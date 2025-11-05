@@ -1,64 +1,82 @@
-#)Overrding
-if we want to  achieve the run time polymorphism then we have to use
-ISA relationship means it  is inheritance .
-RUle
-Method name musr be smae
-parameter must be same
-return type must be same
-private final ,static method cannot be ovveriden
-These must be an IS-A between the classes
 
-if hmre parent class me jo functionality hai ussi ko hm child class me use krna chate then fine we can  go with  that implemntaion with overriden
+#)How Encapsulation Achieves Data Hiding
+Encapsulation achieves data hiding using access modifiers (especially private) and getter/setter methods.
 
-In case of method overridng if we don;t like parent imoplmention  we want to change in  
- the implemtion in child css we an do with ovverdring and  change the implmetaion
+Let’s see an example 👇
+✅ Example:
+public class BankAccount {
+    // Step 1️⃣: Make data private (hidden)
+    private double balance;
 
-
-
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
-
-  class Shape{
-      
-      void  draw(){
-          System.out.println("Drwaing the shape");
-      }
-  }
-  //here parent ki implmentiaon pasnd nhi ilsiye khud ki implmnetioan likh diya
- //basically ovveride kr ke hm khud ka implmnetiona de skt ahai
-  
-  class Circle extends Shape{
-      //here parent ki implmentiaon pasnd nhi ilsiye khud ki implmnetioan likh diya
-      @Override
-      void draw(){
-          System.out.println("Drwaing the circle");
-      }
-  }
-  class Rect extends Circle{
-      @Override
-      void draw(){
-          System.out.println("Drwaing the rect");
-      }
-  }
-
-class Main {
-    public static void main(String[] args) {
-        Shape sh1=new Shape();
-        sh1.draw();
-        Circle c1 =new Circle();
-        c1.draw();
-        Rect rc =new Rect();
-        rc.draw();
-        
-        //parent  chuld refenrce  hold kr skta hai
-        Shape sh2 =new  Circle();  //this is called   run time
-        //at run time it decide
-        sh2.draw();
-        
-      
+    // Step 2️⃣: Provide public methods to access/modify it safely
+    public void deposit(double amount) {
+        if (amount > 0)
+            balance += amount;
     }
-    
+
+    public void withdraw(double amount) {
+        if (amount <= balance)
+            balance -= amount;
+        else
+            System.out.println("Insufficient funds!");
+    }
+
+    public double getBalance() {
+        return balance;
+    }
 }
+
+🔍 Usage:
+public class Main {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount();
+
+        // ✅ Access via methods only
+        account.deposit(5000);
+        account.withdraw(2000);
+
+        System.out.println("Current Balance: " + account.getBalance());
+
+        // ❌ Direct access not allowed
+        // account.balance = 100000; // ERROR — balance is private
+    }
+}
+
+
+✅ Output:
+
+Current Balance: 3000.0
+
+🔒 What Happened Here
+
+The balance field is private, so no one outside the class can access it directly.
+
+Only the public methods (deposit, withdraw, getBalance) control how it’s modified.
+
+This prevents unauthorized or invalid access.
+
+That’s how Encapsulation achieves Data Hiding.
+
+
+--------------------------------------------------------------------------------
+
+💡 Real-Life Analogy
+
+#)Think of a bank ATM machine 🏧
+#)You can deposit or withdraw money using buttons (public methods).
+#)You can’t directly access the internal account data or cash storage (private fields).
+That’s Encapsulation + Data Hiding in real life.
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------
 
 
 Type of casting

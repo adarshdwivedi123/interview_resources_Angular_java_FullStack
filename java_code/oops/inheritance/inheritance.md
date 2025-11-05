@@ -1,7 +1,28 @@
-Inheritance :it can inherit both funcitons and varibles so we do not have to write  them again in child  classes
-can be acheived using extends  keyword pr through interface.
+#)Inheritance :
+The class which acquire the properties(methods and fileds) of another class is called inheritance .
+with helps of extends  keyword  we achieve inheritance.
 
+Exmaple:
+Real life exmaple of inheritance is child and parents  all prop of father are inherited by his son.
 ---------------------------------------------------------------------------------
+Typed of inheritance
+1)Single
+2)Multilevel
+3)MUltiple Inheritance
+4)Hybrid inheritance
+---------------------------------------------------------------------------------
+
+why we need inheritance?
+1)Code Reusability
+We can reuse fields and methods of an existing class instead of rewriting them.
+
+2)Code Maintainability
+If a common feature changes, update it once in the parent class — it reflects in all child classes.
+
+
+#)Disadvantage
+
+-----------------------------------------------------------------------------
 package Coding.oops;
 import javax.management.relation.Relation;
 

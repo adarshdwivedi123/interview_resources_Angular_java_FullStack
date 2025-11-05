@@ -1,9 +1,18 @@
 package Coding.oops;
 
 
+#)Polymorphism  allow us to perform a single action in different waya
+It’s achieved using method overloading (compile-time) and method overriding (runtime),
+ often with inheritanc
+
+
 Polymorphism is a programming concept that allows for the same code to be
 used with different data types. This is achieved by using inheritance and method
 overriding.
+
+Exmpale : A perosn at the same  time can  have  different charactertis like man at the sametime
+is   a father and and employee so the same perosn passes diffent behaviopur  in diffent situaiton
+
 Type of polymorphism
 1. Overloading
 2. Overriding
