@@ -1,8 +1,8 @@
 Inheritance :it can inherit both funcitons and varibles so we do not have to write  them again in child  classes
 can be acheived using extends  keyword pr through interface.
 
+---------------------------------------------------------------------------------
 package Coding.oops;
-
 import javax.management.relation.Relation;
 
 public class inheritance {

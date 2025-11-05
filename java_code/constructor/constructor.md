@@ -1,3 +1,15 @@
+#)Define Constructor
+
+#)A constructor is a special method used to initialize objects in java.
+#)use constructors to initialize all variables in the class when an object is created. As and when an object  
+is created it is initialized automatically with the help of constructor in java. 
+
+#)We have two types of constructors 
+Default Constructor 
+Parameterized Constructor 
+Signature : public classname(
+
+
 #)How to call a superclass constructor?
 You call a superclass constructor using the keyword super() inside the subclass constructor.
 It must be the first statement in the subclass constructor.

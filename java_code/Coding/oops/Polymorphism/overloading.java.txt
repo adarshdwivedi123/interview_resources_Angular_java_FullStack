@@ -1,0 +1,58 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class Atm{
+    private String  username ;
+    private String pass;
+    private String bal;
+
+public String getUserName(){
+    return username;
+}
+public void setUserName(String userName){
+    this.username=userName; 
+    //here this refer current class object that is ATM
+  }
+}
+class Main {
+    public static void main(String[] args) {
+        Atm a =new Atm();
+        a.setUserName("adarsh");
+        System.out.println(a.getUserName()); //this way we implment encapsultioan here we are hiding things
+        //
+    }
+    
+}
+    //overloading
+    //overriding(Run time polymorphisms)
+
+    Oveloading
+    #)same wthod name is same  with different parameter
+    #)return type  is not considered  in method overloading it means we 
+    never decide method ovelaoding with return type
+    #) if we want to achieve compilet time polymorphism then we use overloading
+    // Online Java Compiler
+    // Use this editor to write, compile and run your Java code online
+    class Atm{
+    public int add(int a ,int b)
+    {
+                return a+b;   
+    }
+    public int add(int a)
+    {
+        return a;
+    }
+        public int add(int a ,int b ,int c)
+    {
+        return a+b+c;
+    }
+    }
+    class Main {
+        public static void main(String[] args) {
+            Atm a =new Atm();
+            Integer p=a.add(2,4);
+            System.out.println(p);
+        
+        }
+        
+    } 
+

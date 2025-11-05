@@ -30,7 +30,6 @@ Use ObjectInputStream and readObject().
 
 -------------------------------------------------------------------------
 What do you do if only parts of the object have to be serialized?
-
 Use the transient keyword for fields you don’t want to serialize.
 class Employee implements Serializable {
     String name;

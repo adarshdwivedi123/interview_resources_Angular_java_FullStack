@@ -1,9 +1,7 @@
 package oops;
 
-
 #)Encapsualates  bundles the data and the code working on that data in 
 a single unit.
-
 #)Also know as DATA-HIding
 
 
