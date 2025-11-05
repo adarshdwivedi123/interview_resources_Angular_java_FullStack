@@ -1,0 +1,20 @@
+#)What is a Final Argument?
+
+A final argument means a method parameter declared with the keyword final.
+When you declare a parameter as final, it means:
+👉 The variable cannot be changed (reassigned) inside the method.
+
+
+
+//////////////////////////////////////////////////////////////////////////
+public class Main {
+    void show(final int number) {
+        // number = number + 1;  ❌  Not allowed! (compile-time error)
+        System.out.println("Value: " + number);
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main();
+        obj.show(10);
+    }
+}

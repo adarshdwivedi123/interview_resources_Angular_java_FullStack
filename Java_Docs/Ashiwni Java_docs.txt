@@ -1,0 +1,89 @@
+Overloading   same  method with different in parameter
+Return type must be  not considered in methoid overloading
+
+
+ovverfidng: if we want to achieve run time polymorpshism then we ahve to mehtosd 
+
+SYnchronization:(Similat to synchronuousr)
+IN synchronization   thread class me lgye  ge to jb tk voe thnread complete nhi kr lete 
+to dusre thread ko jagah nhi mile gi
+
+block 
+keyword
+
+where we use and where  we keyword(Ask in interview)
+
+block  agar hme lge ga hmra pura method he sensitive then synchrinzation keyword lge ga
+if lga method ke andar kuch line hi sentitve hai then  synchrinzation block
+
+
+inter Thred Communcation
+wait()  -> wait will run inside the synchronization block and method
+notify()
+notifyAll()
+
+
+
+botha  are same  functionality
+
+
+
+this.eventService.getUnsubscribeVCHeartbeat().subscribe((roomCode: string) => {
+      this.websocketService.vcUnsubscribe(GlobalVariables.mhpHeartbeat_topic + roomCode);
+    });
+
+
+Intervuew me ask(Imp in interview )
+
+//Difernce between controller and restController
+
+
+
+Controller we have 5 control
+Dispach Servlet
+view
+Handler Mapping
+Controller
+View Resolver
+
+
+
+
+jha pe model agaya hm use kr reh hai to voe rest ke andar aye ga
+
+
+
+How to secure application using spring ?
+------------------------------------------------------
+	1. Security is very important for any web application
+	2. To protect our application and data we need to implement security logic
+	3. Spring Security concept we can use to secure our we app/rest APIs
+	4. To secure our spring boot application we need to add below starter in pom.xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
+Note: When we add this dependency in pom.xml then by default our app will be secured with the basic authentication. It will generate random password to access out application
+
+
+How to override spring security default credentials ?
+------------------------------------------------------------------------
+	1. To override default credentials we can configure security user.name and user.password in properties file
+
+
+
+///
+MonoLithics vs Advantage vs disadvantsage read form ashiwin docs
+Advantage 
+
+
+
+Architecture of Microservices
+1)service registry
+2)Service
+3)Api gateway
+4)Load Balancer
+5)Admin Server
+6)Zipkin server & sleuth
+

@@ -1,0 +1,3 @@
+Vector
+The Vector class in Java is a dynamic array that can grow or shrink in size automatically as elements are added or removed.
+it is similar to arrayList and thread safe

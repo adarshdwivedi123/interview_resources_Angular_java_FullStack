@@ -1,0 +1,42 @@
+What is the use of instanceof operator in Java?
+instanceof operator checks if an object is of a particular type.
+The instanceof operator in Java is used to check whether an object is an instance of a particular class or subclass.
+
+It returns a boolean value:
+
+true → if the object is of that type (or subclass type)
+
+false → otherwise
+
+class Animal {}
+class Dog extends Animal {}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+
+        System.out.println(a instanceof Dog);     // true
+        System.out.println(a instanceof Animal);  // true
+        System.out.println(a instanceof Object);  // true
+        System.out.println(a instanceof String);  // false
+    }
+}
+
+
+
+Why do we use instanceof?
+
+✅ Type checking before casting
+It helps prevent ClassCastException when doing downcasting.
+
+if (a instanceof Dog) {
+    Dog d = (Dog) a; // Safe cast
+    System.out.println("Downcasting done safely");
+}
+
+
+✅ Useful in inheritance and polymorphism
+To check which subclass object you’re dealing with at runtime.
+
+✅ Used in method overriding
+Sometimes used to perform different actions depending on the actual object type.

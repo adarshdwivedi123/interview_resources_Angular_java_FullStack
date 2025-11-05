@@ -1,0 +1,263 @@
+
+interface ka object nhi bnta hai becoz it don;t have constructor
+
+
+#)A class uses the implements keyword to use an interface.
+#)It is used to achieve abstraction and multiple inheritance.
+#)class that implements an interface must provide implementations for all its methods.”
+#)interface extend interface
+#)Interface containe abstract method 
+Interface helps in achieving abstraction because it only provides method declarations (no implementation).
+
+
+
+interface Vehicle{
+    
+    void start(); // abstract by defualt     //abstract  method helps to achieve abstraction
+    //after java 8 we can concrete method
+ default void honk() { // concrete method
+    System.out.println("Vehicle is honking!");
+    }
+    
+}
+
+class Car implements Vehicle{
+    public void start(){
+        System.out.println("Car is starting");
+    }
+}
+
+
+public  class Main {
+    public static void main(String[] args) {
+        Car car =new Car();
+        car.start();
+        car.honk();
+    }
+}
+
+
+Pre-Java 8 → interfaces cannot have concrete methods.
+
+Java 8+ → interfaces can have concrete methods via default or static.
+
+
+
+#)interface extend interface
+
+//////////////////////////////////////////////////////////////
+
+interface A {
+    void methodA();
+}
+
+interface B {
+    void methodB();
+}
+
+interface C extends A, B {
+    void methodC();
+}
+
+class MyClass implements C {
+    public void methodA() {
+        System.out.println("A implemented");
+    }
+    public void methodB() {
+        System.out.println("B implemented");
+    }
+    public void methodC() {
+        System.out.println("C implemented");
+    }
+}
+
+call form java mehtohd?
+
+public class Main {
+    public static void main(String[] args) {
+        // Using class reference
+        MyClass obj = new MyClass();
+        obj.methodA();
+        obj.methodB();
+        obj.methodC();
+
+        System.out.println("----- Using interface references -----");
+
+        // Using interface A reference
+        A aRef = obj;
+        aRef.methodA();
+        // aRef.methodB(); // ❌ not allowed
+        // aRef.methodC(); // ❌ not allowed
+
+        // Using interface B reference
+        B bRef = obj;
+        bRef.methodB();
+        // bRef.methodA(); // ❌ not allowed
+        // bRef.methodC(); // ❌ not allowed
+
+        // Using interface C reference
+        C cRef = obj;
+        cRef.methodA();
+        cRef.methodB();
+        cRef.methodC();
+    }
+}
+
+
+
+public class a extends b implments A,B
+
+
+Real Life Exmaple
+
+
+
+
+////
+
+"Suppose we are building an e-commerce application. We need different payment methods like Credit Card, UPI, or Net Banking.
+We can create an interface PaymentGateway which defines a method pay().
+Each payment type (CreditCardPayment, UpiPayment, etc.) implements the interface and provides its own logic.
+This way, our system becomes flexible and scalable, because tomorrow we can add another payment option (say PayPal) without changing the existing code."
+
+
+package Interface;
+
+interface  PaymentGateway{
+    void pay(double amount);
+}
+
+class  CreditCardPayment implements  PaymentGateway{
+    @Override
+    public void pay(double amount) {
+        System.out.println("Paid" +amount +"using credit card");
+    }
+}
+
+
+class UpiPayment implements  PaymentGateway{
+
+    @Override
+    public void pay(double amount) {
+        System.out.println("piad"+amount);
+    }
+}
+
+public class PaymentInterface {
+    public static void main(String[] args) {
+        CreditCardPayment payment = new CreditCardPayment();
+        payment.pay(1000);
+
+
+
+        UpiPayment payment2 =new UpiPayment();
+        payment2.pay(500);
+    }
+
+}
+
+
+
+
+
+Note:
+Interface ka object nhi bnta we can accese
+Variable
+1)public 
+2)static :object nhi bnane ka then class name se acces kr skte hai
+3)Final :so that child class chnge na kr paye
+
+
+
+#)Can you extend an interface?
+yes we can extend interface
+
+#)Example
+interface A {
+    void methodA();
+}
+
+interface B extends A {
+    void methodB();
+}
+
+class MyClass implements B {
+    public void methodA() {
+        System.out.println("Method A");
+    }
+
+    public void methodB() {
+        System.out.println("Method B");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.methodA();  // inherited via interface
+        obj.methodB();  // defined in interface B
+    }
+}
+
+ #)Can a class extend multiple interfaces?
+
+In Java, a class cannot extend interfaces.
+A class can only implement multiple interfaces using the implements keyword.
+
+interface A {
+    void methodA();
+}
+
+interface B {
+    void methodB();
+}
+
+class MyClass implements A, B {   // implements, not extends
+    public void methodA() {
+        System.out.println("Method A");
+    }
+
+    public void methodB() {
+        System.out.println("Method B");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.methodA();
+        obj.methodB();
+    }
+}
+
+////
+interface A {
+    void methodA();
+}
+
+interface B {
+    void methodB();
+}
+
+class MyClass implements A, B {   // implements, not extends
+    public void methodA() {
+        System.out.println("Method A");
+    }
+
+    public void methodB() {
+        System.out.println("Method B");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.methodA();
+        obj.methodB();
+    }
+}
+
+
+#)Note
+Variables	in	 an	 interface	 are	always	 public,	 static,	 final.	 Variables	 in	 an	 interface	 cannot	 be	 declared	
+private.

@@ -1,0 +1,58 @@
+#)It is introduce in  java 8
+
+#)A predicate conatins function with a single argument and return boolean value.
+or we can say predicate have  boolean value function.
+
+#)Where we can use this ?
+we can use where we want deciosn like true or false their we can 
+
+Example
+s.length>5
+
+#)Syntax:
+interface Predicate<T> (this T  is  argument of type boolean and string )
+{
+    public  boolean test(T t);
+}
+
+
+Example
+
+#)Write a predicate to check wether the given interger is grester  than 50 or not?
+------------------------------------------------------
+
+import java.util.function.Predicate;
+
+public class PredicateExample {
+    public static void main(String[] args) {
+        Predicate<Integer> isGreaterThan50 = n -> n > 50; // lambda = test() implementation
+
+        // Using the test() method to check
+        System.out.println(isGreaterThan50.test(40)); // false
+        System.out.println(isGreaterThan50.test(60)); // true
+    }
+}
+
+
+#)predicate Joining
+1)And()
+2)or()
+3)negate()
+
+
+
+
+
+
+-------------------------------------------------------
+#)When You Use .test()
+You only call .test() when you want to execute the predicate:
+
+System.out.println(isGreaterThan50.test(60)); // true
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+In C and C++ applications, memory will be allocated for primitive data types at
+compilation time only, not at runtime.
+
+• If any programming language allows memory allocation for primitive data types
+at runtime, not at compilation time then that programming language is called as
+Dynamic Programming Language.
+EX: JAVA
+
+• In java applications, memory will be allocated for primitive data types at runtime
+only, not at compilation time.
+
+• Note: In Java applications, memory will be allocated for primitive data types at
+the time of creating objects only, in java applications, objects are created at
+runtime only
+
+
+
+///AUR DEKHO

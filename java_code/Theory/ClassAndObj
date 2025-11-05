@@ -1,0 +1,66 @@
+1. Interpreter: Translates code line-by-line.
+2. Compiler: Translates entire code at once.
+3. Assembler: Converts assembly language to machine code.
+
+
+
+Class And Object:
+Class is a blueprint or template for creating objects.
+Example: Think of a class as the blueprint of a house. The blueprint itself isn't a house,
+but it details the design and features of the house.
+
+Object An instance of a class.
+Example: An object is like a real house made from the blueprint. Each house can look
+the same but is a separate, physical thing.
+
+
+#)State
+
+1)The state of an object represents its data or attributes — i.e., what values it holds at a particular time.
+class Car {
+    String color;
+    int speed;
+}
+
+Now if we create an object:
+
+java
+Copy code
+Car car1 = new Car();
+car1.color = "Red";
+car1.speed = 120;
+
+#)State of car1:
+color = "Red"
+speed = 120
+If you change these variables, you change the state of the object.
+
+
+
+2️⃣ Behavior of an Object
+The behavior of an object represents what the object can do — i.e., its methods or functions.
+👉 In simple words: Behavior = actions (methods) that operate on state.
+
+#)class Car {
+    String color;
+    int speed;
+
+    void accelerate() {
+        speed += 10;
+    }
+
+    void brake() {
+        speed -= 10;
+    }
+}
+
+
+#)accelerate() and brake() represent the behavior of the Car object.
+#)They change the state (i.e., modify the speed).
+
+#)What is the super class of every class in Java?
+The superclass of every class in Java is java.lang.Object.
+
+Explanation:
+In Java, all classes implicitly inherit from the Object class, either directly or indirectly.
+That means even if you don’t explicitly extend any class, your class automatically extends Object.

@@ -1,0 +1,45 @@
+package Coding.oops;
+
+
+Polymorphism is a programming concept that allows for the same code to be
+used with different data types. This is achieved by using inheritance and method
+overriding.
+Type of polymorphism
+1. Overloading
+2. Overriding
+
+public class Polymorphism {
+    
+}
+
+class Test {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+
+#)Overloading
+Compile time polymorphism
+
+#)Method overloading means declaring multiple methods with same method
+name but having different method signature.
+
+#)Compile-time polymorphism (decided at compile time).
+
+In method overloading while writing the method signature we have to follow
+following 3 Rules
+
+• Method name must be same for all methods
+• List of parameters must be different like different type of parameters,
+different
+number of parameters, different order of parameters.
+• Return type is not considered in method overloading; it means we never
+decide method overloading with return type.
+
+Ask 
+Overloading requires different parameters, not just different return types.

@@ -1,0 +1,26 @@
+#)What is Functional Programming in Java?
+
+Functional programming in Java means writing code using functions instead of classes and objects to perform actions.
+It focuses on what to do, not how to do it.
+From Java 8, we can use lambda expressions and the Stream API to write cleaner and shorter code.
+
+It was introduced in Java 8 through lambdas, streams, and functional interfaces.
+ It allows us to write cleaner and more readable code by focusing on what to do rather than how to do it.”
+
+----------------------------------------------------------
+Before Java 8 (Imperative Style):
+
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+for (Integer n : numbers) {
+    if (n % 2 == 0) {
+        System.out.println(n);
+    }
+}
+
+
+With Functional Programming (Java 8+):
+
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+numbers.stream()
+       .filter(n -> n % 2 == 0)
+       .forEach(System.out::println);

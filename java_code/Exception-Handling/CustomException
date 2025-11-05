@@ -1,0 +1,111 @@
+#)Steps to Create a Custom Exception in Java
+
+1)Extend the Exception class (or RuntimeException)
+2)If you want a checked exception, extend Exception.
+3)If you want an unchecked exception, extend RuntimeException.
+
+#)Define constructors
+Usually, you define at least a constructor that accepts a message.
+Throw it using throw in your code
+
+---------------------------------------------------------------------------------------------------
+#)Custom Checked Exception Example
+
+👉 Checked exceptions are those that the compiler forces you to handle using try-catch or throws.
+
+✅ Example: AgeNotValidException (Checked Exception)
+// Step 1: Create a custom checked exception
+class AgeNotValidException extends Exception {
+    public AgeNotValidException(String message) {
+        super(message);
+    }
+}
+
+// Step 2: Use it in a class
+public class CheckedCustomExceptionDemo {
+    static void checkAge(int age) throws AgeNotValidException {
+        if (age < 18) {
+            throw new AgeNotValidException("Age must be 18 or older!");
+        } else {
+            System.out.println("You are eligible to vote!");
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            checkAge(15);
+        } catch (AgeNotValidException e) {
+            System.out.println("Caught Exception: " + e.getMessage());
+        }
+    }
+}
+
+
+Output:
+
+Caught Exception: Age must be 18 or older!
+
+🧠 Explanation:
+
+AgeNotValidException extends Exception, so it’s checked.
+
+The checkAge() method declares the exception with throws.
+
+The main() method handles it with try-catch.
+
+---------------------------------------------------------------------------------------
+
+Custom Unchecked Exception Example
+
+👉 Unchecked exceptions (Runtime exceptions) are not checked by the compiler.
+You can throw them directly — no need for throws or try-catch.
+
+✅ Example: InvalidScoreException (Unchecked Exception)
+// Step 1: Create a custom unchecked exception
+class InvalidScoreException extends RuntimeException {
+    public InvalidScoreException(String message) {
+        super(message);
+    }
+}
+
+// Step 2: Use it in a class
+public class UncheckedCustomExceptionDemo {
+    static void checkScore(int score) {
+        if (score < 0 || score > 100) {
+            throw new InvalidScoreException("Score must be between 0 and 100!");
+        } else {
+            System.out.println("Valid Score: " + score);
+        }
+    }
+
+    public static void main(String[] args) {
+        checkScore(120); // This will throw an unchecked exception
+        System.out.println("Program continues..."); // won't execute
+    }
+}
+
+
+Output:
+
+Exception in thread "main" InvalidScoreException: Score must be between 0 and 100!
+
+🧠 Explanation:
+
+InvalidScoreException extends RuntimeException, so it’s unchecked.
+
+The compiler does not force handling.
+
+The program terminates unless you catch it manually.
+
+
+
+
+
+----------------------------------------------------------------
+ #)Can you explain a few exception handling best practices?
+“I always make sure to catch only specific exceptions and log them properly instead of swallowing them silently.
+I use try-with-resources to close files or database connections automatically.
+I never use exceptions for normal logic, and if needed, I rethrow or wrap them with a clear message.
+Also, I prefer using custom exceptions for business logic to make the code more meaningful.”
+
+Example lIkhio

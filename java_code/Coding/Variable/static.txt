@@ -1,0 +1,31 @@
+
+Static varibole :
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Test{
+    static int a=10;
+  void  display(){
+      System.out.println(a);
+    }   
+}
+class Main {
+    public static void main(String[] args) {
+        // Test t1 =new Test();
+        // t1.display();
+        // System.out.println(t1.a);
+        System.out.println(Test.a); //classKe  naame se
+        //bhib acces kr skte hai becoz  ata time of class laoding
+        //usse jagah milti hai
+        //without creating object we can acces
+        //static varible can acces  non static varible
+        //non static variable cannot acces  static
+        //in case of static if u chaneg in one object it changes
+        every other palce
+        //real life scanrion we use static in 
+        error define 
+        
+    }
+}
+

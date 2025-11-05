@@ -1,0 +1,150 @@
+#)What is collection?
+1)collection is a group of Object presnet in java.util package
+2)Framework provide  us  the  architecture to manage these "group of objects " i.e add ,update ,delete .search etc.
+#)when we want  to rep group of individual onject as a single entity then we  should go for strema.
+
+
+Why we need collection framework is required?
+Framework provided us classes and interface so thast we can reuse that code instead of righting from srcatch.
+
+#)before collection  we  have array , vector hash tables.
+#)but problem with that is there is no common interface so its difficult to remember the methods for each.
+
+
+#)Interable is  interface
+
+Interable =>iterable  used to traverse the collections.
+1)iterator()  => it return iterator object
+2) Using ForEach() :iterate collection useing Lambda expression .Lambda expressoni is called foreach element in the collection.
+
+
+
+check the example
+#)PriorotyQueue 
+It is of two type 
+1)Min 
+2)Max
+
+
+
+
+
+
+How to store data
+!)Array
+2)String
+3)Object
+4)Array of Object
+5)Collection of onject
+
+
+LIst 
+List index BAses
+List allow duplicate access
+Order Presever(Jiss order me data dalu ga ussi order me data ayega)
+
+Array   IN ArrayList
+FixedSize            and growable in nature
+same type  of data store   ||  
+
+List => collection => parent class ==>Iterable    
+serilizable=>
+ake data form   se  dusre data form me jate hai to use hi serlizable bolte hai
+
+
+
+
+then we use  -list -->ArrayList
+1)growable 
+2)Index
+3)Oreder preserve
+4)null insertion
+5)default size 10;
+Data fill new List is created check
+v
+Re2)
+we use set(set internally map use kr rha hai duplicate check krne ke liye)
+Duplication
+index based system nhi hai
+heterogenous data not allow
+
+#) Difference AL and  Vector
+1)Non Synchronous       1)Synchrnous
+2)Multiple thread	2)Multi Threading cannot access
+can access
+3)High Prioirty		3)Persitance low
+
+
+
+
+
+
+
+
+--------------------------QUeue
+
+#)Insert from rear.
+#)Remove from Front.
+#)Queuue follow fifo order.
+
+Mthods
+1)add()
+
+
+
+
+Priority Queue
+its of 2 types Minimum Queue and Maximum Priority Queuee
+-> It is based on Priority Heap(Min Heap and Max heap)
+->ELemets are order according to eihere 
+
+-----------------------------------------------------------------------
+Very Imp Question
+
+#)Comparator vs Comparable
+1)Comparable
+Used to define natural order for objects.
+
+Class implements Comparable<T> and overrides compareTo() method.
+
+Example: Strings naturally sorted alphabetically; Numbers naturally sorted numerically.
+
+
+2)Comparator
+When u want to change the natual ordering 
+#)Use Comparator :when you want external/custom sorting without modifying the class.
+
+-------------------------------------------------------------------------------------
+
+#)Comparable is used by classes to say that they can be compared to something else, usually another instance of the same class. You use this when you want to be able to call myObj.compareTo(otherObj).
+
+#)A Comparator is used to compare to objects in much the same way, but with an important distinction: a Comparator is a separate class from the classes being compared. You would use it like myComparator.compare(obj1, obj2).
+
+So they do the same thing, just in slightly different ways. Comparable is usually more convenient if you're comparing a class you wrote yourself, meaning you can have that class implement Comparable. ComparaY tors are better when you don't want to or can't change the code of the class that you want to compare.
+
+---------------------------------------------------------------------------------------------------------
+
+
+#)interview Question
+1)What is the Collection Framework in Java?
+The Java Collection Framework (JCF) provides a set of classes and interfaces 
+to store and manipulate groups of data as a single unit (like lists, sets, and maps).
+
+2) What is the difference between Collection and Collections?
+Collection (interface) vs Collections (utility class)
+
+
+3)What are the main interfaces in the Collection Framework?
+Collection Interface (root interface)
+
+1)List
+2)Set
+3)Queue
+4)Map (separate hierarchy)
+
+
+
+#)What is hashMAp in java how internally work in hashMAp?
+
+
+

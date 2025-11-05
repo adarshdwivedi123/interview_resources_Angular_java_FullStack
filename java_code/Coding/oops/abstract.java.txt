@@ -1,0 +1,408 @@
+#)Java Abstract class and methods
+
+-> A class which is declared using abstract keyword known as abstract class.
+-> An abstract class may or may not have abstract methods.
+-> We cannot create object of abstract class.
+-> It is used to achieve abstraction but it does not provide 100% abstraction
+
+because it can have concrete methods.
+• An abstract class must be declared with an abstract keyword.
+• It can have abstract and non-abstract methods.
+• It cannot be instantiated.
+• It is used for abstraction.
+
+Syntax :
+abstract class class_name { }
+
+
+
+
+#)Abstract method
+Method that are declared without any body within an abstract class are called
+abstract method.
+The method body will be defined by its subclass.
+Abstract method can never be final and static.
+Any class that extends an abstract class must implement all the abstract
+methods.
+Syntax:
+abstract return_type function_name (); //No definition
+
+
+
+
+#)concrete class(Non abstract) are not abstrach method
+#)An abstract method is a method without a body (only declaration, no implementation).
+It tells what a class should do, but not how to do it.
+
+Because it hides the implementation details, it helps achieve abstraction.
+
+
+// Abstract class
+abstract class Animal {
+    abstract void sound(); // abstract method
+
+    void eat() {
+        System.out.println("Animal is eating...");
+    }
+}
+
+// Concrete class must implement abstract methods
+class Dog extends Animal {
+    void sound() { // must be implemented
+        System.out.println("Dog barks");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.sound(); // Output: Dog barks
+        d.eat();   // Output: Animal is eating...
+    }
+}
+
+//////////////////////////////////////////////////////////////////////
+
+#)If subclass doesn’t implement, it must be abstract too
+
+abstract class Animal {
+    abstract void sound();
+}
+
+
+// This class doesn't implement 'sound()', so it must also be abstract
+abstract class Pet extends Animal {
+    void play() {
+        System.out.println("Pet is playing");
+    }
+}
+
+The compiler will throw an error because Pet extends Animal,
+and Animal has an abstract method sound().
+
+Since Pet didn’t implement that method, it must be declared as abstract.
+If it’s not, Java will complain.
+
+
+//////////////////////////////////////////////////////////////////////////////
+Example:3
+ChatGPT said:
+
+Perfect 👍 Here’s an example that shows how a subclass must implement multiple abstract methods from its parent abstract class 👇
+
+
+// Abstract parent class
+abstract class Shape {
+    // abstract methods (no body)
+    abstract double area();
+    abstract double perimeter();
+
+    // normal (concrete) method
+    void display() {
+        System.out.println("This is a shape");
+    }
+}
+
+// Concrete subclass implementing all abstract methods
+class Circle extends Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Implementing abstract methods
+    double area() {
+        return Math.PI * radius * radius;
+    }
+
+    double perimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+// Another subclass implementing the same abstract methods
+class Rectangle extends Shape {
+    double length, width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    double area() {
+        return length * width;
+    }
+
+    double perimeter() {
+        return 2 * (length + width);
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Circle c = new Circle(5);
+        Rectangle r = new Rectangle(4, 6);
+
+        c.display(); // inherited concrete method
+        System.out.println("Circle Area: " + c.area());
+        System.out.println("Circle Perimeter: " + c.perimeter());
+
+        System.out.println("Rectangle Area: " + r.area());
+        System.out.println("Rectangle Perimeter: " + r.perimeter());
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+Java abstract class and method
+
+1) A class which is declared using abstract keyword known as abstract class
+2) an abstract class may or may not  have abstract methods.
+3)we cannot create object of abstract class
+4) it is to achieve abstracton but is does not provide  100% abstraction becoz it can have concrete methods
+
+Note : it can have abstract and non abstract methods
+
+
+
+Syntax :abstract class class_name{}
+ake class hmne abstract bnya hai to usko hm kaise use kr paye ge using extend keyword hm acces kr  paye ge  
+extedn + ovveride
+
+
+Abstract Mehtod :
+Method that are declared without any body  without an abstract class are called abstract method
+
+
+
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class Animal{
+     String name;
+}
+
+class Dog extends Animal{
+  String name;  
+void print(){
+     super.name="Loddie";
+     this.name="Jipsy";
+     System.out.println("parent"+super.name);
+     System.out.println("child"+this.name);
+  }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Dog d =new Dog();
+        d.print();
+    }
+}
+
+This()  and super()
+
+///
+
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+abstract class Vehicle{
+    public  abstract void engine();
+    
+    public void horn(){
+        System.out.println("Pee Pee");
+    }
+}
+
+class BMV  extends Vehicle{
+     public void engine(){
+         System.out.println("4000c Engine");
+     }
+     
+}
+class Tata extends Vehicle{
+    public void engine(){
+        System.out.println("2100c Engine");
+    }
+}
+
+
+
+
+class Main {
+    public static void main(String[] args) {
+        Vehicle vehicle1 =new BMV();
+        vehicle1.engine();
+        
+        Vehicle vehicle2 =new Tata();
+        vehicle2.engine();
+        
+    }
+}
+////////////////////////////////////////////////////////////////////
+
+// Abstract class
+abstract class Animal {
+    // Abstract method (does not have a body)
+    public abstract void makeSound();
+
+    // Regular method
+    public void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+
+// Subclass (inherits from Animal)
+class Dog extends Animal {
+    // Implement the abstract method
+    public void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();  // Upcasting
+        myDog.makeSound();         // Output: Bark
+        myDog.sleep();             // Output: Sleeping...
+    }
+}
+if we overrite static and  private varibole  it will ereor like invalid
+
+method hiding
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+in abstract class objet bna reh hai anonymous method bna ke
+
+abstract class MyAbstract {
+    abstract void display();
+
+    public static void main(String[] args) {
+        System.out.println("Main inside Abstract Class");
+
+        // Anonymous class to create object of abstract class
+        MyAbstract obj = new MyAbstract() {
+            @Override
+            void display() {
+                System.out.println("Hello from anonymous subclass");
+            }
+        };
+
+        obj.display();  // calls the overridden method
+    }
+}
+
+
+/////////////////
+abstract class extends abstract 
+
+
+“We cannot declare an abstract method as static because abstract methods need to be overridden, and static methods cannot be overridden.
+However, we can have static methods inside an abstract class — they just can’t be abstract themselves.”
+
+abstract class Demo {
+    static void greet() {
+        System.out.println("Hello from static method!");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Demo.greet(); // ✅ Works fine
+    }
+}
+
+
+
+/////////////////////////
+#)Using abstract class in java 
+Java does not allow a class (even an abstract class) to extend multiple abstract classes.
+
+abstract class A {
+    abstract void methodA();
+}
+
+abstract class B {
+    abstract void methodB();
+}
+
+abstract class C extends A, B {   // ❌ Not allowed in Java
+    // Error: "class cannot extend multiple classes"
+}
+
+
+//////////////////////////////////////////////////
+But we can do it using abstract class + interfaces
+
+That’s why Java introduced interfaces — to achieve multiple inheritance of type/behavior safely.
+
+
+
+#)WHy we are using abstract class?
+Use an abstract class when you want to provide common functionality and also
+and also enforce certain methods for subclasses to implement.
+
+abstract class Vehicle {
+    abstract void start(); // every vehicle must start differently
+
+    void fuel() { // common method for all vehicles
+        System.out.println("Vehicle needs fuel");
+    }
+}
+
+class Car extends Vehicle {
+    void start() {
+        System.out.println("Car starts with a key");
+    }
+}
+
+class Bike extends Vehicle {
+    void start() {
+        System.out.println("Bike starts with a kick or button");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle v1 = new Car();
+        Vehicle v2 = new Bike();
+
+        v1.start();
+        v1.fuel();
+
+        v2.start();
+        v2.fuel();
+    }
+}
+
+🔹 Explanation
+
+#)Vehicle is an abstract class because we don’t create objects of a general “Vehicle”.
+
+It defines:
+a common behavior (fuel()) shared by all vehicles,
+and a method to be defined by subclasses (start()).
+Subclasses Car and Bike inherit common behavior and provide their own version of start().
+
+

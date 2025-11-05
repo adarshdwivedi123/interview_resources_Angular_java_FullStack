@@ -1,0 +1,30 @@
+
+function secondLargest(arr){
+     if(arr.length <2)
+        {
+            return "null";
+        }
+    firstLargest= -Infinity
+    secondLargest= -Infinity;
+    for(let i=0 ;i<arr.length;i++)
+    {
+       
+        if(arr[i] > firstLargest){
+            secondLargest=firstLargest;
+            firstLargest=arr[i];
+        }
+        //Below case dekhna fashe ga
+        else if(arr[i]>secondLargest && arr[i] != firstLargest){
+            secondLargest=arr[i]
+        }
+    }
+    return secondLargest;
+    
+}
+arr=[-1,5,8,10,7];
+let p=secondLargest(arr);
+
+
+
+
+console.log(p);

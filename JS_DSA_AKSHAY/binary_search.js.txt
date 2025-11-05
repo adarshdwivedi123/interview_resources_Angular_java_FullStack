@@ -1,0 +1,1 @@
+ (IMp point ) binary search u cann apply in sorted array  

@@ -1,0 +1,167 @@
+Serilization: Convert java object to json.
+deserilization : Convert json  to java object.
+
+
+1)Annotaion for configurations
+2)Annotaion for data supply or injection
+3)Annotaion for bean life cycle.
+4)Miscallaneous annotations.
+
+
+
+
+------------------------------
+Anotiaons for configuraitons
+
+These annotations configure java classes as spring bean ,enable ioc  conateinr
+to manage bean life  cycle idea behind using these annotation is  to give instrucftion to framweowkr or container.
+
+1)@Component: mark java class as spring bean.
+2)@Service:  Similar to @Component, but  use for service classes(Business logic).
+3)@Respositoty: mark java class as a DAO(Data access object). 
+4)@Controller :mark java class a  web controller.
+ 5)@RestController:@Controller + @ResponseBody
+6)@Configuraiton: define a  configuration class where  we can declare beans using   @Bean 
+7)@Bean: mark method that return an object  to managed by SB.
+
+
+
+Note :for custom class we can use @Componenet and get its bean but for  predefined class we cannot use
+
+
+2)Annotaion for data supply and injection
+These annotation used to inject data or object.
+1)  @Autowired   :(By default  @Autowired perform injection byType but u can change byName)
+2) @Value:   
+3) Qualifier(Jiska Bean ka  naam diya hu sirf vhi a rha hai)
+Qualiefier  we can use byName DI hota hai
+4) @Primary () (class and method pe lg skta hai)
+class ke bean ko primary mark krte hai 
+
+
+@Compoent (class me  lga skte hai (@Target(ELment.Type)))
+
+
+
+////////////////////////////////////////////////////////////
+
+SpringFrameowrk -----------------> Dusra Frameowrk
+
+java+ Framework   
+
+
+Spring 
+  
+
+
+
+@Autowire  = @Inject
+@Component = @Normal
+@Qualifier = @Resources
+
+
+
+
+
+
+#)Bean Life Cycle
+@PostContructor
+@PreDestroy
+
+
+Misceanllous
+@Lazy
+@Scope
+@ComponentScan
+@PropertySource
+
+
+
+
+Adavantage of Spring Boot
+
+1)No Beans xml based configuration
+2)Embed server
+3)Auto Configuration
+4)Rich annotations
+
+spring-boot-starter-parent
+
+
+
+
+
+@SpringBootApplication annotation 
+is called main  class.
+
+
+spring boot is equal to following notation
+sprintbootConfiguration
+SpringableAutoConfiguraiton
+ComponentScan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

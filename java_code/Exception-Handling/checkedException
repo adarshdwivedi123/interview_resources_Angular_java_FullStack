@@ -1,0 +1,113 @@
+
+#)Checked Exceptions:Checked at compile time. Must be handled using try-catch or declared with throws.	
+IOException, SQLException, FileNotFoundException
+
+#)Unchecked Exceptions (Runtime):Occur at runtime. Compiler does not check them.	NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException
+
+
+#)How do you throw an exception from a method in Java?
+You can throw an exception using the throw keyword.
+If the exception is checked, you must also declare it using the throws keyword in the method signature.
+
+Example – Throwing a Checked Exception
+Checked exceptions (like IOException, SQLException, etc.) must be declared with throws.
+import java.io.IOException;
+
+public class ThrowExample {
+    static void readFile() throws IOException {
+        // throwing a checked exception
+        throw new IOException("File not found");
+    }
+
+    public static void main(String[] args) {
+        try {
+            readFile(); // calling the method
+        } catch (IOException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------
+What happens when you throw a Checked Exception from a method?
+
+Checked exceptions are exceptions that the compiler forces you to handle.
+Examples: IOException, SQLException, FileNotFoundException.
+
+If a method throws a checked exception, two things happen:
+🔹 1. Method declaration must include throws
+The method must declare the exception using the throws keyword.
+This tells the caller that it needs to handle this exception.
+
+void readFile() throws IOException {
+    throw new IOException("File not found");
+}
+
+
+✅ Here, throws IOException declares that this method might throw an IOException.
+
+🔹 2. The caller must handle or declare it
+The calling method has two options:
+Handle it using try-catch
+Declare it in its own throws clause
+
+“When a checked exception is thrown from a method, the method must declare it with throws, and the caller must either handle it or declare it, otherwise the code will not compile.”
+
+--------------------------------------------------------------------------------------------
+Example – Handling Checked Exception
+import java.io.IOException;
+
+public class CheckedExample {
+    static void readFile() throws IOException {
+        throw new IOException("File not found"); // throwing checked exception
+    }
+
+    public static void main(String[] args) {
+        try {
+            readFile(); // calling the method
+        } catch (IOException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
+
+Output:
+
+Exception caught: File not found
+
+
+✅ Explanation:
+
+readFile() throws a checked exception.
+
+main() handles it using try-catch.
+
+Program continues running after handling the exception.
+
+
+--------------------------------------------------------------------
+Example – Declaring Exception Without Catching
+public class CheckedExample2 {
+    static void readFile() throws IOException {
+        throw new IOException("File not found");
+    }
+
+    static void callReadFile() throws IOException {
+        readFile(); // propagate exception
+    }
+
+    public static void main(String[] args) throws IOException {
+        callReadFile(); // exception not handled here, just declared
+    }
+}
+
+
+Here, the exception is propagated up the call stack.
+
+Compiler ensures that every checked exception is either caught or declared.
+
+
+
+---------------------------------------------------------------------
+#)Options to eliminate compilation errors
+“To eliminate compilation errors for checked exceptions, either handle them with a try-catch block or declare them in the method signature using throws.”

@@ -1,0 +1,102 @@
+#)Process Based Multitasking:()
+Executing several tasks simultaneously where each task is a separate independent process 
+Example:
+Process :IN winodws we are running multiple program run sepeartely
+In a system if  multiple program run separateltely 
+for exm paint chl rtha hai and vlc  intelliz.
+
+(#)Thread based multitasking:
+Executing several tasks simultaneously where each task is a separate independent part of
+the same program
+in zoom we are able to   listen audion and video and screen these independent task we are able
+to do in same program this is called thread based multitasking.
+each independent part is called a thread.
+
+Thread bnaya dena usko job diya
+
+
+#)How to know where should  i use multithreading?
+multithreading use 
+ThreadSchduler =>
+1)t.start()  new thread is created and this new threaded is responsible for executing the run() method.
+2) on the other hand if we use run() no new  thread is created the run() method is  excured like a regaular  by main started
+
+------------------------------------------------------------------------------------------------------
+
+
+#)Thread Priorities
+In Java, threads can have different priorities that indicate their importance to the thread
+scheduler. Thread priorities are represented by integer values ranging from 1 to 10, where 1
+is the lowest priority and 10 is the highest priority. The default priority for a thread is usually
+inherited from its parent thread.
+Thread class defines the following constants to represent some standard priorities.
+• Thread. MIN_PRIORITY----------1
+• Thread. MAX_PRIORITY----------10
+• Thread. NORM_PRIORITY--------5 
+
+
+The  methods to prevent a thread form excursion
+1)Yield()
+2)join()  ==> This method allow on thread to wait for the completion of another thread
+3)Sleep() => If we want to make current to sleep for sometime we can use it.
+
+ThreadYield => Behaviour is not fixed might be due yield other thread ko jda baar chance mil jaye(THis method we are not using  always )
+Example dekh lena aboce ke
+
+------------------------------------------------------------------------
+#)What is the use of join() method in Threads?
+💬 Simple Explanation:
+
+The join() method is used to make one thread wait for another thread to finish its execution before continuing.
+
+In other words —
+➡️ If thread A calls threadB.join(), then A will pause until thread B finishes.
+
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Child Thread: " + i);
+            try { Thread.sleep(500); } catch (InterruptedException e) {}
+        }
+    }
+}
+
+public class JoinExample {
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.start();
+
+        try {
+            // Main thread waits for child thread to finish
+            t.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Main Thread finished after Child Thread.");
+    }
+}
+🧠 Explanation:
+The main thread starts the child thread t.
+
+Then main calls t.join(), so it waits until t completes.
+
+Only after the child thread finishes, the main thread prints its final line.
+
+
+
+------------------------------------------------------------------------------------------
+
+#)
+What is Thread Safety?
+
+Thread-safe code means that the code behaves correctly when accessed by multiple threads at the same time,
+ without causing unexpected behavior like data corruption or crashes.
+
+
+
+
+
+
+
+

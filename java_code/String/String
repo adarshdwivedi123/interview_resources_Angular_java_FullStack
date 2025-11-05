@@ -1,0 +1,182 @@
+ 1)String is an object that represents sequence of characters.
+ 2)One important thing to notice about string object is that string objects
+are immutable that means once a string object is created it cannot be
+changed.
+-------------------------------------------------------------------------------------------
+#)How to create String object in Java?
+-> To handle string data in Java, we need an object of string class.
+Basically, there are three ways to create a String object in Java.
+1) By string literal.
+2) By new keyword.
+3) By converting character arrays into strings
+-------------------------------------------------------------------------------------------
+
+#)Working with String literal
+-> String literal in Java is created by using double quotes.
+String str = "hello";
+-> The string literal is always created in the string constant pool.
+-> In Java, String constant pool is a special area that is used for storing
+string objects.
+-> Whenever we create a string literal in Java, JVM checks string constant
+pool first. If the string already exists in string constant pool, no new string
+object will be created in the string pool by JVM.
+
+-> JVM uses the same string object by pointing a reference to it to save
+memory. But if string does not exist in the string pool, JVM creates a new
+string object and placed it in the pool.
+-------------------------------------------------------------------------------------------
+
+#)WHy string OBjects are given as immutable Objects?
+Immutable means once an object is created, its state (data) cannot be changed.
+So when you change a string in Java, you’re not modifying the original object —
+you’re actually creating a new String object in memory.
+
+String s = "Adarsh";
+s.concat(" Dwivedi");
+System.out.println(s); // Output: Adarsh
+Here, "Adarsh Dwivedi" is a new String object, but s still refers to "Adarsh".
+
+
+2)String Pool (Performance & Memory Efficiency)
+
+Java uses a String Constant Pool (SCP) to store unique String literals.
+
+Example:
+for exm when we declare a varbale with this 
+String s1 = "Hello";
+String s2 = "Hello";
+
+
+Both s1 and s2 point to the same object in the SCP.
+
+If Strings were mutable, then changing one string (s1) would affect others (s2), causing unpredictable behavior.
+Immutability ensures that strings in the pool remain consistent and safe to share.
+
+----------------------------------------------------------------------------------------------------
+#)Benfit of immutability
+
+1️⃣ Security
+Strings are used in many sensitive places — e.g.:
+
+String username = "root";
+String password = "1234";
+DriverManager.getConnection(dbURL, username, password);
+
+
+2)If String were mutable, someone could change the password value after it’s passed to a method, which could lead to security breaches.
+Immutability ensures that once created, the data can’t be altered.
+
+
+#)Thread Safety
+Since String objects cannot be changed, they are automatically thread-safe.
+Multiple threads can use the same String without synchronization issues.
+
+
+
+
+20 . What are differences between String and StringBuffer?
+21 . What are differences between StringBuilder and StringBuffer?
+
+
+
+-------------------------------------------------------
+Utility class in Sting
+1)Length
+2)ToUperCase
+3)ToLOwerCase
+4)equals
+5)concat
+6)indexOf
+7)Trim
+
+
+
+
+------------------------------------------------------------------------------------
+#)What is toString()?
+toString() is a method in Java that returns a text (string) that describes an object.
+Every class in Java gets this method from the Object class (because all classes inherit from it).
+
+or
+
+toString() is used to show object information as text instead of showing its memory address.
+
+#)Why we use it?
+We use toString() when we want to see the details of an object in a readable way — like printing it using System.out.println().
+
+
+#)Example (without overriding)
+class Student {
+    int id = 1;
+    String name = "Adarsh";
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        System.out.println(s1);
+    }
+}
+
+
+🧾 Output:
+Student@5ca881b5
+
+-------------------------------------------------------------------------------------
+we need to ovveride toStringMethod() then we are  able print object otehr wise print memory address 
+which is hard to read.
+
+Example (with overriding)
+class Student {
+    int id = 1;
+    String name = "Adarsh";
+
+    public String toString() {
+        return "Student[id=" + id + ", name=" + name + "]";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        System.out.println(s1);
+    }
+}
+
+🧾 Output:
+Student[id=1, name=Adarsh]
+
+
+-----------------------------------------------------------------
+
+
+#)In Java, a superclass reference variable can hold an object of a subclass.
+Superclass (Parent Class) → The class whose properties and methods are inherited by another class.
+Subclass (Child Class) → The class that inherits from a superclass and can have additional properties or methods.
+This is called upcasting.
+class Animal {
+    void eat() {
+        System.out.println("Animal eats");
+    }
+}
+
+class Dog extends Animal {
+    void eat() {
+        System.out.println("Dog eats");
+    }
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Dog();  // Superclass reference, subclass object
+        a.eat();               // Calls overridden method in Dog
+        // a.bark();           // ❌ Error: cannot call subclass-specific methods
+    }
+}
+
+
+
+

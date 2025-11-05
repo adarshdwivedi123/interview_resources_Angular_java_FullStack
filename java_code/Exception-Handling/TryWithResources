@@ -1,0 +1,4 @@
+#) Can you explain about try with resources?
+#) How does try with resources work?
+
+try-with-resources is a feature introduced in Java 7 that makes it easy to automatically close resources (like files, connections, streams, etc.) after use — without needing a finally block.

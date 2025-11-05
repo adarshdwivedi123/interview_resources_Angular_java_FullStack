@@ -1,0 +1,14 @@
+#)Post-Increment (Ex: a ++): Value is first used for computing the result and
+then incremented.
+#)Pre-Increment (Ex: ++ a): Value is incremented first and then the result is
+computed.
+#)Post-decrement (Ex: a--): Value is first used for computing the result and
+then decremented
+#)Pre-decrement (Ex: --a): Value is decremented first and then the result is
+computed.
+
+Imp Points about Increment and Decrement operators
+• Can only be applied to variables only
+• Nesting of both operators is not allowed
+• They are not operated over final variables
+• Increment and Decrement Operators cannot be applied to Boolean

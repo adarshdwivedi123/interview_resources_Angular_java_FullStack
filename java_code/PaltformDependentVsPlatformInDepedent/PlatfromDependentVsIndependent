@@ -1,0 +1,5 @@
+Platform Dependent: A programming language that allows its applications to be
+compiled and executed on the same operating system (e.g., C with .exe files).
+
+Platform Independent: Java, with its .class files containing bytecode, can be executed
+on any operating system.

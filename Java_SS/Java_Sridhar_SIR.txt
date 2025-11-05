@@ -1,0 +1,127 @@
+#)oops
+
+OCJ Books
+1)constructor in depts ,(FInal what will ahpen)
+2)Primitive type and reference Type
+3)autoboxing 
+4)Wrapper class
+4)String Imutable in java  and string pool and string vs string builder
+5)static Keyword 
+6)Acces modifier
+7)Static filed and static method  
+8)OOPS)method overloading  and ovverding(V>IMP)
+9)Exception HAndling(V.IMP)
+10)Inheritance
+11)abstract class and interface
+12)Super keyword
+13)FInal keyword
+14)Scope 
+15)Checked exception and runtime Exception
+16)Equal and hasCOde and tostring method
+17)Enum
+18)Throw vs throws  and try with resources
+19)Concurrency
+20)Thread
+21)Imp design pattern
+Singleton 
+Factory pattern
+BUilder pattern
+Lombok
+
+COllection
+1)Seriable vs Deseriable
+2)
+
+
+OPtional Additional 
+1)lambda
+2)Genric 
+Collection 
+compare vs Compartable
+
+---------------------------------------
+
+Staring  main
+IN MEhtodA
+In method B
+Back in method B
+Back in A
+
+
+
+memotyb implemnt
+Parent is throwable calss 
+exception and error difernce
+Throw and throws keyword
+custom Exception
+
+
+
+-------------------------
+
+
+
+what is module.info.java in java?
+difference between final and sealed
+class cna extend
+java 21 new feaure
+cosntrucot  return the refrense of tha class
+winthin  same class sb chl jaye ag
+
+prptected
+
+within in class?
+within in package 
+within in  subclass(either in same package or or in different package
+
+
+
+
+default 
+within in  packager 
+within in class
+
+same packe in  subclass me allowed hai
+
+
+
+paclage priv
+within in class
+private class ke andar
+
+
+public 
+is every wherr
+
+
+
+grabge Collection
+
+
+diffentr between 
+
+why is string imutbale?
+
+String and syring builder
+
+
+#)collection  
+
+
+
+lambda
+
+///study
+
+
+String pool
+Immutable vd mutable
+Equals method
+Hashcode
+
+
+
+
+
+
+

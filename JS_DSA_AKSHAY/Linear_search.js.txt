@@ -1,0 +1,22 @@
+function jsCompiler(arr,n){
+    let c=0;
+    for(let i=0 ;i<arr.length;i++)
+    {
+        if(arr[i] ==n)
+        // {
+        //     //this way we are returing number
+        //      n=arr[i];
+        //     console.log(n);
+            return i;
+            
+            // break;
+        }
+    }
+    //if  not found
+    return -1;
+    
+}
+arr=[2,10,12,16,];
+n=16;
+p=jsCompiler(arr,n);
+console.log(p);

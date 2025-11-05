@@ -1,0 +1,18 @@
+Primtitive  type
+
+Non  Primitive Type
+Strign , arrays ,class
+
+int is their  what is used of short
+
+Int  have some range 
+short have range 
+
+bases on srange we cann use that  other wise memory getting wated
+
+
+
+/////////////
+
+float (Precison of float is 6 to 7 varibel)
+double (Precison of double is  15 varibele) 

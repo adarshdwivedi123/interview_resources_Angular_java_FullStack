@@ -1,0 +1,20 @@
+Differnce between Error and Exception
+Definition
+
+Error is used in situations when there is nothing a programmer can do about an error
+Exception
+Exception is used when a programmer can handle the exception.
+
+#)Both come from the parent class Throwable, but:
+
+Throwable
+ ├── Exception   → can be handled
+ └── Error       → cannot be handled
+
+
+ #)Exception
+ IOException, SQLException, NullPointerException, ArithmeticException
+
+
+ #)Error 
+ OutOfMemoryError, StackOverflowError, VirtualMachineError

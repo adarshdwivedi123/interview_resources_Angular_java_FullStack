@@ -1,0 +1,292 @@
+Why exception handling is important?
+#)Exception handling is important because it helps a program handle runtime errors gracefully without crashing.
+#)It makes the program more stable, user-friendly, and easy to debug by separating normal logic from error-handling logic
+#)Exception handling important becoz we can show the custom message
+
+ Online Java Compiler
+ Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+        int arr[]= new int[5];
+         for(let i=0 ;iarr.length;i++)
+         {
+             arr[i]=i;tho
+         }
+        try{
+            throw new ArithmeticException(Request fail due to technical error);
+            so jb hmko apne se error dikhna hoga to ye throw  use kr skte hai
+            
+        }
+        Exception is parent  exception
+        so if u want parent exception then first it should be
+        child exception and all
+        catch(ArithmeticException e)
+        {
+            e.printStackTrace();
+        }
+        
+        catch(ArrayIndexOutOfBound e)
+        {
+            e.printStackTrace();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+    
+    
+    inerview ask quesrion exception write pheel then uske baad
+    sb likhe to nhi chle  ga other exception
+    bst partices hota hai child exceptipn likhjo then parent exceptipn
+    agar se   sirf exception se hi sara error  bheje to
+    to specific error message nhi  pta chl paye ga
+    
+    
+}
+
+sytem.exit shutdown the jvm
+
+
+try wurh resoueces
+Auroiclosable
+
+child ka exfetipnm then parent 
+///Interview Question Likho vha se
+
+
+#)Finally
+In Java, the finally block is a part of exception handling that always executes, whether an exception occurs or not.
+It’s used to release resources (like closing files, database connections, or network sockets) — things that must happen no matter what.
+
+🔹 Syntax:
+try {
+    // Code that may cause an exception
+} catch (Exception e) {
+    // Code to handle the exception
+} finally {
+    // Code that will always run
+}
+
+
+--------------------------------------------------------------------------------------------
+Example with return:
+public class FinallyReturn {
+    public static void main(String[] args) {
+        System.out.println(test());
+    }
+    static int test() {
+        try {
+            return 10;
+        } finally {
+            System.out.println("Finally block executed!");
+        }
+    }
+}
+
+
+Output:
+Finally block executed!
+10
+
+Even though the method returns 10, the finally block still executes before returning.
+
+
+------------------------------------------------------------------------------------------------------------------
+#)In what scenarios is code in finally not executed?
+#)The only time it won’t execute is if: The program exits using System.exit(0) The JVM crashes
+1. When System.exit(0) is used
+-------------------------------------------------------------------------------------------------------------------
+System.exit(0) terminates the JVM immediately, so the finally block will not run.
+
+👉 Example:
+public class FinallyExitExample {
+    public static void main(String[] args) {
+        try {
+            System.out.println("Inside try block");
+            System.exit(0); // JVM exits here
+        } catch (Exception e) {
+            System.out.println("Inside catch block");
+        } finally {
+            System.out.println("Inside finally block"); // ❌ Will NOT execute
+        }
+
+        System.out.println("Outside try-catch-finally"); // ❌ Will NOT execute
+    }
+}
+
+Output:
+Inside try block
+
+
+✅ Explanation:
+As soon as System.exit(0) is called, the JVM stops.
+Therefore, finally and any code after it never get executed
+
+
+-----------------------------------------------------------------------------------------------
+🔹 What is the need for finally block?
+The finally block in Java is needed to ensure that important cleanup code always runs, 
+no matter what happens — whether an exception occurs or not.
+
+🧠 Main Purpose:
+To release system resources or perform cleanup actions that must happen even if an error occurs.
+
+For example:
+
+Closing a file or database connection
+Releasing a network socket
+Unlocking a resource or memory
+Logging information before exiting the program
+
+The finally block is needed to guarantee execution of cleanup code and prevent resource leaks, regardless of how the try or catch blocks behave.
+
+
+--------------------------------------------------------------------------------------------------
+Is try without a catch allowed?
+✅ Yes, a try block without catch is allowed only if it has a finally block.
+
+Because:
+
+Every try block must be followed by either a catch block or a finally block (or both).
+
+🔹 Example (Valid):
+try {
+    System.out.println("Inside try block");
+}
+finally {
+    System.out.println("Finally block executed");
+}
+
+
+✅ Output:
+
+Inside try block
+Finally block executed
+
+
+👉 This is valid because finally ensures that cleanup code runs even if no exception occurs.
+
+🔹 Example (Invalid):
+try {
+    System.out.println("Inside try");
+}
+// ❌ Error: 'try' without 'catch' or 'finally'
+System.out.println("Outside try");
+
+
+❌ Compilation Error:
+
+'try' without 'catch' or 'finally'
+----------------------------------------------------------------------------------------------
+
+#)Is try without catch and finally allowed?
+
+❌ No, a try block cannot exist alone.
+It must always be followed by either a catch block, a finally block, or both.
+
+------------------------------------------------------------------------------------------
+#)Can you explain the hierarchy of exception handling classes?
+In Java, all exceptions and errors are part of the Throwable class hierarchy.
+This hierarchy defines how exceptions are organized and how they can be caught or handled.
+
+
+Throwable
+ ├── Exception (recoverable)
+ │     ├── IOException (checked)
+ │     ├── SQLException (checked)
+ │     └── RuntimeException (unchecked)
+ │            ├── NullPointerException
+ │            ├── ArithmeticException
+ │            └── ...
+ └── Error (non-recoverable)
+        ├── OutOfMemoryError
+        ├── StackOverflowError
+        └── ...
+
+ 1)Throwable
+ 2)Exception
+ 3)RuntimeException
+ 4)Error       
+ 
+
+1. Throwable
+It’s the root class for all errors and exceptions.
+It has two main subclasses:
+1)Exception
+2)Error
+
+-----------------------------------------------------------------------
+public class ExceptionHierarchyExample {
+    public static void main(String[] args) {
+        try {
+            int num = 10 / 0; // RuntimeException
+        } catch (ArithmeticException e) {
+            System.out.println("Caught ArithmeticException");
+        } catch (Exception e) {
+            System.out.println("Caught general Exception");
+        } catch (Throwable t) {
+            System.out.println("Caught Throwable");
+        }
+    }
+}
+✅ The order matters — we catch child exceptions first, then parent classes.
+
+----------------------------------------------------------------------------------
+Handling Multiple Exceptions in Java
+
+Sometimes, a block of code can throw more than one type of exception —
+for example, IOException, SQLException, or NumberFormatException.
+
+#)You can handle them in two main ways:
+
+#)Using multiple catch blocks
+
+Using a single catch block for multiple exception types (Java 7+ feature)
+
+
+-----------------------------------------------------------------------------
+import java.io.*;
+
+public class MultipleCatchExample {
+    public static void main(String[] args) {
+        try {
+            int[] numbers = {1, 2, 3};
+            System.out.println(numbers[5]); // may cause ArrayIndexOutOfBoundsException
+
+            FileReader file = new FileReader("data.txt"); // may cause FileNotFoundException
+        } 
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array index error: " + e.getMessage());
+        } 
+        catch (FileNotFoundException e) {
+            System.out.println("File not found: " + e.getMessage());
+        } 
+        catch (Exception e) {
+            System.out.println("General exception: " + e.getMessage());
+        }
+    }
+}
+
+
+-------------------------------------------------------------------------
+Using a single catch block for multiple exception types (Java 7+ feature)
+
+Instead of writing separate catch blocks, you can handle multiple exceptions together using the | (pipe) symbol.
+
+✅ Example:
+import java.io.*;
+
+public class MultiCatchExample {
+    public static void main(String[] args) {
+        try {
+            int num = Integer.parseInt("abc"); // NumberFormatException
+            FileReader file = new FileReader("data.txt"); // FileNotFoundException
+        } 
+        catch (NumberFormatException | FileNotFoundException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
+---------------------------------------------------------------------------------------

@@ -1,0 +1,189 @@
+1)what is springboot?
+->Spring Boot is java framework that makes it easier to create and run java applicaitons.
+
+->it simplifies the configuraion and setup process allowing devlopers to focus moer in writing code for their applicatins.
+
+->Spring boot  a module of the spring framework ,it helps us rapid application development.
+
+
+->Spring boot solve many problem
+a)Configuration
+b)Dependecy Mangement
+Projet bna rha   web ki depenedecy chayiye (spring-boot-starter-web)
+pom.xml daal denge apne app saridepenedency a jaye gi..auto configuraiotn noo need to do 
+any other configarion ..only we have to use annotation and ready to go.
+c)Embedded Server
+It also provide embed server(Earlie we need to  do lot of congiguration on tomacat server set).
+
+
+2)Why spring boot over spring?
+1)Spring boot provide  many adavantages over  normal spring framework.
+
+a) Easy to use -Remove boilerplate codes.
+b)Production Ready application: Metrix ,health Check and many features aredesignes for produiton ready applicaiotn.
+c)Rapid devlopemnt : Auto configuration enable develoers to quickly dvleop apps.
+d)Provide Dependency Mangemnt : no need to manager separate dependices manually.in spring we need to manage depencies manualy
+e)AutoConfiguration:Springboot autoconfiguration things by default.
+f)Embedded server:Provide tomatserver by default.
+
+3)Working of spring boot?
+1)Spring boot starts by scanning the starter dependencies in pom.xml
+download and auto-configuration the module as you included in pom.xml
+
+dwonlaod  haar baar nhi hoga jb maven reload or build kre ge tbhi download hoga.
+Ex: We have to create a web application then we have to put spring-boot-starter-web dependency in pox.xml 
+when we start the project springboot download all the dependency require for web
+and configure  the things like spring mvc.
+
+4)HOw spring boot starts?
+1)Start by caliing main method of main class
+2)The run method of springApplication is called .the method starts the application
+by creating an application context and initializing it.
+
+ApplicationConext
+check the above in more details
+
+what is annotians?
+
+
+Top Spring boot Annotaions
+1)@SpringBootApplication
+This annotation combination  of three annotations
+@Configuration ->we can configuration bean
+@EnableAutoConfiguration
+@ComponentScan ->here we want to check in package ke andar component  hai kya.
+it is typically placed on the main class of the application.
+#)@Component -> it is used to  mark a class as a spring bean that
+will be managed by the spring container.
+@Autowired: This annotion is used to automatically inject dependencies into
+ a Spring-mangedbean.
+Example likho kaise krte oh?
+#)@Service:
+This annotiaon is used to indicate that a class represent a service component in the application .it is typically used to annotate classes that 
+contain business logic.
+
+#)@RestController
+Mark class as Rest Controller .it is a specialized version of the 
+@Controller annotation that includes the @ResponseBody annotation by default.
+
+
+#)@RequestMapping :used to map  specific url to method .Used on class as well as method level.
+is used to map an HTTP request (like GET, POST, etc.) to a method or a class in a controller.
+#)When this URL is called, run this method.
+
+
+@ResponseBody
+
+#)@Repository :mark class a DAO .mostly used on class that has databse persistent logic.
+
+#)Wht are the spring boot starters?
+Startes are a collection of pre-configured dependecncies that makes it a easier  to develop  particular kinds of applications
+
+
+
+
+
+
+
+
+
+
+Bean ->
+--------------------------------------------------------------------
+#)How Spring Finds @Component Beans
+
+Spring scans your project (using @ComponentScan) and automatically detects any class annotated with:
+
+@Component
+
+@Service
+
+@Repository
+
+@Controller
+
+@RestController
+
+This usually happens automatically in Spring Boot, because @SpringBootApplication includes @ComponentScan.
+
+
+
+---------------------------------------------------------------------------
+
+
+
+
+#)What are the Spring boot starters
+Starters are a collection of pre-configured depencies that makes
+it easier to develop particular kinds of aoolications.
+spring-boot-starter-web => web se related sare  configuraiton and dependecy rlhu jaise  hi use kiya sb jldi se downlaod ho jata hai.
+#) These startes include all of the dependecies ,version control and configarion needed to amke certain features of a speing boot  applicaiton funcitonal.
+
+#)What are the key dependecies of spring boot?
+1)spring boot-starter-parent(provide defualt configuraiton for spring-based applicziton)
+Provide the dfualt compiler leevel as java 1.8 and UTF-8 source
+provide defualt config for maven plugis such as maven-surfire
+
+2)maven-plugin
+3)sarter-test
+4)starter-actuator
+5)starter-web
+
+
+#)maven
+
+Q)Can we use only Spring boot dependecy feature  and configure  maven plugin manually?
+1)Yes
+2)
+
+Q)What is spring boot cli and what are its benfits?
+comamnd tool to creat run and amange spring boot applicasiotn
+-->Spring
+-->spring help init
+--> spring version
+-->Spring init --dependecncies=web data-jpa my-project
+-->spring init --list
+->spring  init -d web cli-project
+
+
+Q)What  is Thymeleaf?
+java -based server side  templating engine used in java web applications to
+render dynamic web pages.
+In order to use dynamic  template html then we use themleaf.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://github.com/adarshdwivedi123/java_spring/tree/master
+
+
+Interview experience read form here 
+
+https://www.interviewbit.com/spring-boot-interview-questions/
+https://www.naukri.com/code360/library/spring-boot-interview-questions
+
+
+Java by happy
+#)https://www.youtube.com/watch?v=NcsEXVO0Rtk&t=1783s
+
+Spring boot by happy
+https://www.youtube.com/watch?v=WxJi5yPuE3A
+
+
+
+
+

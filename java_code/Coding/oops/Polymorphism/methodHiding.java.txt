@@ -1,0 +1,23 @@
+class Parent {
+    static void display() {
+        System.out.println("Static method in Parent");
+    }
+}
+
+class Child extends Parent {
+    static void display() {  // Hides the Parent's static method
+        System.out.println("Static method in Child");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        obj.display(); // Output: Static method in Parent (method hiding)
+    }
+}
+
+When to Use Method Hiding?
+When you want to define a new version of a static method in a child class, unrelated to the parent's version.
+
+Less common in practice; method overriding is usually more useful for polymorphism.

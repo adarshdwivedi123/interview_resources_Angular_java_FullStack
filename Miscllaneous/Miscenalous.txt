@@ -1,0 +1,44 @@
+#)In Java, the :: operator is called the method reference operator.
+
+#)It’s used to refer to methods without executing them, mainly in lambda expressions and streams.
+
+------------------------------------------------------------------
+#)What	are	the	default	values	in	an	array?
+New	Arrays	are	always initialized	with	default	values.
+
+int marks2[]	=	new int[5];
+System.out.println(marks2[0]);//0
+
+Default	Values
+byte,short,int,long			0	
+float,double				0.0	
+boolean						false
+object						 null
+
+------------------------------------------------------------------------
+#)How	do	you	loop	around	an	array	using	enhanced	for	loop?
+Name	of	the	variable	is	mark and	the	array	we	want	to	loop	around	is	marks.
+
+for (int mark:	marks)	{
+		System.out.println(mark);
+}
+
+-------------------------------------------------------------------------
+
+#)How	do	you	compare	two	arrays?
+Arrays	can	be	compared	using	static	method	equals	defined	in	Arrays	class.
+
+Two	arrays	are	equal	only	if	
+
+they	have	the	same	numbers	in	all	positions	and	have	the	same	size.
+int[]	numbers1	=	{	1,	2,	3	};
+int[]	numbers2	=	{	4,	5,	6	};
+System.out.println(Arrays.equals(numbers1,	numbers2));	//false
+
+int[]	numbers3	=	{	1,	2,	3	};
+System.out.println(Arrays.equals(numbers1,	numbers3));	//true
+
+
+-----------------------------------------------------------------------
+
+			

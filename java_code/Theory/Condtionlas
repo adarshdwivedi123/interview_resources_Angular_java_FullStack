@@ -1,0 +1,34 @@
+Can a switch statement be used around a String
+Yes, Adarsh! 😊 In modern Java, you can use a switch statement with a String, but there are some things to remember. Let me explain clearly.
+
+🔹 Switch with String
+
+Since Java 7, the switch statement supports String as the expression.
+
+The switch compares the String values using .equals() internally.
+
+🔸 Example:
+public class Main {
+    public static void main(String[] args) {
+        String day = "Monday";
+
+        switch (day) {
+            case "Monday":
+                System.out.println("Start of the week");
+                break;
+            case "Friday":
+                System.out.println("End of the week");
+                break;
+            case "Sunday":
+                System.out.println("Weekend");
+                break;
+            default:
+                System.out.println("Midweek");
+        }
+    }
+}
+
+
+Output:
+
+Start of the week

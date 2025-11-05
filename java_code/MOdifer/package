@@ -1,0 +1,19 @@
+#)Package Statement (Optional)
+• What It Is: A way to group related classes and organize your code.
+• Why It's Used: Helps avoid name conflicts and makes the code more
+manageable.
+• Example: package my package;
+• Note: Your program can work without it.
+
+#)Import Statements
+• What It Is: Allows you to use classes from other packages.
+• Why It's Used: Saves time by reusing code from the Java library or other
+sources.
+• Example: import java.util.Scanner;
+• Note: Think of it as bringing in tools from a toolbox to use in your program.
+
+
+
+1. Interpreter: Translates code line-by-line.
+2. Compiler: Translates entire code at once.
+3. Assembler: Converts assembly language to machine code.

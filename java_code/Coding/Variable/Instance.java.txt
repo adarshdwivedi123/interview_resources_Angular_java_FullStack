@@ -1,0 +1,69 @@
+1)Instance Variable :instance varible declare  at class leve we can acces inside the mehtod any where
+insstwcen class ke bhar  hm object bna ke use kre ge
+2)instance varible get memory at a run time 
+instacen varible take some space 
+int a;
+System.out.println(a);
+3)It is associated with an object, so each object of the class has its own copy of the instance variable.
+Stored in the heap memory, since objects are stored in heap.
+
+
+
+Key Characteristics
+
+Scope → Accessible by all methods, constructors, and blocks inside the class (via the object).
+
+Lifetime → Created when an object is created, destroyed when the object is destroyed (garbage collected).
+
+Default Values → Unlike local variables, instance variables get default values (e.g., 0 for int, null for objects, false for boolean).
+
+Memory → Stored in the heap memory, since objects are stored in heap.
+
+Access → Can use access modifiers (public, private, etc.).
+
+Object-specific → Each object has its own copy of instance variables (unless they are declared static).
+
+
+#)Where are instance variables stored?
+Answer:
+Instance variables are stored in the heap memory, since objects themselves are stored in heap.
+ Each object has its own separate space for instance variables.
+
+
+#)Why are instance variables stored in heap and not stack?
+Answer:
+Because the lifetime of an object is independent of the method call.
+ A stack frame is destroyed when a method ends, but objects may still exist in memory and be referenced elsewhere.
+  Since instance variables belong to objects, they must live in the heap along with the object.
+
+  Example
+
+  class Student {
+    // 👇 Instance variables
+    String name;
+    int age;
+
+    void setDetails(String n, int a) {
+        name = n; // assigning to instance variable
+        age = a;
+    }
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating two objects
+        Student s1 = new Student();
+        Student s2 = new Student();
+
+        s1.setDetails("Adarsh", 22);
+        s2.setDetails("Rahul", 25);
+
+        s1.display(); // Output: Name: Adarsh, Age: 22
+        s2.display(); // Output: Name: Rahul, Age: 25
+    }
+}

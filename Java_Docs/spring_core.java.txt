@@ -1,0 +1,629 @@
+what is framework?
+To overcone the loop holes 
+
+
+1)framework provide common logic required for application
+2)framework provide reusable components
+3)
+
+Architecture
+1)monolithic Architecture(Sara cheeje ake hi application me rakhte hai)
+
+payment ,login and cart and tracking(if two persin using same application if koyi module pe chneg kr diya to pura pplicaiotn bnd ho jata hai) 
+
+2)Microservies Architecture
+alga alg application and allg alg server pr deploy hoga 
+different diffetn port pe chaa do
+
+
+LoadBalancer:
+
+#)Disadavantage
+
+
+Libray Vs Framework
+#)Library me pura ka pura code likhna pdta hai
+
+
+#)Framework:
+Code phele se likha hai usme hm direct r use kr reh hai.
+ORM -->hibernate -ke top pe-->Spring Data JPA
+
+Spring Module:
+1)Spring Core
+2)Spring JDBC
+3)SPring ORM
+4) SPring web MVC
+5)Spring BAthc
+6)SPring  social
+7)DATA JPA
+8)REST
+9)CLOUDos
+10)Context
+
+
+
+#)Tightly COupled :Ake module padhne ke sare module padhna pde rha hai this is called tightly coupled.\
+
+
+spring core: base module in the spring framework
+
+
+spring core module provides fundamental  concepts of sping framework
+
+1)IOC container(inversion of control)
+2)DI
+3)Bean Life Cycle
+4)Bean Scopes
+5)Autowiring 
+
+
+spring AOP: Aspect Oriented Programming   
+3)sping context => it will deal with configuration  require for  spring applicaytions
+4)spring JDBC(outdated)
+5) Spring mvc  :it is used to develop web application
+6)Spring ORM :(Object relational mapping)
+	a)Spring framework having integration with orm framework
+	b) jdbc will reperesent data in text format  hibernate orm will  represent data in 	object format
+7)Spring security:
+a) security is very imp for every application
+b)using spring security we can implement authentication and authorization
+c) Spring security with JWT 
+8) spring batch
+a) reading  data from excel and store  in databse table
+b)used in batcg processing --100 ,2000
+
+9) spring cloud
+it provide some common tool quickly build application
+
+Spring core:
+It is all about managing dependencies amognteh classes with loose coupling
+
+maven  --dep -->jars (maven me dep jars hote hai).
+Spring  --dep --->object(classes)(spring dep object ya class hota hau)
+
+
+IN project we will develop  several classes
+#)All those classes we can categorize into 3 types
+
+1)POJO
+2)JAVA Bean
+3)Component
+
+#)what is pojo(plain old java object)?
+any java class which can be complied by using only jdk is called a pojo classes
+
+class Demo1{
+ 	int id;
+	String name;
+}
+//java class
+
+class Demo2 extend Thread{
+   jdk use
+}
+
+class Demo3 implmnets Runnable{
+   jdk 
+}
+above are the class we compile using jdk  that why above classes are poko class
+
+class Demo implemented Servlet{
+	////service()   
+}
+not using jdk for compile
+tomcat 
+
+#)what  is java bean?
+any java class  which follow bean specification rules is called as java bean
+1) class should be implemented serializable interface
+2)class should have private data members(variable)
+3)Every privare vareible should have public setter and publei getter
+4) class have zero-param constructor(default constructor)
+
+Note: bean classes are used to write business logic and to store and retrive data.
+
+#)what is component?
+java classes which contains business logic is called as component classes
+Eg controller ,service ,Dao  
+controller :classes will have logic to deal woth req and res
+service classes :will have business logic of our app
+Ex generate OTP ,
+
+DAO classes :will contain the logic to comm with database.
+
+#)FLow For Spring (IMp)
+Client Request ---> Controller  --->service -->DAO ->DB)
+
+Db me dekhe ke baad vaps  aye ga client pe
+
+
+
+
+1) In java one class can talk to another in 2 ways
+  a)Inhertance  ---(IS-A)
+   b)Composition /Agg --(HAS-A)
+
+
+jb extend krte hai sare mwhtod a jata hai but might we not requorw all method to isse heavy ho jata hai.
+so that why composiot aya  object bnavo  class ka  aur usko call kr  jo bhi methoid chayiye
+respective of all the methods
+ 
+#)compsontion
+
+
+
+#)note => 
+#)agar mai constructor khud nhi bnta to jvm by default constructor bnye ga with zero  params
+#)agar hmne construcott bna diya hai jvm constructo nhi bnye ga
+TOmmorow if engine constructor modified then our class will be affected
+NOte:if we use any apparoach tightly couple with engine class that is not recommended.
+
+
+always we need to develope our classes with loose coupling
+
+
+Lossely Coupliing means without creating object and without inherting prop we should to acces one class method in another class 
+
+-> if we make any changes in engine class then car class  shouldn't be affected.
+then we cna say our classes is loosely coupled
+
+
+Factory Design Patternis very painfull process un sb ko pain huttne ke liye DI use krte hai
+
+DI => THe  process of injecting one class object to another class is called DI
+We can perform DI in 3 ways
+1)Setter INjection(setter method is used to insert depedency)
+2)Constructor INjection() =>(constructor is used  to insert dependecy);
+3)Field Injection  :reflection api  used
+
+
+T/C  -------> L/c
+then we  use interface
+
+Ioc
+DI
+Ioc container ==>(context isliye jitney bhi container hai issi jar me availabke hai)
+
+
+Steps to make spring Project
+1. Create maven project
+2.Add context dep
+	a spring context maven dependency
+
+
+
+IOC -->  ioc ake Prinicpal  (usii principal koe DI jda implement krte hai)
+Spring Bean:aise java object manage by ioc  container  is called spring bean 
+
+
+
+XML FIle generate krna hai 
+File ->Setting --> Editor
+
+
+
+
+#)Bean bna ke ioc container ko btna pde ga alg se 
+DI INjection
+Setter type ka DI krna hai to  then propert tag use kre ge
+  <property name="engine" ref="petrol">
+        </property>
+
+#EagerLoading : phele se load kr ke rkh leta hai
+1)Means creating object when ioc starts
+#LazyLoading : jb mai magu ga tb ye call hoga
+1)crate object when we called getBeans
+
+
+Note: Spring bean inka default scope is singletions
+
+
+Singletone:create one object for multiple request:
+JAVA 8 playlist
+
+#)difference between Application Context    Bean Factory
+
+
+
+
+Bean Scope
+1)Singleton(BY Deafult hota hai)
+2)Prototye -->getBean();
+3)Request
+4)Seession
+
+Interview me ask
+difference between Singleton  and prototype
+
+In  case of prototype are ake call ke liye naya object bne ga
+<bean id="car" class="org.example.Car"  scope="prototype">
+<!--        Setter Dependecy  INjction-->
+<!--        <property name="engine" ref="petrol">-->
+<!--        </property>-->
+        <constructor-arg name="engine" ref="petrol" ></constructor-arg>
+    </bean>
+
+
+AutoWiring:
+
+1)Manual  => means programmer will inject dependent objet into target object using xml file and tragets
+<constructor-arg name="engine" ref="petrol" ></constructor-arg>
+
+2)AutowiringMeans: IOC conatientr will identify benas and it will inject bean into target bean (We need to use any attribute in bean configuration file)
+Autowiring will work base on below modes
+
+1)byName  (BeanID and target class ka name match hoga to inject ho jaye ga ye)
+2)byType
+3)Constructor
+4)No  (We don't need autowiring  here)
+BeanLifeCycle
+
+
+Anotation: are the functionality they tell to compiler on what u need to perform  operation those peration 
+it consist of
+Target
+Retention
+
+
+Spring Annotaion
+1)@Confguration:TO represent java class  as configure class
+2)@ComponentScan : to identify spring bean class in project based on base package
+3)@Component : To REpresnet java class as spring bean
+4)@Service: TO rep java class as spring bean(Business layer)
+5. @Repository: To rep java class as spring bean (Persistence layer classes)
+6. @Scope : to rep bean scope
+7. @Autowired : to perform DI
+8. @Qualifier : to perform autowiring based on byName
+9. @Primary:  
+@Bean : to call the method with return bean
+
+
+Project Setup 
+1)Spring INtializer (This from internet)
+2)Spring me plugin daal lo  (Start Spring boot project)
+
+
+
+Advantages of spring boot
+------------------------------------
+
+	1. No Beans xml based configurations (Hmre bean 1000 bean hai to sb ka configuration krna pde ga ab nhi)
+	2. Embed server
+	3. Auto configuration (cosntruct-args ) DI manually krna pdta hai ab ye bhi  nhi krna pde ga  sprig boot directly annotation de do bs
+	4.Rich annotations 
+	
+	spring-boot-starter-parent(allg alg se jar  dalne ke  jarurat nhi pde taki developer ko amunnaly kuch krna na pde)
+	its include all the jar that required to devleoep applocatoin so that we not required to add manually
+
+
+
+
+------------------------------------------------------------
+@SpringBootApplication ==> main class hoga ja bhi annotioan hoga
+
+
+
+SpringApplication.run   ==> Intenally ioc container ko activate krta hai  .jaise ioc config ACTIVATE HOIGA -->config read
+
+
+@SpringBootApplication = 
+								@SpringBootConfiguration  ==@Configuratoin
+								                         +
+								@EnableAutoConfiguration  (isme automatic bn jaye ga aur  DI   kr  du ga  bean bna duga)
+								                        +
+								@ComponentScan (ye unko scan kre ga bean bnye unka auto configurtioan @EnaabelAuto comnfigutrtioankre ga )  
+
+
+thatw why mianss as a configuration btya jta hai  and ioc container activate oh jata hai 		@SpringBootConfiguration  ==@Configuratoin.
+
+
+
+RUn Mehtod Ioc contianer ko activate krta hai usme SPringBootApplication ake configure class  hai jisko hm bolte hai springbootConfiguration
+bna hai @Configuratio class se that why class bhi ake configuration class hai.
+
+IOc coantientr pta chlta hai kaise scan krna hai just beoz of @ComponentScan  annotaion lga hai
+
+
+
+Default behaviour by type hi hot ahai
+
+
+Note : if the variable name is same as required bean name then SB will inject bean byName
+
+
+
+
+Categories of annotations :
+
+Note : spring boot have various annotations to handle different-2 aspects
+
+	1. annotations for configurations 
+	2. Annotations for data supply or Injection
+	3. Annotations for bean life cycle
+	4. Miscellaneous annotations 
+
+
+
+Annotations for configurations 
+------------------------------------------
+These Annotations configure java classes as spring bean, enable IOC container to manage beans life cycle
+Idea behind using these annotations is to give instruction to framework or container
+
+@Component: mark java class as spring bean
+@Service : Similar to @component, but use for service classes(business logic)
+@Respository : mark java class a DAO(data access object
+@Controller: mark java class as web controller
+@RestController : @Controller + @ResponseBody
+@Configuration : define a configurations class where we can declare beans using @Bean 
+@Bean : mark method that return an object to manged by SB
+
+
+
+Note : for custom class we can use @component and get it's bean, but for pre-define class we can't use it 
+
+//this way we  cannot do that  becoz its  a custom class
+    @Autowired
+    LocalDateTime localDateTime;
+
+
+
+Annotations for data supply or Injection
+These annotations used to inject data or object 
+
+	1. @Autowired : by default @Autowired perform injection byType, but you can change it to byName
+	2. @Value
+	3. @Qualifier
+@Primary
+
+
+//    jisak bean ka naam diya hu vhi chle ga incase of ambigituyt
+    @Qualifier("justPay") sath me @Primary bhi use kre ge    (Qualifier jb use krte hau by Name hota hai thast why ambuigity resolve hoga )
+
+SpringBootP03 Important hai
+
+
+
+Annotations for bean life cycle
+	1. @PostConstruct
+	2. @PreDestroy
+
+
+Miscellaneous annotations 
+	1. @Lazy
+	2. @Scope
+	3. @ComponentScan
+@PropertySource
+
+
+
+
+ambugity problem solve kre reh hai 
+@qalifier ()
+@VOlatile
+
+
+
+////////////////
+Spring With DB
+What is distributed app ?
+
+If one application is communicating with another application then they are called Distributed application
+
+
+Distributed Technologies
+
+	1. CORBA
+	2. RMI
+	3. EJB
+	4. SOAP Based webservices ------> xml
+	5. Restful Services(trending)
+
+
+Producer:  The application which is providing services to other application(resources)
+Consumer: The application which is consuming services from other application(client)
+
+
+
+#)JSON Prefer Over XML
+	1. Stand for java script object notation
+	2. Rep data in key-value pair
+	3. Light weight
+	4. JSON is interoperable ( we cna use with language)
+	5. We can use JSON to exchange data from one app to another app
+   IMp When it compare to xml, JSON is less memory taking .
+
+
+Marshalling : Convert java object to XML data
+Un-Marshalling: convert XML object to java object
+
+Serialization: convert java object to JSON
+De-serialization: Convert JSON data to java object
+
+
+HTTP protocol
+--------------------
+	1. Stands for Hypertext transfer protocol
+	2. Http acts a mediator between client and server
+	3. Http is a stateless protocol, it will treat every request as a new request
+		(Har request ake new request hoti hais)
+
+Note: To develop REST API we should know below details about HTTP protocol 
+
+	1. HTTP methods
+	2. HTTP status codes
+	3. HTTP request
+	4. HTTP response
+
+
+	1. HTTP methods
+----------------------------
+		a. GET: to get data from server to client
+		b. POST: to send data from client to server
+		c. PUT: to update data at server
+		d. DELETE: to delete data from sever
+
+		E)PATCH: to update the data partiallys
+
+
+
+Note: every REST API method/endpoint should bind to HTTP protocol
+=> getTicketData() ----> HTTP GET       ------> @GetMapping
+=> bookTicket(..,..) ----> HTTP POST     ------> @PostMapping
+=> updateProuct(..)----> HTTP PUT      -------> @PutMapping
+=> deleteProduct(..) --> HTTP Delete   -------> @DeleteMapping
+
+
+HTTP status codes
+-------------------------
+
+Server will send HTTP status code to client in the response
+Http status code will indicate how server processed our request
+
+1XX (100 to 199) --> informational status code
+2xx (200 to 299) --> SUCCESS status code (OK)
+3xx (300 to 399) --> Redirectional 
+4xx (400 to 499) --> client error
+5xx (500 to 599) --> server error
+
+
+
+Rest API development
+-------------------------------
+	1. Add dependency ---> web-starter
+	
+	
+	
+Step to create project with rest
+-------------------------------------------
+	1. Create spring-starter project
+			i. Add dep--> springboot-starter-web
+	2. Create Rest controller using @RestContoller
+	3. Write the required method and bind them to required http protocol request
+	4. Run tha application
+	5. Use postman for testing
+
+ui ->controller ->
+
+
+
+data agar client se lena hai to @RequestBody  hota hai
+
+
+
+  postman -->controller ->
+
+
+
+#)Spring-Data-JPA
+1)Spring data jpa is used to develope persistence layer in the application
+2)SDJ provides readymade methods to perform CRUD operation in DB
+3)From where we are getting these methods
+@) CrudRepositry(this one is outdated)
+b) JPA Repoository
+
+JPARepository = CR +pagination +sorting methods
+
+#)SPRIng Data JPA Terminology
+Data Source Object :it rep databse connections
+Note :data source object we can configure in application.properties
+
+Entity class :this class which mapped  with databse table
+@Entity: 
+@Table
+@Id
+@Column
+
+
+Repository interface :JPARepository Methods:
+
+1)Save()
+2)saveAll()
+3)findById()
+4)findAll()
+5)deletebyID()
+6)deleteAll()
+
+
+Auto_ddl :dynamics schema generation
+Show_sql :display sql query
+
+
+
+pom .xml 
+1)MySQL connecto dala
+===>spring data jpa maven dependency
+2)Spring data MySQL configuraiton
+https://spring.io/guides/gs/accessing-data-mysql
+
+
+
+#)JPA ake interface run time pe jvm ki responsibility it give functionality
+jitni bhi predefine method hai database sec communicate  ki voe hmre Student repo me  ajye ga 
+
+
+(ask in interview)
+
+//    http://localhost:8080/api/std/2
+id  in getMapping and in parmater  both are same
+    @GetMapping("/{id}")
+    public Optional<Student> getStudentById(@PathVariable Integer id){
+            return  service.getStudentById(id);
+    }
+
+Ex
+
+  @GetMapping("/{id}")
+    public Optional<Student> getStudentById(@PathVariable Integer ggg){
+            return  service.getStudentById(gggg);
+    }
+
+then it will give errro
+
+
+
+//This way it work
+
+   @GetMapping("/{id}")
+    public Optional<Student> getStudentById(@PathVariable(id) Integer ggg){
+        return  service.getStudentById(ggg);
+    }
+
+Intervire ask
+H.w
+Idempotent and not ideponent
+
+patch 
+delete
+
+
+
+
+How to write custom query in jpa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,289 @@
+What is Stream?
+->strema is an interface represtn in java.util.stream.
+->
+-> Stream is as pipline throught which  our collection elements passes thorugh.
+
+->Wjile element passes through it perform various operation like  sorting ,filtering  ,etc.
+
+-> usefull when deals  with bulk processing  (Can do parallel processing).
+
+
+
+#)Why stream api is required?
+
+
+collection   ------------->
+	 Create 
+     `Stream ---------->
+ 		Intermeditate Operation(KLike filter ,map)
+				    -------------->Termianl  Operation 
+
+WithoutStream  
+Public class StreamExmaple{
+
+main(){
+	List<Integer>salaryList =new ArrayList<>();
+	salaryList.add(100);
+	salaryList.add(200);
+	salaryList.add(300);
+`
+
+let count=0;
+for(Integer salary:salaryList){
+	if(salary > 3000)
+	{
+		count++;
+}
+}
+	
+}
+}
+//////////////////////
+
+With stream
+
+List<Integer>salaryList =new ArrayList<>();
+salaryList.add(2000);
+salaryList.add(3000);
+salaryList.add(4000);
+salaryList.add(5000);
+long output =salaryList.stream().filter((Integer  sal)-> sal >2000).count();
+	system.out.println(""+)
+
+}
+}
+
+
+
+
+
+-----------------------------
+What are Intermediate Operations in Streams?
+
+Intermediate operations return another Stream — they are lazy, meaning they don’t process data immediately. They only execute when a terminal operation is called.
+
+🧩 Examples:
+
+Operation	Description
+filter(Predicate)	Filters elements based on a condition
+map(Function)	Transforms elements
+sorted()	Sorts elements
+distinct()	Removes duplicates
+limit(n)	Takes first n elements
+skip(n)	Skips first n elements
+peek(Consumer)	Used for debugging/logging
+
+
+
+------------
+What are Terminal Operations in Streams?
+
+Terminal operations produce a result or side-effect and end the stream pipeline — after a terminal operation, the stream cannot be reused.
+
+🧩 Examples:
+
+Operation	Description
+forEach(Consumer)	Performs action on each element
+collect(Collector)	Converts stream to list, set, etc.
+count()	Counts elements
+reduce()	Combines elements to a single value
+findFirst()	Returns the first element
+allMatch(), anyMatch()	Test conditions on elements
+----------------
+
+
+							
+
+#)What is a Lambda Function in Java?
+
+A lambda function (or lambda expression) is a short way to write a method without giving it a name.
+It’s mainly used to pass behavior (like a function) as an argument to methods, often with Streams or Collections.
+
+(parameters) -> expression
+
+parameters → input to the function
+-> → separates parameters from the body
+expression → what the function does
+
+
+
+
+
+
+
+Highlight key benefits you experienced
+
+Reduced boilerplate loops (for, while).
+
+Easier to read and maintain.
+
+Can process large data in parallel using parallelStream() for better performance.
+
+
+
+Different Way to create Stream
+
+1) Form Collection
+
+List<Integer>salaryList =Arrays.asList(3000,4100,9000);
+Stream<Integer>streamFromIntegerArray=salaryList.stream();
+
+
+2.From Array
+
+Integer[] salaryArray ={3000,4100,1000,3500}
+Stream<Integer>streamFromIntegerArray=Arrays.stream(salaryStream);
+
+3)From Stream Method
+Stream<Integer>streamFromIntegerArray=Stream.of(1000,2000,3000);
+
+
+4)From Stream Builder
+
+Stream.Builder<Integer>streamBuilder =Stream.builder();
+
+
+
+5) From Stream Iterate
+Stream<Integer>streamFromInterate =Stream.iterate()
+
+
+
+
+///////////////////////////////////////////////////////////////
+#)Intermediate OPeration
+
+
+
+
+
+
+
+Why Streams are called lazy in Java
+
+Intermediate operations don’t execute immediately
+
+Operations like map(), filter(), distinct(), sorted() just build up a pipeline.
+
+They don’t process elements until a terminal operation (collect(), forEach(), reduce(), etc.) is called.
+
+
+Java Streams are lazy because intermediate operations do not execute immediately. They only build a pipeline, and execution happens when a terminal operation is invoked. This allows optimization (like short-circuiting with limit, findFirst) and makes working with large or infinite data possible.
+
+
+
+import java.util.Arrays;
+import java.util.List;
+
+public class LazyExample {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+        // Create a stream and add a filter
+        numbers.stream()
+               .filter(n -> {
+                   System.out.println("Checking " + n);
+                   return n % 2 == 0;
+               })
+               // Terminal operation triggers processing
+               .forEach(n -> System.out.println("Even number: " + n));
+    }
+}
+
+
+//////////////////////////////////////////////////////
+
+
+
+What are terminal Operation?
+
+
+#)ForEach
+Perform action on each element of the Stream ,.Do not return value
+
+#)toArray()
+Collect the element of the stream into an Array.
+
+List<Integer>numbers =Arrays.asList(2,1,4,7,10);
+
+#)reduce
+
+#)Collect
+#Min
+
+How many times we can use a single stream?
+One terminal Operation is used on a stream ,it is closed /consumed and can not be used again for another terminal operation
+
+Stream has already operated
+
+
+#)Parallel Stream
+
+
+Main(){
+List<Integer>numbers =Arrays.asList(11,22,33,44,55,66);
+  
+long sequenceProcessingStream =System.currentTimeMillis();
+numbers.stream()
+.map((Integer val) -> System.out.println(val));
+System.out.println()
+
+}
+
+//paraller Processing
+
+Helps to perform stream concurrently taking advantage of multi core cpu ParallelStream() method is used of regular stream() method.
+
+
+Main(){
+List<Integer>numbers =Arrays.asList(11,22,33,44,55,66);
+  
+long parallelProcessingStream =System.currentTimeMillis();
+numbers.parallelStream()
+.map((Integer val) -> val*val);
+.forEach((Integer val)->System.out.println(var));
+System.out.println()
+
+}
+
+
+in case of parallel numbers.parallelStream need to do.
+
+#)Task Splitting : It uses "SPLITERATOR" function to split  the data into multiple chunks.
+#)Task submission and parallel processing :Used Fork join pool technique
+Fork means divide  and then join.
+
+
+
+
+
+
+
+
+
+
+
+`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,201 @@
+Authentication  =>
+
+
+
+Authorization:  
+
+
+
+#)JWT 
+
+BHut easy we scure communication kr skte hai between client and  server.
+In jwt there are three part 
+dot se phele 
+1)Header
+2)Payload
+3)Signature
+
+
+
+#)Api for Generating token
+#)
+
+
+#)MiCROSERVICES
+
+
+#)what is monolithic architecture?
+1)if we develop all functionlaity  in sngle  project then it is called
+monolithic architecture based app.
+2)We will package our app as jar/war to deploy into server.
+3)Target  -->jar  --> all module
+4)As monolithic app contains all functionality .it will become  fat jar.
+
+
+#)Advantage
+1)Simple to develop.
+2)Everything is available in one place
+3)configuration require only once.
+
+
+#)DIS:Advantage
+1)Difficult to maintain
+2)Dependices among  the functionalities 
+3)Single Point of failure
+4)Entire project deployment
+
+
+
+
+TO overcome the problem of monolithic ,Microservice architecture  came into picture
+1)Microservices is not prog lang
+2)Microservices is not a  framework
+3)Microservicex is not an specification api.
+4)Microservices is an architecture design pattern.
+5)microservices suggesting to  develop app functionalities with loosely coupling.
+
+
+
+#)ake  service dusre pe dependent is called tight coupling.
+#)NOn dependet then called  loose coupliong.
+
+
+Advantages
+
+1)Loosely couping
+2)Easy to mantain
+3)Quick development and deployment
+4)Less downtime
+5)Technology independent
+6)
+
+
+Secure Key
+1)SHA
+2)
+
+#)Microservices Architeture
+
+1)Service Registery
+2)Service
+3)Api gateway
+4)Load Balancer
+5)Admin Server
+6)ZipKin Server & sleuth.
+
+
+
+Service Registry:
+1) Service Registry act as  db of services available in th project
+2)It provides the details of all services which are registered with service registry.
+3)we czan use ""eurek
+
+
+#)Steps For Microservices
+web
+Eureka Server (First Select this option)
+Spring boot dev tools (Ctrls +s  kre ge automatica reload)
+
+
+
+#) Actuator Production me  monitor tool ke liye use krte
+#) Actuator  is Just add dependency 
+codecentric's Spring Boot Admin (Server) Ops
+A community project to manage and monitor your Spring Boot
+
+
+
+Cors =>two differn domain  cannot communicate directly .
+ake domain ka data mai bina domain ke margi ke avu ga to isko bole ge resource sharing without
+permisiion.
+
+
+
+
+/Quiz APi ME changes
+
+#)login API
+#)Question naam se seperate controller
+
+
+
+
+Entity CLass :this class which mapped with databse table
+
+@Entity :class which mapped with databse
+
+
+Reposiory interface :JPARepository
+
+Methods
+1)Save()
+2)SaveAll()
+3)findByID()
+4)findAll()
+5)deleteBYId()
+6)deleteAll()
+
+
+Audo ddl :dynamcis schema generation
+show sql: display sql Query
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

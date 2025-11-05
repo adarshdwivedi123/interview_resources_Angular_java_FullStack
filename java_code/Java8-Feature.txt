@@ -1,0 +1,69 @@
+Java 8 new feature
+
+1)Lambda Expressions
+2)Functional Interface
+3)Streams API
+4)Functional Interfaces
+5)Predicate
+6)Double colon operator(::)
+7)Default and Static Methods in Interfaces
+8)Data and TIme Api
+
+
+Interfaces can now have method implementations.
+interface Vehicle {
+    void run();
+
+    default void fuel() {
+        System.out.println("Vehicle needs fuel");
+    }
+
+    static void info() {
+        System.out.println("Vehicle interface");
+    }
+}
+
+
+
+#)Optional Class
+Avoids NullPointerException by wrapping a value that may be null.
+
+Optional<String> name = Optional.ofNullable(null);
+System.out.println(name.orElse("Default Name"));
+
+New Date and Time API (java.time)
+
+Replaces old Date and Calendar (which were messy).
+
+
+Java 8 Features Cheat Sheet
+1. Lambda Expressions
+Enable functional programming style.
+Example: Runnable r = () -> System.out.println("Hello");
+2. Functional Interfaces
+Interface with only one abstract method.
+Example: Runnable, Comparator.
+3. Streams API
+Declarative operations: filter, map, reduce.
+Example: list.stream().filter(x -> x>10).collect(...)
+4. Default & Static Methods
+Interfaces can now have implementations.
+Example: default void log() { ... }
+5. Method References
+Shortcut for lambdas.
+Example: System.out::println
+6. Optional
+Avoid NullPointerException.
+Example: Optional.ofNullable(value).orElse("default")
+7. New Date/Time API
+Better replacement for Date/Calendar.
+Example: LocalDate.now(), Period.between(...)
+8. Nashorn JS Engine
+Run JavaScript inside Java.
+Example: engine.eval("print('hi')")
+9. Collectors
+Used with streams to collect results.
+Example: Collectors.toList(), Collectors.joining(",")
+10. Parallel Streams
+Process streams in parallel for speed.
+Example: list.parallelStream().forEach(...)

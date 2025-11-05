@@ -1,0 +1,38 @@
+#)Array
+• Array is an object which contains elements of similar data type
+• Array is a container object that hold values of homogeneous type.
+• Array is also known as static data structure because size of an array
+must be specified at the time of its declaration.
+• Array starts from zero index and goes to n-1 where n is length of the
+array.
+• Array in Java is index-based, the first element of the array is stored
+at the 0th index, 2nd element is stored on 1st index and so on.
+• In Java, array is treated as an object and stores into heap memory. It
+allows to store primitive values or reference values.
+
+#)Syntax
+dataType[] arr;
+dataType []arr;
+dataType arr[];
+
+
+Instantiation of Array
+dataType[] arr = new dataType[size];
+
+public class ArrayDemo{
+    public static void main(String[] args){
+        int[] arr = new int[5];
+        for(int x : arr){
+            System.out.println(x);
+        }
+    }
+}
+Here, we are assigning values at the time of array creation. It is useful
+when we want to store static data into the array
+#) int[] arr={10,20,30,40,50};
+
+#)find the length of an array
+arr.length
+int[] myArray = {10, 20, 30, 40, 50};
+System.out.println("Length of the array: " + myArray.length);
+

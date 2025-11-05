@@ -1,0 +1,219 @@
+#)3 and 4 video are importnat
+#)Identity map and week hash map
+
+Can you briefly explain about the Map interface?
+
+Map in Java is a collection that stores key–value pairs.
+Each key is unique, and each key maps to exactly one value.
+
+What is a HashMap?
+
+HashMap is a part of Java’s Collection Framework.
+It stores data in key-value pairs.
+Keys are unique, and each key maps to exactly one value.
+It provides fast retrieval and insertion based on the key.
+HashMap does not maintain any order (like insertion order).
+--------------------------------------------------------------
+What are the different methods in a HashMap?
+
+Here are the most commonly used methods 👇
+
+Method	Description
+put(K key, V value)	Adds or replaces a key-value pair
+get(Object key)	Retrieves value by key
+remove(Object key)	Removes entry for given key
+containsKey(Object key)	Checks if key exists
+containsValue(Object value)	Checks if value exists
+keySet()	Returns all keys as a Set
+values()	Returns all values as a Collection
+entrySet()	Returns key-value pairs as Set<Map.Entry>
+size()	Returns number of entries
+isEmpty()	Checks if map is empty
+clear()	Removes all mappings
+
+🧩 Example:
+
+for (Map.Entry<String, Integer> e : scores.entrySet()) {
+    System.out.println(e.getKey() + " → " + e.getValue());
+}
+--------------------------------------------------------------
+
+If value is already present then override ke dega
+
+HashMap =>
+
+
+put => used to store to value in map
+get =>user to get to value in 
+
+
+
+
+
+
+
+HashMap<String ,Integer>map =new HashMap<>();
+map.put("apple",10);
+map.put("apple",20);
+int value =map.get("apple")
+From map how to get an value
+usign java 8
+
+
+
+
+////
+
+HashMap<String ,Integer>map = new HashMap<>();
+map.put(");
+
+1)Internally, HashMap uses an array to store entries. Each position in this array is called an array index.
+
+When we add an entry with put(key, value), HashMap calculates the key’s hash code and maps it to an array index where the entry should be stored.
+
+If the array index is empty, the entry is placed there directly. If there’s already one or more entries at that index due to collisions,
+if same key is already presen it will overrite 
+
+
+HashCode => method is one which help us to generate the  hashcode.
+Equal =>Equal is the one which compare the two object.
+
+
+
+Internal Working of hashMap
+------------------------------------------------------------------------------------------------
+
+
+Jais hi 
+
+put(1 ,ome)
+1 ka hashcode bnata hai
+12134%16
+range (0 to 15)
+
+aya 1 one pe ja kr linkedlist bnavu ga jisme key store hoga 1 value stoer hoguyi one and addres store hoga
+
+put(2, "two")
+6342%2
+4  pe linked list bn jaye ga
+
+
+again put(3,"three");
+3456%16 iska bhi answer 1 aya then isse case me hoga collison 
+
+1 ke agae Linked lsit bne gi aur ake dabaaa lg ajey ga
+ja ja  collions hota jaye ga list bdti chli jaye gi this happen till java 1.7
+
+jaise hi  coliisoin 4 vli pe reach hogyi ye value bdl jaye gi balance tree me a jaye  ga
+
+incase of null put
+
+than uska block zero inde pe bne ga 
+
+
+
+
+#) IN case of get(1) them again hashcode aye ga 12346%16  ..then again 1
+isse me equal method hota hai jo ki ja kr linked list me compare kre ga and value return kre ga
+becoz in some case colliosn bhi ho skt ahai
+ 
+
+
+
+
+
+
+--------------------------------------------------------------
+nternal Working of HashMap — In My Own Words (Hinglish Notes)
+1️⃣ put() Operation
+
+Jab hum likhte hain —
+
+map.put(1, "one");
+
+
+Sabse pehle key ka hashCode banta hai.
+Example: hashCode = 12314
+
+Phir ye hashCode array size (default 16) se divide hota hai →
+
+12314 % 16 = 2
+
+
+Ab ye index 2 mil gaya.
+Is index pe ek Node (LinkedList type) banti hai jisme store hota hai:
+
+key → 1
+
+value → "one"
+
+next → next node ka address
+
+2️⃣ Next Entry
+map.put(2, "two");
+
+
+hashCode → 6342
+
+6342 % 16 = 6
+
+Index 6 pe ek new node banegi (key=2, value="two").
+
+3️⃣ Collision Case
+map.put(3, "three");
+
+
+hashCode → 3456
+
+3456 % 16 = 2
+
+Ab index 2 pe already ek node hai (key=1, value="one")
+⇒ Collision ho gaya 😅
+
+👉 Java 1.7 tak: LinkedList me new node end me attach hoti thi.
+👉 Java 1.8 ke baad: Jab ek bucket me 8 se zyada collision hoti hai,
+toh woh LinkedList → Balanced Tree me convert ho jaata hai.
+Isse searching fast ho jaati hai (O(n) → O(log n)).
+
+4️⃣ Null Key Case
+
+Agar hum likhte hain
+
+map.put(null, "abc");
+
+
+Toh null ka hashCode nahi hota,
+isliye woh index 0 pe store hotta hai.
+
+5️⃣ get() Operation
+map.get(1);
+
+
+Pehle fir se hashCode niklega: 12314 % 16 = 2
+
+Index 2 pe jaake compare karega equals() method se,
+kyunki wahan collision ho sakta hai (multiple keys ho sakti hain).
+
+Jab key match mil gayi → "one" return ho jaayega ✅
+
+💡 Summary:
+Operation	Step
+put()	hashCode nikalo → index nikaalo → node insert karo
+Collision	LinkedList banti hai (1.7 tak), Tree banta hai (1.8 ke baad)
+null key	Always index 0 par store hoti hai
+get()	hashCode + equals() se value dhoondta hai
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

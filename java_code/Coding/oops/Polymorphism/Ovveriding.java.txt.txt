@@ -1,0 +1,88 @@
+@Oveverridng if we remove form the code it not give the but com
+
+
+@Override is an annotation, not a keyword.
+
+It is optional, meaning the code will still compile and run without it.
+
+Why it’s useful:
+
+Helps the compiler check that you are actually overriding a method from a superclass or interface.
+
+Catches typos or signature mismatches early.
+
+
+
+Overriding
+If we want to achieve the run time polymorphism then we have to use method
+overriding.
+Method overriding means declaring 2 methods with same method signature in 2
+different classes which are having IS-A relation.
+While Method overriding and writing the method signature, we must follow
+following rules.
+• Method name must be same
+• List of parameters must be same
+• Return type must be same
+• Private, final and static methods cannot be overridden.
+• There must be an IS-A relationship between classes (inheritance)
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
+
+Run time Polymorphism
+#)What is Method Overriding in Java?
+
+Method overriding happens when a child class provides a new implementation of a method that is already defined in its parent class.
+The method signature must be the same (name + parameters).
+Return type must be same or covariant (subclass type).
+It is an example of runtime polymorphism.
+
+
+🔹 Rules for Method Overriding
+The method in the child class must have the same name and parameters as the parent.
+Access modifier in child cannot be more restrictive than the parent.
+final and static methods cannot be overridden.
+You can call the parent method using super.methodName().
+
+
+
+
+class Vehicle{
+    void start(){
+        System.out.println("vehicle is starting");
+    }
+}
+class Car extends  Vehicle{
+    @Override
+    void start(){
+        System.out.println("Car is startnig");
+    }
+}
+
+
+
+public class MethodOverriding {
+    public static void main(String[] args) {
+        Vehicle v = new Vehicle();
+        v.start(); // Vehicle is starting
+
+        Vehicle c  = new Car(); //car is starting ->ovveridne  method//here parent method  ovverding  hai 
+        c.start();
+    }
+
+
+}
+
+
+public class MethodOverriding {
+    // public static void main(String[] args) {
+    //     Vehicle v = new Vehicle();
+    //     v.start(); // Vehicle is starting
+
+        Vehicle c  = new Car(); //car is starting -> overridden method
+        c.start();   //not work
+    // }
+}
+

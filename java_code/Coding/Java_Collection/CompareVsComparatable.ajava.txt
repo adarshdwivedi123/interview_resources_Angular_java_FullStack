@@ -1,0 +1,98 @@
+#)Comparator vs Comparable
+
+
+
+#)Comparator
+
+Comparator and Comparable both provides a way to sort the collection of objects.
+
+why we Need for that?
+1)Primitive Collection sorting
+we can sort in ascending order but how we are not bale sort in desc order
+
+2)Object Collection sorting
+not able to sort in case of object
+-----------------------------------------------------------------NICHE VLA SHI HAI
+
+
+///see this galt hai
+
+#)Imp ask in interview
+#)Comparable
+If we want to natural sorting of jvm then we use Comparable 
+by defualt natural sorting in asc order.
+
+Comparable we have one method 
+compare 
+
+#)Comparator
+If we want to  use custom  soring order  then we use comparator.
+It has two methid
+if class  implmente the Comparator
+
+1)compare(obj1,obj2)
+2)Equals
+
+
+
+Note :If koyi bhi class kisi class ko extend nhi kr rhi hai  to voe  class object  ko extend kr rhi hia.
+
+
+------------------------------------------------------------------------------------
+#)How do you sort elements in an ArrayList using Comparable interface?
+
+🗣️ Answer:
+
+Implement the Comparable interface and override the compareTo() method inside your class.
+
+📘 Example:
+
+class Student implements Comparable<Student> {
+    int id;
+    String name;
+
+    Student(int id, String name) { this.id = id; this.name = name; }
+
+    public int compareTo(Student s) {
+        return this.name.compareTo(s.name);
+    }
+}
+
+ArrayList<Student> list = new ArrayList<>();
+list.add(new Student(1, "John"));
+list.add(new Student(2, "Alice"));
+
+Collections.sort(list);
+
+
+📤 Output: Sorted by name.
+
+143. How do you sort elements in an ArrayList using Comparator interface?
+
+🗣️ Answer:
+
+Use a Comparator when you want to define sorting outside the class.
+
+📘 Example:
+
+ArrayList<String> names = new ArrayList<>(Arrays.asList("Charlie", "Bob", "Alice"));
+Collections.sort(names, (a, b) -> a.compareTo(b));
+System.out.println(names);
+
+
+✅ Or with custom class:
+
+Collections.sort(list, (s1, s2) -> s1.id - s2.id);
+
+
+
+
+
+
+
+
+
+
+
+
+

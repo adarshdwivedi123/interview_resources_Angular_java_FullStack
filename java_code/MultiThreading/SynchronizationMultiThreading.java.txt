@@ -1,0 +1,184 @@
+#)What is synchronization of threads?
+
+💬 Simple Explanation:
+#)Synchronization in Java is a process that allows only one thread to access at a time — to prevent data inconsistency or race conditions.
+#)Synchronization ensures only one thread can access a method or variable at a time, avoiding inconsistent results.
+#)When multiple threads try to modify the same data simultaneously, it can cause unexpected results.
+Synchronization ensures thread safety by locking the resource until one thread finishes its work.
+
+package MultiThreading;
+
+class SavingAccount{
+
+    public synchronized void withdraw(String name){
+        for(int i=0 ;i<5 ;i++){
+            System.out.print("paise nikal reh hai=");
+            try{
+                    Thread.sleep(1000);
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+            }
+            System.out.println(name);
+        }
+        System.out.println("**************Transaction Completed***************");
+    }
+
+}
+class  MyThreadAccount extends  Thread{
+
+    SavingAccount s;
+    String name;
+//here consuctor hai above ka acces krna hoga
+    //upar class uska method ka varible acces krna hoga to construtor use kre ge
+    //constructor object and varible pass kr ke acces kr reh  hai
+    MyThreadAccount(SavingAccount s, String name){
+        this.s=s;
+        this.name=name;
+
+    }
+    @Override
+    public void run() {
+        s.withdraw(name);
+    }
+}
+
+public class Synchronization {
+    public static void main(String[] args) {
+        SavingAccount savingAccount= new SavingAccount();
+        MyThreadAccount t1 =new MyThreadAccount(savingAccount,"pati");
+        MyThreadAccount t2 =new MyThreadAccount(savingAccount,"bivi");
+        t1.start();
+        t2.start();
+    }
+}
+-----------------------------------------
+Example: Synchronized Method
+class Counter {
+    int count = 0;
+
+    // synchronized method
+    synchronized void increment() {
+        count++;
+    }
+}
+
+public class SyncDemo1 {
+    public static void main(String[] args) throws InterruptedException {
+        Counter c = new Counter();
+
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) c.increment();
+        });
+
+        Thread t2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) c.increment();
+        });
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+
+        System.out.println("Final count: " + c.count);
+    }
+}
+
+🧠 Explanation:
+
+Both threads call increment() 1000 times.
+
+Because the method is synchronized, one thread at a time increments count.
+
+Final output will always be 2000 ✅
+
+Without synchronization, result may be less (like 1500 or 1800) ❌
+
+💡 Interview Line:
+
+“Synchronization ensures only one thread can access a method or variable at a time, avoiding inconsistent results.”
+
+-------------------------------------------------------------------------------------------------------
+Can you give an example of a synchronized block?
+💬 Simple Explanation:
+
+A synchronized block locks only a specific part of code — not the whole method.
+It gives better performance by limiting the synchronized section to the critical code.
+
+✅ Example:
+class Display {
+    void showMessage(String name) {
+        System.out.println("Not synchronized part");
+
+        // Only this part is synchronized
+        synchronized (this) {
+            for (int i = 1; i <= 3; i++) {
+                System.out.println("Hello " + name);
+                try { Thread.sleep(500); } catch (InterruptedException e) {}
+            }
+        }
+
+        System.out.println("After synchronized block");
+    }
+}
+
+public class SyncBlockExample {
+    public static void main(String[] args) {
+        Display d = new Display();
+
+        Thread t1 = new Thread(() -> d.showMessage("Adarsh"));
+        Thread t2 = new Thread(() -> d.showMessage("Dwivedi"));
+
+        t1.start();
+        t2.start();
+    }
+}
+
+🧠 Explanation:
+
+synchronized (this) ensures only one thread prints "Hello ..." at a time.
+
+Other parts (before/after block) can run simultaneously.
+
+Improves performance because only the important code is locked.
+
+---------------------------------------------------------------------------
+. Can a static method be synchronized?
+💬 Simple Explanation:
+
+Yes, a static method can be synchronized.
+When we do this, the lock is on the class object, not on any particular instance of the class.
+So, only one thread can execute a static synchronized method of that class at a time.
+
+✅ Example:
+class Example {
+    static synchronized void showMessage(String name) {
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("Hello " + name);
+            try { Thread.sleep(500); } catch (InterruptedException e) {}
+        }
+    }
+}
+
+public class StaticSyncExample {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(() -> Example.showMessage("Adarsh"));
+        Thread t2 = new Thread(() -> Example.showMessage("Dwivedi"));
+
+        t1.start();
+        t2.start();
+    }
+}
+
+🧠 Explanation:
+
+The showMessage() method is static and synchronized.
+
+Only one thread at a time can run it, even if multiple threads call it.
+
+Lock is on Example.class, not on object instances.
+
+💡 Interview Line:
+
+“Yes, static methods can be synchronized. In that case, the lock is taken on the class itself instead of any object instance.”

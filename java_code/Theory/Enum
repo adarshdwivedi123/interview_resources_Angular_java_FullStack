@@ -1,0 +1,148 @@
+#)Enum
+is a special data type in Java that represents a fixed set of constants
+like days of the week, directions, or statuses.
+
+“An enum in Java is a special class that defines a group of constants.
+It’s type-safe, more readable than static final variables, and can include fields, methods, and constructors.”
+
+
+--------------------------------------------------------------------------
+enum Day {
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+}
+
+public class EnumExample {
+    public static void main(String[] args) {
+        Day today = Day.MONDAY;
+
+        switch (today) {
+            case MONDAY:
+                System.out.println("Start of the week!");
+                break;
+            case FRIDAY:
+                System.out.println("Weekend is near!");
+                break;
+            default:
+                System.out.println("Midweek day!");
+        }
+    }
+}
+
+----------------------------------------------------------------------------
+
+What does “type-safe” mean in Java?
+
+Type safety means:
+
+The compiler ensures that only valid values of a specific type are used in your program.
+
+In other words —
+you can’t assign or compare invalid values, and the compiler will catch it before runtime.
+
+🧩 Now — How is enum Type-Safe?
+
+Let’s compare it with the old way (using constants) vs the enum way.
+
+🔹 ❌ Old Way (using static final constants)
+public class OldWay {
+    public static final int MONDAY = 1;
+    public static final int TUESDAY = 2;
+    public static final int WEDNESDAY = 3;
+}
+
+public class TestOldWay {
+    public static void main(String[] args) {
+        int day = 5; // ❌ Invalid value, but compiler won’t complain!
+
+        if (day == OldWay.MONDAY) {
+            System.out.println("Start of week");
+        }
+    }
+}
+
+
+👉 Here:
+
+You can assign any integer (like 5, 10, or even -1).
+
+The compiler won’t give an error.
+
+You’ll get logical bugs — because 5 doesn’t represent any real day.
+
+So, no type safety here. 😞
+
+------------------------------------------------------------
+✅ Enum Way (Type Safe)
+enum Day {
+    MONDAY, TUESDAY, WEDNESDAY
+}
+
+public class TestEnum {
+    public static void main(String[] args) {
+        Day day = Day.MONDAY; // ✅ Only valid values allowed
+
+        // ❌ Compiler error if you try:
+        // day = 5;         // Error: incompatible types
+        // day = null;      // Error unless explicitly allowed
+    }
+}
+
+
+✅ Explanation:
+
+day is of type Day.
+
+It can only hold one of the defined constants (MONDAY, TUESDAY, WEDNESDAY).
+
+If you try to assign anything else, the compiler will show an error immediately.
+
+That’s why enums are type-safe.
+
+
+----------------------------------------------------------------------------
+Can you use a switch statement around an enum?
+
+✅ Yes!
+You can use a switch statement with an enum in Java.
+
+In fact, enums were designed to work very well with switch statements —
+this is one of the main advantages of using enums over simple constants.
+
+
+---------------------------------------------------------------------------
+What are Variable Arguments (Varargs) in Java?
+
+Variable Arguments (varargs) allow you to pass zero or more arguments of the same type to a method without explicitly creating an array
+
+
+
+public class VarargsExample {
+    static int sum(int... numbers) {
+        int total = 0;
+        for (int n : numbers) {
+            total += n;
+        }
+        return total;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(sum());          // 0 → zero arguments
+        System.out.println(sum(5));         // 5 → one argument
+        System.out.println(sum(1, 2, 3, 4)); // 10 → multiple arguments
+    }
+}
+---------------------------------------------------------------------------------------------
+#)What is assert in Java?
+assert is a statement used for debugging purposes.
+It tests a boolean condition; if the condition is false, it throws an AssertionError.
+Mainly used to check assumptions in the code during development.
+
+public class AssertExample {
+    public static void main(String[] args) {
+        int age = 15;
+        assert age >= 18 : "Age must be 18 or older"; // Throws AssertionError if false
+        System.out.println("Age is valid");
+    }
+}
+
+

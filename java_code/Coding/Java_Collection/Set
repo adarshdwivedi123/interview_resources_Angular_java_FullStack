@@ -1,0 +1,98 @@
+Can you briefly explain about the Set interface?
+Set in Java is a Collection that does not allow duplicate elements.
+It represents a group of unique values, just like a mathematical set.
+
+import java.util.*;
+
+public class SetExample {
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("Apple");
+        set.add("Banana");
+        set.add("Apple"); // duplicate ignored
+        set.add("Cherry");
+
+        System.out.println(set);
+    }
+}
+
+------------------------------------------------------------------------------------------------
+#)How HashSet Ensures Uniqueness
+
+HashSet in Java is backed by a HashMap internally.
+That means whenever you add an element to a HashSet, it’s actually stored as a key in a HashMap, and the value is a constant dummy object.
+
+📦 Example
+Set<String> set = new HashSet<>();
+set.add("Apple");
+set.add("Banana");
+set.add("Apple"); // duplicate
+
+
+Internally, it works like this:
+
+HashMap<String, Object> map = new HashMap<>();
+private static final Object PRESENT = new Object();
+
+map.put("Apple", PRESENT);
+map.put("Banana", PRESENT);
+map.put("Apple", PRESENT); // Ignored because key already exists
+
+⚙️ Step-by-Step Internal Process
+
+When you add an element, say "Apple",
+→ Java calls hashCode() on the object to find its hash value.
+
+The hash value determines the bucket location in the HashMap.
+
+If the bucket is empty, the element is added.
+
+If the bucket already has elements (collision),
+→ Java checks each element using the equals() method.
+→ If equals() returns true, the element is considered duplicate and not added.
+
+🧩 Why hashCode() and equals() Are Important
+
+To ensure proper uniqueness, every class whose objects are stored in a HashSet must override these two methods:
+
+hashCode() → decides bucket location
+
+equals() → checks actual equality of objects
+
+✅ Example: Custom Class in HashSet
+class Student {
+    int id;
+    String name;
+
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Student s = (Student) obj;
+        return this.id == s.id;
+    }
+}
+
+public class HashSetExample {
+    public static void main(String[] args) {
+        Set<Student> students = new HashSet<>();
+        students.add(new Student(1, "John"));
+        students.add(new Student(1, "John")); // duplicate
+
+        System.out.println(students.size()); // Output: 1
+    }
+}
+-------------------------------------------------------------------------------------
+🗣️ Interview Answer Example
+
+“HashSet ensures uniqueness using a combination of hashCode() and equals() methods.
+When you add an element, it first checks the hash code to locate the bucket, and if another object with the same hash exists, it uses equals() to verify equality.
+If both match, the element is treated as a duplicate and not added.”

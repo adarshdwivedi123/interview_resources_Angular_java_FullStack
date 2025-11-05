@@ -1,0 +1,94 @@
+Given a binary array nums, return the maximum number of consecutive 1's in the array.
+
+ 
+
+Example 1:
+
+Input: nums = [1,1,0,1,1,1]
+Output: 3
+Explanation: The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.
+Example 2:
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+
+
+loop chla ke check krna hai 
+doe counter lenan hai counter=0 and
+max=0;
+jaise 1 mile counter++;
+else zero case me max check kri and   count=0 kro
+
+var findMaxConsecutiveOnes = function(nums) {
+    let count=0;
+    let max=0;
+    for(let i=0;i<=nums.length;i++)
+    {
+        if(nums[i] == 1)
+        {
+             count++;
+        }
+        else {
+        if(count>max)
+        {
+            max=count;
+            count=0;
+        }
+            
+    }
+
+     
+    }
+    if(count>max)    so here we need aalso check max
+        {    
+            max=count;
+            count=0;
+        }
+        return max;
+   
+};
+
+
+for large case not work
+
+
+//why we returning after that
+
+
+[1 1 ,0,0 , 1 1 ,1]
+in this case 
+max =2 
+loop end no zero to max update hi nhi huva
+uske max =3
+to return huva hi nhi max =3 vla
+
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findMaxConsecutiveOnes = function(nums) {
+    let count=0;
+    let maxCount=0;
+    for(let i=0;i<=nums.length;i++)
+    {
+        if(nums[i] == 1)
+        {
+             count++;
+        }
+        else {
+
+                maxCount=Math.max(maxCount,count);
+                count=0;
+
+            }
+
+     
+    }
+    maxCount=Math.max(maxCount,count);
+
+        return maxCount;
+   
+};

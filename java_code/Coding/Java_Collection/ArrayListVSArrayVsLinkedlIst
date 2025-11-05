@@ -1,0 +1,71 @@
+#)List
+The List interface in Java is part of the Collection framework.
+List we can store the duplicate element
+
+
+
+What is the difference between Array and ArrayList?
+
+
+Array
+1)A fixed-size data structure that holds elements of the same type.
+2)Can store primitive types (e.g., int, char)
+3)Faster for accessing elements (index-based
+4)No built-in methods (manual handling for add, remove, etc.).
+int[] arr = new int[5]
+
+
+
+#)ArrayLIst
+1)A dynamic collection (interface) that can grow or shrink in size.
+2)Can store only objects (e.g., Integer, String).
+3)Has many built-in methods (add(), remove(), contains(), etc.).
+
+List<Integer> list = new ArrayList<>();
+1)Array size is fixed — once created, you can’t change its length.
+2)List size is flexible — you can add or remove elements anytime.
+3)Array can store primitive types like int, char, etc.
+4)List can only store objects, like Integer, String, etc.
+5)Array doesn’t have built-in methods.
+6)List has many helper methods — like add(), remove(), contains() etc.
+
+
+4).What is the difference between ArrayList and LinkedLis
+t?
+
+“Both ArrayList and LinkedList are classes that implement the List interface in Java.
+The main difference is how they store data.
+ArrayList uses a dynamic array internally, so it’s fast for accessing elements because it allows direct access using an index.
+But inserting or deleting elements, especially in the middle, is slow since elements have to be shifted.
+On the other hand, LinkedList uses a doubly linked list, so it’s fast for insertion and deletion, as it just changes the links between nodes.
+However, accessing elements is slower, because it needs to traverse from the beginning.
+So, I would prefer ArrayList when I need fast access, and LinkedList when I need frequent insertions or deletions.”
+
+
+How do you iterate around an ArrayList using Iterator?
+
+🗣️ Answer:
+
+You can use the Iterator interface to traverse through an ArrayList.
+
+📘 Example:
+
+ArrayList<String> list = new ArrayList<>();
+list.add("A"); list.add("B"); list.add("C");
+
+Iterator<String> it = list.iterator();
+while (it.hasNext()) {
+    System.out.println(it.next());
+
+
+ ---------------------------------------------------------------------------------------------------
+ #)How do you sort an ArrayList?
+🗣️ Answer:
+You can use Collections.sort() to sort an ArrayList in ascending order.
+📘 Example:
+ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(3, 1, 2));
+Collections.sort(nums);
+System.out.println(nums); // [1, 2, 3]   
+
+---------------------------------------------------------
+

@@ -1,0 +1,4 @@
+🔹 What is Cohesion?
+
+Cohesion means how closely the methods and data inside a class are related to each other —
+in other words, how focused a class is on a single purpose.

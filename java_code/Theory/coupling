@@ -1,0 +1,72 @@
+🔹 What is Coupling?
+
+Coupling in Java (and in OOP in general) means how much one class or module depends on another.
+If two classes are tightly coupled, they depend heavily on each other.
+If they are loosely coupled, they depend less on each other.
+
+or
+Coupling is a measure of how much a class is dependent on other classes. There should minimal
+dependencies between classes. So, we should always aim for low coupling between classes.
+
+🔸 Example of Tight Coupling:
+class Engine {
+    void start() {
+        System.out.println("Engine starts");
+    }
+}
+
+class Car {
+    Engine engine = new Engine(); // direct dependency
+
+    void startCar() {
+        engine.start(); // tightly coupled to Engine
+    }
+}
+
+
+👉 Here, Car is tightly coupled with Engine because:
+
+It creates the Engine object itself.
+
+If Engine changes, the Car class may also need to change.
+
+🔸 Example of Loose Coupling (Better Design):
+class Engine {
+    void start() {
+        System.out.println("Engine starts");
+    }
+}
+
+class Car {
+    private Engine engine; // reference passed from outside
+
+    Car(Engine engine) {   // constructor injection
+        this.engine = engine;
+    }
+
+    void startCar() {
+        engine.start();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Engine e = new Engine();
+        Car c = new Car(e); // Engine passed from outside
+        c.startCar();
+    }
+}
+
+
+👉 Now Car is loosely coupled with Engine because:
+
+It doesn’t create the Engine object itself.
+
+You can pass different types of engines (like ElectricEngine, DieselEngine) easily.
+
+🔹 Why Loose Coupling is Better
+
+✅ Easier to maintain
+✅ Easier to test (mock objects can be used)
+✅ More flexible (works with different classes)
+✅ Follows good OOP principles (like Dependency Injection)

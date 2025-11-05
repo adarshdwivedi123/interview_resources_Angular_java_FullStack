@@ -1,0 +1,69 @@
+diffenc LIner and LinkedLot
+
+//create lInkedList
+
+
+function Node(val){
+	
+	this.val=val;
+	this.next=null;
+
+}
+
+
+
+
+#)Create  a new Node
+let newNode =new Node(5)
+
+1 ->2 -3>
+
+let node =new Node();
+node.next =head;
+this.head =node
+this.size()++
+
+
+2)
+Add TO Tail
+traverse kr ke last tk javo jb tk null na mile
+jaise null mile  newNode create usme assign kr newNOde
+let curr =this.head;
+while(curr.next != null){
+	curr =curr.next;
+}
+let newNode =new Node();
+curr.next =newNode();
+//here curr->next already null hai to  dubra krne ka k=jarurat nhi hai
+
+Edge case agar  head hi null hogya to new nodeCreate kro use assing kro
+function addToTail(val){
+let newNode =new Node(val)
+if(this.head == null)
+{
+	this.head =newNode;
+}
+else{
+
+}
+}
+
+(#)Add to Specific Postion
+1) create a new node
+2)reach at(index-1)=curr(Traverse kro per ake node phele tk)
+3)newNode.next =curr.next
+4)curr.next =newNode;
+5)carner cases
+6)size incresse kr diya 
+(3 and 4) line in same order if we switch it will give error
+first  joint and  then removed
+
+corner add a at head 
+and add at tail
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+#)Consumer
+it represents an operation that takes one input argument and returns no result (i.e., void).
+It’s usually used to perform actions — like printing, logging, modifying data, etc.
+
+
+import java.util.function.Consumer;
+
+public class ConsumerExample {
+    public static void main(String[] args) {
+        // A Consumer that prints a string
+        Consumer<String> printer = s -> System.out.println("Hello, " + s);
+
+        // Call the accept() method
+        printer.accept("World");
+        printer.accept("Java 8");
+    }
+}

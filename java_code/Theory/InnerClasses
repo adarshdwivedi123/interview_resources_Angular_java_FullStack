@@ -1,0 +1,123 @@
+#)What	is	an	Inner	Class?
+Inner	Classes	are	classes	which	are	declared	inside	other	classes.
+
+Consider	the	following	example:
+class OuterClass	{
+		public class InnerClass	{
+				}
+		public static class StaticNestedClass	{
+				}
+}
+
+#)What	is	a	Static	Inner	Class?
+A	class	declared	directly	inside	another	class	and	declared	as	static.
+In	 the	example	above,	class	name	
+StaticNestedClass	is a	static	inner	class.	
+
+class Outer {
+    String message = "Hello from Outer";
+
+    // Inner class
+    class Inner {
+        void greet() {
+            System.out.println(message);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Outer outer = new Outer();          // Create outer class object
+        Outer.Inner inner = outer.new Inner(); // Create inner class object
+        inner.greet();                       // Call inner class method
+    }
+}
+
+Can you create an inner class inside a method?
+
+✅ Yes! This is called a local inner class.
+
+A local inner class is defined inside a method.
+
+It can access local variables of the method only if they are final or effectively final.
+
+🔸 Example:
+class Outer {
+    void display() {
+        final String msg = "Hello from method";
+
+        // Local inner class
+        class Inner {
+            void greet() {
+                System.out.println(msg);
+            }
+        }
+
+        Inner inner = new Inner();
+        inner.greet();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Outer outer = new Outer();
+        outer.display();
+    }
+}
+
+
+Output:
+
+Hello from method
+
+
+✅ Key points:
+
+Defined inside a method.
+
+Cannot have access modifiers (like public, private).
+
+Can access final or effectively final local variables.
+
+
+----------------------------------------------------------------------------
+
+2️⃣ What is an Anonymous Class?
+
+✅ An anonymous class is a class without a name.
+Used when you need a one-time implementation of a class or interface.
+Usually used for event handling, threads, or simple interfaces.
+
+🔸 Example:
+interface Greeting {
+    void sayHello();
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Greeting g = new Greeting() { // Anonymous class
+            public void sayHello() {
+                System.out.println("Hello from Anonymous Class");
+            }
+        };
+        g.sayHello();
+    }
+}
+
+
+Output:
+
+Hello from Anonymous Class
+
+
+✅ Key points:
+
+No class name.
+
+Usually instantiated in place.
+
+Can extend a class or implement an interface.
+
+Used for quick, one-time usage.
+
+✅ Interview Answer (short version

@@ -1,0 +1,69 @@
+Deifne CLass
+
+#)Class  public  ,default ,abstract
+class cannot be private other wise object nhi bna payee ge
+
+
+final class Vehicle {
+    void display() {
+        System.out.println("This is a vehicle.");
+    }
+}
+
+// ❌ This will cause a compile-time error
+class Car extends Vehicle {  
+}
+
+
+Members = fields +method
+members can be (Public ,private ,protected ,default)
+
+
+Class name is equal  to file name then no error but compile nhi higa
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+import Abstraction.Car;
+
+
+class Main3{
+    public static void main(String[] args) {
+        System.out.println("hello1");
+    }
+}
+
+class Main2{
+    public static void main(String[] args) {
+        System.out.println("hi");
+    }
+}
+
+ class Main {
+
+    public static void main(String[] args) {
+//        InstanceVariable obj =new InstanceVariable("Honda",28);
+//        //System.out.println(num);//local varibel acces inside the class
+//        obj.display();
+//        Car myCar =new Car();
+//        myCar.brand ="Toyata";
+//         myCar.start();
+        
+    }
+}
+
+
+fir
+
+
+
+#)what is module-=info in java?
+A module is a group of packages bundled together with explicit dependencies and visibility rules.
+
+
+Differnce between sealed and final?
+
+
+
+
+
+

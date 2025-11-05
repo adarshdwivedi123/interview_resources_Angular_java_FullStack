@@ -1,0 +1,111 @@
+#)Java String Pool
+
+In Java, the String Pool is a special memory region inside the heap that stores string literals.
+When we create a string using double quotes, like "Hello", Java first checks the pool.
+If the string already exists in the pool, it reuses the same object.
+If not, it adds the new string to the pool.
+This helps improve memory efficiency and performance, especially when working with many duplicate strings.
+
+
+#)What does immutable mean for Strings?
+In Java, strings are immutable, which means once a String object is created, it cannot be changed.
+ Any operation that seems to modify a string actually creates a new string object instead of changing the original one
+
+#)Example
+public class Main {
+    public static void main(String[] args) {
+        String original = "Hello";
+        String modified = original.concat(" World");
+
+        System.out.println("Original String: " + original);
+        System.out.println("Modified String: " + modified);
+    }
+}
+
+--------------------------------------------------------------------------------
+#)Explanation
+original points to the string "Hello".
+
+When we call original.concat(" World"), it does NOT change the original string.
+
+Instead, it creates a new string "Hello World" and assigns it to modified.
+
+So, printing original still outputs "Hello", showing the string itself was not changed.
+
+
+--------------------------------------------------
+#)Why is this important?
+Immutability makes strings thread-safe.
+It enables string pooling to save memory.
+Prevents unexpected side effects since strings can’t be changed once created.
+
+
+
+--------------------------------Mutable Vs IMutable-------------------
+
+// Immutable String
+String s1 = "Hello";
+String s2 = s1.concat(" World");
+
+System.out.println(s1); // Hello
+System.out.println(s2); // Hello World
+
+// Mutable StringBuilder
+StringBuilder sb1 = new StringBuilder("Hello");
+sb1.append(" World");
+
+System.out.println(sb1.toString()); // Hello World
+
+
+
+Note:
+“Immutable objects like String are great for thread safety 
+and predictable behavior because their state can’t change once created.
+ Mutable objects like StringBuilder are preferred when you need to change data frequently,
+like concatenating strings in loops, 
+to improve performance by avoiding creating many intermediate objects.”
+
+
+
+#)ThreadSafe
+
+public class ThreadSafeExample {
+    public static void main(String[] args) {
+        String sharedString = "Hello";
+
+        Runnable task = () -> {
+            // Multiple threads reading the same immutable string
+            System.out.println(sharedString.toUpperCase());
+        };
+
+        Thread t1 = new Thread(task);
+        Thread t2 = new Thread(task);
+
+        t1.start();
+        t2.start();
+    }
+}
+
+
+You create a shared immutable string "Hello".
+
+You create two threads (t1 and t2), both executing the same task: print sharedString.toUpperCase().
+
+Since String is immutable, both threads just read the same object and convert it to uppercase.
+
+The threads run concurrently, but since the operation doesn’t modify any shared data, there are no conflicts or inconsistencies.
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+

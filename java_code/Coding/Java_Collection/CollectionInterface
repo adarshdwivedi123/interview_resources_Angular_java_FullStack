@@ -1,0 +1,28 @@
+#)The Collection interface extends Iterable and defines basic methods like
+1)add,
+2)remove,
+3)and size.
+
+It has three main subinterfaces:
+List → ordered, allows duplicates (like ArrayList, LinkedList)
+Set → unique elements, no duplicates (like HashSet, TreeSet)
+Queue → holds elements for processing, usually FIFO (like LinkedList, PriorityQueue)
+
+
+#)What are the important methods declared in the Collection interface?
+🗣️ Sample Interview Answer:
+
+“The Collection interface provides common methods that are implemented by all its subclasses.
+Some important ones are:
+-----------------------------------------------------------------------------------------
+add() → to add elements
+remove() → to delete elements
+size() → to get total number of elements
+isEmpty() → to check if collection is empty
+contains() → to check if an element exists
+iterator() → to iterate through elements
+toArray() → to convert collection to array
+clear() → to remove all elements.”
+
+
+

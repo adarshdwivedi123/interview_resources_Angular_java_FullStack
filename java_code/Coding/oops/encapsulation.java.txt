@@ -1,0 +1,141 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class Atm{
+    private String  username ;
+    private String pass;
+    private String bal;
+
+public String getUserName(){
+    return username;
+}
+public void setUserName(String userName){
+    this.username=userName; 
+    //here this refer current class object that is ATM
+  }
+}
+class Main {
+    public static void main(String[] args) {
+        Atm a =new Atm();
+        a.setUserName("adarsh");
+        System.out.println(a.getUserName()); //this way we implment encapsultioan here we are hiding things
+        //
+    }
+    
+}
+//overloading
+//overriding(Run time polymorphisms)
+
+Oveloading
+#)same wthod name is same  with different parameter
+#)return type  is not considered  in method overloading it means we 
+never decide method ovelaoding with return type
+#) if we want to achieve compilet time polymorphism then we use overloading
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class Atm{
+   public int add(int a ,int b)
+   {
+            return a+b;   
+   }
+   public int add(int a)
+   {
+       return a;
+   }
+    public int add(int a ,int b ,int c)
+   {
+       return a+b+c;
+   }
+}
+class Main {
+    public static void main(String[] args) {
+        Atm a =new Atm();
+        Integer p=a.add(2,4);
+        System.out.println(p);
+      
+    }
+    
+} 
+
+
+#)Overrding
+if we want to  achieve the run time polymorphism then we have to use
+ISA relationship means it  is inheritance .
+RUle
+Method name musr be smae
+parameter must be same
+return type must be same
+private final ,static method cannot be ovveriden
+These must be an IS-A between the classes
+
+if hmre parent class me jo functionality hai ussi ko hm child class me use krna chate then fine we can  go with  that implemntaion with overriden
+
+In case of method overridng if we don;t like parent imoplmention  we want to change in  
+ the implemtion in child css we an do with ovverdring and  change the implmetaion
+
+
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+  class Shape{
+      
+      void  draw(){
+          System.out.println("Drwaing the shape");
+      }
+  }
+  //here parent ki implmentiaon pasnd nhi ilsiye khud ki implmnetioan likh diya
+ //basically ovveride kr ke hm khud ka implmnetiona de skt ahai
+  
+  class Circle extends Shape{
+      //here parent ki implmentiaon pasnd nhi ilsiye khud ki implmnetioan likh diya
+      @Override
+      void draw(){
+          System.out.println("Drwaing the circle");
+      }
+  }
+  class Rect extends Circle{
+      @Override
+      void draw(){
+          System.out.println("Drwaing the rect");
+      }
+  }
+
+class Main {
+    public static void main(String[] args) {
+        Shape sh1=new Shape();
+        sh1.draw();
+        Circle c1 =new Circle();
+        c1.draw();
+        Rect rc =new Rect();
+        rc.draw();
+        
+        //parent  chuld refenrce  hold kr skta hai
+        Shape sh2 =new  Circle();  //this is called   run time
+        //at run time it decide
+        sh2.draw();
+        
+      
+    }
+    
+}
+
+
+Type of casting
+Widening: low to high type casting( Implict typr casting)
+Narrowing: High to low type casting(explicit typr casting)
+isme hme type mention krna pde  ga otherwise data loss ho jaye ga
+
+int l=24
+int f= l(data losss we neeed to mention type)case
+int f=(int)l;
+
+
+In java memory take 4 byte
+int and float  becoz memoy repressantion  alg hoa hai
+
+
+
+
+
+
+
