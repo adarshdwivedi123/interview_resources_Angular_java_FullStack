@@ -1,0 +1,1 @@
+a constructor which  have specfic no of parmeter is called parameterized constructor.

@@ -1,15 +1,44 @@
 #)Define Constructor
 
-#)A constructor is a special method used to initialize objects in java.
-#)use constructors to initialize all variables in the class when an object is created. As and when an object  
-is created it is initialized automatically with the help of constructor in java. 
-
+#)A constructor is a special method  that haing same name as a class name
+#)constructor is  used to initialize objects in java.constructor is called when object is created.
+#)constructor does not have any return type even void .
+#)we can use modifer  public ,private ,defualt ,protected.
 #)We have two types of constructors 
 Default Constructor 
 Parameterized Constructor 
 Signature : public classname(
 
 
+-------------------------------------------------------------------------------
+#)Can a constructor be private?”
+
+✅ You can say:
+Yes. A private constructor is used when we want to restrict instantiation from outside the class — commonly used in Singleton Design Pattern and Static Utility classes (like Math or Collections).
+
+Example public class Singleton {
+    private static Singleton instance;
+
+    private Singleton() {
+        System.out.println("Private constructor called");
+    }
+
+    public static Singleton getInstance() {
+        if (instance == null)
+            instance = new Singleton();
+        return instance;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        // Singleton s = new Singleton(); ❌ Not allowed
+        Singleton s = Singleton.getInstance(); // ✅ Allowed via static method
+    }
+}
+
+
+-------------------------------------------------------------------------------
 #)How to call a superclass constructor?
 You call a superclass constructor using the keyword super() inside the subclass constructor.
 It must be the first statement in the subclass constructor.
