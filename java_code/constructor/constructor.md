@@ -153,3 +153,6 @@ public class Main {
 
 Parent constructor: Adarsh
 Child constructor
+---------------------------------------
+can we make constructor static()
+it give compile time error

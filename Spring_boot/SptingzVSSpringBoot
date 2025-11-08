@@ -1,0 +1,7 @@
+What is the difference between Spring and Spring Boot?
+Feature	Spring	Spring Boot
+Configuration	Manual (XML or Java-based)	Auto-configuration
+Setup	Complex	Very simple
+Server	External	Embedded
+Dependency Management	Manual	Spring Boot Starters
+Deployment	WAR	JAR (standalone)

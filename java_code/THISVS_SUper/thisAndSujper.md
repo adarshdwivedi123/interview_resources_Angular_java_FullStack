@@ -3,17 +3,15 @@ Since both this() and super() must be the first statement, you cannot use them t
 You can use either one, but not both.
 
 
-#)This
-This refer to current class of instsance varible
-1)Access current class variables.
-2)Call another constructor in the same class (this()).
+#)This keyword can be  used   to refer  current class instance varible.
+if their is ambigity between instance varibla and parmeter varible this keyword reoslve the prnlm
+of ambiguoty
 
+1)this can be used to invoke a current  class method.
+2)this() can be used to invoke current class constructor
+4)this.Must be the first statement if used in constructor.
 
-Key points to say:
-1)Refers to current object.
-2)this() can only call constructors in the same class.
-3)Must be the first statement if used in constructor.
-
+Example likho
 
 ------------------------------------------------------------------------------------------
 class Employee{

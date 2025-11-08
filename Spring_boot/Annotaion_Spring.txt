@@ -101,6 +101,324 @@ SpringableAutoConfiguraiton
 ComponentScan
 
 
+---------------------------------------------------------------
+@ConponentScan:
+@ComponentScan tells Spring where to search for beans.
+Spring needs to know which packages to scan and create objects from.
+That’s what @ComponentScan does.
+
+#)“@ComponentScan tells Spring which packages to scan for annotated components like @Component, @Service, @Repository, and @Controller.
+ It is used when our beans are located outside the package of the main Spring Boot application.
+  By default, Spring scans the package of the main class and all its sub-packages
+
+
+-------------------------------------------------------------
+When you create a Spring Boot app:
+
+com.myapp
+ └── MyAppApplication (main class)
+       @SpringBootApplication
+
+
+And you keep all classes inside:
+
+com.myapp.controllers
+com.myapp.services
+com.myapp.repository
+
+
+#)Spring automatically scans everything inside the same package and sub-packages as the main class.
+
+✅ Because @SpringBootApplication already includes @ComponentScan.
+
+
+-----------------------------------------------------
+✅ So when do we use @ComponentScan manually?
+
+You only need it when:
+
+✅ Your beans are in a different package
+✅ Spring is not scanning that package automatically
+
+---------------------------------------------------------
+Example: When @ComponentScan is required
+
+Directory:
+
+com.mainapp
+ └── MainApp.java
+
+com.services
+ └── EmailService.java
+
+
+EmailService is in a different package.
+
+Spring won’t find it automatically.
+
+✅ You need:
+
+@SpringBootApplication
+@ComponentScan(basePackages = "com.services")
+public class MainApp {}
+
+
+This tells Spring:
+
+👉 “Scan com.services package and create beans from there.”
+
+
+--------------------------------------------------------------
+#)How does spirng know where to search for scompoents or beans?
+
+
+-----------------------------------------------------------------------------------
+#)@Autowired is used to automatically inject one Spring bean into another.
+Spring sees the annotation and gives you the required dependency without you creating it manually.
+It removes the need for new and lets Spring manage object creation and lifecycle.
+#)This improves loose coupling, testability, and clean code.”
+---------------------------------------------------------------------------------------
+Why do we use @Autowired? (Interview strong points)
+
+Automatic Dependency Injection
+Spring manages object creation; we don’t use new.
+
+Loose Coupling
+Classes depend on interfaces, not implementations.
+
+Easier Testing
+You can easily mock dependencies.
+
+Cleaner, more maintainable code
+-------------------------------------------------------------------------------
+#)Types of Autowiring 
+
+1)By Type (most common)
+2)By Name
+3)Constructor Injection
+4)Field Injection
+5)Setter Injection
+----------------------------------------------------------------------
+“Although @Autowired can be used on fields, the recommended way is constructor 
+injection because it makes code cleaner, testable, and avoids reflection.”
+
+Example:
+@Service
+public class OrderService {
+
+    private final PaymentService paymentService;
+
+    @Autowired
+    public OrderService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+}
+------------------------------------------------------------
+
+1. Autowiring By Type (MOST COMMON)
+
+Spring looks for a bean based on class type.
+
+✅ Example
+@Service
+public class PaymentService {}
+
+@Service
+public class OrderService {
+
+    @Autowired   // injects bean of type PaymentService
+    private PaymentService paymentService;
+}
+
+
+✅ Works because only one PaymentService bean exists.
+❌ If two beans have same type → ambiguity.
+
+✅ Most commonly used autowiring mechanism.
+
+✅ 2. Autowiring By Name
+
+Spring injects the bean whose name matches the variable name.
+
+✅ Example
+@Service("paypalService")
+public class PaypalPaymentService implements PaymentService {}
+
+@Service
+public class OrderService {
+
+    @Autowired
+    private PaymentService paypalService; // variable name matches bean name
+}
+
+
+✅ Works only because variable name = bean name
+❌ Not recommended — too fragile, depends on variable naming
+
+✅ 3. Constructor Injection (RECOMMENDED)
+
+Spring injects dependency through constructor.
+
+✅ Example
+@Service
+public class OrderService {
+
+    private final PaymentService paymentService;
+
+    @Autowired
+    public OrderService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+}
+
+
+✅ Best practice
+✅ Mandatory dependency
+✅ Easy for unit testing
+✅ Supports immutability
+✅ Works without @Autowired if only one constructor exists in the class
+
+Used in real projects? → YES ✔ (recommended by industry)
+
+✅ 4. Field Injection
+
+Uses @Autowired directly on fields.
+
+✅ Example
+@Service
+public class OrderService {
+
+    @Autowired
+    private PaymentService paymentService;
+}
+
+
+✅ Simple
+❌ Not recommended
+❌ Hard to unit test
+❌ Uses reflection
+❌ Cannot mark fields as final
+
+Used in real projects? → Sometimes, but NOT a good practice
+
+✅ 5. Setter Injection
+
+Dependency is injected through setter method.
+
+✅ Example
+@Service
+public class OrderService {
+
+    private PaymentService paymentService;
+
+    @Autowired
+    public void setPaymentService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+}
+
+
+✅ Optional dependencies
+✅ Useful when dependency can change
+❌ Not ideal for required dependencies
+
+-------------------------------------------------------------------
+@Qualifier → tells which bean to inject when multiple beans exist
+
+
+---------------------------------------------------------------------------------
+#)What is @Component?
+@Component is a Spring annotation used to mark a class as a Spring-managed bean.
+When you annotate a class with @Component, Spring’s component scan will automatically:
+
+✅ Detect the class
+✅ Create its object
+✅ Store it in the IoC container
+✅ Allow it to be injected using @Autowired
+
+---------------------------------------------------------------------------
+✅ Simple example
+@Component
+public class EmailUtil {
+    public void sendEmail() {
+        System.out.println("Sending email...");
+    }
+}
+
+
+Then you can inject it anywhere:
+
+@Service
+public class UserService {
+
+    @Autowired
+    private EmailUtil emailUtil;
+}
+
+
+✅ No need to write new EmailUtil()
+✅ Spring does the creation and injection
+--------------------------------------------------------------------
+✅ Why do we use @Component? (Interview answer)
+“We use @Component to let Spring automatically detect and manage classes as beans.
+It enables dependency injection and removes manual object creation.”
+
+
+---------------------------------------------------------------------------
+
+#)What is @Bean?
+@Bean is used inside a @Configuration class to manually create and register a Spring bean.
+It is commonly used for third-party classes or when you need full control over object creation.
+
+------------------------------------------------------------------------------
+#)When to use @Bean?
+You use @Bean when:
+✅ 1. You want to register objects from third-party libraries
+
+
+@Configuration
+public class SecurityConfig {
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();    // used for password hashing
+    }
+}
+
+How it works internally? (Strong answer)
+
+Spring uses CGLIB proxies to ensure:
+
+Beans inside @Configuration are singleton
+
+@Bean methods are executed only once
+
+Example:
+------------------------------------------------------------------
+@Configuraiton
+“We use @Configuration when we want to define beans manually.
+It allows Spring to treat the class as a source of bean definitions.
+This is useful for third-party objects, custom initialization, or configuration logic.”
+----------------------------------------------------------------
+@Repository
+@Repository marks a class as the database layer.
+Spring automatically creates it as a bean and handles SQL exceptions for us.”
+@Repository (Database Layer)
+
+“@Repository is used for classes that interact with the database.
+It also converts SQL exceptions into Spring exceptions.”
+
+Example:
+@Repository
+public class UserRepository {}
+
+
+Used for:
+✅ Database queries
+✅ JDBC, JPA, Hibernate operations
+✅ DAO layer
+
+
 
 
 

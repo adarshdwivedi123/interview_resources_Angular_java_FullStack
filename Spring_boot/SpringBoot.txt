@@ -1,11 +1,10 @@
 1)what is springboot?
 ->Spring Boot is java framework that makes it easier to create and run java applicaitons.
-
-->it simplifies the configuraion and setup process allowing devlopers to focus moer in writing code for their applicatins.
-
+->it simplifies the configuraion and setup process allowing devlopers to focus moore
+ in writing code for their applicatins.
 ->Spring boot  a module of the spring framework ,it helps us rapid application development.
 
-
+--------------------------------------------------------------------------------
 ->Spring boot solve many problem
 a)Configuration
 b)Dependecy Mangement
@@ -15,7 +14,7 @@ any other configarion ..only we have to use annotation and ready to go.
 c)Embedded Server
 It also provide embed server(Earlie we need to  do lot of congiguration on tomacat server set).
 
-
+-----------------------------------------------------------------------------------
 2)Why spring boot over spring?
 1)Spring boot provide  many adavantages over  normal spring framework.
 
@@ -26,6 +25,7 @@ d)Provide Dependency Mangemnt : no need to manager separate dependices manually.
 e)AutoConfiguration:Springboot autoconfiguration things by default.
 f)Embedded server:Provide tomatserver by default.
 
+--------------------------------------------------------------------
 3)Working of spring boot?
 1)Spring boot starts by scanning the starter dependencies in pom.xml
 download and auto-configuration the module as you included in pom.xml
@@ -42,19 +42,24 @@ by creating an application context and initializing it.
 
 ApplicationConext
 check the above in more details
+-------------------------------------------------------------------------
 
-what is annotians?
+#)what is annotians?
 
 
-Top Spring boot Annotaions
+
+#)Top Spring boot Annotaions
+
 1)@SpringBootApplication
 This annotation combination  of three annotations
 @Configuration ->we can configuration bean
 @EnableAutoConfiguration
 @ComponentScan ->here we want to check in package ke andar component  hai kya.
 it is typically placed on the main class of the application.
+
 #)@Component -> it is used to  mark a class as a spring bean that
 will be managed by the spring container.
+
 @Autowired: This annotion is used to automatically inject dependencies into
  a Spring-mangedbean.
 Example likho kaise krte oh?
@@ -119,6 +124,7 @@ it easier to develop particular kinds of aoolications.
 spring-boot-starter-web => web se related sare  configuraiton and dependecy rlhu jaise  hi use kiya sb jldi se downlaod ho jata hai.
 #) These startes include all of the dependecies ,version control and configarion needed to amke certain features of a speing boot  applicaiton funcitonal.
 
+--------------------------------------------------------------------
 #)What are the key dependecies of spring boot?
 1)spring boot-starter-parent(provide defualt configuraiton for spring-based applicziton)
 Provide the dfualt compiler leevel as java 1.8 and UTF-8 source
