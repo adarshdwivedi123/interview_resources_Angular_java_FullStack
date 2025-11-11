@@ -12,14 +12,16 @@ Drawbacks:
 
 Global locking on the collection object
 
-Only one thread can access the collection at a time
+#)Only one thread can access the collection at a time
 
-Can lead to performance bottlenecks in high-concurrency scenarios
+#)Can lead to performance bottlenecks in high-concurrency scenarios
+
+what  we use see in pcihce mondya 5
 -------------------------------------------------------------------------------
 2. Concurrent Collections
 
 Part of the java.util.concurrent package
 
-Designed for high-concurrency, allowing multiple threads to read/write without locking the whole collection
+#)Designed for high-concurrency, allowing multiple threads to read/write without locking the whole collection
 
 Better performance in multithreaded environments

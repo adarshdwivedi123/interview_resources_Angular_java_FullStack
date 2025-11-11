@@ -60,7 +60,8 @@ long output =salaryList.stream().filter((Integer  sal)-> sal >2000).count();
 -----------------------------
 What are Intermediate Operations in Streams?
 
-Intermediate operations return another Stream — they are lazy, meaning they don’t process data immediately. They only execute when a terminal operation is called.
+Intermediate operations return another Stream — they are lazy, meaning they don’t process data immediately. 
+They only execute when a terminal operation is called.
 
 🧩 Examples:
 

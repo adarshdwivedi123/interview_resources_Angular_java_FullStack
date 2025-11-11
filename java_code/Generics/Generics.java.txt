@@ -106,19 +106,3 @@ Works independently of class generics
 
 
 ----------------------------------------------------
-#)Generics:
-
-• Generics are used to specify what type of objects allowed to store into Collection.
-Collection without Generics: Allow to store any type of Objects.
-Syntax:
-#)Collection	c	=	new	Collection();
-c.add(10);
-c.add(23.45);
-c.add(“java”);
-
-Collection with Generics: Allow only specific type of data Objects.
-Syntax:
-Collection<Integer>	c	=	new	Collection<Integer>();
-c.add(10);
-c.add(“java”); // Error :
-Collection with Generics that allows any type of

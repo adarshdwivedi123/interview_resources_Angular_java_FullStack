@@ -6,7 +6,7 @@ Can you briefly explain about the Map interface?
 Map in Java is a collection that stores key–value pairs.
 Each key is unique, and each key maps to exactly one value.
 
-What is a HashMap?
+#)What is a HashMap?
 
 HashMap is a part of Java’s Collection Framework.
 It stores data in key-value pairs.

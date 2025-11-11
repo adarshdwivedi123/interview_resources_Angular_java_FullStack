@@ -384,7 +384,7 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();    // used for password hashing
     }
 }
-
+---------------------------------------------------------------------
 How it works internally? (Strong answer)
 
 Spring uses CGLIB proxies to ensure:
@@ -400,7 +400,7 @@ Example:
 It allows Spring to treat the class as a source of bean definitions.
 This is useful for third-party objects, custom initialization, or configuration logic.”
 ----------------------------------------------------------------
-@Repository
+#)@Repository
 @Repository marks a class as the database layer.
 Spring automatically creates it as a bean and handles SQL exceptions for us.”
 @Repository (Database Layer)
@@ -418,6 +418,35 @@ Used for:
 ✅ JDBC, JPA, Hibernate operations
 ✅ DAO layer
 
+
+------------------------------------------------
+#)✅ What is @Service? (Simple Answer)
+#)“@Service is used to mark a class that contains business logic.
+It tells Spring to create an object of that class and manage it as a bean.”
+#)Spring automatically creates and manages it as a bean so it can be injected using @Autowired.”
+
+------------------------------------------------------------------
+#)Controller
+“@Controller is used to create web controllers that return HTML views using Spring MVC.”
+
+#)✅ When NOT to use @Controller?
+❌ When building REST APIs
+✅ Use @RestController instead (returns JSON)
+--------------------------------------------------------------------
+
+-->@SpringBootConfiguration ->we can configuration bean
+-->@EnableAutoConfiguration:
+
+#)What is AutoConfiguration in Spring Boot?
+AutoConfiguration means Spring Boot automatically configures your application based on the dependencies present in your classpath.
+You do NOT need to write manual configuration for common features.
+
+
+#)What is Classpath? (Simple Answer)
+Classpath is the path where Java looks for your .class files and required libraries (JAR files) to run your application.
+It tells Java where to find the classes needed to compile and run the program.
+
+#)
 
 
 

@@ -17,6 +17,7 @@ String str = "hello";
 -> The string literal is always created in the string constant pool.
 -> In Java, String constant pool is a special area that is used for storing
 string objects.
+#)String are immutbale?
 -> Whenever we create a string literal in Java, JVM checks string constant
 pool first. If the string already exists in string constant pool, no new string
 object will be created in the string pool by JVM.

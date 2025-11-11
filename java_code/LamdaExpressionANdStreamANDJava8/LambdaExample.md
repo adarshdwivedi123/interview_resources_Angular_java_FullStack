@@ -64,9 +64,7 @@ ClassName::methodName
 🧩 Types of Method References:
 
 Reference to a static method → ClassName::staticMethod
-
 Reference to an instance method → object::instanceMethod
-
 Reference to a constructor → ClassName::new
 
 ✅ Example:

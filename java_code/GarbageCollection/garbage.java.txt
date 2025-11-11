@@ -1,5 +1,5 @@
 in java  garbage means unrefrencesda objects.
-What is Garbage Collection?
+#)What is Garbage Collection?
 
 In Java, Garbage Collection (GC) is the process of automatically freeing up memory 
 by removing objects that are no longer reachable (i.e., not referenced by any variable).

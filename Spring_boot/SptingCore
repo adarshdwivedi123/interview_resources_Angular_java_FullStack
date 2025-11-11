@@ -1,1 +1,66 @@
 What is ioc?
+
+
+--------------------------------------------------------------------------------
+#)XML VS Java Configuration
+“XML configuration uses XML files to define beans, while Java configuration uses Java classes with annotations like @Configuration and @Bean.
+Java config is cleaner, type-safe, and used in modern Spring Boot.
+XML is older and mainly found in legacy applications.”
+
+------------------------------------------------------------------------
+
+How  do you debug problm with spring frmawrodk?
+NoUniqueBeanDefinitionException
+NoSuchBeanDefinitionExeption
+
+above issue will come once if we not found @component or it is not foung any anotaion
+
+@Autowired
+private SortAlgorithm  sortAlgorithm     
+
+---------------------------------------------------------------------------------
+#)what is @Primary
+#)@Qualifier?
+
+
+#)what is cdi(context and deenedecy injeciton)
+Java EE Dependecy injection standrd 
+it is simlar to spring  boot anotation
+
+#)would you recommedn  to use  CDI or sping annotaion?
+
+
+-------------------------------------------------------------------------------------
+#)What is Bean Scope?
+Most common:
+
+singleton (default)
+prototype
+
+Short answer:
+“Bean scope defines how many instances of a bean Spring creates.”
+#)13. What is the difference between Singleton and Prototype scope?
+
+“Singleton → one bean instance per application
+Prototype → new instance each time it’s requested.”
+
+---------------------------------------------------------------------------
+#) What is AOP (Aspect-Oriented Programming)?
+
+“AOP allows adding cross-cutting concerns like logging, security, or transactions without modifying business logic.”
+
+-----------------------------------------------------------------------
+Spring 2.5
+Ammotiaon  all came in pictuer
+
+
+
+#)Spring 4.0
+First veriosn to fully support java8 features.
+introdcued @RestController annotaion
+--------------------------------------------------------------------
+
+Spring Modules
+
+
+

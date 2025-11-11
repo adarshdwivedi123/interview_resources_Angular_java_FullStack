@@ -13,9 +13,109 @@ pom.xml daal denge apne app saridepenedency a jaye gi..auto configuraiotn noo ne
 any other configarion ..only we have to use annotation and ready to go.
 c)Embedded Server
 It also provide embed server(Earlie we need to  do lot of congiguration on tomacat server set).
+#)what is embedded server?
+#)Concept of embedserve it hels in deploying our jar in easy way
+#)Desutl is Tomcat
+
+
+What is an Embedded Server? (Simple Answer)
+
+An embedded server means the web server (like Tomcat, Jetty) is built inside the Spring Boot application JAR.
+We don’t need to install or deploy the server separately.
+Just run the JAR, and the server starts automatically.
+
+✅ Example
+
+In traditional Java:
+
+❌ You need to install Tomcat on your machine
+❌ Deploy WAR file into webapps folder
+❌ Restart server manually
+
+In Spring Boot:
+
+✅ Just run:
+
+java -jar myapp.jar
+
+
+Spring Boot automatically starts an internal server:
+
+Embedded Tomcat (default)
+
+Or Jetty
+
+Or Undertow
+
+✅ Why is it called embedded?
+
+Because the server is:
+
+✅ Included inside your JAR
+✅ Started by Spring Boot automatically
+✅ Managed by your application, not separately
+
+✅ Simple real example
+
+Spring Boot uses this dependency:
+
+spring-boot-starter-web
+
+
+It includes:
+
+✅ Embedded Tomcat
+✅ That means Tomcat runs inside your application JAR file.
+
+✅ Advantages of Embedded Server
+✅ 1. No need to install external Tomcat
+
+Everything is packaged.
+
+✅ 2. Easy deployment
+
+Just run the JAR anywhere.
+
+✅ 3. Simplifies DevOps and microservices
+
+Every service runs independently with its own server.
+
+✅ 4. Faster startup
+
+Because no WAR deployment is needed.
+
+✅ 5. Supports microservice architecture
+
+Each microservice has its own server.
+
+✅ Simple interview line
+
+“An embedded server is a server bundled inside the Spring Boot application.
+When we run the JAR, the server starts automatically.
+No external Tomcat installation or WAR deployment is required.”
+
+✅ If interviewer asks: Which server does Spring Boot use?
+
+Default Embedded Server:
+✅ Tomcat
+
+But you can switch to:
+
+Jetty
+
+Undertow
+
+
 
 -----------------------------------------------------------------------------------
 2)Why spring boot over spring?
+#)spring based applications have a lots of configarion.
+#)when we use spring mvc we need to config compoent scan ,dispatcher servlet .
+world is moving towards Microservices.
+#)We do not have a lot of time to set up 100 Microservices.
+#)We can quiucily start the spring boot setup using starter.io and quicly setup integrate with jpa.
+#)Springboot actuator help in monotorint the applicaiton.
+
 1)Spring boot provide  many adavantages over  normal spring framework.
 
 a) Easy to use -Remove boilerplate codes.
@@ -23,7 +123,7 @@ b)Production Ready application: Metrix ,health Check and many features aredesign
 c)Rapid devlopemnt : Auto configuration enable develoers to quickly dvleop apps.
 d)Provide Dependency Mangemnt : no need to manager separate dependices manually.in spring we need to manage depencies manualy
 e)AutoConfiguration:Springboot autoconfiguration things by default.
-f)Embedded server:Provide tomatserver by default.
+f)Embedded server:Provide tomatserver by default. we don't need to manullay configuaration.
 
 --------------------------------------------------------------------
 3)Working of spring boot?
@@ -51,10 +151,18 @@ check the above in more details
 #)Top Spring boot Annotaions
 
 1)@SpringBootApplication
-This annotation combination  of three annotations
-@Configuration ->we can configuration bean
-@EnableAutoConfiguration
-@ComponentScan ->here we want to check in package ke andar component  hai kya.
+we use @SpringBootApplication annotaon launch our application
+
+✅ Tells Spring Boot to start the application
+✅ Tells Spring Boot to scan all components in that package
+✅ Performs auto-configuration
+✅ Starts the embedded server (Tomcat)
+
+#)This annotation combination  of three annotations
+-->@SpringBootConfiguration ->we can configuration bean
+-->@EnableAutoConfiguration:
+    Tells Spring Boot to automatically configure the application based on dependencies (e.g., if you add Spring Web, it auto-configures Tomcat).
+--> @ComponentScan ->here we want to check in package ke andar component  hai kya.
 it is typically placed on the main class of the application.
 
 #)@Component -> it is used to  mark a class as a spring bean that
@@ -123,6 +231,50 @@ Starters are a collection of pre-configured depencies that makes
 it easier to develop particular kinds of aoolications.
 spring-boot-starter-web => web se related sare  configuraiton and dependecy rlhu jaise  hi use kiya sb jldi se downlaod ho jata hai.
 #) These startes include all of the dependecies ,version control and configarion needed to amke certain features of a speing boot  applicaiton funcitonal.
+#)spring-boot-starter-web is a starter used to build web applications.
+It brings Spring MVC, embedded Tomcat, and JSON support out of the box.”
+-----------------------------------------------------------------------
+
+What does it include?
+
+When you add this in pom.xml:
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+
+
+Spring Boot automatically includes:
+
+✅ 1. Spring MVC
+
+For handling web requests (controllers, endpoints)
+
+✅ 2. Embedded Tomcat Server
+
+Spring Boot’s default web server (runs on port 8080)
+
+✅ 3. Jackson
+
+For JSON serialization/deserialization
+(Java objects ↔ JSON)
+
+✅ 4. Validation API
+
+For request validation (@Valid, @NotNull, etc.)
+
+✅ What can you build with spring-boot-starter-web?
+
+✅ REST APIs
+✅ Web MVC apps (Thymeleaf/JSP)
+✅ Microservices
+✅ Backend services
+
+
+spring-boot-starter-secuirty -Authentication and Authorization using spring secuirty.
+spring-boot-starter-data-jpa->Spring Dataamework jpa with hubernate
+spring-boot-starter-cache-->Enablinr spring framework  caching suport.
 
 --------------------------------------------------------------------
 #)What are the key dependecies of spring boot?
@@ -188,6 +340,93 @@ Java by happy
 
 Spring boot by happy
 https://www.youtube.com/watch?v=WxJi5yPuE3A
+
+
+
+---------------------------------------------------------------------
+Profile
+#)What is a Profile in Spring Boot? (Simple Answer)
+A Profile in Spring Boot is a way to define different configurations for different environments — like dev, test, stage, prod.
+You activate one profile at a time depending on where your application is running.
+
+#)How do you have diffenrt configuaration for differnt enviroments?
+we need to define individula env for each Profile
+->application-dev.properties
+in application.properties,
+spring.profiles.active=prod
+
+
+------------------------------------
+#)Why do we use Profiles?
+
+Because each environment needs different:
+✅ Database URLs
+✅ API URLs
+✅ Logging levels
+✅ Credentials
+✅ Ports
+✅ Feature flags
+
+Profiles help us separate these cleanly.
+--------------------------------------
+Common example
+
+You might have:
+
+application-dev.properties
+application-test.properties
+application-prod.properties
+
+-----------------------------------------------------
+Inside application-dev.properties:
+
+server.port=8081
+spring.datasource.url=jdbc:mysql://localhost:3306/dev_db
+
+
+Inside application-prod.properties:
+
+server.port=8080
+spring.datasource.url=jdbc:mysql://prod-server:3306/prod_db
+
+
+
+✅ Using @Profile annotation
+
+You can activate beans only for specific environments:
+
+@Service
+@Profile("dev")
+public class DevService {}
+
+@Service
+@Profile("prod")
+public class ProdService {}
+
+
+Only ONE of these will load based on active profile.
+
+
+---------------------------------------
+#)Spring Boot actuator?
+Spring Boot Actuator gives production-ready monitoring and management endpoints for your application.
+It helps you check the health, metrics, logs, environment, and other internals of your Spring Boot application.
+
+How to enable Actuator?
+
+Add dependency in pom.xml:
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+
+
+--------------------------------------------------------------------
+
+
+
+
 
 
 

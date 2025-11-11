@@ -1,0 +1,24 @@
+What is the difference between Spring and Spring Boot?
+Feature	            Spring	                Spring Boot
+Configuration	Manual (XML or Java-based)	 Auto-configuration
+Setup	        Complex	                          Very simple
+Server	        External	                      Embedded
+Dependency Management	Manual	                Spring Boot Starters
+Deployment	    WAR	                                JAR (standalone)
+
+#)Why spring boot?
+->ELemiates all configuraiton needed by spring and spring mvc and auto configures it.
+->NO need for @ComponentScan .default  Component scan.
+->No need to configure dispatcherServlet
+-> NO need to configure a dataSorce Entity Manger Facory or Transaction Manger.
+
+
+Spting Boot Thinking
+
+
+
+
+Problem sring solves 
+1)Duplicate code
+2) Good integration with other Framework.
+
