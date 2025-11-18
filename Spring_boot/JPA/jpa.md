@@ -6,11 +6,7 @@ You fetch data → JPA gives it back as Java objects.
 java persistance apia
 jpa  map
 
-what is hiberante?
-
-How do you define an entity in jpa?
-@Entity
-@Table
+----------------------------------
 
 Main advantage of jpa is we need to define  Mapping rest jpa will hanle the query
 

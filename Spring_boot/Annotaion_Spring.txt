@@ -630,6 +630,24 @@ server.port=9090
 
 
 
+#)@Transacional
+@Transactional ensures that a group of database operations runs as one unit.
+ If any operation fails, everything rolls back
+
+@Service
+public class UserService {
+
+    @Transactional
+    public void createUser() {
+        userRepo.save(user);
+        addressRepo.save(address);
+        // If address save fails → both roll back
+    }
+}
+
+
+
+
 
 
 --------------------------------------------------------------
