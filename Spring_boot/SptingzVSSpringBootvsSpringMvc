@@ -1,23 +1,134 @@
-What is the difference between Spring and Spring Boot?
-Feature	            Spring	                Spring Boot
-Configuration	Manual (XML or Java-based)	 Auto-configuration
+#)What is the difference between Spring and Spring Boot?
+#)Why spring boot over spring?
+Feature	            Spring	                    Spring Boot
+Configuration	Manual (XML or Java-based)	        Auto-configuration
 Setup	        Complex	                          Very simple
 Server	        External	                      Embedded
 Dependency Management	Manual	                Spring Boot Starters
 Deployment	    WAR	                                JAR (standalone)
+--------------------------------------------------------------------------------------
 
-#)Why spring boot?
-->ELemiates all configuraiton needed by spring and spring mvc and auto configures it.
-->NO need for @ComponentScan .default  Component scan.
-->No need to configure dispatcherServlet
--> NO need to configure a dataSorce Entity Manger Facory or Transaction Manger.
+1)what is springboot?
+->Spring Boot is java framework that makes it easier to create and run java applicaitons.
+->it simplifies the configuraion and setup process allowing devlopers to focus moore
+ in writing code for their applicatins.
+->Spring boot  a module of the spring framework ,it helps us rapid application development.
+
+--------------------------------------------------------------------------------
+->Spring boot solve many problem
+a)No Beans xml based configuration
+b)Dependecy Mangement
+Projet bna rha   web ki depenedecy chayiye (spring-boot-starter-web)
+pom.xml daal denge apne app saridepenedency a jaye gi..auto configuraiotn noo need to do 
+any other configarion ..only we have to use annotation and ready to go.
+c)Embedded Server
+It also provide embed server(Earlie we need to  do lot of congiguration on tomacat server set).
+#)what is embedded server?
+#)Concept of embedserve it hels in deploying our jar in easy way
+#)Default is Tomcat
+#)we can put other server also by removint the current one  and it otehr
+
+--------------------------------------------------------------------------
+#)What is an Embedded Server? (Simple Answer)
+An embedded server means the web server (like Tomcat, Jetty) is built inside the Spring Boot application JAR.
+We don’t need to install or deploy the server separately.
+Just run the JAR, and the server starts automatically.
+
+✅ Example
+In traditional Java:
+
+❌ You need to install Tomcat on your machine
+❌ Deploy WAR file into webapps folder
+❌ Restart server manually
+
+---------------------------------------
+In Spring Boot:
+✅ Just run:
+java -jar myapp.jar
 
 
-Spting Boot Thinking
+Spring Boot automatically starts an internal server:
+Embedded Tomcat (default)
+Or Jetty
+Or Undertow
+----------------------------------------------------
+✅ Why is it called embedded?
+
+Because the server is:
+✅ Included inside your JAR
+✅ Started by Spring Boot automatically
+✅ Managed by your application, not separately
+
+✅ Simple real example
+
+Spring Boot uses this dependency:
+
+#)spring-boot-starter-web
+
+It includes:
+
+✅ Embedded Tomcat
+✅ That means Tomcat runs inside your application JAR file.
+
+---------------------------------------------------------------
+✅ Advantages of Embedded Server
+✅ 1. No need to install external Tomcat
+Everything is packaged.
+✅ 2. Easy deployment
+Just run the JAR anywhere.
+✅ 3. Simplifies DevOps and microservices
+Every service runs independently with its own server.
+✅ 4. Faster startup
+Because no WAR deployment is needed.
+✅ 5. Supports microservice architecture
+Each microservice has its own server.
+✅ Simple interview line
+
+“An embedded server is a server bundled inside the Spring Boot application.
+When we run the JAR, the server starts automatically.
+No external Tomcat installation or WAR deployment is required.”
+
+-------------------------------------------------------------
+✅ If interviewer asks: Which server does Spring Boot use?
+Default Embedded Server:
+✅ Tomcat
+But you can switch to:
+Jetty
+Undertow
+
+
+-----------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+1)Spring boot provide  many adavantages over  normal spring framework.
+
+a) Easy to use -Remove boilerplate codes.
+b)Production Ready application: Metrix ,health Check and many features aredesignes for produiton ready applicaiotn.
+c)Rapid devlopemnt : Auto configuration enable develoers to quickly dvleop apps.
+d)Provide Dependency Mangemnt : no need to manager separate dependices manually.in spring we need to manage depencies manualy
+e)AutoConfiguration:Springboot autoconfiguration things by default.
+f)Embedded server:Provide tomatserver by default. we don't need to manullay configuaration.
+
+--------------------------------------------------------------------
+3)Working of spring boot?
+1)Spring boot starts by scanning the starter dependencies in pom.xml
+download and auto-configuration the module as watever we  included in pom.xml
+
+dwonlaod  haar baar nhi hoga jb maven reload or build kre ge tbhi download hoga.
+Ex: We have to create a web application then we have to put spring-boot-starter-web dependency in pom.xml 
+when we start the project springboot download all the dependency require for web
+and configure  the things like spring mvc.
 
 
 
 
+
+
+
+
+
+------------------------------------------------------------------------------------------
 Problem sring solves 
 1)Duplicate code
 2) Good integration with other Framework.

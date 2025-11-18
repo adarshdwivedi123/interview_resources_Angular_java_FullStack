@@ -36,15 +36,61 @@ Collections
 
 
 
----------------------------------05/11
 
-Check each topic where theory is not complete  which is  not clear?
 
-eXCEPTION   
-PACAKNEGS
-THIS AND Super
-static
 
+------------------COmpelte before intervire
+HOw autoConfigguration work?
+exceptional  handling  in restapi
+custom exception handling REsponseentiy
+5. How does Spring Boot works?
+
+------------------
+
+Misceanllous
+@Lazy
+@PropertySource
+
+----------------------
+
+
+. What is Lazy vs Eager loading?
+Lazy → loads when accessed  
+Eager → loads immediately
+
+------------------------------
+
+What is @Transactional?
+Provides transaction management.
+
+-----------------------
+How to handle 404?
+Create a custom exception + handler.
+-----------
+What is CORS?
+Allows cross-origin requests (frontend → backend).
+
+-------------------------------------------------------
+44. How to enable CORS?
+@CrossOrigin(origins="*")
+What is circular dependency?
+Class A needs B and B needs A → error.
+
+-------------------------------------------------------
+55. How to fix circular dependency?
+Use constructor injection or @Lazy.
+What is roll back?
+Automatically undo DB operations if exception occurs.
+
+
+
+
+Project 
+1)MicorFrontedn
+2)FullSctack reusme with AI
+
+
+----------------------------------
 
 
 

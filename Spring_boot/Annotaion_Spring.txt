@@ -1,108 +1,57 @@
 Serilization: Convert java object to json.
 deserilization : Convert json  to java object.
 
-
-1)Annotaion for configurations
-2)Annotaion for data supply or injection
-3)Annotaion for bean life cycle.
-4)Miscallaneous annotations.
-
-
-
-
-------------------------------
-Anotiaons for configuraitons
-
-These annotations configure java classes as spring bean ,enable ioc  conateinr
-to manage bean life  cycle idea behind using these annotation is  to give instrucftion to framweowkr or container.
-
-1)@Component: mark java class as spring bean.
-2)@Service:  Similar to @Component, but  use for service classes(Business logic).
-3)@Respositoty: mark java class as a DAO(Data access object). 
-4)@Controller :mark java class a  web controller.
- 5)@RestController:@Controller + @ResponseBody
-6)@Configuraiton: define a  configuration class where  we can declare beans using   @Bean 
-7)@Bean: mark method that return an object  to managed by SB.
-
-
-
 Note :for custom class we can use @Componenet and get its bean but for  predefined class we cannot use
-
-
-2)Annotaion for data supply and injection
-These annotation used to inject data or object.
-1)  @Autowired   :(By default  @Autowired perform injection byType but u can change byName)
-2) @Value:   
-3) Qualifier(Jiska Bean ka  naam diya hu sirf vhi a rha hai)
-Qualiefier  we can use byName DI hota hai
-4) @Primary () (class and method pe lg skta hai)
-class ke bean ko primary mark krte hai 
-
-
 @Compoent (class me  lga skte hai (@Target(ELment.Type)))
 
+-------------------------------------------------------------------------------
+#)How spring boot starts?
+“Spring Boot starts by running the main class, which contains the main() method.
+Inside that method, SpringApplication.run() is called.
+This method creates the Spring application context, does component scanning, loads all beans, 
+applies auto-configuration, and finally starts the embedded server like Tomcat.
+
+----------------------------------------------------------------
+#)what is ApplicationConext?
+It creates and manages all beans and handles dependency injection.” 
+it is simila  to  ioc container
+-------------------------------------------------------------------------
 
 
-////////////////////////////////////////////////////////////
+1)@SpringBootApplication
+we use @SpringBootApplication annotation launch our application
 
-SpringFrameowrk -----------------> Dusra Frameowrk
+✅ Tells Spring Boot to start the application
+✅ Tells Spring Boot to scan all components in that package
+✅ Performs auto-configuration
+✅ Starts the embedded server (Tomcat)
 
-java+ Framework   
-
-
-Spring 
-  
-
-
-
-@Autowire  = @Inject
-@Component = @Normal
-@Qualifier = @Resources
+------------------------------------------------------------
 
 
-
-
-
-
-#)Bean Life Cycle
-@PostContructor
-@PreDestroy
-
-
-Misceanllous
-@Lazy
-@Scope
-@ComponentScan
-@PropertySource
-
-
-
-
-Adavantage of Spring Boot
-
-1)No Beans xml based configuration
-2)Embed server
-3)Auto Configuration
-4)Rich annotations
-
-spring-boot-starter-parent
-
-
-
-
-
-@SpringBootApplication annotation 
-is called main  class.
-
-
-spring boot is equal to following notation
-sprintbootConfiguration
-SpringableAutoConfiguraiton
-ComponentScan
+#)@Component -> it is used to  mark a class as a spring bean that
+will be managed by the spring container.
 
 
 ---------------------------------------------------------------
-@ConponentScan:
+#)This annotation combination  of three annotations
+✅ @SpringBootApplication = 3 Annotations
+1)@SpringBootConfiguration ->we can configuration bean
+2)@EnableAutoConfiguration
+3)@ComponentScan
+It tells Spring Boot to configure itself, scan components, and load beans automatically.”
+
+---------------------------------------------------------------------
+#)SpringBootConfiguration:
+This class is used for Spring Boot configuration.
+Why do we need it?
+
+Because Spring needs to know:
+👉 “From which class should I start loading all the configurations and beans?”
+So, it marks your main class as the configuration class
+
+---------------------------------------------------------------------
+1)@ConponentScan:
 @ComponentScan tells Spring where to search for beans.
 Spring needs to know which packages to scan and create objects from.
 That’s what @ComponentScan does.
@@ -110,6 +59,14 @@ That’s what @ComponentScan does.
 #)“@ComponentScan tells Spring which packages to scan for annotated components like @Component, @Service, @Repository, and @Controller.
  It is used when our beans are located outside the package of the main Spring Boot application.
   By default, Spring scans the package of the main class and all its sub-packages
+
+  here we want to check in package ke andar component  hai kya.
+it is typically placed on the main class of the application.
+
+-------------------------------------------------------------
+@EnableAutoConfiguration:
+Tells Spring Boot to automatically configure the application based on 
+dependencies (e.g., if you add Spring Web, it auto-configures Tomcat).
 
 
 -------------------------------------------------------------
@@ -126,18 +83,13 @@ com.myapp.controllers
 com.myapp.services
 com.myapp.repository
 
-
 #)Spring automatically scans everything inside the same package and sub-packages as the main class.
-
 ✅ Because @SpringBootApplication already includes @ComponentScan.
-
 
 -----------------------------------------------------
 ✅ So when do we use @ComponentScan manually?
-
 You only need it when:
-
-✅ Your beans are in a different package
+✅ Your beans are in a different package then required as likhna else @SpringBootApplication ke andar sara hota hai
 ✅ Spring is not scanning that package automatically
 
 ---------------------------------------------------------
@@ -162,21 +114,20 @@ Spring won’t find it automatically.
 @ComponentScan(basePackages = "com.services")
 public class MainApp {}
 
-
 This tells Spring:
-
 👉 “Scan com.services package and create beans from there.”
 
-
 --------------------------------------------------------------
-#)How does spirng know where to search for scompoents or beans?
+#)How does spirng know where to search for compoents or beans?
 
 
 -----------------------------------------------------------------------------------
-#)@Autowired is used to automatically inject one Spring bean into another.
-Spring sees the annotation and gives you the required dependency without you creating it manually.
+#)@Autowired 
+1)is used for dependency injection.
+2)is used to automatically inject one Spring bean into another.
+3)Spring to automatically create and inject the required bean instead of manually creating it
 It removes the need for new and lets Spring manage object creation and lifecycle.
-#)This improves loose coupling, testability, and clean code.”
+4)This improves loose coupling, testability, and clean code.”
 ---------------------------------------------------------------------------------------
 Why do we use @Autowired? (Interview strong points)
 
@@ -199,8 +150,8 @@ Cleaner, more maintainable code
 4)Field Injection
 5)Setter Injection
 ----------------------------------------------------------------------
-“Although @Autowired can be used on fields, the recommended way is constructor 
-injection because it makes code cleaner, testable, and avoids reflection.”
+in“Although @Autowired can be used on fields, the recommended way is constructor 
+jection because it makes code cleaner, testable, and avoids reflection.”
 
 Example:
 @Service
@@ -211,6 +162,7 @@ public class OrderService {
     @Autowired
     public OrderService(PaymentService paymentService) {
         this.paymentService = paymentService;
+        
     }
 }
 ------------------------------------------------------------
@@ -236,6 +188,7 @@ public class OrderService {
 
 ✅ Most commonly used autowiring mechanism.
 
+-----------------------------------------------------------------------------
 ✅ 2. Autowiring By Name
 
 Spring injects the bean whose name matches the variable name.
@@ -255,6 +208,7 @@ public class OrderService {
 ✅ Works only because variable name = bean name
 ❌ Not recommended — too fragile, depends on variable naming
 
+----------------------------------------------------------------------------
 ✅ 3. Constructor Injection (RECOMMENDED)
 
 Spring injects dependency through constructor.
@@ -279,6 +233,8 @@ public class OrderService {
 ✅ Works without @Autowired if only one constructor exists in the class
 
 Used in real projects? → YES ✔ (recommended by industry)
+
+---------------------------------------------------------------------------------------
 
 ✅ 4. Field Injection
 
@@ -323,13 +279,45 @@ public class OrderService {
 ❌ Not ideal for required dependencies
 
 -------------------------------------------------------------------
-@Qualifier → tells which bean to inject when multiple beans exist
+#)“@Qualifier is used to specify exactly which bean should be injected 
+when multiple beans of the same type exist.”
+
+
+🟦 Why do we need @Qualifier?
+When there are multiple beans of the same class, Spring gets confused.
+
+Example:
+@Service
+public class EmailService implements MessageService {}
+
+@Service
+public class SMSService implements MessageService {}
+
+
+Now you inject:
+@Autowired
+MessageService messageService;
+
+
+❌ Spring does NOT know which one to inject
+(email or sms?) → Ambiguity
+
+This causes:
+NoUniqueBeanDefinitionException
+
+🟢 Solution → Use @Qualifier
+@Autowired
+@Qualifier("emailService")
+MessageService messageService;
 
 
 ---------------------------------------------------------------------------------
 #)What is @Component?
-@Component is a Spring annotation used to mark a class as a Spring-managed bean.
-When you annotate a class with @Component, Spring’s component scan will automatically:
+1)@Component marks a class as a Spring-managed bean.
+Spring automatically creates its object and handles dependency injection.”
+
+“We use @Component to let Spring automatically detect and manage classes as beans.
+It enables dependency injection and removes manual object creation.”
 
 ✅ Detect the class
 ✅ Create its object
@@ -359,13 +347,6 @@ public class UserService {
 ✅ No need to write new EmailUtil()
 ✅ Spring does the creation and injection
 --------------------------------------------------------------------
-✅ Why do we use @Component? (Interview answer)
-“We use @Component to let Spring automatically detect and manage classes as beans.
-It enables dependency injection and removes manual object creation.”
-
-
----------------------------------------------------------------------------
-
 #)What is @Bean?
 @Bean is used inside a @Configuration class to manually create and register a Spring bean.
 It is commonly used for third-party classes or when you need full control over object creation.
@@ -401,17 +382,15 @@ It allows Spring to treat the class as a source of bean definitions.
 This is useful for third-party objects, custom initialization, or configuration logic.”
 ----------------------------------------------------------------
 #)@Repository
-@Repository marks a class as the database layer.
+#)“@Repository is used for classes that interact with the database.
+It also converts SQL exceptions into Spring exceptions.”
+#)@Repository marks a class as the database layer.
 Spring automatically creates it as a bean and handles SQL exceptions for us.”
 @Repository (Database Layer)
-
-“@Repository is used for classes that interact with the database.
-It also converts SQL exceptions into Spring exceptions.”
 
 Example:
 @Repository
 public class UserRepository {}
-
 
 Used for:
 ✅ Database queries
@@ -436,31 +415,245 @@ It tells Spring to create an object of that class and manage it as a bean.”
 
 -->@SpringBootConfiguration ->we can configuration bean
 -->@EnableAutoConfiguration:
+------------------------------------------------------------------------------
 
 #)What is AutoConfiguration in Spring Boot?
 AutoConfiguration means Spring Boot automatically configures your application based on the dependencies present in your classpath.
 You do NOT need to write manual configuration for common features.
 
-
+-------------------------------------------------------------------------------
 #)What is Classpath? (Simple Answer)
 Classpath is the path where Java looks for your .class files and required libraries (JAR files) to run your application.
 It tells Java where to find the classes needed to compile and run the program.
 
-#)
+#)Why do we need @Component?
+Because without it, Spring won’t know your class exist
+
+----------------------------------------------------------------------------
+@Value:
+we red the value whatever written in app.properties
+ex:
+app.name=Car Application
+
+@Value("${app.name}")
+
+
+---------------------------------------------
+#)"@Controller is used to return view pages, not JSON."
+"@Controller is a Spring MVC annotation used to define a controller class that handles HTTP requests and returns a view (JSP/HTML/Thymeleaf template).
+
+----------------------------------------------------------------------------
+For Doing Rest API
+1)Need to  use this library spring-boo-starter-web
+
+#)@RestController  
+is Spring Boot’s way to build REST APIs.
+it returns json/text directly. 
+
+----------------------------------------
+#)@RequestMapping ("/api") 
+1)base path for all endpointd
+
+--------------------------------------
+Request Handling Annotaions
+#)@PathVariable – Extract values from URL
+
+URL: /cars/10
+
+@GetMapping("/cars/{id}")
+public Car getCar(@PathVariable int id) { }
+-------------------------------------------------
+@RequestParam – Extract query params
+
+URL: /cars?color=red&year=2020
+
+@GetMapping("/cars")
+public List<Car> filterCars(@RequestParam String color,
+                            @RequestParam int year) {
+}
+-------------------------------------------------------------------------
+✅ 7. @PathVariable – Extract values from URL
+
+URL: /cars/10
+
+@GetMapping("/cars/{id}")
+public Car getCar(@PathVariable int id) { }
+check this id shoudl be same wat if diffent
+
+
+✅ Extracts values from URL path
+
+✅ 8. @RequestParam – Extract query params
+
+URL: /cars?color=red&year=2020
+
+@GetMapping("/cars")
+public List<Car> filterCars(@RequestParam String color,
+                            @RequestParam int year) {
+}
+
+
+✅ For optional:
+
+@RequestParam(required = false)
+String brand
+-----------------------------------------------------------
+✅ 9. @RequestBody – Extract JSON from the request body
+Map jsonBody to object
+@PostMapping("/cars")
+public Car createCar(@RequestBody Car car) { }
+
+
+✅ Spring auto-converts JSON → Java Object
+✅ Uses Jackson
+
+✅ 10. @ResponseBody – Return JSON response
+@ResponseBody
+@GetMapping("/message")
+public String getMessage() {
+    return "Hello";
+}
+
+
+✅ Automatically done in @RestController
+(No need to use @ResponseBody manually)
+-----------------------
+✅ 11. @RestController – Combines @Controller + @ResponseBody
+@RestController
+public class CarController { }
+
+
+✅ All methods return JSON
+✅ Most used for REST APIs
+
+✅ 12. @RequestHeader – Read header values
+@GetMapping("/cars")
+public String checkHeader(@RequestHeader("User-Agent") String agent) {
+    return agent;
+}
+--------------------------------------------------
+
+✅ 13. @CookieValue – Read cookie values
+@GetMapping("/user")
+public String getCookie(@CookieValue("sessionId") String sessionId) {
+    return sessionId;
+}
+--------------------------------------------------
+
+Returint Response
+Use ResponseBody to control status codes and headers
+
+
+----------------------------------------------
+#)input validation  validate in controller
+Add dependecy -> spring-boot-starter-validation
+
+
+
+----------------------------------------------------------------
+#)@Profile
+Profile
+#)What is a Profile in Spring Boot? (Simple Answer)
+A Profile in Spring Boot is a way to define different configurations for different environments — like dev, test, stage, prod.
+You activate one profile at a time depending on where your application is running.
+
+#)How do you have diffenrt configuaration for differnt enviroments?
+we need to define individula env for each Profile
+->application-dev.properties
+in application.properties,
+spring.profiles.active=prod
+
+
+------------------------------------
+#)Why do we use Profiles?
+
+Because each environment needs different:
+✅ Database URLs
+✅ API URLs
+✅ Logging levels
+✅ Credentials
+✅ Ports
+✅ Feature flags
+
+Profiles help us separate these cleanly.
+--------------------------------------
+Common example
+
+You might have:
+
+application-dev.properties
+application-test.properties
+application-prod.properties
+
+-----------------------------------------------------
+Inside application-dev.properties:
+
+server.port=8081
+spring.datasource.url=jdbc:mysql://localhost:3306/dev_db
+
+
+Inside application-prod.properties:
+
+server.port=8080
+spring.datasource.url=jdbc:mysql://prod-server:3306/prod_db
+
+
+
+✅ Using @Profile annotation
+You can activate beans only for specific environments:
+
+@Service
+@Profile("dev")
+public class DevService {}
+
+@Service
+@Profile("prod")
+public class ProdService {}
+
+
+Only ONE of these will load based on active profile.
+
+
+---------------------------------------------------------------------
+#)@Primary :
+tells Spring to use this bean as the default one when multiple beans of the same type exist."
+When Spring finds two or more beans of the same type, it gets confused → Ambiguity error.
+To avoid this, we mark one bean as @Primary, so Spring chooses it automatically.
+
+#0what is differnce between them?
+
+
+---------------------------------------------
+How to change the port?
+server.port=9090
+--------------------------------------------
 
 
 
 
 
+--------------------------------------------------------------
+Extract
 
+1)Annotaion for configurations
+2)Annotaion for data supply or injection
+3)Annotaion for bean life cycle.
+4)Miscallaneous annotations.
 
+----------------------------------------------------------------------------------------
+#)Anotiaons for configuraitons
+Extrea 
 
+These annotations configure java classes as spring bean ,enable ioc  conateinr
+to manage bean life  cycle idea behind using these annotation is  to give instrucftion to framweowkr or container.
 
-
-
-
-
-
+1)@Component: mark java class as spring bean.
+2)@Service:  Similar to @Component, but  use for service classes(Business logic).
+3)@Respositoty: mark java class as a DAO(Data access object). 
+4)@Controller :mark java class a  web controller.
+ 5)@RestController:@Controller + @ResponseBody
+6)@Configuraiton: define a  configuration class where  we can declare beans using   @Bean 
+7)@Bean: mark method that return an object  to managed by SB.
 
 
 

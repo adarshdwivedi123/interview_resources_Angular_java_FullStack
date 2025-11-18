@@ -19,9 +19,6 @@ above issue will come once if we not found @component or it is not foung any ano
 private SortAlgorithm  sortAlgorithm     
 
 ---------------------------------------------------------------------------------
-#)what is @Primary
-#)@Qualifier?
-
 
 #)what is cdi(context and deenedecy injeciton)
 Java EE Dependecy injection standrd 
@@ -39,28 +36,20 @@ prototype
 
 Short answer:
 “Bean scope defines how many instances of a bean Spring creates.”
+---------------------------------------------------------------------------
 #)13. What is the difference between Singleton and Prototype scope?
-
 “Singleton → one bean instance per application
 Prototype → new instance each time it’s requested.”
 
 ---------------------------------------------------------------------------
 #) What is AOP (Aspect-Oriented Programming)?
-
-“AOP allows adding cross-cutting concerns like logging, security, or transactions without modifying business logic.”
+“AOP allows adding cross-cutting concerns like logging, security, 
+or transactions without modifying business logic.”
 
 -----------------------------------------------------------------------
 Spring 2.5
 Ammotiaon  all came in pictuer
 
-
-
-#)Spring 4.0
-First veriosn to fully support java8 features.
-introdcued @RestController annotaion
---------------------------------------------------------------------
-
-Spring Modules
 
 
 
