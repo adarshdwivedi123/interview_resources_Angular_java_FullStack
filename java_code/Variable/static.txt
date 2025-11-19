@@ -1,4 +1,106 @@
+Static Kwyword
+we can use  with
+1)variable
+2)methods
+3)block
+4)innerClass
+
+
 Static varibole :
+1)static keyword is java  used for memory mangement   we can apply static keyword with  variable ,methods, 
+2)when a variable is declared a static then a single copy of variable is created and shared among all 
+object at class level.
+3)Static variable get memory only onece in the class area of time of  class loading.
+
+
+
+
+--------------------------------------------------------------------------
+#)Static method
+1)if we apply static keyword with any method it is know static method.
+2)static method can be invoked  without the need for creating an object of a class.
+3)static method can acces static data member  and can changes value of it.
+4)static methid belong to class  not an object becoz object ki need nhi hai.
+--------------------------------------------------------------------------------
+we have  class employee  an employee we have empID, name ,companyName,now all  instance data memeber 
+will get memory each time when  the object is created so here wastages of memory .
+companyName is common but every time  when we created object it occupy  memory .so when  we 
+declare as static then this field will get the memory only once so here memory.
+
+-------------------------------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------------------
+#)why java main methoid is static?
+it is becoz the object is not require to call  a static method .if it were non static  method 
+jvm create an object 
+
+
+------------------------------------------------------------------------------------
+
+#) stiatc method vs instance method?
+
+
+
+#)can we make construcotr static?
+as we know that the static keyword belong to class not the object since construcotr are invoked 
+onlybwhen  the object is created  .it give compile tiem error.
+
+------------------------------------------------------------------------------
+
+static method
+1)A method  that is declared  as static is know as the static method.
+2)in static method  thier  is no need of object creation we can  direclty call className.variable
+
+
+
+#)instance method
+1)A method that is  not declared as static is know as the instance method.
+2)A instane methid we need to create object then  able to acces.
+---------------------------------------------------------------------------
+
+#)static varible and static method
+
+
+Example:
+
+
+class Test{
+    static int a=10;
+
+     void m1(){ //Static variables must be class-level, not method-level.
+        static int b=20;
+    }
+}
+Why is static not allowed inside a method?
+
+Because:
+
+------------------------------------------------------------------------
+Static variables are stored in the class memory (Method Area).
+Local variables (variables inside methods) are stored in stack memory.
+Local variables belong to each method call, not the class.
+Static variables must be class-level, not method-level.
+So Java does NOT allow static inside methods.
+
+----------------------------------------------------
+Example2
+class Test{
+    static int a=10;
+        public static void main(String[] args)
+        {
+            System.out.println(Test.a);
+        }
+    }
+
+-------------------------------------------------
+
+
+
+
+
 
 // Online Java Compiler
 // Use this editor to write, compile and run your Java code online

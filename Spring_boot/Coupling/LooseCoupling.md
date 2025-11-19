@@ -55,4 +55,4 @@ public class PaymentService {
 
 ✔ We depend on Payment interface, not DebitCard/CreditCard
 ✔ Easy to switch implementations
-✔ Spring decides which object to inject → LOOSE COUPLING achieved
+✔ Spring decides which object to inject → LOOSE COc

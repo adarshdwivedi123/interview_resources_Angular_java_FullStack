@@ -52,12 +52,13 @@ So, it marks your main class as the configuration class
 
 ---------------------------------------------------------------------
 1)@ConponentScan:
-@ComponentScan tells Spring where to search for beans.
+Spring scan a package and create object from that wht @COmposnrScan  deos
+or
 Spring needs to know which packages to scan and create objects from.
 That’s what @ComponentScan does.
 
 #)“@ComponentScan tells Spring which packages to scan for annotated components like @Component, @Service, @Repository, and @Controller.
- It is used when our beans are located outside the package of the main Spring Boot application.
+ #)It is used when our beans are located outside the package of the main Spring Boot application.
   By default, Spring scans the package of the main class and all its sub-packages
 
   here we want to check in package ke andar component  hai kya.
@@ -311,7 +312,7 @@ NoUniqueBeanDefinitionException
 MessageService messageService;
 
 
----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 #)What is @Component?
 1)@Component marks a class as a Spring-managed bean.
 Spring automatically creates its object and handles dependency injection.”
@@ -383,9 +384,10 @@ This is useful for third-party objects, custom initialization, or configuration 
 ----------------------------------------------------------------
 #)@Repository
 #)“@Repository is used for classes that interact with the database.
+#)Spring automatically creates it as a bean and handles SQL exceptions for us.”
 It also converts SQL exceptions into Spring exceptions.”
 #)@Repository marks a class as the database layer.
-Spring automatically creates it as a bean and handles SQL exceptions for us.”
+
 @Repository (Database Layer)
 
 Example:

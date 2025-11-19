@@ -1,9 +1,53 @@
-#)Package Statement (Optional)
-• What It Is: A way to group related classes and organize your code.
-• Why It's Used: Helps avoid name conflicts and makes the code more
-manageable.
-• Example: package my package;
-• Note: Your program can work without it.
+#)Package
+1)Packages in java way of grouping  classes  and  interface  together so that the code is organzed 
+reusable, and avoids naming conflicts.”
+2)
+
+
+---------------------------------------------------------------------------
+
+🎯 Why Do We Use Packages?
+✔ 1. Avoid Name Conflicts
+Two classes with same name can exist in different packages.
+
+✔ 2. Better Code Organization
+Makes large projects easier to manage.
+
+✔ 3. Access Protection
+public, protected, default accessibility depends on packages.
+
+✔ 4. Reusability
+Package classes can be reused across projects.
+
+-----------------------------------------------------------------------
+#)What is a Subpackage in Java? 
+A subpackage is a package inside another package.
+
+---------------------------------------------------------------------
+com
+ └── company
+      └── service
+            └── impl
+Here:
+
+com.company → main package
+com.company.service → subpackage
+com.company.service.impl → subpackage inside a subpackage
+
+---------------------------------------------------------------
+#)How to Define a Subpackage
+package com.company.service.impl;
+
+🔍 Important Interview Point
+Subpackages do NOT inherit classes from parent packages.
+You must explicitly import them.
+
+Example:
+import com.company.service.UserService
+
+
+------------------------------------------------------------------
+
 
 #)Import Statements
 • What It Is: Allows you to use classes from other packages.
@@ -17,3 +61,96 @@ sources.
 1. Interpreter: Translates code line-by-line.
 2. Compiler: Translates entire code at once.
 3. Assembler: Converts assembly language to machine code.
+
+---------------------------------------------------------------------------------
+#)What are the types of packages in Java?
+
+There are two types:
+1. Built-in packages (Java API)
+
+Examples:
+
+java.lang
+java.util
+java.io
+java.net
+
+2. User-defined packages
+
+Created by developers:
+package com.myapp.controller;
+
+
+----------------------------------------------------------------
+#)How do you create a user-defined package?
+package com.app.model;
+
+public class User {}
+The package statement must be the first line in the file.
+
+----------------------------------------------------------
+How do you import a package in Java?
+import com.app.model.User;
+--------------------------------------------------------
+Can we access a class without importing the package?
+
+👉 Yes, using fully qualified name.
+
+com.app.model.User user = new com.app.model.User();
+-------------------------------------------------------------
+#)What happens if two classes have the same name in different packages?
+
+Two classes with the same name Student
+1. Class in package school
+package school;
+
+public class Student {
+    public void show() {
+        System.out.println("Student from School");
+    }
+}
+---------------------------------------------
+
+2. Class in package college
+package college;
+
+public class Student {
+    public void show() {
+        System.out.println("Student from College");
+    }
+}
+
+🎉 Now using both in the same Java file
+import school.Student;  // import FIRST Student
+
+public class Test {
+    public static void main(String[] args) {
+
+        Student s1 = new Student();  
+        s1.show();   // prints: Student from School
+
+        // For SECOND Student, use fully qualified name
+        college.Student s2 = new college.Student();
+        s2.show();   // prints: Student from College
+    }
+}
+-------------------------------------------------------------------
+
+Can we make a class private inside a package?
+
+❌ No.
+Top-level classes can only be:
+
+public
+
+default
+
+Private is only for class members.
+
+✅ 18. Can we access default members from another package?
+
+❌ No.
+Default = package-private
+Accessible only inside the same package.
+
+
