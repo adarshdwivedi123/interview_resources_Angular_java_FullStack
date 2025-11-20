@@ -36,14 +36,47 @@ public  class Main {
     }
 }
 
-
 Pre-Java 8 → interfaces cannot have concrete methods.
-
+----------------------------------------------------------------------------------------
 Java 8+ → interfaces can have concrete methods via default or static.
-
-
-
 #)interface extend interface
+
+#)default
+1)To allow developers to add new methods to interfaces
+without breaking old implementing classes.
+2)“Default methods let us add new functionality to interfaces without
+ forcing every implementing class to override them.”
+
+
+------------------------------------------------------------------
+#)static
+To allow utility/helper methods inside interfaces
+instead of creating separate utility classes.
+Interview pointer: Used for utilities related to the abstraction
+
+
+interface Converter {
+    static int toInt(String s) {
+        return Integer.parseInt(s);
+    }
+}
+
+class UseConverter {
+    public static void main(String[] args) {
+        int n = Converter.toInt("123"); // call via interface
+        System.out.println(n + 1);
+    }
+}
+-----------------------------------------------------------------------
+
+
+Q: Can an interface have constructors?
+A: No — interfaces cannot be instantiated and don’t have constructors.
+
+
+
+
+
 
 //////////////////////////////////////////////////////////////
 
@@ -157,7 +190,7 @@ public class PaymentInterface {
 }
 
 
-
+------------------------------------------------------Must check
 
 
 Note:

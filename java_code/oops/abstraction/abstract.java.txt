@@ -16,13 +16,13 @@ abstract class class_name { }
 
 
 
-
+------------------------------------------------------------------
 #)Abstract method
-Method that are declared without any body within an abstract class are called
+#)Method that are declared without any body within an abstract class are called
 abstract method.
-The method body will be defined by its subclass.
-Abstract method can never be final and static.
-Any class that extends an abstract class must implement all the abstract
+#)The method body will be defined by its subclass.
+#)Abstract method can never be final and static.
+#)Any class that extends an abstract class must implement all the abstract
 methods.
 Syntax:
 abstract return_type function_name (); //No definition

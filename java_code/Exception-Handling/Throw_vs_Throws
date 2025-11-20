@@ -1,0 +1,20 @@
+#)Throw
+1)throw is used inside the method to explicitly throw an exception
+Example
+1)“If I want to manually raise an exception I use throw.
+2)“I use throw when I want to manually throw an exception, like validating age or input.”
+throw new IllegalArgumentException("Invalid input");
+
+
+
+
+
+#)Throws
+1)only declares the exception.
+2)is used in the method signature to declare that a method might throw an exception.
+Example
+If my method might raise an exception but I want the caller to handle it, I use throws.”
+
+
+
+
