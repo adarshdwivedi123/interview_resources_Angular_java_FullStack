@@ -36,6 +36,7 @@ t?
 The main difference is how they store data.
 ArrayList uses a dynamic array internally, so it’s fast for accessing elements because it allows direct access using an index.
 But inserting or deleting elements, especially in the middle, is slow since elements have to be shifted.
+
 On the other hand, LinkedList uses a doubly linked list, so it’s fast for insertion and deletion, as it just changes the links between nodes.
 However, accessing elements is slower, because it needs to traverse from the beginning.
 So, I would prefer ArrayList when I need fast access, and LinkedList when I need frequent insertions or deletions.”
@@ -68,3 +69,5 @@ System.out.println(nums); // [1, 2, 3]
 
 ---------------------------------------------------------
 
+ArrayList<Integer>nums =new ArrayList<>(Arrrays.asList(3,1,2));
+Collections.sort(num)

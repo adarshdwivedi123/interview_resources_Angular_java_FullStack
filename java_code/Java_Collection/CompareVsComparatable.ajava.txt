@@ -19,6 +19,7 @@ not able to sort in case of object
 
 #)Imp ask in interview
 #)Comparable
+By default whatevet soring provided by jvm that we want to use then we comparable.
 If we want to natural sorting of jvm then we use Comparable 
 by defualt natural sorting in asc order.
 

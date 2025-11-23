@@ -1,18 +1,15 @@
 #)Difference between Synchronized and Concurrent Collections in Java
 
 In Java, thread safety can be achieved in two ways:
+Because both are thread safe
 ------------------------------------------------------------------------------
 1. Synchronized Collections
-
-Achieved by wrapping collections using Collections.synchronizedXXX() methods.
-
-Example: Collections.synchronizedList(new ArrayList<>())
-
 Drawbacks:
 
 Global locking on the collection object
 
 #)Only one thread can access the collection at a time
+whole segment is locked  by this thread and other threads have to wait in Synchrnozied collection.
 
 #)Can lead to performance bottlenecks in high-concurrency scenarios
 
@@ -22,6 +19,5 @@ what  we use see in pcihce mondya 5
 
 Part of the java.util.concurrent package
 
-#)Designed for high-concurrency, allowing multiple threads to read/write without locking the whole collection
-
-Better performance in multithreaded environments
+#)allowing multiple threads to read/write without 
+locking the whole collection Better performance in multithreaded environments

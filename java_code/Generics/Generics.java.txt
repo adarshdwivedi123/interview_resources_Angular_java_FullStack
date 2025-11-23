@@ -7,6 +7,7 @@ Syntax:
 c.add(10);
 c.add(23.45);
 c.add(“java”);
+-----------------------------------------------------------------
 
 Collection with Generics: Allow only specific type of data Objects.
 Syntax:

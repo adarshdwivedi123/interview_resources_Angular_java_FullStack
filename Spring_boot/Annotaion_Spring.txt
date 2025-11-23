@@ -28,11 +28,6 @@ we use @SpringBootApplication annotation launch our application
 
 ------------------------------------------------------------
 
-
-#)@Component -> it is used to  mark a class as a spring bean that
-will be managed by the spring container.
-
-
 ---------------------------------------------------------------
 #)This annotation combination  of three annotations
 ✅ @SpringBootApplication = 3 Annotations
@@ -420,7 +415,8 @@ It tells Spring to create an object of that class and manage it as a bean.”
 ------------------------------------------------------------------------------
 
 #)What is AutoConfiguration in Spring Boot?
-AutoConfiguration means Spring Boot automatically configures your application based on the dependencies present in your classpath.
+AutoConfiguration means Spring Boot automatically configures your
+ application based on the dependencies present in your classpath.
 You do NOT need to write manual configuration for common features.
 
 -------------------------------------------------------------------------------
@@ -618,6 +614,7 @@ Only ONE of these will load based on active profile.
 
 ---------------------------------------------------------------------
 #)@Primary :
+If multiple beans of the same type exist, use this one by default.
 tells Spring to use this bean as the default one when multiple beans of the same type exist."
 When Spring finds two or more beans of the same type, it gets confused → Ambiguity error.
 To avoid this, we mark one bean as @Primary, so Spring chooses it automatically.

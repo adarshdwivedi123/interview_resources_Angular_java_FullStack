@@ -27,6 +27,7 @@ public class ArrayDemo{
         }
     }
 }
+it will print the default values of int array that is 0 0000
 Here, we are assigning values at the time of array creation. It is useful
 when we want to store static data into the array
 #) int[] arr={10,20,30,40,50};

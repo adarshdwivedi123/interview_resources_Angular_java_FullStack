@@ -22,5 +22,5 @@ Ye shi hai
 How They Work Together:
 JDK: You use it to write and compile Java programs.
 JRE: Provides the environment and libraries needed to run Java programs.
-JVM: Runs the bytecode produced by the JDK, turning it into machine code your
-computer can understand.
+JVM: The JVM reads the bytecode (compiled Java code) and
+translates it into machine code that your computer can execute.

@@ -1,2 +1,56 @@
 Java 21 is a Long-Term Support (LTS) release (after Java 17), 
 and it focuses on improving performance, simplifying code,
+
+
+1. Virtual Threads (Most Important)
+
+Helps you create thousands of lightweight threads easily.
+
+Simple:
+👉 Runs tasks faster
+👉 Uses very little memory
+👉 Best for high-load apps (APIs, servers)
+---------------------------------------------------------
+
+2. Pattern Matching for Switch
+
+Switch can now check types directly.
+
+Example:
+
+switch(obj) {
+    case String s -> System.out.println("String value: " + s);
+}
+
+
+👉 No need of instanceof + casting
+
+
+--------------------------------------------
+4. String Templates (Preview)
+
+New way to format strings.
+
+Old:
+
+"Hello " + name
+
+
+New:
+
+String msg = STR."Hello \{name}";
+
+
+👉 Cleaner and readable.
+
+--------------------------------------
+Unnamed Variables (_)
+
+Use _ when variable not required.
+
+Example:
+
+for (int _ : list) { }
+
+
+👉 Avoid unused variable warnings.

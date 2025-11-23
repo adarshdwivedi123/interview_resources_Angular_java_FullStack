@@ -53,6 +53,7 @@ public class LambdaExample {
 
 }
 
+-----------------------------------------------------------------
 
 #)What are Method References?
 A method reference is a shorthand or compact way to write lambda expressions that call an existing method.
@@ -62,7 +63,6 @@ ClassName::methodName
 
 
 🧩 Types of Method References:
-
 Reference to a static method → ClassName::staticMethod
 Reference to an instance method → object::instanceMethod
 Reference to a constructor → ClassName::new
@@ -124,6 +124,13 @@ public int m1(String s)
 
 3)if we have one argument  no need of mention type
 s -> s.length();
+
+--------------------------
+(parameters) -> expression
+
+parameters → input to the function
+-> → separates parameters from the body
+expression → what the function does
 
 
 

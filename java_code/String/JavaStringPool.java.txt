@@ -4,7 +4,8 @@ In Java, the String Pool is a special memory region inside the heap that stores 
 When we create a string using double quotes, like "Hello", Java first checks the pool.
 If the string already exists in the pool, it reuses the same object.
 If not, it adds the new string to the pool.
-This helps improve memory efficiency and performance, especially when working with many duplicate strings.
+This helps improve memory efficiency and performance, especially 
+when working with many duplicate strings.
 
 
 #)What does immutable mean for Strings?

@@ -3,7 +3,7 @@
 
 `
 Q)What is Dependency Injection in Spring Boot?
-#)Dependency Injection (DI) is a design pattern where Spring creates and provides the required objects (dependencies) to your class automatically, instead of you creating them manually using new.
+#)Dependency Injection (DI) is a design pattern where Spring creates and provides the required objects (dependencies) to your class automatically, instead of we creating them manually using new.
 
 `
 ----------------------------------------------------------------------------------------------

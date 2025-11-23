@@ -155,4 +155,88 @@ Parent constructor: Adarsh
 Child constructor
 ---------------------------------------
 can we make constructor static()
+staric keyword belong to class not obejct
 it give compile time error
+
+
+
+--------------**********Varible that can be used in construcotr---------------------
+1) Public Constructor
+Use Case:
+
+When you want the class to be instantiable from anywhere.
+
+Example:
+public class Car {
+    public Car() {
+        System.out.println("Public Constructor");
+    }
+}
+
+Where used:
+
+Normal classes used by other packages
+
+Utility classes that need to be created freely
+
+✅ 2) Private Constructor
+Use Case:
+
+When you want to restrict object creation from outside the class.
+
+Used in:
+✔ Singleton Pattern
+✔ Factory pattern (with static methods)
+✔ Utility classes (Math, Collections)
+✔ To prevent inheritance
+Example (Singleton):
+public class Singleton {
+    private static Singleton instance = new Singleton();
+
+    private Singleton() {
+        System.out.println("Private Constructor");
+    }
+
+    public static Singleton getInstance() {
+        return instance;
+    }
+}
+
+
+👉 This ensures only one object can be created.
+
+Example (Utility Class):
+public class Utils {
+    private Utils() {}  // prevent object creation
+}
+
+✅ 3) Protected Constructor
+Use Case:
+
+When you want the class to be instantiated only by:
+
+Child classes (subclasses)
+
+Same package classes
+
+Example:
+public class Animal {
+    protected Animal() {
+        System.out.println("Protected Constructor");
+    }
+}
+
+class Dog extends Animal {
+    Dog() {
+        super();  // allowed
+    }
+}
+
+Where used:
+
+When designing a base class framework
+
+When object creation is allowed only for inheriting classes
+
+🎯 Summary Table
+Constructor Type

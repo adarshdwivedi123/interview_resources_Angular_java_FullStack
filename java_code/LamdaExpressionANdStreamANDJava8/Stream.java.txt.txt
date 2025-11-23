@@ -1,68 +1,74 @@
-What is Stream?
+#)What is Stream?
+
 ->strema is an interface represtn in java.util.stream.
-->
 -> Stream is as pipline throught which  our collection elements passes thorugh.
-
 ->Wjile element passes through it perform various operation like  sorting ,filtering  ,etc.
-
 -> usefull when deals  with bulk processing  (Can do parallel processing).
 
 
 
+
 #)Why stream api is required?
+➡ Less code
+➡ More readable
+➡ No extra variables
+---------------------------------------------------
+Stream API is required to process collections in a faster, cleaner, 
+and more readable way using functional programming
 
+without stream
+we need manuallu run the lop and add if condiotn
+import java.util.*;
 
-collection   ------------->
-	 Create 
-     `Stream ---------->
- 		Intermeditate Operation(KLike filter ,map)
-				    -------------->Termianl  Operation 
-
-WithoutStream  
-Public class StreamExmaple{
-
-main(){
-	List<Integer>salaryList =new ArrayList<>();
-	salaryList.add(100);
-	salaryList.add(200);
-	salaryList.add(300);
-`
-
-let count=0;
-for(Integer salary:salaryList){
-	if(salary > 3000)
-	{
-		count++;
-}
-}
-	
-}
-}
-//////////////////////
-
-With stream
-
-List<Integer>salaryList =new ArrayList<>();
-salaryList.add(2000);
-salaryList.add(3000);
-salaryList.add(4000);
-salaryList.add(5000);
-long output =salaryList.stream().filter((Integer  sal)-> sal >2000).count();
-	system.out.println(""+)
-
-}
+class Main {
+    public static void main(String[] args) {
+        
+        List<Integer> list = Arrays.asList(2, 3, 4);
+        
+        List<Integer> even = new ArrayList<>();
+        
+        for (int i : list) {
+            if (i % 2 == 0) {
+                even.add(i);
+            }
+        }
+        
+        System.out.println(even); // Output: [2, 4]
+    }
 }
 
 
+With Stream:
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        
+        List<Integer>list =Arrays.asList(2,3,4);
+        List<Integer>even =list.stream()
+        .filter(i -> i%2 ==0)
+        .toList();
+        
+        System.out.println(even);
+        
+    }
+}
 
 
-
------------------------------
+--------------------------------------------------------------
 What are Intermediate Operations in Streams?
 
-Intermediate operations return another Stream — they are lazy, meaning they don’t process data immediately. 
-They only execute when a terminal operation is called.
+#)Intermediate operations transform the stream and return another Stream.
+They are lazy — they do NOT execute until a terminal operation is called.
 
+Examples of Terminal + Intermediate operations
+list.stream()            // source
+    .filter(i -> i%2==0) // intermediate (lazy)
+    .map(i -> i*2)       // intermediate
+    .forEach(System.out::println); // terminal (executes the pipeline)
+
+
+------------------------------------------------------
 🧩 Examples:
 
 Operation	Description
@@ -76,10 +82,10 @@ peek(Consumer)	Used for debugging/logging
 
 
 
-------------
-What are Terminal Operations in Streams?
-
-Terminal operations produce a result or side-effect and end the stream pipeline — after a terminal operation, the stream cannot be reused.
+---------------------------------------------------------------------
+#)What are Terminal Operations in Streams?
+A terminal operation is the final operation in a Stream pipeline that produces the result and closes the stream. 
+Examples: forEach(), toList(), collect(), count(), reduce(), max(), min(), findFirst().
 
 🧩 Examples:
 
@@ -93,36 +99,14 @@ allMatch(), anyMatch()	Test conditions on elements
 ----------------
 
 
-							
-
-#)What is a Lambda Function in Java?
-
-A lambda function (or lambda expression) is a short way to write a method without giving it a name.
-It’s mainly used to pass behavior (like a function) as an argument to methods, often with Streams or Collections.
-
-(parameters) -> expression
-
-parameters → input to the function
--> → separates parameters from the body
-expression → what the function does
-
-
-
-
-
-
-
-Highlight key benefits you experienced
-
+#)Highlight key benefits you experienced
 Reduced boilerplate loops (for, while).
-
 Easier to read and maintain.
-
 Can process large data in parallel using parallelStream() for better performance.
 
 
 
-Different Way to create Stream
+#)Different Way to create Stream
 
 1) Form Collection
 
@@ -154,22 +138,14 @@ Stream<Integer>streamFromInterate =Stream.iterate()
 ///////////////////////////////////////////////////////////////
 #)Intermediate OPeration
 
-
-
-
-
-
-
-Why Streams are called lazy in Java
-
+#)Why Streams are called lazy in Java
 Intermediate operations don’t execute immediately
-
 Operations like map(), filter(), distinct(), sorted() just build up a pipeline.
-
 They don’t process elements until a terminal operation (collect(), forEach(), reduce(), etc.) is called.
 
-
-Java Streams are lazy because intermediate operations do not execute immediately. They only build a pipeline, and execution happens when a terminal operation is invoked. This allows optimization (like short-circuiting with limit, findFirst) and makes working with large or infinite data possible.
+Java Streams are lazy because intermediate operations do not execute immediately.
+ They only build a pipeline, and execution happens when a terminal operation is invoked. 
+ This allows optimization (like short-circuiting with limit, findFirst) and makes working with large or infinite data possible.
 
 
 
@@ -196,29 +172,27 @@ public class LazyExample {
 
 
 
-What are terminal Operation?
-
+#0What are terminal Operation?
 
 #)ForEach
 Perform action on each element of the Stream ,.Do not return value
 
 #)toArray()
 Collect the element of the stream into an Array.
-
 List<Integer>numbers =Arrays.asList(2,1,4,7,10);
-
 #)reduce
-
 #)Collect
 #Min
 
-How many times we can use a single stream?
+----------------------------------------------------------------------
+#)How many times we can use a single stream?
 One terminal Operation is used on a stream ,it is closed /consumed and can not be used again for another terminal operation
-
 Stream has already operated
 
-
+----------------------------------------------------------------------
 #)Parallel Stream
+Parallel stream uses multiple threads
+Main thread is NOT doing all the work
 
 
 Main(){

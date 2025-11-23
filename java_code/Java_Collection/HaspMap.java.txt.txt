@@ -5,6 +5,7 @@ Can you briefly explain about the Map interface?
 
 Map in Java is a collection that stores key–value pairs.
 Each key is unique, and each key maps to exactly one value.
+-------------------------------------------------------------------
 
 #)What is a HashMap?
 
@@ -20,15 +21,15 @@ Here are the most commonly used methods 👇
 
 Method	Description
 put(K key, V value)	Adds or replaces a key-value pair
-get(Object key)	Retrieves value by key
-remove(Object key)	Removes entry for given key
+get(Object key)	   :Retrieves value by key
+remove(Object key):Removes entry for given key
 containsKey(Object key)	Checks if key exists
-containsValue(Object value)	Checks if value exists
+containsValue(Object value)	:Checks if value exists
 keySet()	Returns all keys as a Set
 values()	Returns all values as a Collection
 entrySet()	Returns key-value pairs as Set<Map.Entry>
-size()	Returns number of entries
-isEmpty()	Checks if map is empty
+size()	:Returns number of entries
+isEmpty()	:Checks if map is empty
 clear()	Removes all mappings
 
 🧩 Example:
@@ -59,10 +60,23 @@ int value =map.get("apple")
 From map how to get an value
 usign java 8
 
+-----------------------------------Chat  Gpt Expalkn----------------------
+“HashMap internally uses an array of buckets.
+When we call put(key, value), HashMap calculates the key’s hash code, applies a hash function, 
+and maps it to an index of the internal array.
+
+If the bucket at that index is empty, the entry is stored directly.
+
+If not, it means a collision occurred. 
+HashMap then stores multiple entries at the same bucket using a LinkedList or a Balanced Tree (after Java 8).
+
+If the same key already exists in the bucket, HashMap replaces the old value with the new one.
+
+When the size exceeds the load factor (0.75), HashMap resizes and rehashes all entries.”(Optipnal)
 
 
 
-////
+////--------------------------------------------------------------------------------
 
 HashMap<String ,Integer>map = new HashMap<>();
 map.put(");
@@ -124,7 +138,7 @@ becoz in some case colliosn bhi ho skt ahai
 
 
 --------------------------------------------------------------
-nternal Working of HashMap — In My Own Words (Hinglish Notes)
+internal Working of HashMap — In My Own Words (Hinglish Notes)
 1️⃣ put() Operation
 
 Jab hum likhte hain —

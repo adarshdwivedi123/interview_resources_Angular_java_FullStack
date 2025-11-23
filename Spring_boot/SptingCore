@@ -3,9 +3,10 @@ What is ioc?
 
 --------------------------------------------------------------------------------
 #)XML VS Java Configuration
-“XML configuration uses XML files to define beans, while Java configuration uses Java classes with annotations like @Configuration and @Bean.
-Java config is cleaner, type-safe, and used in modern Spring Boot.
-XML is older and mainly found in legacy applications.”
+--> “XML configuration uses XML files to define beans,  
+    while Java configuration uses Java classes with annotations like @Configuration and @Bean.
+--> Java config is cleaner, type-safe, and used in modern Spring Boot.
+--> XML is older and mainly found in legacy applications.”
 
 ------------------------------------------------------------------------
 

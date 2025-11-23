@@ -50,20 +50,13 @@ Collection quesiton need to study
 
 Fail-Fast vs Fail-Safe Iterators
 
-Iterators are used to traverse collections in Java. Fail-fast and fail-safe describe how iterators behave when the underlying collection is modified during iteration.
+Iterators are used to traverse collections in Java.
+ Fail-fast and fail-safe describe how iterators behave when the underlying collection is modified during iteration.
 
 1. Fail-Fast Iterator
 
-Iterators that immediately throw ConcurrentModificationException if the collection is modified while iterating (except through the iterator’s own methods).
-
-✅ Key Points:
-
-Works on original collection
-
-Cannot modify collection during iteration
-Found in non-concurrent collections: ArrayList, HashSet, HashMap
-
-Fast, but not safe in multi-threaded modification
+Fail-fast iterators throw a ConcurrentModificationException when one tries to modify 
+the collection while iterating over it.
 
 🧩 Example:
 
@@ -82,7 +75,8 @@ while (it.hasNext()) {
 
 2. Fail-Safe Iterator
 
-Iterators that do not throw an exception if the collection is modified during iteration.
+Fail-safe iterators do not throw ConcurrentModificationException
+ when the collection is modified during iteration.
 They work on a copy of the collection, not the original.
 
 ✅ Key Points:
@@ -111,3 +105,10 @@ while (it.hasNext()) {
 }
 
 System.out.println(list); // [A, C]
+
+
+#)Blocking Queue
+It is thread-safe queue that blocks the operations when the queue is full or empty.
+It is part of java.util.concurrent package.
+multiplethread canbe inserting and removing elements concurrently from a java blocking queue without
+ any concurrency issues arrisng.

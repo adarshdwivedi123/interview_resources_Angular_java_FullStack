@@ -2,7 +2,8 @@
 #)Checked Exceptions:
 1)Checked exceptions occur at compile time.
 2)Exceptions that the compiler forces you to handle using either try/catch or throws
-Checked at compile time. Must be handled using try-catch or declared with throws.	
+Checked at compile time.
+#)Must be handled using try-catch or declared with throws.	
 IOException, SQLException, FileNotFoundException
 
 #)Unchecked Exceptions (Runtime):

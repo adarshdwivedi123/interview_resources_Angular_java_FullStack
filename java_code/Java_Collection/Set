@@ -20,7 +20,9 @@ public class SetExample {
 #)How HashSet Ensures Uniqueness
 
 HashSet in Java is backed by a HashMap internally.
-That means whenever you add an element to a HashSet, it’s actually stored as a key in a HashMap, and the value is a constant dummy object.
+That means whenever you add an element to a HashSet, 
+it’s actually stored as a key in a HashMap, 
+and the value is a constant dummy object.
 
 📦 Example
 Set<String> set = new HashSet<>();
@@ -94,5 +96,6 @@ public class HashSetExample {
 🗣️ Interview Answer Example
 
 “HashSet ensures uniqueness using a combination of hashCode() and equals() methods.
-When you add an element, it first checks the hash code to locate the bucket, and if another object with the same hash exists, it uses equals() to verify equality.
+When you add an element, it first checks the hash code to locate the bucket,
+ and if another object with the same hash exists, it uses equals() to verify equality.
 If both match, the element is treated as a duplicate and not added.”

@@ -4,7 +4,7 @@
 #)when we want  to rep group of individual onject as a single entity then we  should go for strema.
 
 
-Why we need collection framework is required?
+#)Why we need collection framework is required?
 Framework provided us classes and interface so thast we can reuse that code instead of righting from srcatch.
 
 #)before collection  we  have array , vector hash tables.
@@ -17,16 +17,17 @@ Interable =>iterable  used to traverse the collections.
 1)iterator()  => it return iterator object
 2) Using ForEach() :iterate collection useing Lambda expression .Lambda expressoni is called foreach element in the collection.
 
+-------------------------------------------------------
 
 
-check the example
-#)PriorotyQueue 
-It is of two type 
-1)Min 
-2)Max
+hierarchy of collection
+            Collection
 
+  Map           List             Queue   Set  (maar Le Que se)
 
-
+  hashMAp      ArrayList                HashSet
+  hashtable    LinkedList               LinkedHashset    
+    sortedMap   Vector                   Vector 
 
 
 
@@ -38,12 +39,130 @@ How to store data
 5)Collection of onject
 
 
-LIst 
-List index BAses
+----------------------------------------------------------------------------
+#)LIst 
+support  index BAses search ,random access 
 List allow duplicate access
 Order Presever(Jiss order me data dalu ga ussi order me data ayega)
 
-Array   IN ArrayList
+ArrayList ->LinkedList ->Vector
+
+----------------------------------------------------------------------------
+
+#)ArrayLIst
+1)A dynamic collection (interface) that can grow or shrink in size.
+2)Can store only objects (e.g., Integer, String).
+3)Has many built-in methods (add(), remove(), contains(), etc.).
+4) NOn Synchronised
+5) when we arrayList size is full then dynamic resizing  50% of orginla size.
+
+----------------------------------------------------------------------
+#(LinkedList
+#Orer perserved
+#)LinkedList uses a doubly linked list, so it’s fast for insertion and deletion, as it just changes the links between nodes.
+However, accessing elements is slower, because it needs to traverse from the beginning.
+#)not Synchronised
+-------------------
+#Vector
+Synchronized
+Thred  Safe
+is is legacy class
+---------------------------------
+#)Stack
+#)Lifo
+Element are the added as well as remove fromt the rear end
+
+
+
+*****************************************
+2nd APRT
+-----------------********************
+-----------------------------------------------------------------------------
+#set
+#)doesn;t contain duplicate value
+#)order Presever nhi hota hai index based search is  not supported.
+
+     set  ->HashSet -->LinkedHashset
+     extends sortedSet ->TreeSet
+---------------------------------------------------------
+HashSet
+#)It implicity implmted a hashtable
+#)Contins  only unique elements
+3)only null element can be added 
+4)it is unorede set
+--------------------------
+
+#)LinkedHashset
+it preserver the insertion order.
+
+
+
+--------------------------------
+
+#)sortedSet
+All the elemnts of srotedSet must implment the Comparable interface
+
+#)TreeSet
+Uses a TreeSet for storage(self- balancing binary  search Tree like RED-Black Tree)
+Object in a TreeSet are stored  in a sorted and ascending order.
+
+
+
+***************************#3RD*************
+                3RD
+****************************************
+
+---------------------------------------------------------------------------------
+#)Queue
+
+Fallow a FIFO Appaoch
+#)Elements adds at rear end and remove from the front end.
+
+----------------------------------------------------------------
+PriorityQueue
+#)PriorityQueue is a queue  wih Prioirty associated with element
+#)Hight priority element is served befote low propeitry
+
+
+
+#)DeQue
+#)eque refer to double-ended queue
+Elements can be added and removed from  either end.
+
+#)ArrayDeQueu
+
+
+
+
+
+
+
+----------------------------------------------------------------
+#)Map
+Repersetn a key value pair
+Map interface does not implmen the collection.
+it can only  contain a unique key
+
+--------------------------------------------------------
+#)hashMAp
+It is non Synchronised in nature
+it allow one null key 
+
+--------------------------------------
+#)Hashtable
+Synchrnozied in nature
+Doesn't allow any null key or value.
+
+#)sortedMap
+enreis are mantian in ascending key Orer
+
+
+#)TreeMap
+
+---------------------------------------------------------------------
+
+
+Array            IN    ArrayList
 FixedSize            and growable in nature
 same type  of data store   ||  
 
