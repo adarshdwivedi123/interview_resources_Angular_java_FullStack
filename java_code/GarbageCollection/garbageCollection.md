@@ -1,12 +1,50 @@
 #)Garbage collection?
 
-->The process by which the JVM automatically frees memory by removing objects that are no longer  
-used in the program.
+->In java, garbage means unreferenced objects.
+
+->In Java, Garbage Collection (GC) is the process of automatically freeing up memory 
+    by removing objects that are  not referenced by any variable
 ->Helps prevent memory leaks.
+
+ ->Best practices include nullifying references, avoiding unnecessary objects, using        try-with-resources, and monitoring memory usage.”
+
+#)How can be object unReferenced?
+1) By nulling a reference:
+Employee e=new Employee();  
+e=null;  
+
+2) By assigning a reference to another:
+Employee e1=new Employee();  
+Employee e2=new Employee();  
+e1=e2;//now the first object referred by e1 is available for garbage collection  
+
+3) By anonymous object:
+new Employee();  
+
+An object without any reference variable.
+
+That means you create the object using new keyword but do NOT store it in a variable.
+
+⭐ Simple Example
+new Employee().display();
+
+
+Here:
+
+new Employee() → object created
+
+.display() → method called
+
+No reference variable like Employee e = ... → so it is an anonymous object
+
+
+---------------------------------------
+
+
 
 #)“Garbage Collection is JVM’s automatic memory management process that removes unreachable objects.
 It runs when objects are no longer referenced or memory is low.
- Best practices include nullifying references, avoiding unnecessary objects, using try-with-resources, and monitoring memory usage.”
+
 
 #)Aim of Garbage
 Collection is to Keep as much of heap available (free) for the program as possible. JVM removes objects
@@ -31,7 +69,6 @@ Here are interview-friendly best practices:
 
 #)Null references when done
 obj = null; // Makes object eligible for GC
-
 
 #)Avoid creating unnecessary objects
 #)Reuse objects where possible to reduce GC load.

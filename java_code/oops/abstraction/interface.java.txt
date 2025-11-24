@@ -201,6 +201,48 @@ Variable
 3)Final :so that child class chnge na kr paye
 
 
+-----------------------------------------why interface  we use variable-----------
+
+Because interface cannot have objects.
+So variable must be accessed using interface name, not object.
+
+Example:
+interface Test {
+    int x = 10;  // static
+}
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(Test.x); // Access using interface name
+    }
+}
+
+---------------------------------------------------------------------FINAL-------------
+
+Because interface variables represent rules, so value should not change.
+
+Example:
+interface Bank {
+    int MIN_BAL = 500; // final
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Trying to change value
+        // Bank.MIN_BAL = 100;  // ❌ error: cannot assign (final)
+        
+        System.out.println(Bank.MIN_BAL);
+    }
+}
+
+
+
+
+
+
+---------------------------------------------------------------------
+
+
 
 #)Can you extend an interface?
 yes we can extend interface
@@ -263,34 +305,9 @@ public class Main {
     }
 }
 
-////
-interface A {
-    void methodA();
-}
-
-interface B {
-    void methodB();
-}
-
-class MyClass implements A, B {   // implements, not extends
-    public void methodA() {
-        System.out.println("Method A");
-    }
-
-    public void methodB() {
-        System.out.println("Method B");
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        MyClass obj = new MyClass();
-        obj.methodA();
-        obj.methodB();
-    }
-}
-
 
 #)Note
-Variables	in	 an	 interface	 are	always	 public,	 static,	 final.	 Variables	 in	 an	 interface	 cannot	 be	 declared	
+Variables	in	 an	 interface	 are	always
+
+public,	 static,	 final.	 Variables	 in	 an	 interface	 cannot	 be	 declared	
 private.

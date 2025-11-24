@@ -29,11 +29,10 @@ import javax.management.relation.Relation;
 public class inheritance {
     
 }
-
 Dimaond problem  not allowed
 Through interfacw its allowed
 
-
+--------------------------------------------------------------------------
 1)Is-a Relationship
 Achieved throgh inheritance
 Parent child Relationship is called Inheritance

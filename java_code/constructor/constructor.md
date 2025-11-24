@@ -1,9 +1,11 @@
 #)Define Constructor
 
 #)A constructor is a special method  that haing same name as a class name
-#)constructor is  used to initialize objects in java.constructor is called when object is created.
+#)constructor is  used to initialize objects in java.
+constructor is called when object is created.
 #)constructor does not have any return type even void .
 #)we can use modifer  public ,private ,defualt ,protected.
+
 #)We have two types of constructors 
 Default Constructor 
 Parameterized Constructor 
@@ -14,7 +16,7 @@ Signature : public classname(
 #)Can a constructor be private?”
 
 ✅ You can say:
-Yes. A private constructor is used when we want to restrict instantiation from outside the class — commonly used in Singleton Design Pattern and Static Utility classes (like Math or Collections).
+Yes. A private constructor is used when we want to restrict instantiation(Object creation) from outside the class — commonly used in Singleton Design Pattern and Static Utility classes (like Math or Collections).
 
 Example public class Singleton {
     private static Singleton instance;

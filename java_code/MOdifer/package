@@ -1,8 +1,7 @@
 #)Package
-1)Packages in java way of grouping  classes  and  interface  together so that the code is organzed 
+1)Packages is a group of similar types of classes, interfaces, and sub-packages.
 reusable, and avoids naming conflicts.”
 2)
-
 
 ---------------------------------------------------------------------------
 
@@ -66,6 +65,7 @@ sources.
 #)What are the types of packages in Java?
 
 There are two types:
+--------------------------------------------------------
 1. Built-in packages (Java API)
 
 Examples:

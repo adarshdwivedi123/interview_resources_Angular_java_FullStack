@@ -1,9 +1,10 @@
 #)Throw
 1)Java throw keyword is used to throw an exception
 2)Throw is used within method.
-1)throw is used inside the method to explicitly throw an exception
-3)cannot throw a multople exception
-2)Can throw one exception at a time
+3)throw is used inside the method to explicitly throw an exception
+4)cannot throw a multople exception
+5)Can throw one exception at a time
+6)
 Example
 1)“If I want to manually raise an exception I use throw.
 2)“I use throw when I want to manually throw an exception, like validating age or input.”

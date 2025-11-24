@@ -1,3 +1,9 @@
+#)Define Exception Handling?
+An exception is an unwnated or unexpected  event which occur during  the execution  of a program
+at a run time.
+(run time that disrupt the normal flow of the program)
+
+
 Why exception handling is important?
 #)Exception handling is important because it helps a program handle runtime errors gracefully without crashing.
 #)It makes the program more stable, user-friendly, and easy to debug by separating normal logic from error-handling logic
@@ -55,6 +61,7 @@ Auroiclosable
 child ka exfetipnm then parent 
 ///Interview Question Likho vha se
 
+----------------------------------------------------------------------------------------
 
 #)Finally
 In Java, the finally block is a part of exception handling that always executes, whether an exception occurs or not.

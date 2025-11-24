@@ -6,10 +6,33 @@ Checked at compile time.
 #)Must be handled using try-catch or declared with throws.	
 IOException, SQLException, FileNotFoundException
 
+Exmaple
+import java.io.*;
+
+class Test {
+    public static void main(String[] args) throws IOException {
+        FileReader fr = new FileReader("xyz.txt"); // File may not exist
+    }
+}
+
+
+
 #)Unchecked Exceptions (Runtime):
 1)Unchecked exceptions occur at runtime.
 2)Exceptions that the compiler does NOT force you to handle.
-Compiler does not check them.	NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException
+Compiler does not check them.
+
+NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException
+
+
+class Test {
+    public static void main(String[] args) {
+        int x = 10 / 0; // ArithmeticException
+    }
+}
+
+
+--------------------------------------------------------------------------------------
 
 
 #)How do you throw an exception from a method in Java?
@@ -20,20 +43,26 @@ Example – Throwing a Checked Exception
 Checked exceptions (like IOException, SQLException, etc.) must be declared with throws.
 import java.io.IOException;
 
-public class ThrowExample {
-    static void readFile() throws IOException {
-        // throwing a checked exception
-        throw new IOException("File not found");
+class ThrowExample {
+
+    // this method may throw an exception → so we use throws
+    static void checkAge(int age) throws Exception {
+        if (age < 18) {
+            // manually throwing an exception
+            throw new Exception("You must be 18 or above");
+        }
+        System.out.println("You are allowed to vote");
     }
 
     public static void main(String[] args) {
         try {
-            readFile(); // calling the method
-        } catch (IOException e) {
+            checkAge(15); // calling the method
+        } catch (Exception e) {
             System.out.println("Exception caught: " + e.getMessage());
         }
     }
 }
+
 
 --------------------------------------------------------------------------------------
 #)What happens when you throw a Checked Exception from a method?
@@ -117,4 +146,5 @@ Compiler ensures that every checked exception is either caught or declared.
 
 ---------------------------------------------------------------------
 #)Options to eliminate compilation errors
-“To eliminate compilation errors for checked exceptions, either handle them with a try-catch block or declare them in the method signature using throws.”
+“To eliminate compilation errors for checked exceptions,
+ either handle them with a try-catch block or declare them in the method signature using throws.”

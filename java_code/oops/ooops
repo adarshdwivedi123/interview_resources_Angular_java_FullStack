@@ -2,3 +2,5 @@ what is oops?
 #)oops is programing languge is to bind together the data  and the fucniton that operate on this 
 so that no other part of code can acess this data expect that function.
 
+#)The goal of OOPS is to make code modular, reusable, flexible, and easier to maintain
+

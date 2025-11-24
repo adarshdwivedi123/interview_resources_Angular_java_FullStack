@@ -9,7 +9,11 @@ Exception is used when a programmer can handle the exception.
 
 Throwable
  ├── Exception   → can be handled
+ we can handle using try and catch.
+
  └── Error       → cannot be handled
+ we cannot handle using try and catch.
+ Usually caused by the JVM or system environment
 
 
  #)Exception

@@ -1,0 +1,9 @@
+Define try and catch
+try:
+#)try keyword is used to specify a block  where we should place exception code.
+#)try block must be followed by either catch or finally block.
+#)we cannot use try block alone.
+
+catch:
+catch block is used to handle the exception.`
+#)we cannot use catch block alone it must be used with try block.

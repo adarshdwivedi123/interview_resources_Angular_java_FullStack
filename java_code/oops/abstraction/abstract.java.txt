@@ -1,9 +1,15 @@
-#)Java Abstract class and methods
+Java abstract class and method
 
--> A class which is declared using abstract keyword known as abstract class.
--> An abstract class may or may not have abstract methods.
--> We cannot create object of abstract class.
--> It is used to achieve abstraction but it does not provide 100% abstraction
+1) A class which is declared using abstract keyword known as abstract class
+2) an abstract class may or may not  have abstract methods.
+3)we cannot create object of abstract class
+4) it is to achieve abstracton but is does not provide  100% abstraction becoz it can have concrete methods
+
+Note : it can have abstract and non abstract methods
+
+Syntax :abstract class class_name{}
+ake class hmne abstract bnya hai to usko hm kaise use kr paye ge using extend keyword hm acces kr  paye ge  
+extedn + ovveride
 
 because it can have concrete methods.
 • An abstract class must be declared with an abstract keyword.
@@ -24,6 +30,7 @@ abstract method.
 #)Abstract method can never be final and static.
 #)Any class that extends an abstract class must implement all the abstract
 methods.
+#)Method that are declared without any body  without an abstract class are called abstract method
 Syntax:
 abstract return_type function_name (); //No definition
 
@@ -175,24 +182,7 @@ public class Main {
 
 ------------------------------------------------------------------------------------------------------------------------
 
-Java abstract class and method
 
-1) A class which is declared using abstract keyword known as abstract class
-2) an abstract class may or may not  have abstract methods.
-3)we cannot create object of abstract class
-4) it is to achieve abstracton but is does not provide  100% abstraction becoz it can have concrete methods
-
-Note : it can have abstract and non abstract methods
-
-
-
-Syntax :abstract class class_name{}
-ake class hmne abstract bnya hai to usko hm kaise use kr paye ge using extend keyword hm acces kr  paye ge  
-extedn + ovveride
-
-
-Abstract Mehtod :
-Method that are declared without any body  without an abstract class are called abstract method
 
 
 

@@ -438,7 +438,8 @@ app.name=Car Application
 
 ---------------------------------------------
 #)"@Controller is used to return view pages, not JSON."
-"@Controller is a Spring MVC annotation used to define a controller class that handles HTTP requests and returns a view (JSP/HTML/Thymeleaf template).
+"@Controller is a Spring MVC annotation used to define 
+a controller class that handles HTTP requests and returns a view (JSP/HTML/Thymeleaf template).
 
 ----------------------------------------------------------------------------
 For Doing Rest API

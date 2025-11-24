@@ -1,6 +1,7 @@
 #)What is an Enhanced For Loop?
 
-The enhanced for loop (also called for-each loop) is a simpler way to iterate over arrays or collections.
+The enhanced for loop (also called for-each loop) 
+#)is a simpler way to iterate over arrays or collections.
 
 It eliminates the need for a counter/index.
 

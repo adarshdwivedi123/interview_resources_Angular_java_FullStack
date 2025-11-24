@@ -1,10 +1,3 @@
-package Theory;
-
-public class PlatformIndependent {
-    
-}
-
-
 WHy java is popuular?
 Java is popular for several reasons:
 

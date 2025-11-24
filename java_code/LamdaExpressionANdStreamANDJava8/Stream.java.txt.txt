@@ -60,6 +60,9 @@ What are Intermediate Operations in Streams?
 
 #)Intermediate operations transform the stream and return another Stream.
 They are lazy — they do NOT execute until a terminal operation is called.
+Java Streams are lazy because intermediate operations do not execute immediately.
+
+
 
 Examples of Terminal + Intermediate operations
 list.stream()            // source

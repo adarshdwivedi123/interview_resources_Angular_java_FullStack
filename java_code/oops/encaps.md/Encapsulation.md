@@ -1,6 +1,7 @@
 package oops;
 
 #)Encapsulation in java is  process of wrapping code and data together into a single unit.restricting direct access to the data.
+
 Exmple:
 A capsule which is mixed of several medicine.(jo cpasule hota hai voe ake hi medicnie ke andar bind hota hai) 
 

@@ -74,12 +74,6 @@ Multiple threads can use the same String without synchronization issues.
 
 
 
-
-20 . What are differences between String and StringBuffer?
-21 . What are differences between StringBuilder and StringBuffer?
-
-
-
 -------------------------------------------------------
 Utility class in Sting
 1)Length

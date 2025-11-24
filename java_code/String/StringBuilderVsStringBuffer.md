@@ -9,6 +9,7 @@ simultaneously
 
 
 #)StringBuilder class
+(BUider loge shi nhi rehte hai that why not thread safe)
 -> StringBuilder is identical to StringBuffer except for one important
 difference that it is not synchronized, which means it is not thread safe.
 -> StringBuilder also used for creating string object that is mutable and non synchronized.

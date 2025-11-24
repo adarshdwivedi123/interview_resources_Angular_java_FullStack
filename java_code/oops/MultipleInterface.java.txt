@@ -1,0 +1,2 @@
+Multiple inheritance is not supported through class in java but  it suprted through interface.
+Due to ambiguity java  doesn't support multiple inheritance
