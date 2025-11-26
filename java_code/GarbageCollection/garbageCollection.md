@@ -92,6 +92,17 @@ Large collections with unnecessary references prevent GC.
 
 ------------------------------------------------------------------------------
 
+GC identifies which objects are reachable and which are not reachable.
+
+Reachable → keep
+Not reachable → delete
+
+2️⃣ Deletion / Sweeping
+
+GC removes the unreachable objects from heap memory.
+
+---------------------------------------------------------------------------------------
+
 #)What	are	Initialization	Blocks?
 Initialization Blocks - Code which runs when an object is created or a class is loaded
 

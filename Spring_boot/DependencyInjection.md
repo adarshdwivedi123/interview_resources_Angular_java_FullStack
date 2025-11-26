@@ -11,6 +11,11 @@ Q)What is Dependency Injection in Spring Boot?
 
 ---------------------------------------------------------------------------------------
 
+#)How DI is implmnted  in spring boot?
+“In Spring Boot, DI is implemented using Spring’s IoC container. 
+Spring scans classes, creates beans using reflection, stores them in ApplicationContext, and automatically injects dependencies through constructors, fields, or setters using autowiring.”
+-
+
 👉 In simple words:
 Spring creates objects for you and connects them together.
 
@@ -82,6 +87,7 @@ public class OrderService {
 
     private final PaymentService paymentService;
 
+//construcote DI constircto pe lg rha hai
     @Autowired
     public OrderService(PaymentService paymentService) {
         this.paymentService = paymentService;

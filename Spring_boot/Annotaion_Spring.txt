@@ -47,7 +47,7 @@ So, it marks your main class as the configuration class
 
 ---------------------------------------------------------------------
 1)@ConponentScan:
-Spring scan a package and create object from that wht @COmposnrScan  deos
+Spring scan a package and create object from that what @ComponentScan  does
 or
 Spring needs to know which packages to scan and create objects from.
 That’s what @ComponentScan does.
@@ -402,8 +402,10 @@ It tells Spring to create an object of that class and manage it as a bean.”
 #)Spring automatically creates and manages it as a bean so it can be injected using @Autowired.”
 
 ------------------------------------------------------------------
+#)Differnce between controller and RestController
 #)Controller
 “@Controller is used to create web controllers that return HTML views using Spring MVC.”
+@RestController is used to build REST APIs, where the controller returns JSON or XML directly.
 
 #)✅ When NOT to use @Controller?
 ❌ When building REST APIs
@@ -497,6 +499,19 @@ public List<Car> filterCars(@RequestParam String color,
 @RequestParam(required = false)
 String brand
 -----------------------------------------------------------
+@RequestBody is used when we want to read JSON data from the request body and
+ convert it into a Java object.
+ 
+You want to receive JSON data from the client
+✔ Convert JSON → Java Object automatically
+----------------------------------------------------------------------------
+@ResponseBody is used when we want to return data (like JSON)
+ directly to the client instead of returning a view.
+
+@RestController automatically applies @ResponseBody to all methods.
+
+
+
 ✅ 9. @RequestBody – Extract JSON from the request body
 Map jsonBody to object
 @PostMapping("/cars")

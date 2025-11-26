@@ -93,6 +93,22 @@ Lambda expressions are anonymous functions (functions without a name) introduced
  2)Without modifier
  3)without return type
 
+
+ Benfit of lambda
+ 1)Less Code, More Readability
+ 2)Better for Streams API
+ 3)Helps in Functional Programming (Java 8+)
+Lambdas allow Java to behave like modern functional languages.
+Example:
+list.forEach(item -> System.out.println(item));
+
+✔ No loops
+✔ No iterator
+✔ Clean and functional
+ 3)Eliminates Boilerplate Code
+ 4)Easy to Use With Functional Interfaces   
+ Comparator<Integer> c = (a, b) -> a.compareTo(b);
+
 ✅ Syntax:
 (parameters) -> expression
 

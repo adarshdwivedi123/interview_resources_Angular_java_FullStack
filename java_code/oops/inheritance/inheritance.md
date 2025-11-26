@@ -15,12 +15,66 @@ Typed of inheritance
 why we need inheritance?
 1)Code Reusability
 We can reuse fields and methods of an existing class instead of rewriting them.
+parent class me jo  likha usse hm child class me extend kr ke use kr skt ahai.
+
+
+Parent Class (common code written once)
+class Animal {
+    void eat() {
+        System.out.println("Eating...");
+    }
+}
+
+Child Classes (reuse parent code)
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Barking...");
+    }
+}
+
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Meowing...");
+    }
+}
+
+Usage
+Dog d = new Dog();
+d.eat();   // reused from Animal
+d.bark();
+
+Cat c = new Cat();
+c.eat();   // reused from Animal
+c.meow();
 
 2)Code Maintainability
 If a common feature changes, update it once in the parent class — it reflects in all child classes.
 
 
+
+
 #)Disadvantage
+1. Tight Coupling
+
+Child class heavily depends on parent class.
+If the parent changes → child may break.
+
+❌ 2. Increases Complexity
+
+Deep inheritance chains become hard to understand and maintain.
+When parent changes frequently
+
+If the parent class changes a lot, all subclasses break.
+
+Example:
+
+Changing method signature
+
+Adding new abstract methods
+
+Modifying logic
+
+➡️ Avoid inheritance in unstable designs.
 
 -----------------------------------------------------------------------------
 package Coding.oops;

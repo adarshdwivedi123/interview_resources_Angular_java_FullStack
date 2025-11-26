@@ -7,3 +7,48 @@ try:
 catch:
 catch block is used to handle the exception.`
 #)we cannot use catch block alone it must be used with try block.
+----------------------------------------------------------------
+#)what happen exception occur in the finally block?
+
+If an exception occurs in the finally block, 
+it will override (replace) any exception thrown in the try or catch block.
+The finally exception becomes the actual exception thrown from the method.
+----------------------------------------------------------------
+
+
+public static void test() {
+    try {
+        System.out.println(10 / 0);  // ArithmeticException
+    } finally {
+        String s = null;
+        System.out.println(s.length());  // NullPointerException
+    }
+}
+👉 The NullPointerException from finally is thrown
+👉 The original ArithmeticException is lost
+-----------------------------------------------------------------------
+
+Why this is dangerous?
+
+Because:
+
+You lose the original error
+
+Debugging becomes difficult
+
+Application may behave unexpectedly
+-----------------------------------------------------------------------
+Best Practice
+
+NEVER throw an exception from finally block.
+If needed, wrap code inside finally with its own try/catch.
+
+Example:
+
+finally {
+    try {
+        closeConnection();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}

@@ -95,12 +95,17 @@ Project
 ----------------------------------
 
 
-
-Studey notes ache se bnavo
-Throw vs throws 
-Try anc catch copy se likho
+Qualifier and @Primary
+CLassPath
 
 
 
 
-
+/// sir se
+JPA vs Hibernate
+How to  make jar and profile use
+Explain the Singleton design pattern in Java. How would you make a Spring bean singleton?​
+What steps should you take to debug a slow or failing Spring Boot application?​
+Describe your approach to handling validation and error responses in a Spring Boot API using annotations like @Valid, @NotNull, etc.​
+TwO project krva doe
+crud +JWT +paginaiton

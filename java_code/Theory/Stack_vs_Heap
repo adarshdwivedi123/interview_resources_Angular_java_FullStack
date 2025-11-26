@@ -1,0 +1,2 @@
+Stack memory stores method calls, local variables, and references.
+Heap memory stores objects created using new.

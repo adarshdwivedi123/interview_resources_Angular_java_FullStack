@@ -1,3 +1,13 @@
+Problem bEfire Try wirh resources
+
+Problems:
+
+❌ Lots of boilerplate code
+❌ Easy to forget closing
+❌ If close() throws exception → original exception is lost
+❌ Resource leaks (file/db connection remains open)
+----------------------------------------------------------------
+
 #) Can you explain about try with resources?
 #) How does try with resources work?
 
@@ -8,6 +18,17 @@ try-with-resources is a feature introduced in Java 7 that makes
  #)Try-with-resources ensures that resources like files, DB connections, streams are automatically closed after use, without needing a finally block.
 #)It works only with classes that implement AutoCloseable.
 
+
+try (Resource r = new Resource()) {
+    // use resource
+} 
+// resource is automatically closed here
+try (FileInputStream fis = new FileInputStream("data.txt")) {
+    System.out.println(fis.read());
+} 
+// fis is automatically closed
+
+----------------------------------------------------------------
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -25,3 +46,11 @@ public class TryWithResourceExample {
         // FileReader auto-closes because it implements AutoCloseable
     }
 }
+----------------------------------------------------------------
+How try-with-resources solves the problem?
+✔ Automatically closes resources
+✔ Even if exception occurs
+✔ No need for finally block
+✔ Prevents resource leak
+✔ Cleaner code
+✔ Safer exception handling

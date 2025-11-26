@@ -1,3 +1,8 @@
+== compares memory/address.
+.equals() compares values.
+
+
+
 🔸 1. What is equals() in Java?
 The equals() method is defined in the java.lang.Object class,
  which is the parent of all Java classes. It is used to compare two objects for logical equality, 
@@ -7,12 +12,14 @@ The equals() method is defined in the java.lang.Object class,
 The equals() method is used to compare two objects in Java to check if they are “equal” in content (not memory).
 
 Example
-String s1 = new String("Adarsh");
-String s2 = new String("Adarsh");
+ String s1 = new String("Adarsh");
+        String s2 = new String("Adarsh");
 
-System.out.println(s1 == s2);      // false (different memory)
-System.out.println(s1.equals(s2)); // true (same content)
-
+        String s3 ="Adarsh";
+        String s4 ="Adarsh";
+        System.out.println(s1 == s2);      // false (different memory)
+        System.out.println(s3 == s4);      // (different memory)true
+        System.out.println(s1.equals(s2));
 
 
 #)30 . What are the important things to consider when implementing equals method?
