@@ -2,5 +2,23 @@ in java  garbage means unrefrencesda objects.
 #)What is Garbage Collection?
 
 In Java, Garbage Collection (GC) is the process of automatically freeing up memory 
-
 by removing objects that are no longer reachable (i.e., not referenced by any variable).
+
+
+#)wht is memory leak?
+A memory leak happens when objects are no longer needed but still referenced,
+ so the garbage collector cannot remove them.
+ 
+#) Use try-with-resources
+#)Remove listeners
+Avoid static large objects
+Use WeakReference/WeakHashMap
+Clean unused collections
+#)Nullify References
+Inside long-lived classes, set references to null after use.
+obj = null;
+#)Use memory profiling tools
+Avoid static large objects
+Use WeakReference/WeakHashMap
+Clean unused collections
+Use memory profiling tools

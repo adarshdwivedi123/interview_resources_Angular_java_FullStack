@@ -85,6 +85,9 @@ spring-boot-starter-web => web se related sare  configuraiton and dependecy rlhu
 #) These startes include all of the dependecies ,version control and configarion needed to amke certain features of a speing boot  applicaiton funcitonal.
 #)spring-boot-starter-web is a starter used to build web applications.
 It brings Spring MVC, embedded Tomcat, and JSON support out of the box.”
+or
+Instead of adding many separate dependencies, a starter gives you everything you need for a specific feature.
+#)You include one dependency, and Spring Boot pulls all required libraries automatically.
 -----------------------------------------------------------------------
 
 What does it include?

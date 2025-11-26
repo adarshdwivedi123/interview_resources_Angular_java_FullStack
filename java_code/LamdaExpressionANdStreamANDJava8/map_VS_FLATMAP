@@ -1,0 +1,11 @@
+Use map():
+
+If each element transforms into one value
+Example: string → length
+Example: user → username
+
+-------------------------------------------------------------------
+✨ Use flatMap():
+If each element transforms into multiple values
+If your result is a stream of lists / stream of arrays
+When you want to flatten nested lists

@@ -458,6 +458,10 @@ it returns json/text directly.
 --------------------------------------
 Request Handling Annotaions
 #)@PathVariable – Extract values from URL
+Use
+Fetching a specific resource
+/users/15
+/orders/100/items
 
 URL: /cars/10
 
@@ -465,6 +469,14 @@ URL: /cars/10
 public Car getCar(@PathVariable int id) { }
 -------------------------------------------------
 @RequestParam – Extract query params
+Used to capture query parameters from URL after ?.
+
+#)use
+Passing filters
+Sorting
+Pagination
+Optional values
+
 
 URL: /cars?color=red&year=2020
 
