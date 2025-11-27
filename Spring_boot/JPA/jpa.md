@@ -1,17 +1,20 @@
 #)what is jpa?
 JPA helps Java programs talk to the database using Java objects instead of SQL queries.
 
-You save a Java object → JPA saves it to the database.
-You fetch data → JPA gives it back as Java objects.
-java persistance apia
-jpa  map
+-------------------------------------------------------------------------------------------
+JPA does not provide any implementation
+✔ It only defines interfaces, annotations, and guidelines for mapping Java objects to database tables.
+
+#)Examples of JPA features:
+@Entity
+@Id
+@Column
+EntityManager
+JPQL (Java Persistence Query Language)
 
 ----------------------------------
 
 Main advantage of jpa is we need to define  Mapping rest jpa will hanle the query
-
-
-
 --------------------------------------------------
 map relationshipin jpa
 differnt type of relationship in jpa?

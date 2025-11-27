@@ -119,11 +119,10 @@ This tells Spring:
 
 -----------------------------------------------------------------------------------
 #)@Autowired 
-1)is used for dependency injection.
-2)is used to automatically inject one Spring bean into another.
-3)Spring to automatically create and inject the required bean instead of manually creating it
+1)@Autowired is a Spring annotation used for automatic dependency injection.
+2)Spring to automatically create and inject the required bean instead of manually creating it
 It removes the need for new and lets Spring manage object creation and lifecycle.
-4)This improves loose coupling, testability, and clean code.”
+3)This improves loose coupling, testability, and clean code.”
 ---------------------------------------------------------------------------------------
 Why do we use @Autowired? (Interview strong points)
 
@@ -137,6 +136,14 @@ Easier Testing
 You can easily mock dependencies.
 
 Cleaner, more maintainable code
+
+
+----------------------------------------------------
+#)How does @Autowired work?
+Spring has an IOC (Inversion of Control) Container that manages all beans.
+When it sees @Autowired, it performs dependency injection in 
+5 ways
+
 -------------------------------------------------------------------------------
 #)Types of Autowiring 
 

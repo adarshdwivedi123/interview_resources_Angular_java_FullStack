@@ -5,9 +5,6 @@
 ->Wjile element passes through it perform various operation like  sorting ,filtering  ,etc.
 -> usefull when deals  with bulk processing  (Can do parallel processing).
 
-
-
-
 #)Why stream api is required?
 ➡ Less code
 ➡ More readable

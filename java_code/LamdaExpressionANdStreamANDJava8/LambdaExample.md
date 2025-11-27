@@ -93,7 +93,7 @@ Lambda expressions are anonymous functions (functions without a name) introduced
  2)Without modifier
  3)without return type
 
-
+------------------------------------------------------------
  Benfit of lambda
  1)Less Code, More Readability
  2)Better for Streams API

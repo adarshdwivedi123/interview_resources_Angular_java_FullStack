@@ -12,7 +12,8 @@ Problems:
 #) How does try with resources work?
 
 try-with-resources is a feature introduced in Java 7 that makes
- it easy to automatically close resources (like files, connections, streams, etc.) after use — without needing a finally block.
+ it easy to automatically close resources (like files, connections, streams, etc.) 
+ after use — without needing a finally block.
 
 
  #)Try-with-resources ensures that resources like files, DB connections, streams are automatically closed after use, without needing a finally block.

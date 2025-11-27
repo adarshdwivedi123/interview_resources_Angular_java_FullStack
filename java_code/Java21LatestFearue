@@ -1,6 +1,7 @@
 Java 21 is a Long-Term Support (LTS) release (after Java 17), 
 and it focuses on improving performance, simplifying code,
 
+---------------------------------------------------------
 
 1. Virtual Threads (Most Important)
 

@@ -1,6 +1,6 @@
 #)Define Constructor
 
-#)A constructor is a special method  that haing same name as a class name
+#)A constructor is a special method  that having same name as a class name
 #)constructor is  used to initialize objects in java.
 constructor is called when object is created.
 #)constructor does not have any return type even void .
@@ -163,6 +163,8 @@ it give compile time error
 
 
 --------------**********Varible that can be used in construcotr---------------------
+**************************************************************************
+------------------------------------------------------------------------------------
 1) Public Constructor
 Use Case:
 
@@ -216,7 +218,6 @@ public class Utils {
 Use Case:
 
 When you want the class to be instantiated only by:
-
 Child classes (subclasses)
 
 Same package classes
@@ -237,7 +238,6 @@ class Dog extends Animal {
 Where used:
 
 When designing a base class framework
-
 When object creation is allowed only for inheriting classes
 
 🎯 Summary Table

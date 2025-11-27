@@ -5,6 +5,7 @@ In Java, Garbage Collection (GC) is the process of automatically freeing up memo
 by removing objects that are no longer reachable (i.e., not referenced by any variable).
 
 
+-----------------------------------------------------------------------
 #)wht is memory leak?
 A memory leak happens when objects are no longer needed but still referenced,
  so the garbage collector cannot remove them.

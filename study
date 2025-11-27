@@ -109,3 +109,27 @@ What steps should you take to debug a slow or failing Spring Boot application?â€
 Describe your approach to handling validation and error responses in a Spring Boot API using annotations like @Valid, @NotNull, etc.â€‹
 TwO project krva doe
 crud +JWT +paginaiton
+--------------------------------------------------------------------------
+singlton
+Facoptry pattern
+Builder pattern
+Mvc Pattern
+
+
+-------------------------------------------------
+If two objects are equal (equals() returns true),
+
+then their hashCode() must also be equal.
+hasCode niktla hai then using equal we compare both hashbocde are eaulas
+both object are equal
+
+----------------------------------------------------------------
+Intro
+
+"Hi, my name is Adarsh Dwivedi. I have 4+ years of experience as a Full-Stack Developer at IIIT Bangalore. I work mainly on the frontend with Angular, and I also have good experience in backend development using Java and Spring Boot.
+
+
+---------------------------------------------------------
+MCQ
+What is the difference between PermGen and Metaspace?
+JPA AND HIBERNATE ORM TOOL

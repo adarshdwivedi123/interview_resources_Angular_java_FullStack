@@ -22,7 +22,6 @@ e1=e2;//now the first object referred by e1 is available for garbage collection
 new Employee();  
 
 An object without any reference variable.
-
 That means you create the object using new keyword but do NOT store it in a variable.
 
 ⭐ Simple Example

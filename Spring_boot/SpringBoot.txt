@@ -1,6 +1,8 @@
 #)What is Spring Boot?
-Spring Boot is a framework built on top of Spring that simplifies configuration using auto-configuration,
- starter dependencies, and embedded servers.
+Spring Boot is a framework built on top of Spring that simplifies configuration 
+1)using auto-configuration,
+ 2)starter dependencies, 
+ 3)and embedded servers.
 
 
 -------------------------------------------------------------------
@@ -88,6 +90,13 @@ It brings Spring MVC, embedded Tomcat, and JSON support out of the box.”
 or
 Instead of adding many separate dependencies, a starter gives you everything you need for a specific feature.
 #)You include one dependency, and Spring Boot pulls all required libraries automatically.
+
+if we not user starter we need to do manually everything
+we need to add
+(a)Add manual dependency 
+b)Ensures compatible versions
+c)Provides auto-configuration
+(d) Reduces boilerplate configuration
 -----------------------------------------------------------------------
 
 What does it include?
