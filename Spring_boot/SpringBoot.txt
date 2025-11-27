@@ -303,17 +303,6 @@ https://www.youtube.com/watch?v=WxJi5yPuE3A
 
 
 ---------------------------------------
-#)Spring Boot actuator?
-#)it is  used to for monitoring and mangemnt endPoints  for  application.
-#)It helps you check the health, metrics, logs, environment,
- and other internals of your Spring Boot application.
-
-#)How to enable Actuator?
-Add dependency in pom.xml:
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-actuator</artifactId>
-</dependency>
 
 
 --------------------------------------------------------------------

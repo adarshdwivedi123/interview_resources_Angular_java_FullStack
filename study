@@ -133,3 +133,30 @@ Intro
 MCQ
 What is the difference between PermGen and Metaspace?
 JPA AND HIBERNATE ORM TOOL
+
+----------------------------------------
+comes in Mapping 
+What is the N+1 query problem and how can you prevent it?
+
+
+-------------------------------------------------
+1. What is @ControllerAdvice and how is it used for exception handling?
+2. What is @ExceptionHandler and how does it work?
+3. How do you implement global exception handling in Spring Boot?
+
+
+## **Design Patterns (Questions 76-80)**
+
+1. What is the Singleton pattern and how do you implement it?
+2. What is the Factory pattern and what are its benefits?
+3. What is the Builder pattern and when should you use it?
+4. What is the Observer pattern?
+5. What is the Repository pattern and how is it used in Spring Boot?
+
+## **SOLID and Design Principles (Questions 81-85)**
+
+1. What is the Single Responsibility Principle?
+2. What is the Open/Closed Principle?
+3. What is the Liskov Substitution Principle?
+4. What is the Dependency Inversion Principle?
+5. What is the DRY (Don't Repeat Yourself) principle?

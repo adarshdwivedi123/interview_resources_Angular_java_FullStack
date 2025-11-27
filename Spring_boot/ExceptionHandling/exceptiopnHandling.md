@@ -2,6 +2,8 @@
 #)@ControllerAdvice is used for global exception handling and returns a custom JSON error response.”
 #)I create one class for exception handling and inside it I use @ExceptionHandler to handle specific exceptions.
 So instead of writing try-catch everywhere, all exceptions go to one place and return clean JSON responses.”
+#)allows you to write common exception-handling logic in one place instead of repeating it in every controller.
+Helps maintain clean controller code
 
 
 -----------------------------------------------------------

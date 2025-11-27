@@ -48,9 +48,16 @@ Prototype → new instance each time it’s requested.”
 or transactions without modifying business logic.”
 
 -----------------------------------------------------------------------
-Spring 2.5
-Ammotiaon  all came in pictuer
+The Problem AOP Solves
+In traditional programming, you would have to write logging code inside nearly every single one of your core functions.
+ This makes the code messy, harder to read, and difficult to change later 
+ (if you decide to use a different logging system, you have to edit hundreds of files).
 
 
-
+-------------------------------------------------------
+#)What is the purpose of application.yml vs application.properties?
+#)Both application.yml and application.properties serve the same purpose in Spring Boot:
+➡ They are used to store application configuration
+(e.g., server port, database config, logging, profiles, actuator, etc.)
+The difference is only in format, not functionality.
 
