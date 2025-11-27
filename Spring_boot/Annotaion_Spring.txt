@@ -410,8 +410,13 @@ It tells Spring to create an object of that class and manage it as a bean.”
 
 ------------------------------------------------------------------
 #)Differnce between controller and RestController
+
 #)Controller
-“@Controller is used to create web controllers that return HTML views using Spring MVC.”
+@Controller is used to create web controllers that return HTML views using Spring MVC.”
+@Controller is used to return view pages, not JSON."
+@Controller is a Spring MVC annotation used to define 
+a controller class that handles HTTP requests and returns a view (JSP/HTML/Thymeleaf template).
+
 @RestController is used to build REST APIs, where the controller returns JSON or XML directly.
 
 #)✅ When NOT to use @Controller?
@@ -439,22 +444,49 @@ Because without it, Spring won’t know your class exist
 ----------------------------------------------------------------------------
 @Value:
 we red the value whatever written in app.properties
+use the @Value annotaion to acces the properties which  isdefined in the applicaiton properties files
 ex:
-app.name=Car Application
+app.proerteis
+app.name=My Spring App
 
+@Service
+public class AppService {
+
+    @Value("${app.name}")
+    private String appName;
+    public void printValues() {
+        System.out.println(appName);
+        System.out.println(appVersion);
+    }
+}
+
+
+Important: You CANNOT use @Value without a field/method/constructor parameter.
+
+You must inject the value into:
+
+✔ a field
 @Value("${app.name}")
+private String appName;
 
+✔ OR a constructor parameter
+public AppService(@Value("${app.name}") String appName) {
+    this.appName = appName;
+}
 
----------------------------------------------
-#)"@Controller is used to return view pages, not JSON."
-"@Controller is a Spring MVC annotation used to define 
-a controller class that handles HTTP requests and returns a view (JSP/HTML/Thymeleaf template).
+✔ OR a method parameter
+@Value("${app.name}")
+public void setAppName(String appName) {
+    this.appName = appName;
+}
 
-----------------------------------------------------------------------------
+---------------------------------------------------------
 For Doing Rest API
 1)Need to  use this library spring-boo-starter-web
 
 #)@RestController  
+RestController is combianiton of two annotaion 
+@Controller +@ResponseBody
 is Spring Boot’s way to build REST APIs.
 it returns json/text directly. 
 
@@ -678,35 +710,6 @@ public class UserService {
         // If address save fails → both roll back
     }
 }
-
-
-
-
-
-
---------------------------------------------------------------
-Extract
-
-1)Annotaion for configurations
-2)Annotaion for data supply or injection
-3)Annotaion for bean life cycle.
-4)Miscallaneous annotations.
-
-----------------------------------------------------------------------------------------
-#)Anotiaons for configuraitons
-Extrea 
-
-These annotations configure java classes as spring bean ,enable ioc  conateinr
-to manage bean life  cycle idea behind using these annotation is  to give instrucftion to framweowkr or container.
-
-1)@Component: mark java class as spring bean.
-2)@Service:  Similar to @Component, but  use for service classes(Business logic).
-3)@Respositoty: mark java class as a DAO(Data access object). 
-4)@Controller :mark java class a  web controller.
- 5)@RestController:@Controller + @ResponseBody
-6)@Configuraiton: define a  configuration class where  we can declare beans using   @Bean 
-7)@Bean: mark method that return an object  to managed by SB.
-
 
 
 

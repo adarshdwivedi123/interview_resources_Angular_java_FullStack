@@ -60,4 +60,20 @@ In traditional programming, you would have to write logging code inside nearly e
 ➡ They are used to store application configuration
 (e.g., server port, database config, logging, profiles, actuator, etc.)
 The difference is only in format, not functionality.
-
+---------------------------------------
+disable any annotaion spring boot
+-----------------------------------------------------------     
+To disable a specific Spring Boot auto-configuration class, you can use the @SpringBootApplication annotation's exclude attribute.
+For example, to disable DataSourceAutoConfiguration, you would do the following:    
+```java
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+public class MyApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(MyApplication.class, args);
+    }
+}
+```
+This tells Spring Boot to skip the specified auto-configuration class during startup.
+-----------------------------------------------------------     
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+-----------------------------------------------------------

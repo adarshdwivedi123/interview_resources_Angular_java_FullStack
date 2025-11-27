@@ -2,7 +2,7 @@
 Spring Boot is a framework built on top of Spring that simplifies configuration 
 1)using auto-configuration,
  2)starter dependencies, 
- 3)and embedded servers.
+ 3)and embedded servers.()
 
 
 -------------------------------------------------------------------
