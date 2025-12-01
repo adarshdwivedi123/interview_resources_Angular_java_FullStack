@@ -1,8 +1,9 @@
 #)Spring Boot actuator?
-#)it is  used to for monitoring and mangemnt endPoints  for  application.
+#)it is  used to for monitoring and mange your application  
 #)It helps you check the health, metrics, logs, environment,
  and other internals of your Spring Boot application.
-#)that provides production-ready monitoring and management features for your application.
+#)we can enable this feature by addoing the dependecy spring-boot-starter-actuator
+in pom.xml.
 
 
 

@@ -1,8 +1,47 @@
+
+what is annotaion?
+#)annotaion is jave is the metadata start with(@)give that provide additional information  to the compiler.
+#)Annotations help remove boilerplate code and make configuration easier, cleaner, and more readable.
+#)We use annotations to simplify configuration.
+Instead of writing long XML or configuration classes, annotations let us declaratively define:
+
+-----------------------------------------------------------------------------------------
+
+#)If interviewer asks: Give examples of annotations you used.
+Perfect examples:
+
+@RestController – marks class as REST API controller
+@Service – marks a service/business layer
+@Autowired – dependency injection
+@GetMapping/@PostMapping – map HTTP requests
+@Entity – mark a class as a JPA entity
+@NotBlank/@Email/@Valid – validation annotations
+@RestControllerAdvice – global exception handling
+-------------------------------------------------------------------------------------
+
+🟦 ⭐ If interviewer asks: How do annotations work internally?
+
+Say this:
+
+“Annotations are processed by reflection.
+Spring reads annotations at runtime, registers beans, maps endpoints, validates input, and applies cross-cutting features.
+This replaces manual configuration.”
+
+
+---------------------------------------------------------------------
+the main applicaiton class is also bean  as its annotated with @Configuraiton which is a @Compoent
+
+-----------------------------------------------------
 Serilization: Convert java object to json.
 deserilization : Convert json  to java object.
 
 Note :for custom class we can use @Componenet and get its bean but for  predefined class we cannot use
 @Compoent (class me  lga skte hai (@Target(ELment.Type)))
+
+
+
+Note;
+the main application class is also bean as its annotate with @Controller which is a @Compoent
 
 -------------------------------------------------------------------------------
 #)How spring boot starts?
@@ -63,9 +102,12 @@ it is typically placed on the main class of the application.
 @EnableAutoConfiguration:
 Tells Spring Boot to automatically configure the application based on 
 dependencies (e.g., if you add Spring Web, it auto-configures Tomcat).
+ex: when we define  the spring-boot-starte-web dependencies in our classpath Spring boot auto-configuaration
+Tomcat and spring MVC.
 
 
--------------------------------------------------------------
+
+-------------------------------------------------------------------------
 When you create a Spring Boot app:
 
 com.myapp
@@ -490,9 +532,38 @@ RestController is combianiton of two annotaion
 is Spring Boot’s way to build REST APIs.
 it returns json/text directly. 
 
-----------------------------------------
+--------------------------------------------------------------------
 #)@RequestMapping ("/api") 
-1)base path for all endpointd
+What is @RequestMapping in Spring Boot?
+@RequestMapping is an annotation used to map HTTP requests (like GET, POST, PUT, DELETE)
+ to specific methods or classes in a Spring MVC controller.
+It tells Spring:
+👉 “When a request comes to this URL, call this method.”
+-------------------------------------------------------------
+Mapping Specific HTTP Methods
+Usually, we don’t use @RequestMapping alone.
+Instead, we use its shortcuts:
+
+✔ @GetMapping
+✔ @PostMapping
+✔ @PutMapping
+✔ @DeleteMapping
+✔ @PatchMapping
+-----------------------------------------------
+@GetMapping("/users")
+public String getUsers() {
+    return "All users";
+}
+This is exactly same as:
+
+java
+Copy code
+@RequestMapping(value = "/users", method = RequestMethod.GET)
+public String getUsers() {
+    return "All users";
+}
+
+
 
 --------------------------------------
 Request Handling Annotaions

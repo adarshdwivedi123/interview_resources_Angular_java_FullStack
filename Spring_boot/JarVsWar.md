@@ -42,3 +42,18 @@ Starts server on port 8080
 Registers controllers/endpoints
 App starts serving HTTP requests
 ✅ That’s why no external server needed.
+---------------------------------------------Step Deply JAR AND WAR FILE---
+<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+    by using th baove plugin you will get a jar executing  the package phase .this jar will
+    contain all the necessary libraries and dependcies required.it will  also contian
+    an embedded server so you basically  run the applciaton like ordianry JAR FIle.
+    Note:
+    The packaging elemetn in POM.xml must be set to jar  to bild a jar file as below.
