@@ -53,7 +53,7 @@ applies auto-configuration, and finally starts the embedded server like Tomcat.
 ----------------------------------------------------------------
 #)what is ApplicationConext?
 It creates and manages all beans and handles dependency injection.” 
-it is simila  to  ioc container
+it is similar  to  ioc container
 -------------------------------------------------------------------------
 
 

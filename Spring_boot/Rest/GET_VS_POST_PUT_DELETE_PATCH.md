@@ -114,3 +114,6 @@ Final state changes each time
 ❌ Not idempotent.
 
 So PATCH depends on implementation.
+-----------------------------------------------------
+#)CascadeType.ALL -> agar parent me change kr reh  hait to child me chnages oh rha hai
+then we use CasCaseType.ALL
