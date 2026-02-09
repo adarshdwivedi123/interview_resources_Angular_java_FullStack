@@ -303,9 +303,16 @@ https://www.youtube.com/watch?v=WxJi5yPuE3A
 
 
 ---------------------------------------
+“H2 is an in-memory database mainly used for development and testing because it is fast
+, embedded, and requires no setup.”
 
+--------------------------------------------------------------------\
+Modes of H2
+1️⃣ In-Memory (Most common)
 
---------------------------------------------------------------------
+App band → data delete
+
+Testing ke liye best
 
 
 

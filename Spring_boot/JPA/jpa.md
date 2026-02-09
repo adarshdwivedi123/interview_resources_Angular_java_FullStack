@@ -29,3 +29,47 @@ hiberna
 
 Configure entity managerFactory  Transactional  management?
 making service Transactional?
+
+
+------------------------------------------------------------
+WHEN TO USE @JoinColumn ?
+
+Use @JoinColumn when you want to specify:
+
+The name of the foreign key column
+
+Which table will have the FK
+
+You want to make this side the owner of the relationship
+
+Example (Task is owner):
+
+@ManyToOne
+@JoinColumn(name = "user_id")
+private User user;
+
+-----------------------------------------------
+WHEN TO USE mappedBy ?
+
+Use mappedBy on the side that is not the owner.
+
+Example:
+
+@OneToMany(mappedBy = "user")
+private List<Task> tasks;
+
+
+This says:
+“Check Task.user for FK.”
+
+---------------------------------------------
+WHEN TO USE mappedBy ?
+
+Use mappedBy on the side that is not the owner.
+
+Example:
+
+@OneToMany(mappedBy = "user")
+private List<Task> tasks;
+
+-----------------------------------------------
