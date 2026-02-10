@@ -13,6 +13,8 @@ Application health
 Metrics
 Environment
 Logs
+
+
 Thread dumps
 Beans
 Mappings

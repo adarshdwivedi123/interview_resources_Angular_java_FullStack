@@ -21,7 +21,8 @@ But you don’t write this, Spring writes it internally.
 -----------------------------Spring bean Life Cycle-----------
 
 Bean Life Cycle means – how a bean is created, initialized, used, and destroyed by Spring.
-We can use @PostConstruct for initialization and @PreDestroy for destruction.”
+We can use @PostConstru
+ct for initialization and @PreDestroy for destruction.”
 
 Spring manages the complete life of a bean:
 
