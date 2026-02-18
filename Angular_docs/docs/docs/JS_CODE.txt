@@ -1,0 +1,210 @@
+Angular 14
+https://sumoctavian.medium.com/routing-in-angular-14-the-essentials-180136b4f67d
+
+
+https://www.scaler.com/topics/javascript/difference-between-var-let-and-const/
+
+https://codewithmrnerd.medium.com/angular-14-standalone-components-a49dace3a579
+
+While let and const are block-scoped, var declarations are either globally scoped or function-scoped.
+The JavaScript array join() method combines all the elements of an array into a string and return a new string. We can use any type of separators to separate given array elements.
+
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+
+// const p=new Promise((resolve,reject) =>{
+//     setTimeout(()=>{
+//         resolve("Promise Resolved Value");
+//     },10000)
+// })
+
+// async function handlePromise(){
+//     console.log("hello afte this async and await for 10 second");
+//     const val=await p;
+//       console.log(val);
+//     console.log("Namaste JAvascript");
+    
+//     console.log("hello afte this async and await for 10 second");
+//     const val2=await p;
+//       console.log(val2);
+//     console.log("Namaste JAvascript2");
+// //if we dd one awuit keyword then what happen
+// }
+// handlePromise();
+
+
+const p=new Promise((resolve,reject) =>{
+    setTimeout(()=>{
+        resolve("Promise Resolved Value");
+    },10000)
+})
+
+const p2=new Promise((resolve,reject) =>{
+    setTimeout(()=>{
+        resolve("Promise Resolved Value");
+    },10000)
+})
+
+async function handlePromise(){
+    console.log("hello afte this async and await for 10 second");
+    const val=await p;
+      console.log(val);
+    console.log("Namaste JAvascript");
+    
+    console.log("hello afte this async and await for 10 second");
+    const val2=await p2;
+      console.log(val2);
+    console.log("Namaste JAvascript2");
+//if we dd one awuit keyword then what happen
+}
+handlePromise();
+
+
+Till now, we learned about events and callback functions for handling the data. But, its scope is limited. 
+It is because events were not able to manage and operate asynchronous operations. Thus, Promise is the simplest and better approach for handling asynchronous operations efficiently.
+
+
+Advantages of using Promises
+A better option to deal with asynchronous operations.
+Provides easy error handling and better code readability.
+
+
+
+/////////////////////////
+
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+
+// const p=new Promise((resolve,reject) =>{
+//     setTimeout(()=>{
+//         resolve("Promise Resolved Value");
+//     },10000)
+// })
+
+// async function handlePromise(){
+//     console.log("hello afte this async and await for 10 second");
+//     const val=await p;
+//       console.log(val);
+//     console.log("Namaste JAvascript");
+    
+//     console.log("hello afte this async and await for 10 second");
+//     const val2=await p;
+//       console.log(val2);
+//     console.log("Namaste JAvascript2");
+// //if we dd one awuit keyword then what happen
+// }
+// handlePromise();
+
+
+const p=new Promise((resolve,reject) =>{
+    setTimeout(()=>{
+        resolve("Promise Resolved Value");
+    },10000)
+})
+
+const p2=new Promise((resolve,reject) =>{
+    setTimeout(()=>{
+        resolve("Promise Resolved Value");
+    },5000)
+})
+
+//async and await for  all the  function to completed 
+async function handlePromise(){
+    console.log("hello afte this async and await for 10 second");
+    const val=await p;
+      console.log(val);
+    console.log("Namaste JAvascript");
+    
+    console.log("hello afte this async and await for 10 second");
+    const val2=await p2;
+      console.log(val2);
+    console.log("Namaste JAvascript2");
+//if we dd one awuit keyword then what happen
+}
+handlePromise();
+
+
+
+
+differnce betweemm var ,let and const
+#)Scope
+Scope stands for where our variable will be available to use inside our code and where it will not.
+
+#)Block-scope
+Block means a pair of curly brackets, a block can be anything that contains an opening and closing curly bracket.
+
+Variable having Block-scope will only be available to use inside the block it declared, will not be accessible outside the block, and will give Reference Error if we try to access.
+
+
+#)Function scope
+
+Variable having Function-scope means variable will only be available to use inside the function it declared, will not be accessible outside of function, and will give Reference Error if we try to access.
+
+////////
+
+#)Block-scope
+
+Block means a pair of curly brackets, a block can be anything that contains an opening and closing curly bracket.
+
+Variable having Block-scope will only be available to use inside the block it declared, will not be accessible outside the block, and will give Reference Error if we try to access.
+
+
+
+DifFERENCE b/t let const and var
+var is function or global scope
+ can be redclare a varibale
+Can be accessed without initialization becoz of hositing as its default value is “undefined”.
+
+let and const are block scope
+ we  cannot be redclare a varibal
+
+Cannot be accessed without initialization, leading to ‘referenceError’
+
+in case of const it is constant so we cannot change
+
+
+
+///////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+JavaScript as a client-side programming language. But as people were using JavaScript, developers also realized that JavaScript could be used as a server-side programming language thast why type scipt came in picture
+
+
+
+Features of TypeScript:
+
+TypeScript Code is converted into Plain JavaScript Code: TypeScript code can’t be natively interpreted by browsers. So if the code was written in TypeScript, it gets compiled and converted into JavaScript. This process is known as Trans-piled. With the help of JavaScript code, browsers are able to read the code and display it.
+JavaScript is TypeScript: Whatever code is written in JavaScript can be converted to TypeScript by changing the extension from .js to .ts.
+Use TypeScript anywhere: TypeScript can be compiled to run on any browser, device, or operating system. TypeScript is not specific to any single environment.
+TypeScript supports JS libraries: With TypeScript, developers can use already existing JavaScript code, incorporate popular JavaScript libraries, or call the TS Code from native JavaScript code.
+
+================
+#)differnce between typescript and js
+1)typescript is similar to js  but in case of ts there  is some addional feature  in typescroipt
+
+TypeScript supports static type languar . This means that type correctness can be checked at compile time. This feature is not available in JavaScript. means at compile it give error
+
+2)TypeScript always highlights errors at compilation time during the time of development, whereas JavaScript points out errors at the runtime.
+
+3)It is just a scripting language.
+
+It supports object-oriented programming concept like classes, interfaces, inheritance, generics, 
+
+
+4)It is directly run on the browser.
+It is not directly run on the browser
+
+
+19
+
+Trying to explain with a really simple example:-
+
+Observable is like a youtube channel of someone else. (( It uploads new videos(data) from time to time, so it is a data source for you))
+
+Your youtube account is an Observer
+
+Your youtube account (Observer) can only get notifications about whether someone else's youtube channel (Observable) has uploaded a new video (has new data) or made a livestream (new event) only if you have subscribed to that channel
+
+(Observer subscribes Observable to listen for new data/any event)
+
+

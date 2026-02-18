@@ -1,0 +1,288 @@
+https://www.interviewbit.com/react-interview-questions
+https://www.javatpoint.com/react-interview-questions
+
+React is a front-end and open-source JavaScript library which is useful in developing user interfaces specifically for applications with a single page.
+
+
+It will make use of the virtual DOM rather than real DOM (Data Object Model) as RealDOM manipulations are expensive.
+It follows unidirectional data binding or data flow.
+It uses reusable or composable UI components for developing the view
+
+2. What are the advantages of using React?
+
+Use of Virtual DOM to improve efficiency: React uses virtual DOM to render the view. As the name suggests, virtual DOM is a virtual representation of the real DOM. Each time the data changes in a react app, a new virtual DOM gets created. Creating a virtual DOM is much faster than rendering the UI inside the browser.
+
+Reusable components: React uses component-based architecture for developing applications. Components are independent and reusable bits of code.
+
+
+. What are the limitations of React?
+The few limitations of React are as given below:
+
+React is not a full-blown framework as it is only a library.
+
+. What is useState() in React?
+
+
+5. What are keys in React?
+A key is a special string attribute that needs to be included when using lists of elements.
+Keys help react identify which elements were added, changed or removed.
+Keys should be given to array elements for providing a unique identity for each element.
+Without keys, React does not understand the order or uniqueness of each element.
+With keys, React has an idea of which particular element was deleted, edited, and added
+
+ What is JSX?
+JSX stands for JavaScript XML. It allows us to write HTML inside JavaScript and place them in the DOM without using functions like appendChild( ) or createElement( ).
+
+
+Note- We can create react applications without using JSX as well.
+const text = React.createElement('p', {}, 'This is a text');
+const container = React.createElement('div','{}',text );
+ReactDOM.render(container,rootElement);
+
+Using JSX
+const container = (
+<div>
+  <p>This is a text</p>
+</div>
+);
+ReactDOM.render(container,rootElement);
+
+
+What are the differences between functional and class components?
+Declaration
+Functional components are nothing but JavaScript functions and therefore can be declared using an arrow function or the function keyword:
+ function card(props){
+   return(
+      <div className="main-container">
+        <h2>Title of the card</h2>
+      </div>
+    )
+   }
+   const card = (props) =>{
+    return(
+      <div className="main-container">
+        <h2>Title of the card</h2>
+      </div>
+    )
+   }
+
+
+//////////////////
+
+
+class Card extends React.Component{
+  constructor(props){
+     super(props);
+   }
+    render(){
+      return(
+        <div className="main-container">
+          <h2>Title of the card</h2>
+        </div>
+      )
+    }
+   }
+
+Why we Need The Virtual Dom?
+For example, consider a list that is being rendered inside the DOM. If one of the items in the list changes, the entire list gets rendered again instead of just rendering the item that was changed/updated. This is called inefficient updating.
+To address the problem of inefficient updating, the react team introduced the concept of virtual DOM.
+
+
+Working  of the virtual Dom
+
+=>Whenever any data changes in the React App, the entire UI is re-rendered in Virtual DOM representation.
+
+=> Now, the difference between the previous DOM representation and the new DOM is calculated.
+
+=>Once the calculations are completed, the real DOM updated with only those things which are changed.
+
+
+RENDER
+=>It is mandatory for each React component to have a render() function. Render function is used to return the HTML which you want to display in a component.
+=>If you need to rendered more than one HTML element, you need to grouped together inside single enclosing tag (parent tag) such as <div>, <form>, <group> etc. This function returns the same result each time it is invoked.
+
+Points to Note:
+
+Each render() function contains a return statement.
+The return statement can have only one parent HTML tag.
+
+
+
+What is Props?
+Props stand for "Properties" in React
+=> It gives a way to pass data from the parent to the child components throughout the application.
+=>It is similar to function arguments and passed to the component in the same way as arguments passed in a function.
+
+
+state in React
+What are Higher Order Components(HOC)?
+
+=>In React, Higher Order Component is an advanced technique for reusing component logic.
+=>It is a function that takes a component and returns a new component.
+	In other words,
+=>it is a function which accepts another function as an argument.
+
+What can you do with HOC?
+You can do many tasks with HOC, some of them are given below:
+
+Code Reusability
+Props manipulation
+State manipulation
+
+
+ Why is it necessary to start component names with a capital letter?
+In React, it is necessary to start component names with a capital letter. If we start the component name with lower case, it will throw an error as an unrecognized tag. It is because, in JSX, lower case tag names are considered as HTML tags.
+
+
+What are fragments?
+In React, Fragments are used for components to return multiple elements.
+It allows you to group a list of multiple children without adding an extra node to the DOM.
+
+render() {  
+  return (  
+    <React.Fragment>  
+      <ChildA />  
+      <ChildB />  
+      <ChildC />  
+    </React.Fragment>  
+  )  
+}  
+
+Why are fragments better than container divs?
+Fragments are faster and consume less memory because it did not create an extra DOM node.
+
+Is it possible for a web browser to read JSX directly?
+Web browsers can't read JSX directly. This is because the web browsers are built to read the regular JS objects only, and JSX is not a regular JavaScript object.
+
+If you want a web browser to read a JSX file, you must transform the files into a regular JavaScript object. For this purpose, Babel is used.
+
+
+What is React Router?
+React Router is a standard routing library system built on top of the React.
+It is used to create Routing in the React application using React Router Package. 
+It helps you to define multiple routes in the app.
+
+<switch>  
+      <h1>React Router Example</h1>  
+      <Route path="/" component={Home} />  
+      <Route path="/about" component={About} />  
+      <Route path="/contact" component={Contact} />  
+</switch>  
+
+
+How many ways can we style the React Component?
+Inline Styling
+CSS Stylesheet
+CSS Module
+Styled Components
+
+
+
+Why switch keyword used in React Router v4?
+The 'switch' keyword is used to display only a single Route to rendered amongst the several defined Routes. The <Switch> component is used to render components only when the path will be matched. Otherwise, it returns to the not found component.
+
+
+
+LIFE Cycle Of React Hooks?
+=>Each lifecycle of a component is having 3 phases which include
+mount, 
+unmount, 
+and update.
+
+
+. What are Custom Hooks?
+A Custom Hook is a function in Javascript whose name begins with ‘use’ and which calls other hooks
+
+React uses a virtual Dom to efficiently update the ui without re-render the entire page which helps improve performance and make the application more resposive.
+
+
+
+what are the react compoent?
+
+
+what is npm ? what is the role of node_modules folders?
+Npm is used to mangae the dependencies for your React Project including the react
+libray itself.
+
+for ex :jo babel libray hai voe jsx ko convert krti hai j.s me so that browser can understand.
+
+public folder in react ?
+isse andar sari static file hoti hai.static file jo browser me direct dosnlaod oh jaye
+public filder contaims static assets that are served direclty to the users browser such as 
+images  fonts  and index.html file.
+
+
+src
+in react src folder is used to store all the source code of the application
+
+index.html 
+=>Ina react project is the entry point the application.
+=>we can callled as  single page application.
+
+what is the role App.js  file in react?
+app.js first defualt compoentne  or root component and it is resposible  
+for rendering all  of the other componets.
+
+what is the role of function and return inside app.js?
+
+
+can we have a function without return inside App.js?
+yes
+here we a re not returing any thing
+
+import './App.css'
+
+function App(){
+console.log("Clicked");
+}
+
+
+
+ReactDom=>is js library which convert your component (which are wriiten in react) to the actual browser
+index.js=> is the js file which render all the components and replace the root element 
+of the index.html file with the newly rendered root element.
+
+
+JSX
+(Javascript XML) is  asyntax extension used by React to write HTML lIke code
+
+index.html   =>index.js =>App.js
+
+
+Advantage of jsx
+improve code redabilty and writalbilty
+Error Checking in advance
+Support J.s Expression
+Code Reusabilty
+
+
+
+what is babel?
+Bebel in react is used to transpile jsx syntax into regular js which browser can understand
+
+what is Transpiler?
+jsx convert into js this is called transpiler
+
+
+Yes it is  possibel to use jsx without React by creating your own trnaspiler like babel
+what is props?
+props  is refer to prperties are the way to pass the data from a parent componenet to a 
+child component.
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+

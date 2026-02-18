@@ -1,0 +1,623 @@
+js is a programming langauge that is used for converting static web pages to interactive and dyanic web Page
+
+Every Browser we have js engine that why browser understand the js code
+chrome we have v8 engine
+Edge we have chakra
+
+
+
+client side and server side
+
+
+
+#scope in js 
+scope determines where varible are defiend and where they can  be accesed
+gloabl Scope  =>variable declare at the top of the scope
+Local Scope or block scope  =>  varaible define iside the block (blaock means pair of curly brackets)
+Fucniton Scope   => variable are defined inside the fuction.
+
+//WHat is the type of a variable when avaribel is declraed without var let or const keyword
+//var is  the implict type of variable when a variable is declared  without var,let or const keywords
+if(true)
+    {
+        variable =10;
+    }
+    console.log(varaible);
+ ///////////////////////////   
+
+//// Hoisting in js?
+myFunction();
+ function myFunction(){
+     console.log('Hello'); 
+}
+////varibel hoisting 
+x=10;
+console.log(x);
+var x;
+
+
+//#Json
+Json Object notation 
+Json  consit of key and value
+{
+    "name":"john Doe",
+    "age":"30",
+    "isStudent":false,
+    "address":{
+            "street":"123 Mian"
+    }
+
+}
+
+//variable :are container which is used to store data 
+
+
+//#)Data type in js?
+=>  A data type determines the type of variable
+Two type of data type are in js
+
+=> Primitive type  =>  only Hold only single value.
+=> Number,strings,Boolean ,Undefiend);
+=> Primitive Data type are immutubale menaing their value once assigned cannot be changed.
+=> Non Primitive data type:=>  
+    Object,Array, Function, Date;
+
+
+#)Non Primitive Data type can hold multiple value
+Non primittive data type can hold multiple value
+ They are mutable and then values can be changed
+
+#)Differnce between null and undefine in js?
+
+
+typeof
+type of operator is used to determine  the type of each variable.
+Nan in js?
+
+#type coercion in js?
+automatic  conversion of values from one data type  to another  
+let string ="42";
+let number =42;
+console.log(string == number); //true
+
+Here try with crete different object and then check
+let string ="42";
+let number =42;
+console.log(string + number);
+
+
+
+
+
+//== and ===
+console.log(false == 0);  //false
+console.log(true == 1); //true
+
+
+
+//spread and rest operator
+spread operator is used to expand or spread element 
+const array =[1,2,3];
+console.log(...array);
+// 1,2,3
+
+#)Arrays in js 
+Get  Indexof
+Add
+Remove
+Modify
+others
+
+
+Push=> add in last elemnt of the array.
+unshift =>  add in starting point of the array.
+pop =>  delete from the last index of array.
+shift=>remove the first element from the array.
+
+
+////////////////////////////////
+IndexOf  method gets the index of a specified  element in the array.
+
+const array =[1,2,3,4,5];
+let a =array.indexOf(3);
+console.log(a);
+
+//IndexOf()  method gets  the index of a specified  element in the array
+
+
+find()   method get the first element that satisfies a Condition
+
+
+slice()
+slice  method get a subset of the array from start index to end index (end not included)
+
+splice() method is used to add ,remove  or replce elemets in an array.
+array.splice(startIndex,deleteCount , ...itemsToAdd);
+
+let letters=['a','b','c'];
+//here we are adding one element in a specifc  position (Inreviwer ask)
+letters.splice(1,0,'x','y');
+console.log(letters);
+
+//Remove i element starting from index i
+letters.splice(1,1);
+console.log(letters);
+
+//if we have start  index then we replace from only this  method
+letters.splice(2,1,'q');
+console.log(letters); 
+//ouput['a','y','q','c']
+
+//map  vs forEach
+map method is used when you want to modify each element of array and create a new array 
+with modify values
+
+foreach methods is used to when to perform  some operation  on each element of the array withot creating a new array
+
+
+let array=['c','e','a','t'];
+array.sort();
+console.log(array);
+//it wwll not work with number directly
+
+//destructing
+extract the elements  from and array and assign them to individual varibles in a single element.
+
+
+//array like objects in js?   IMP
+Array like objects are objects that have indexed elements  and a length  property ,similar to 
+ arrays but they may not have all the methods or arrays like push(),pop() & 0thers
+
+ const str="Hello";
+ console.log(str); //hello
+ console.log(str.length);//5
+ console.log(str[0]); //output H
+ //////
+
+
+ arguments => it return  everything in array
+
+ sum(1,2,3)
+function sum(){
+    console.log(arguments);
+    console.log(arguments[0]); //first index but don't ahev pushg andpop 
+}
+
+
+
+#Method to   Convert an  array like object into an array
+Array.from()
+Spread(...)
+Array.prototype.slice.call()
+
+
+var arrayLike={0:'a',1:'b',2:'c',length:3};
+var array1=Array.from(arrayLike);
+console.log(array1);
+
+
+
+types of loop 
+a peice of code repeatedly untill a certain Condition that.
+
+
+do while loop atleast excute atleast one time
+
+
+break  => break staemtn we used to terminate the loop
+for(i=1 ;i<5;i++)
+   
+   {
+       if(i==3)
+           break;
+   }
+console.log(i);
+//output 1 2
+
+
+/////////////////
+//continue statmenet
+//the continue stmnt is uded to skip the current iteration of the loop and moves on to the next iteration
+for(i=1 ;i<5;i++)
+   
+   {
+       if(i==3)
+           continue;
+   }
+console.log(i);
+//1 2 4 5
+
+
+#for of and for in loop   v imp
+for of loop used to loop through the values of an object like arrays ,strings
+ it allows to acces each value directly without having to use and index
+
+ //for in loop
+ for in loop used  to loop prpertioes of an object
+ it allows us to itreate over the keys of an object and acces the values  keys as the index
+
+
+ #)for ..of  loop vs forEach method
+
+ when to use for of loop and when to use  foreach method
+
+ inside the for loop we use break stmnt and all
+ but inside foreach we cannot use break stmnt and all iilegal break stment erro give
+ it is design in way to interupt
+
+
+
+ ////FUntions
+ funciton is a peice of code that accompilsih a certian task
+
+ //name fucniton    normal function
+ fucntion name(a,b){
+    return a+b;
+ };
+ console.log(add(5,3));
+
+
+ //// anomous fucniton
+ console.log(function(a,b){
+    return a* b;
+ }(4,5));
+
+
+
+ //Funciton  expression is a way to define a fucniton  by assigning it to variable
+ fucntion expression  are like we are storing in varible
+
+ const add =fucntion(a,b){
+    return a+b;
+ }
+ console.log(add(5,3));
+
+//Named Function expression
+ const add =function sum(a,b){
+    return a+b;
+ }
+ console.log(add(5,3));
+
+ //arrow function also known as fat arrow fucntion it is  asimplest and shorter way for defining 
+ //function in js
+
+ Higher Order Fucniton?
+ Higher order function  return one or more funciton as arguments return a fucntion  as a result.
+
+ function createAdder(number){
+    return function(value){
+        return  value+number;
+    };
+}
+const addFive =createAdder(5);
+console.log(addFive(2));
+
+
+#Different vs arguemnts and parameter
+
+//paramete are defiend in the function declaration
+ fucntion add(a,b)
+
+
+ //arguments are the actual value passed to a funciton when it is invoked or call
+
+
+ //default paramter
+ fucntion greet(name = "Happy" ){
+    console.log("Hello" +name);
+ }
+greet();
+
+
+///event handling in js?
+First Class Function in js?
+
+Fucniton is treated like another variable are called first class fucntion?
+
+
+funciton is treated like variable
+#1
+const myFunction =fucntion(){
+    console.log("Interview Happy");
+}
+myFunction();  //interview Happy
+
+#2
+//PAss an arguemnts
+function double(number){
+    rerurn number*2;
+}
+//passing fucntion as arguments like a varible
+fucntion performOperation(double,value){
+    return  double(value);
+}
+console.log(performOperation(double,5));
+
+//A function that return another fucntion
+fucntion createSimpleFunciton(){
+    return fucntion(){
+        console.log('I am from return function');
+    };
+}
+
+Reusbilty
+modularity
+speclization
+
+///////////////////
+Curring by NIsha Singla
+js cafe ka dekho
+
+
+
+
+What is a string?
+A string is used to store and manipulte data;
+
+
+#Template Literal
+
+
+textContext =>
+    broswer render as tag.
+    excat  same tag is print
+
+
+innerHtml =>
+    browser render as text.
+/////////////COPY AND PASTE HERE
+
+
+
+/////////////////
+
+#)Add And Remove Poperties  of html elements in the dom using js?
+
+<div id="myELement">Hello World</div>
+
+js
+var element=document.getElementById("myELement");
+//set attribute method is used to add proeprty
+element.setAttribute("data-info","new value")
+
+output => 
+    
+    element.removeAttribute("data-info");
+
+//add  and remove  style from html elements in dom using js?
+element.style.setProperty("color","blue");
+
+
+
+/////////////
+element.classList.add("highlight");
+element.classList.remove("highlight");
+element.classList.toggle("highlight");
+
+
+//dyna,ically  add new welements
+var newDiv - document.createElement("div");
+newDiv.textContext='Newly created div';
+document.body.appendChild(newDiv);
+
+
+///error haNDLING IN JS?
+Error handling is role of error handling
+try{
+
+}
+catch(error){
+   console.log('An arror occured ',error.messaage);
+}
+//finally blaock chle ga hi irrescpective chahye jo kro
+
+finally{
+
+
+}
+#)Error Propagaation in js?
+procss  of passiing  or prograitng  an  error  form one
+part of the code to another  by using the throw stamnt with try catch.
+
+
+bst practise for error handling?
+try{
+
+}
+catch(error){
+
+}
+throw new Error("Cannot divide by zero");
+#)Obects Literal
+#)Onjects Contructor
+#)Object.create() 
+
+
+
+Limitation of dot  nottaion  ->IN some  scenario bracket notaion  is inly option ,such
+ as when accesing properties  when the property name is stored in a variable.
+
+ var propertName ='age';
+ console.log(person[propertName]);
+ console.log(person.propertName);
+
+
+ ///////////////////////////////
+ //iterate over the properties of an object
+const person={
+    name:'john',
+    age:30
+}
+
+ for(let prop in person){
+         console.log(person[prop]);
+ }
+Object.keys(person).forEach((prop)=>{
+    console.log(person[prop]);
+});
+
+Object.values(person).forEach((value)=>{
+    console.log(value);
+});
+
+
+
+var person={
+    name:'Alice',
+    age:25
+}
+
+console.log(person.hasOwnProperty("name"));
+
+//coparing with undefiend
+console.log(person.name !== undefined); //true
+
+///////////////////
+
+Copy Object 
+const originalObject ={
+    name:'Happy',
+}
+
+//copy og object
+const clonedObjectSpread ={...orginalObject};
+using Object.assign({});
+using json.parse()  //deep copy
+
+
+deep copy : As named suggest deep means everthing copy.
+shallow Copy:  shallow copy in nested object case will modify  the parent   object prorprty value.
+
+
+deep copy  copy wwill not modigy the paren tobject
+
+
+//using set we will remove the elements from arrays   im
+let myArr =[1,4,3,4];
+let mySet =new Set(myArr);
+
+let uniqueArray=[...mySet]; //convert in array
+console.log(uniqueArray);
+
+
+o/p =>[1,4,3]
+
+
+
+#)EventDelegation in js?
+Event Delegation in js  a technque wher event attach a single event handler  to apraent element 
+to handle events on its child elemnts.
+
+#)EventBubling in js?
+bottom to top
+event trigger on child element triggerin event handlers on its parent elements
+
+#)Event Capturing in js?
+top to bottom
+event capturing  in js whnere an event started from  the root of the dom and moving down to
+the target element
+
+
+prevent the default behaviour of anevent 
+eventPreventDefault();
+
+
+
+///////////
+
+
+SetTimeout and SetInterval are the only native function in JavaScript that is used to run code asynchronously, 
+# SetTimeout This method executes a function, after waiting a specified number of milliseconds. 
+
+Bst Practise Folow this
+function sayHello(){
+    console.log('Hello world0');
+}
+setTimeout(sayHello,1000)
+
+
+#)we can write in this way
+
+setTimeout(()=>{
+    console.log('hello is good');
+},1000);
+
+
+#)The setInterval() method repeats a given function at every given time interval. 
+function sayHello() {
+    console.log("Hello, world!");
+}
+
+// Call setInterval to execute the function every 2 seconds (2000 milliseconds)
+var intervalId = setInterval(sayHello, 2000);
+
+
+
+///temporal dead zon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+if you want to design your  theme u need to design the fice colors
+and these colors are called pellets
+
+we strt with 
+primary palette=>it use very most widely use across all the screens
+so it is main color of your app
+
+
+Accent Paletter=>
+
+that used to higlight content for interactive elements
+these flaoting buttons things like that
+
+Warn Palette=> this is color used to show warning to really draw attention
+
+
+Foreground Palette=> which is kused for text and icons.
+
+Background Palette=> it used in toolbar by default.
+
+
+1)import THeming Package
+
+         

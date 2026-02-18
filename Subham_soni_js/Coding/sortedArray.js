@@ -1,0 +1,1 @@
+//if arr[i] == ar[i+1] //then it might we equal

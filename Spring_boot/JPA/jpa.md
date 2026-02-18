@@ -35,13 +35,10 @@ making service Transactional?
 WHEN TO USE @JoinColumn ?
 
 Use @JoinColumn when you want to specify:
-
 The name of the foreign key column
-
 Which table will have the FK
-
 You want to make this side the owner of the relationship
-
+-----------------------------------------------------------------------------
 Example (Task is owner):
 
 @ManyToOne

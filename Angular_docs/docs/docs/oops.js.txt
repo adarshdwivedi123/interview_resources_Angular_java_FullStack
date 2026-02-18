@@ -1,0 +1,14 @@
+Inheritance 
+
+The Abstract class is one of the most important OOP tools that cannot create instance. In other words, we can not define a variable of the Abstract class. An Abstract class is similar to the Interface but it's more expanded
+
+
+interface can be defined with interface keyword
+A class can implement multiple interfaces.
+An interface can extend multiple other interfaces.
+
+
+
+ abstract
+abstract is defined with the abstract keyword
+in abstract class we cannot create a object of that class

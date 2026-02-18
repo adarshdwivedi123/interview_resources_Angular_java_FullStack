@@ -1,0 +1,31 @@
+https://github.com/bittu1040/JavaScript-Coding-and-Notes/blob/master/JS-Code-Challenge/coding-practice-1.js
+
+
+
+1️⃣ Array Based Questions (VERY COMMON)
+
+These are asked almost everywhere.
+Remove duplicates from array
+Move zeroes to end
+Reverse an array
+Find second largest element
+Find missing number
+Two sum problem
+Merge two sorted arrays
+Rotate array
+Flatten nested array
+Group anagrams
+
+
+
+🔥 2️⃣ String Based Questions
+
+Very common in frontend interviews.
+Reverse a string
+Check palindrome
+Count vowels
+Check anagram
+First non-repeating character
+Longest substring without repeating characters
+Capitalize first letter of each word
+Count character frequency

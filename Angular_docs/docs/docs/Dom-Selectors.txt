@@ -1,0 +1,48 @@
+DOM  defintely ask in interview 
+
+
+QuerySelector=>queryi Selector kya  hai voe hme ake hi value deta hai
+////////////////////////////////////////////////////////////////////////////////
+document.querySelector('ul');
+<ul>​<li>​…​</li>​::marker​"One"</li>​<li>​…​</li>​<li>​…​</li>​</ul>​
+const  myul=document.querySelector('ul');
+undefined
+myul.querySelector('li');
+<li>​…​</li>​::marker​"One"</li>​
+
+const turnGreen =myul.querySelector('li');
+undefined
+turnGreen.style.backgroundColor="green"
+'green'
+
+turnGreen.style.padding="10px"
+'10px'
+
+turnGreen.innerText
+'One'
+
+turnGreen.innerText="five"
+'five'
+
+
+
+//////////////
+QuerySelctorAll
+queryselectorAll return  list
+document.querySelectorAll('li');
+NodeList(3) [li, li, li]0: li1: li2: lilength: 3[[Prototype]]: NodeList
+  const tempList= document.querySelectorAll('li');
+undefined
+tempList
+see below is nodelist not an array
+NodeList(3) [li, li, li]
+
+this is not array that mistake we do usually so check that    check the prototype the u understand map and foreach there
+
+tempList[0].style.color='green'
+'green'
+
+
+
+
+

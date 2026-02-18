@@ -1,0 +1,36 @@
+Lazy Loading in Angular 14
+#)Using LoadChidren
+
+     import { NgModule } from '@angular/core';
+     import { RouterModule, Routes } from '@angular/router';
+
+     const routes: Routes = [
+       {
+         path: 'feature-name',
+         loadChildren: () =>
+           import('./feature-name/feature-name.module').then(
+             (m) => m.FeatureNameModule
+           ),
+       },
+     ];
+
+     @NgModule({
+       imports: [RouterModule.forRoot(routes)],
+       exports: [RouterModule],
+     })
+     export class AppRoutingModule {}
+
+////////////////////////////////////////////////////////////////////////////////
+
+Lazy Laoading in Angular 17 Using  LoadComponent
+
+import { Routes } from '@angular/router';
+
+
+export const routes: Routes = [
+    {
+        path:'Login',loadComponent:()=>import('./login/login.component')
+        .then(com => com.LoginComponent)
+
+    }
+];

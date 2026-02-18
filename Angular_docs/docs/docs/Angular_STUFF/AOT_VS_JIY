@@ -1,0 +1,51 @@
+But Angular 14+:
+✔ Dev mode is already optimized
+✔ Vite-based dev server is extremely fast
+✔ No JIT needed
+
+----------------------------------------------------
+What happens with AOT?
+✔ Angular converts your HTML + TypeScript into JavaScript during build time
+AOT = Angular builds your app early so users get a fast experience.
+(Not in the browser)
+
+✔ Browser gets fully-prepared code
+
+No extra compilation needed.
+
+✔ App loads faster
+
+Because the user’s browser does less work.
+
+✔ Fewer errors in production
+
+Because Angular catches template mistakes early.
+
+
+
+or
+“AOT means Angular compiles the application at build time instead of compiling in the browser.
+Because the templates and components are already converted into optimized JavaScript before the user loads the app, it makes the application faster, more secure, and reduces bundle size.
+Errors are also caught early during build, which makes the production build more reliable.”
+
+
+-------------------------------------------------------------------
+
+
+Without AOT (JIT):
+
+User opens your app
+
+Browser starts compiling templates
+
+Takes time
+
+Page loads slowly
+
+With AOT:
+
+Angular compiles everything beforehand
+
+Browser only shows the UI
+
+Page loads very fast

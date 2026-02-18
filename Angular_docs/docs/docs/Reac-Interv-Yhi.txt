@@ -1,0 +1,779 @@
+Refernce :https://www.interviewbit.com/react-interview-questions/#how-to-prevent-re-renders
+https://www.javatpoint.com/react-interview-questions
+
+
+1) React is open source js library.
+2)React is used for building user inteface.
+3)React simplies  the creation of spa by using reusable components.
+
+#)React is a front-end and open-source JavaScript library which is useful in developing user interfaces specifically for applications with a single page. 
+#)It is helpful in building complex and reusable user interface(UI) components of mobile and web applications as it follows the component-based approach.
+
+#)It will make use of the virtual DOM rather than real DOM (Data Object Model) as RealDOM manipulations are expensive.
+
+. What are the advantages of using React?
+Use of Virtual DOM to improve efficiency: React uses virtual DOM to render the view. As the name suggests, virtual DOM is a virtual representation of the real DOM. Each time the data changes in a react app, a new virtual DOM gets created. Creating a virtual DOM is much faster than rendering the UI inside the browser. Therefore, with the use of virtual DOM, the efficiency of the app improves.
+
+Features of React.
+
+1)JSX
+2)Components based architecture
+3)Reusabiltiy & compositon
+4)React hooks
+5)Community and Ecosystem
+3)One-way Data Binding
+4)Virtual DOM
+5)Simplicity
+6)Performance
+
+
+Gentle learning curve: React has a gentle learning curve when compared to frameworks like Angular. 
+Anyone with little knowledge of javascript can start building web applications using React.
+
+
+ What are the limitations of React?
+The few limitations of React are as given below:
+
+Q) What are the biggest limitations of React?
+Following is the list of the biggest limitations of React:
+
+#)React is just a library. It is not a complete framework.
+#)It has a huge library which takes time to understand.
+#)It may be difficult for the new programmers to understand and code.
+#)If we make static page then+
+#)React uses inline templating and JSX, which may be difficult and act as a barrier. It also makes the coding complex.
+
+Q)what is state?
+
+It is the heart of the react component which determines the behaviour of the component and how it will render. 
+
+#)React components has a built-in state object.
+#)The state object is where you store property values that belong to the component.
+#)When the state object changes, the component re-renders.
+
+Changing the state Object
+To change a value in the state object, use the this.setState() method.
+
+When a value in the state object changes, the component will re-render, meaning that the output will change according to the new value(s).
+
+
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      brand: "Ford",
+      model: "Mustang",
+      color: "red",
+      year: 1964
+    };
+  }
+  changeColor = () => {
+    this.setState({color: "blue"});
+  }
+  render() {
+    return (
+      <div>
+        <h1>My {this.state.brand}</h1>
+        <p>
+          It is a {this.state.color}
+          {this.state.model}
+          from {this.state.year}.
+        </p>
+        <button
+          type="button"
+          onClick={this.changeColor}
+        >Change color</button>
+      </div>
+    );
+  }
+}
+
+Note:Always use the setState() method to change the state object, it will ensure that the component knows its been updated and calls the render() method (and all the other lifecycle methods).
+
+
+
+#)React components has a built-in state object.
+The state object is where you store property values that belong to the component.
+When the state object changes, the component re-renders.
+
+
+#)React is not a full-blown framework as it is only a library.
+The components of React are numerous and will take time to fully grasp the benefits of all.
+It might be difficult for beginner programmers to understand React.
+Coding might become complex as it will make use of inline templating and JSX.
+
+
+Q)What is JSX?
+JSX stands for JavaScript XML. It allows us to write HTML  code inside JavaScript and place them in the DOM without using functions like appendChild( ) or createElement( ).
+
+#)Why can't browsers read JSX?
+Browsers cannot read JSX directly because they can only understand JavaScript objects, and JSX is not a regular JavaScript object.
+ Thus, we need to transform the JSX file into a JavaScript object using transpilers like Babel and then pass it to the browser.
+
+
+
+
+Without using JSX, we would have to create an element by the following process:
+
+const text = React.createElement('p', {}, 'This is a text');
+const container = React.createElement('div','{}',text );
+ReactDOM.render(container,rootElement);
+Using JSX, the above code can be simplified:
+
+const container = (
+<div>
+  <p>This is a text</p>
+</div>
+);
+ReactDOM.render(container,rootElement)
+
+
+Q)Render Function()
+#)It is mandatory for each React component to have a render() function.
+#)Render function is used to return the HTML which you want to display in a component.
+#) If you need to rendered more than one HTML element, you need to grouped together inside single enclosing tag (parent tag) such as <div>, <form>, <group> etc. This function returns the same result each time it is invoked.
+#)Each render() function contains a return statement.
+The return statement can have only one parent HTML tag
+
+
+Q)axios
+
+
+
+
+Q)What is useState() in React?
+#)The useState() is a built-in React Hook that allows you for having state   variables in functional  components. 
+#)It should be used when the DOM has something that is dynamically manipulating/controlling.
+#)Since useState hook returns an array of two items, the first item contains the current state, and the second item is a function used to update the state.
+
+Q) What is Props?
+#)Props stand for "Properties" in React.
+#)Props are immutable so we cannot modify the props from inside the component.
+#)pass data from the parent to the child components throughout the application.
+
+Q) What are keys in React?
+#)Keys help react identify which elements were added, changed or removed.
+#)Without keys, React does not understand the order or uniqueness of each element.
+#)A key is a special string attribute that needs to be included when using lists of elements.
+#)Keys should be given to array elements for providing a unique identity for each element.
+#)With keys, React has an idea of which particular element was deleted, edited, and added.
+#)Keys are generally used for displaying a list of data coming from an API.
+***Note- Keys used within arrays should be unique among siblings. They need not be globally unique.
+
+
+I
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\
+ What are the differences between functional and class components?
+major differnve in this two are
+1)Declaration
+2)HGandling Props
+3)Handling state
+
+Q)funtional cinoonents
+funtional cinoonents are the normal js funciton .we declare using an arrow funtion or the funtion keyword
+
+Class components, on the other hand, are declared using the ES6 class:
+
+ class Card extends React.Component{
+  constructor(props){
+     super(props);
+   }
+    render(){
+      return(
+        <div className="main-container">
+          <h2>Title of the card</h2>
+        </div>
+      )
+    }
+   }
+
+
+
+Handling props
+Let’s render the following component with props and analyse how functional and class components handle props:
+
+<Student Info name="Vivek" rollNumber="23" />
+In functional components, the handling of props is pretty straightforward. Any prop provided as an argument to a functional component can be directly used inside HTML elements:
+
+ function StudentInfo(props){
+   return(
+     <div className="main">
+       <h2>{props.name}</h2>
+       <h4>{props.rollNumber}</h4>
+     </div>
+   )
+ }
+In the case of class components, props are handled in a different way:
+#)class component extend the react component 
+
+ class StudentInfo extends React.Component{
+   constructor(props){
+     super(props);
+    }
+    render(){
+      return(
+        <div className="main">
+          <h2>{this.props.name}</h2>
+          <h4>{this.props.rollNumber}</h4> 
+        </div>
+      )
+    }
+   }
+
+Benfit of using functional compoent   over Class Component.
+
+Why virtual  Dom is Required ?
+
+#)DOM manipulation is an integral part of any web application, but DOM manipulation is quite slow when compared to other operations in JavaScript.
+ The efficiency of the application gets affected when several DOM manipulations are being done.
+ Most JavaScript frameworks update the entire DOM even when a small part of the DOM changes.
+
+If we have done small changes in dom then browser pura ka pura ui rendered hota hai entire page is getting refresh  then it is time taken task
+for that soln we use virtual dom.
+
+#)VIRTUAL_DOM
+in virtual dom first it create copy of dom then it will change  only specific part of the virtual dom is updated instead of just re render everything.
+backgroind me  virtual ko real dom me chnage kre gi.
+virtual dom se real dom ke jne ko process  ko hm bolte hai reconcillation.
+
+(React uses a virtual dom to efficently update the ui without re-render the entire  page which helps improve performance and make the application more resposive)
+ 
+#)For example, consider a list that is being rendered inside the DOM. If one of the items in the list changes, the entire list gets rendered again 
+instead of just rendering the item that was changed/updated. This is called inefficient updating.
+
+#)To address the problem of inefficient updating, the react team introduced the concept of virtual DOM.
+
+Diff vs dom vs virtual dom.
+
+
+#)Controlled and uncontrolled components are just different approaches to handling input from elements in react. 
+
+
+imp
+Q)React State
+#)Every component in react has a built-in state object, which contains all the property values that belong to that component.
+#)In other words, the state object controls the behaviour of a component. Any change in the property values of the state object leads to the re-rendering of the component.
+Note-> State object is not available in functional components but, we can use React Hooks to add state to a functional component.
+
+
+
+
+Q)Props Drilling
+if  there is a need to pass data from a component that is higher in the hierarchy to a component that is deeply nested. To pass data between such components, we pass props from a source component and keep passing the prop to the next component in the hierarchy till we reach the deeply nested component.
+
+The disadvantage of using prop drilling is that the components that should otherwise be not aware of the data have access to the data
+
+
+. Each lifecycle of a component is having 3 phases which include mount, unmount, and update
+
+
+
+Q)Why were Hooks introduced in React?
+React hooks were introduced in the 16.8 version of React. Previously, functional components were called stateless components. Only class components were used for state management and lifecycle methods. The need to change a functional component to a class component, whenever state management or lifecycle methods were to be used, led to the development of Hooks.
+
+
+Q)What are the rules that must be followed while using React Hooks?
+#)There are 2 rules which must be followed while you code with Hooks:
+
+#)React Hooks must be called only at the top level. It is not allowed to call them inside the nested functions, loops, or conditions.
+#)It is allowed to call the Hooks only from the React Function Components
+
+
+
+
+#)Use Effect Hooks
+ What is the use of useEffect React Hooks?
+With the help of useEffect, you will inform React that your component requires something to be done after rendering the component or after a state change.
+
+#)The useEffect React Hook will accept 2 arguments: useEffect(callback,[dependencies]);
+Where the first argument callback represents the function having the logic of side-effect and it will be immediately executed after changes were being pushed to DOM. 
+#)The second argument dependencies represent an optional array of dependencies. #)The useEffect() will execute the callback only if there is a change in dependencies in between renderings.
+
+
+
+
+The refs are used for:
+
+Managing focus, media playback, or text selection.
+Integrating with DOM libraries by third-party.
+Triggering the imperative animations
+
+
+
+Q)What are Custom Hooks?
+A Custom Hook is a function in Javascript whose name begins with ‘use’ and which calls other hooks. It is a part of React v16.8 hook update and permits you for reusing the stateful logic without any need for component hierarchy restructuring.
+
+ex :We create the custom hook for network call and resue that one in other compoent also.
+
+
+
+Q)Explain Strict Mode in React.
+StrictMode is a tool added in version 16.3 of React to highlight potential problems in an application. It performs additional checks on the application.
+
+
+Q) Name a few techniques to optimize React app performance.
+There are many ways through which one can optimize the performance of a React app, let’s have a look at some of them:
+
+Using useMemo( ) -
+It is a React hook that is used for caching CPU-Expensive functions.
+Sometimes in a React app, a CPU-Expensive function gets called repeatedly due to re-renders of a component, which can lead to slow rendering.
+useMemo( ) hook can be used to cache such functions. By using useMemo( ), the CPU-Expensive function gets called only when it is needed.
+Using React.PureComponent -
+It is a base component class that checks the state and props of a component to know whether the component should be updated.
+Instead of using the simple React.Component, we can use React.PureComponent to reduce the re-renders of a component unnecessarily.
+Maintaining State Colocation -
+This is a process of moving the state as close to where you need it as possible.
+Sometimes in React app, we have a lot of unnecessary states inside the parent component which makes the code less readable and harder to maintain. Not to forget, having many states inside a single component leads to unnecessary re-renders for the component.
+It is better to shift states which are less valuable to the parent component, to a separate component.
+#)Lazy Loading -
+ It is a technique used to reduce the load time of a React app. Lazy loading helps reduce the risk of web app performances to a minimum.
+
+
+
+Q) How to pass data between react components?
+Parent Component to Child Component (using props)
+Child Component to Parent Component (using callbacks)
+
+
+Q)What are Higher Order Components?
+Simply put, Higher-Order Component(HOC) is a function that takes in a component and returns a new component. 
+
+#)while developing larger applications we need to keep our code DRY, therefore, we want an abstraction that allows us to define this logic in a single place and share it across components. HOC allows us to create that abstraction.
+
+#)We know HOC is a function that takes in a component and returns a component.
+
+#)Remember, we are not trying to change the functionality of each component, we are trying to share a single functionality across multiple components using HOC.
+
+
+
+Q)What can you do with HOC?
+You can do many tasks with HOC, some of them are given below:
+
+Code Reusability
+Props manipulation
+State manipulation
+
+Q) What are the different phases of the component lifecycle?
+#)Initialization:React component will prepare by setting up the default props and initial state for the
+
+#)Mounting:Mounting refers to putting the elements into the browser DOM. Since React uses VirtualDOM, the entire browser DOM which has been currently rendered would not be refreshed.
+
+#)Updating: In this phase, a component will be updated when there is a change in the state or props of a component. This phase will have lifecycle methods like componentWillUpdate, shouldComponentUpdate, render, and componentDidUpdate.
+
+#)Unmouting:In this last phase of the component lifecycle, the component will be removed from the DOM or will be unmounted from the browser DOM. This phase will have the lifecycle method named componentWillUnmount.
+
+
+Typess OF Hooks in React
+1)Build IN Hooks
+2)Custom Hooks
+
+Custom Hooks: A custom Hook is basically a function of JavaScript. The Custom Hook working is similar to a regular function. The “use” at the beginning of the Custom Hook Name is required for React to understand that this is a custom Hook and also it will describe that this specific function follows the rules of Hooks. Moreover, developing custom Hooks will enable you for extracting component logic from within reusable functions.
+
+
+
+Q) How to prevent re-renders in React?
+The Parent component is the parent component and the Message is the child component. Any change in the parent component will lead to re-rendering of the child component as well. To prevent the re-rendering of child components, we use the shouldComponentUpdate( ) method:
+**Note- Use shouldComponentUpdate( ) method only when you are sure that it’s a static component.
+
+
+Q) Why is it necessary to start component names with a capital letter?
+In React, it is necessary to start component names with a capital letter. If we start the component name with lower case, it will throw an error as an unrecognized tag. It is because, in JSX, lower case tag names are considered as HTML tags.
+
+
+Redux:
+ Redux (It is an open-source, JavaScript library useful in managing the application state) when it comes to the management of the global application state tree in large complex applications, even though the React will provide a #)useReducer hook that manages state transitions similar to Redux. Redux is very useful at a lower level of component hierarchy to handle the pieces of a state which are dependent on each other, instead of a declaration of multiple useState hooks.
+
+
+Props	State
+1.	Props are read-only.	State changes can be asynchronous.
+2.	Props are immutable.	State is mutable.
+3.	Props allow you to pass data from one component to other components as an argument.	State holds information about the components.
+4.	Props can be accessed by the child component.	State cannot be accessed by child components.
+5.	Props are used to communicate between components.	States can be used for rendering dynamic changes with the component.
+
+
+Q)What are Higher Order Components(HOC)?
+In React, Higher Order Component is an advanced technique for reusing component logic. It is a function that takes a component and returns a new component. In other words, it is a function which accepts another function as an argument. According to the official website, it is not the feature(part) in React API, but a pattern that emerges from React's compositional nature.
+
+
+
+Q)Why is it necessary to start component names with a capital letter?
+In React, it is necessary to start component names with a capital letter. If we start the component name with lower case, it will throw an error as an unrecognized tag. It is because, in JSX, lower case tag names are considered as HTML tags.
+
+
+
+Q) What are fragments?
+In was introduced in React 16.2 version. In React, Fragments are used for components to return multiple elements. It allows you to group a list of multiple children without adding an extra node to the DOM.
+
+Example
+
+render() {  
+  return (  
+    <React.Fragment>  
+      <ChildA />  
+      <ChildB />  
+      <ChildC />  
+    </React.Fragment>  
+  )  
+}  
+There is also a shorthand syntax exists for declaring Fragments, but it's not supported in many tools:
+
+render() {  
+  return (  
+    <>  
+      <ChildA />  
+      <ChildB />  
+      <ChildC />  
+    </>  
+  )  
+}  
+
+Q)Why are fragments better than container divs?
+Fragments are faster and consume less memory because it did not create an extra DOM node.
+Some CSS styling like CSS Grid and Flexbox have a special parent-child relationship and add <div> tags in the middle, which makes it hard to keep the desired layout.
+The DOM Inspector is less cluttered.
+
+
+
+Q)What is create-react-app?
+Create React App is a tool introduced by Facebook to build React applications. It provides you to create single-page React applications. The create-react-app are preconfigured, which saves you from time-consuming setup and configuration like Webpack or Babel. You need to run a single command to start the React project, which is given below.
+
+
+
+///
+Q) How can you create a component in React?
+There are two possible ways to create a component in React:
+
+Function Components: This is the simplest way to create a component in React. These are the pure JavaScript functions that accept props object as the first parameter and return React elements:
+
+function Greeting({ message }) {  
+  return <h1>{`Hello, ${message}`}</h1>  
+}  
+Class Components: The class components method facilitates you to use ES6 class to define a component. The above function component can be written as:
+
+class Greeting extends React.Component {  
+  render() {  
+    return <h1>{`Hello, ${this.props.message}`}</h1>  
+  }  
+}  
+
+
+
+
+
+Q)What do you understand by refs in React?
+Refs is the shorthand used for references in React.
+It is an attribute which helps to store a reference to particular DOM nodes or React elements.
+Earlier, refs were only limited to class components but now it can also be accessible in function components through the useRef Hook in React.
+
+
+Q)How many ways can we style the React Component?
+Inline Styling
+CSS Stylesheet
+CSS Module
+Styled Components
+
+
+
+Q)Why do we need a Router in React?
+React Router plays an important role to display multiple views in a single page application. It is used to define multiple routes in the app. When a user types a specific URL into the browser, and if this URL path matches any 'route' inside the router file, the user will be redirected to that particular Route. So, we need to add a Router library to the React app, which allows creating multiple routes with each leading to us a unique view.
+
+
+
+Q)What is React Router?
+BrowserRouter: 
+Route: It is considered to be a conditionally shown component and some UI will be rendered by this whenever there is a match between its path and the current URL.
+Link: It is useful in creating links to various routes and implementing navigation all over the application. It works similarly to the anchor tag in HTML.
+
+
+
+<switch>  
+      <h1>React Router Example</h1>  
+      <Route path="/" component={Home} />  
+      <Route path="/about" component={About} />  
+      <Route path="/contact" component={Contact} />  
+</switch> 
+
+
+
+
+Q)Why switch keyword used in React Router v4?
+The 'switch' keyword is used to display only a single Route to rendered amongst the several defined Routes. The <Switch> component is used to render components only when the path will be matched. Otherwise, it returns to the not found component.
+
+
+what is npm ? what is the role of node_modules folders?
+Npm is used to mangae the dependencies for your React Project including the react
+libray itself.
+
+for ex :jo babel libray hai voe jsx ko convert krti hai j.s me so that browser can understand.
+
+public folder in react ?
+isse andar sari static file hoti hai.static file jo browser me direct dosnlaod oh jaye
+public filder contaims static assets that are served direclty to the users browser such as 
+images  fonts  and index.html file.
+
+
+src
+in react src folder is used to store all the source code of the application
+
+index.html 
+=>Ina react project is the entry point the application.
+=>we can callled as  single page application.
+
+what is the role App.js  file in react?
+app.js first defualt compoentne  or root component and it is resposible  
+for rendering all  of the other componets.
+
+
+
+
+ReactDom=>is js library which convert your component (which are wriiten in react) to the actual browser
+index.js=> is the js file which render all the components and replace the root element 
+of the index.html file with the newly rendered root element.
+
+
+JSX
+(Javascript XML) is  asyntax extension used by React to write HTML lIke code
+
+index.html   =>index.js =>App.js
+
+Advantage of jsx
+improve code redabilty and writalbilty
+Error Checking in advance
+Support J.s Expression
+Code Reusabilty
+
+
+
+Q)what is babel?
+Babel in react is used to transpile jsx syntax into regular js which browser can understand
+
+Q)what is Transpiler?
+jsx convert into js this is called transpiler.
+Yes it is  possibel to use jsx without React by creating your own trnaspiler like babel.
+
+
+
+
+Q)What is Redux?
+#)Redux is an open-source JavaScript library used to manage application state. React uses Redux for  building the user interface. The Redux application is easy to test and can run in different environments
+
+
+#)React Redux is the official React binding for Redux. It allows React components to read data from a Redux Store, and dispatch Actions to the Store to update data. Redux helps apps to scale by providing a sensible way to manage state through a unidirectional data flow model. React Redux is conceptually simple. It subscribes to the Redux store, checks to see if the data which your component wants have changed, and re-renders your component.
+
+
+Q)List down the components of Redux.
+The components of Redux are given below.
+
+STORE: A Store is a place where the entire State of your application lists. It is like a brain responsible for all moving parts in Redux.
+ACTION: It is an object which describes what happened.
+REDUCER: It determines how the State will change.
+
+
+
+
+
+
+
+
+
+
+
+React By AKshay Saini  imp Question
+Nisha Simla
+
+#)Hooks
+#)useState
+#)useEffect
+#)whast is dependecy what if depndency is not their what if it is empty?
+#)useContext
+#)useReducer
+#)useMemo
+#)useCallback
+#)useRef
+#)
+
+
+
+#)Higher Order Component
+what is  
+why we use
+when to use
+how we use
+prep with example
+
+so in the latest version of react we don't  need these things
+#)Life Cycle Method of Components
+ mouth
+
+
+State Mangement
+#) state/props
+#)Props Drilling =>when we have a lots of compoent  compoenents are in heirachy  if we to sned the data from parent to down  to child hirrach that concept is known as props drilling.
+
+#)React Context:
+how to pass data between two sibilings
+
+Redux (stateMangement/Zustand):
+
+#)how Redux 
+#)why we need redux
+#)when we need redux
+#)redux should we use when we applicaiton is large enough
+Redux Toolkit (RTK)  (Not Must have skill if are we moving from anguakr to react)
+
+#)Custom Hooks
+separate the logic using the custom hooks
+its start with use 
+when to use
+
+
+#)Lazy Loading  or code splitting  or chunkinig   VVIM
+suspense
+Lazy laoding Improve Performance  of the applicastion
+
+
+#)Why React is Famous
+#)Virtual Dom 
+Reconcilaltion  Algorithm
+React Fiber
+Diff Algo
+How Render Work
+SSR VS cSR
+benfit
+seo of rewact application
+
+
+#)Rotuting (RBAC)=>Role based acces Control
+react router
+How do you mange Protexted Route(Suupose that only login user is able to acces thast page only);
+react.router
+Query APrams 
+dynamic Routing  
+ xcom/profile()
+xcom/profile()
+
+#Testing
+-React Test Cases
+-Inteview tell use write the test cases whaterve explain  (IMpresses Interview) (unit testing)
+componet  testing
+
+=======================================================
+#Async Task -useEffect()  behind the scene
+APi Call  Using(Fetch or axios)
+=>Events:
+=>Promises:
+=>SetTimeout:
+=======================================================================================
+#)why we are building higher order module?
+=> Resusablity  
+=> modularity   (breaking down into smaller componet ) not go behind 200 lines
+=>redabilty 
+=>Testability
+
+#Performance
+->Lazy Loadin
+-> Asset (Optimiszation)
+-> js -css
+->Differnet level optimization
+->Write Optimization
+1)clear set timeout.
+2)Random image popup.
+3) Rendering of a component fast and optimization
+#)use Bundler (Bundeler bundle the code and minify the code)
+#)CDN 
+
+=================
+#)Styling
+->tailwind 
+-> StyleX
+->Bootstrap
+-> Mulptiple UI
+->css/sccss/
+
+
+
+#Accessibilty  (ask in micrsoft)
+These are four imp  we should defintely cover we are giving interview in prod based company
+
+#)stand out form other
+->test cases
+->Accessiblity
+->Performance
+->Security
+
+way to create react app
+create react-app demo-interview
+
+#)create react app project is create we code it.
+=> this project we have dummy  project  and inside we can it ..
+insdie this react project  we have  budler   it give set of testing it  
+this project help us to host locally on serve  and help use build a  react project...
+ 
+#) How react-app build?
+=> create react behind the scene is use webpack. 
+=> in thsi webpacl Its jobs is your to compile our proejct and run on our localhost.
+=>  thier are some command by which we build this project and all thise are done by bundler
+=>its test of seo things 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,99 @@
+new ngFor  new Syntax 
+we wwant to implement ngFor then need to import
+signal
+SSR
+Laxy LAoding 
+Standalone
+nrew control ngFor
+NgModule Remove\Fast laoding
+
+
+
+ng new --standalone==false
+
+-----------------------------------------------------------------
+
+*What are the key features of Angular 17/18?**
+— Improved performance with Ivy compiler
+— Standalone components
+— Control flow syntax
+— Deferred loading
+— Server-side rendering improvements
+
+
+1. Smaller Bundle Size
+✅ 2. Faster Build and Rebuild Times
+3)Enables Modern Angular Features
+
+Ivy was a requirement for:
+
+Standalone components
+
+Signals
+
+Zone-less Angular
+
+Component-level code splitting
+
+
+
+------------------------------------------------------------------------------------
+1. Standalone Components
+
+Standalone Components allow Angular apps to work without NgModules.
+
+Before (OLD Angular)
+
+Too many modules, confusing imports, extra boilerplate.
+--------------------------------------------------------------------------
+now (Standalone)
+
+Just this:
+@Component({
+  standalone: true,
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+})
+export class LoginComponent {}
+-----------------------------------------------------------------------------
+✔ Benefits
+Much simpler architecture
+No more module confusion
+Faster load time (less metadata)
+Better for large enterprise apps
+Perfect for micro-frontends
+
+
+---------------------------------------------------------------------------
+2) Instead of *ngIF and *ngFor now we are using @NgIf and @For
+
+@if (isLoggedIn) {
+  Welcome
+}
+
+@for (user of users) {
+  <li>{{ user }}</li>
+}
+✔ Benefits
+Faster rendering
+Cleaner syntax
+More powerful (built-in break/empty)
+Matches modern JS patterns
+-----------------------------------------------------------
+#)Deferred Loading (@defer)
+
+Loads components only when needed, improving performance.
+
+Example:
+@defer (on viewport) {
+  <dashboard></dashboard>
+}
+
+Meaning:
+
+When user scrolls into view → load dashboard component
+Benefits
+Faster initial page load
+Better Core Web Vitals (LCP, FCP)
+Helps reduce bundle size
+Perfect for heavy components (charts, video, maps)

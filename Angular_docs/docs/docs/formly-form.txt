@@ -1,0 +1,22 @@
+https://egghead.io/lessons/angular-install-and-setup-angular-formly
+https://medium.com/hackernoon/organize-your-forms-application-using-ngx-fomrly-796150461045
+#)The <formly-form> component is the main container of the form, which will build and render form fields.
+#)fields: The field configurations for building the form(genrate  all the form dynamically).
+#)form: The form instance which allow to track model value and validation status.
+#)model: The model to be represented by the form.
+ model = { email: 'email@gmail.com' };
+
+v5
+NO Form Field Preset
+
+
+
+v6
+Formly Field Preset Module
+ Formly V6 now requires Angular Version >= 13how 
+how to make vertitcal compoent in formly 
+how to scale into n columns
+all the curd operation 
+
+
+we use fomrly form in ang

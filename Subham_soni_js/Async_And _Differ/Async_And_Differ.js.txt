@@ -1,0 +1,37 @@
+#)async and defer
+
+Basically three cases should happen
+1)script with.
+2)script with async.
+3)script with  differ.
+
+1)In first case  when js run line by line jaise hi script tag  mila  browser stop parsing fetching the script from
+network and get to browser and run it  there.till  that html is paused html parsing continue to start after the script 
+comleted excuted.
+js  bloacking the rendering of the html  that is not a good solution
+
+
+IN CASE OF ASYNC
+(2)Ass soon as encounter a script tag it run paralley becoz of the async keyword found 
+ once script is completed then  only then html parser continues.
+
+
+
+IN CASE OF DEFER
+(3)While html parsing is going on Script tag from the network  will only
+ run when html parsing is completed after THAT script tag will run
+
+
+when to use what 
+async attribute does not garantee oreder of execution of script 
+
+
+differ attribute used to maintain the order of script that why mostly use differ
+
+if we have add multiple script that depend on each some script depend on other then using async tag 
+doesn't garanty this script executed in parallel order.
+
+
+whta is html parase?
+
+ 

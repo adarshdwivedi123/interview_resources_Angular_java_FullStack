@@ -1,0 +1,24 @@
+
+//Ocurrence of character in  p
+
+function characterOccurance(str,letter){
+    let count=0;
+    for(var i=0 ;i<str.length;i++)
+    {
+        if(str.charAt(i) === letter){
+            count++;
+        }
+    }
+    console.log(count);
+    
+}
+
+characterOccurance("priyapri", "p")
+
+
+
+//
+let count=0;
+for(var i=0 ;i<str.length;i++)
+    let count =0;
+    if(str.charAt(i) === letter)

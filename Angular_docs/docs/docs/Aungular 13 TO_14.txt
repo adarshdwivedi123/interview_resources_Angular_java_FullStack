@@ -1,0 +1,132 @@
+Update Angular 13 to 14
+https://update.angular.io/?v=13.0-14.0
+
+These are changes in Angular 14
+https://blog.ninja-squad.com/2022/06/02/what-is-new-angular-14.0/
+
+
+#)Issues that i am Getting navigation is not working ..lazy loading not wokring
+#)whenever path is empty  we have to add pathMatch:'full'
+  {
+    path:'',
+    redirectTo:'',
+    pathMatch:'full'
+  },
+
+in appRoudleModule,i just enable :true:debug  why navogaiton is not working got not issue becoz 
+pathMatch:full  not there that why it is  giving issue.
+
+ 
+#)if other things are not working properly either we have update that version or may
+be it giving some error
+compatiblity issue in breadcumb ,so after checkl which version is suaitable for vbrad it is working .
+so in my case  breadcumb it is not showing the title propery so when i update the 
+version of breadcumb it start working
+
+=>few dependencires issue like breadcumb is not working properly
+
+//one issue facing untypeFormControl
+
+////////////
+=>this command we are using to update
+ ng update @angular/core@14 @angular/cli@14
+
+ ng update @angular/material@14
+
+/////////
+#)Angular v14: we now have strictly typed forms!
+
+
+#)standalone application create in angualr 14
+ Angular standalone components. Standalone components are a new feature in Angular that allows you to create reusable components that can be used without the need for an NgModule. This can make your code more modular, efficient, and easier to share.
+
+Standalone components are a new and powerful feature in Angular that can make your code more modular, efficient, and easier to share. If you are creating new Angular components, I recommend using the standalone flag
+
+
+@Component({
+  selector: 'my-standalone-component',
+  standalone: true,
+})
+export class MyStandaloneComponent {
+  // ...
+}
+
+
+#)easier to make  reusable component dep
+
+signal introduced in  angular 14
+ A signal is a wrapper around a value that can notify interested consumers when that value changes
+Signals is a simplified version of state management and is going to be integrated into the Angular Core. 
+
+
+jb koyi value change  hoti hai notify krti hai subscriber ko
+singnal are simple work ad change detection
+
+
+
+https://dkreider.medium.com/how-to-build-a-dynamic-form-with-angular-a-simple-example-with-explanation-2057abaf9169
+
+
+#)formly form
+
+Observable vs o
+#)An Observable can be thought of as various data sources(ex: (userInputs)Events, HttpRequests etc).
+here creating our custom observaserver
+Observable to listen for new data/any event
+#)An Observer is basically who subscribes to Observable.
+
+==========================================================
+Example
+Observable is like a youtube channel of someone else. (( It uploads new videos(data) from time to time, so it is a data source for you))
+Your youtube account is an Observer
+Your youtube account (Observer) can only get notifications about whether someone else's youtube channel (Observable) has uploaded a new video (has new data) or made a livestream (new event) only if you have subscribed to that channel
+
+
+#)Standalone components are stable
+The standalone components API lets you build Angular applications without the need to use NgModules. For more information about using these APIs in your next Angular application
+
+
+The standalone flag and component imports
+Components, directives, and pipes can now be marked as standalone: true. Angular classes marked as standalone do not need to be declared in an NgModule (the Angular compiler will report an error if you try).
+
+
+jsie hm ngMOdule me import krte thae thik vaise hi import krte hai standalone compoent me bhi
+@Component({
+  standalone: true,
+  selector: 'photo-gallery',
+  // an existing module is imported directly into a standalone component
+  imports: [MatButtonModule],
+  template: `
+    ...
+    <button mat-button>Next Page</button>
+  `,
+})
+export class PhotoGalleryComponent {
+  // logic
+}
+
+#)Bootstrapping an application using a standalone component
+ An Angular application can be bootstrapped without any NgModule by using a standalone component as the  application's root component. This is done using the bootstrapApplication API:
+
+// in the main.ts file
+import {bootstrapApplication} from '@angular/platform-browser';
+import {PhotoAppComponent} from './app/photo.app.component';
+
+bootstrapApplication(PhotoAppComponent);
+
+#)The NgOptimizedImage directive is stable
+Adding NgOptimizedImage directive to your component or NgModule can help reduce the download time of images in your Angular application. 
+For more information about using the NgOptimizedImage directive, see
+
+
+
+///////////////////////////////\\\\\\\\\\
+
+
+
+
+
+
+
+
+

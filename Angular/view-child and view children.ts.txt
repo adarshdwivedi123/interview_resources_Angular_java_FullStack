@@ -1,0 +1,21 @@
+
+
+<p #highlight>THis is important </p>
+
+
+
+TS
+syntax
+----------
+@ViewChild(selector)variableName:type
+-------------------
+
+@ViewChild("highlight")marker!: ElementRef 
+//we have to Call in  ngAfterViewInit()
+
+  ngAfterViewInit(): void {
+  this.marker.nativeElement.style.color="red";
+    // console.log();
+    
+output 
+This is important of red color

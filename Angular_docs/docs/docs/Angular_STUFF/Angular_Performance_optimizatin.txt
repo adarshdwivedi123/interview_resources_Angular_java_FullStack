@@ -1,0 +1,41 @@
+HMR
+Hot module reloading
+HmR is a feature that allows  all kinds of module to be updated at runtime wihtput needing a full referesh  this improve
+the development speed by retainig application  state.
+
+CodeSplitting:
+
+it allows to split our code into  various bundles that can be loaded on demand or in parallel.
+it improvement load time & performance by sending smaller  more mangeable chunks of code to the client.
+
+
+Tree SHaking work:
+Tree shaking is a dead code elimination technique in webpack that removes unsed export from your bundles 
+reducing budle size
+
+web Worker
+
+Internalization and lo
+
+
+use StandAlone Application
+standalone application make true;
+no need to create a separate module and directly we use that
+
+
+ Use a Bundler Optimizer
+A bundler optimizer is a tool that can analyze your application code and optimize it for production, helping to reduce the size of your bundle and improve the performance of your application. There are several bundler optimizers available for Angular, each with its own set of features and benefits. Here are a few tips for choosing and using a bundler optimizer:
+
+////////////////////////////////////////////////
+#Angualr Oprimization technique
+
+view provider and provider 
+ngTrack by
+aot and jit compiler
+Singal
+lazy lading  and preloading
+NgOptimitaize image directive
+on  psuh change detection we can use
+use angular life cycle
+
+

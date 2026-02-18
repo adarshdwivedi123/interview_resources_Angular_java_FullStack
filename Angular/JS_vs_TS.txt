@@ -1,0 +1,18 @@
+TypeScript always points out the compilation errors at the time of development (pre-compilation). Because of this getting runtime errors is less likely, whereas JavaScript is an interpreted language.
+
+A statically typed language is a programming language where the type of a variable is known at compile time. 
+
+TypeScript supports static/strong typing. This means that type correctness can be checked at compile time. This feature is not available in JavaScript.
+TypeScript is nothing but JavaScript and some additional features i.e. ES6 features. It may not be supported in your target browser but the TypeScript compiler can compile the .ts files into ES3, ES4, and ES5 also
+
+
+
+
+TypeScript always highlights errors at compilation time during the time of development, whereas JavaScript points out errors at the runtime.
+TypeScript supports strongly typed or static typing, whereas this is not in JavaScript.  js is dynamic typr languaeg
+
+
+
+
+
+////JS

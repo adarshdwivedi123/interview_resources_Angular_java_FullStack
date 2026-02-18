@@ -1,0 +1,1551 @@
+parent and child la relation bnane ke liye 
+coponent ka slector rkhte hai
+jaha pe sleector rkhte hai voe bn jagta hai parent compoent
+view-encapsulation of three typess
+
+=>Emulated(dafuault)
+=>Native/shadow dom
+=>None
+
+
+
+https://www.javatpoint.com/property-binding-in-angular-8
+#)what is angular?
+Angular is js framework
+it also help build a single page application
+
+Differnce between AngularJS And Angular
+
+differnce Between Promises and observables7
+
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Observable, Subscriber, Subscription } from 'rxjs';
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  encapsulation:ViewEncapsulation.None
+})
+export class AppComponent implements OnInit,OnDestroy{
+  title = 'practise';
+  private subscrip!: Subscription;
+  constructor(){
+    
+  }
+  
+  ngOnInit(){
+    const promise=new Promise(resolve=>{
+      setTimeout(()=>{
+        // it return resolve method
+        resolve("Promise working");
+        resolve("Promise working2");
+        resolve("Promise working3");
+        
+      },1000)
+    
+    })
+    promise.then(result =>console.log(result));
+
+    // // observable
+    //  const observable=new Observable(sub=>{
+    //   setTimeout(()=>{
+    //     // it return observable
+    //     sub.next("Observable working");
+    //     sub.next("Observable working1");
+    //     sub.next("Observable working2");8
+    //   },1000)
+    //  })
+    // //  setInterval likho exmpale
+    //    this.subscrip= observable.subscribe(result =>console.log(result))
+
+ // }
+    // ngOnDestroy(): void {
+    //   this.subscrip.unsubscribe();
+    // }
+    // this will not stop so here need to add uuSubscribe method
+    const observable=new Observable(sub =>{
+      console.log('Observable call...');
+      let counter=0;
+      setInterval(()=>{
+        counter=counter+1;
+        sub.next(counter);
+      },1000);
+    });
+    observable.subscribe(result => console.log('Subscriber count'+result));
+  }
+  ngOnDestroy(): void {
+    this.subscrip.unsubscribe();
+  }
+}
+
+/// observer print differnrt value
+
+   // const observable=new Observable(obj =>obj.next(Math.random()));
+    // // subscriber 1
+    // observable.subscribe(d =>console.log(d));
+    //   // subseisbcr 2
+    // observable.subscribe(d =>console.log(d));
+
+// -------------------It print same value
+    // Subject
+      // const subject=new Subject();
+      // // subscriber1
+      // subject.subscribe(d=>console.log(d));
+      // // subssciber2
+      // subject.subscribe(d=> console.log(d));
+      // subject.next(Math.random());
+
+
+
+
+
+
+  // subject not take intial value
+      const  subject=new Subject();
+      subject.subscribe(d => console.log(d))
+      subject.subscribe(d => console.log(d))
+      subject.next(2020);
+
+      // behaviour subject take intial value
+      const bSubject=new BehaviorSubject<number>(12);
+      bSubject.subscribe(d=> console.log(`Behaviour  Subsciber is  ${d}`));
+
+
+///their are some issue with observable that can we reoslve by subject
+
+
+ const bSubject=new BehaviorSubject<number>(12);
+
+
+      bSubject.subscribe(d=> console.log(`Behaviour  Subsciber is  ${d}`));
+      bSubject.next(1200);
+      bSubject.subscribe(d=> console.log(`Behaviour  Subsciber2  $
+
+
+
+Observables vs Promises
+Observables are asynchronous like promises, but the key distinction is that Observables can return multiple values over time, and promises simply return a single value.
+
+Observables are not executed until we subscribe to them using the subscribe() method, and they can emit multiple events.
+Promises handle a single event and are executed even if you do not attach a callback method.
+
+
+Reactive Programming is simply the idea of designing your program to wait on events and react to them when they happen.
+
+
+https://javascript.plainenglish.io/eli5-observables-vs-subjects-vs-behavior-subjects-f2494f14813d
+/////////////////
+When we create a new Angular project this library automatically gets installed on the project. You don’t need to install Rxjs separately.
+,
+
+
+////////////////////
+
+
+#)Observable in Angular?
+1)Observables we are using  to hanlde asynchronously data.
+2)Observable is part of rxjs lubray that provide differnt method like map filter and reducr  etc.
+3)
+
+
+
+
+Template Vs Reactive Forms
+
+#)Template-Driven Forms in Angular
+A template-driven form is the simplest way to build a form in Angular. It uses Angular’s two-way data-binding directive
+ (ngModel) to create and manage the underlying form instance.
+
+#)Additionally, as the name suggests, a template form is mainly driven by the view component. So,
+ it uses directives placed in HTML rather than TypeScript or JavaScript to manage the form.
+ A template-driven form is asynchronous due to the use of “directives” because the creation of form controls is delegated to the declared directives (IoC).
+
+
+When to Use a Template-Driven Form
+It is essential to know when to use a template-driven form in your Angular app. You may use a template-driven form if:
+
+Your form is small to medium scale (around 10 controls with no steps).
+Your form utilizes the validation attributes integrated with HTML without complex validation.
+Your form has basic requirements that can be managed within the template with minimal lines of code.
+
+
+
+Reactive Forms in Angular
+The second way to develop forms in Angular is to use reactive forms.
+ Reactive forms utilize the component class to programmatically declare the form controls and the required validators synchronously.
+====================================================================================
+#)When to Use a Reactive Form
+#)Reactive Form is also known as Model Driven Form
+
+We then bind the controls to the input fields in the HTML template.
+ Reactive forms use classes such as FormGroup and FormControl to define groups and controls wired to the template.
+
+If your form has a lot of controls with many groups (children) that require complex validation logic.
+If you have validation code reused in multiple forms across your app. Reactive forms will help reuse 
+the validation logic to avoid code duplication, thus making your code scalable.
+
+
+Form we use to do
+
+#)Difference between and TDF and Reactive Form
+we write  logic and validation control etc in html file  t
+template are useful when there are basic form to desig
+like  simple login  and signup form
+create by directive           
+ 1) Async Data Flow  (view and Datamodel)                                 	                        
+2)  Form Module Import  (to activate this form  in code import lib)        	                       
+3) 2-way Data Bidnig (used ng model  directive to bind input value to field in our compoennt )	
+4) Less Scable		 
+
+/////////////////////////////
+Reactive Form
+It follow model Driven Approach Whoes values change over the time 
+In reactive form teplate not use handle the logic  right the logic  and vlaidation in component class 
+Reactive form use function to add validation 
+Synchronus Data FLow
+Reactive FormsModule if we use  we need  import 
+We are not using Two Data 
+More Scable they provide flexbilty to we can direclty acces api  and use synchronout data flow between view and  data Model  which  may scale large
+
+
+Q1)differnce between view child and viewchildren.
+Q2)core conceptin angular.
+Q3)differ promise and observable.
+Q4)change dertection.
+Q5)life cycle hooks.
+Q6)content and content projection.
+07) Zone.js
+08) Es6 Feature
+What new in Angular 14
+
+
+#)In palin JS we do dom manipulation using document.getElemntById() get the reference of dom elmemt 
+then we manipulate
+#) if we to get the refence for  element from template file  in component class 
+then we child and view children we can use
+@ViewChild("container")output:ELementRef;
+
+we can acces the viewChild  in this situation=
+1) Accesig template of same component
+2)Accesing the template of child component in parent Component
+
+#)@ViewChild Decorator
+@ViewChild Decorator decorator provide us with a easy and simple way to
+access and manipulate the propertires and method of a child componet from a contianer or root compoent
+#) view-child return first matching element from the dom an update the  compoent on which we have apply
+@ViewChild(selector)variableName:type
+=====
+<h1 id="title">Hello</h1>
+const element=document.getElementById('title');
+same way we implement
+@ViewChild("title"):element;
+
+
+/////////Html
+<p #highlight>THis is an important Message </p>
+
+//THis Ts\\\\
+import ViewChild from @angular/core
+@ViewChild("highlight")marker:ElementRef  (type of elementRef)
+
+//we have to call in ngAfterViewInit()  otherwise it will give error
+ngAfterViewInit(){
+	console.log(this.marker);
+}
+
+
+
+=============================================================================================
+viewChildren => as the name suggest viewChildren means it will point to multiple  element
+#)if we want to return a list of  elemnt  from  a template to compoennt then we use viewChildren.
+#)It will return a QueryList 
+===================================================================================================
+HTML
+<p #highlight>THis is an important Message </p>
+<p #highlight>THis is an important Message </p>
+
+
+TsViewChildren("highlight")marker:QueryList<any>;
+
+ngAfterViewInit(){
+console.log(this.marker);
+//after that manipulate them
+this.marker.first.nativeElemnt.style.color="red"
+}
+
+Above both are how Html elment acces in its same compoennt file with the help of viewChildren
+
+
+=>So here we wwnt to acces in between parent and child component 
+
+
+Instead of input and outpur we can also use ViewChild for pass the data from one Compoennt to other 
+Compoent
+practidse see
+
+#)Change  Detection  Ability to detect chnges  so here they make sure databinding and view are in syncs
+
+ngZone =responsible for any ashynchronus operation
+OnPushChangeDetection()
+
+
+backbone of angular framework
+	
+Zone. js=> is a signaling mechanism that Angular uses to detect when an application state might have changed. 
+
+#)typescript:
+#)guard:
+#)authentication vs Authorization 
+#)Observable vs subscriber
+#)promise vs Observable  vs observer
+#)some Question 
+#)Life Cycle  Hooks
+
+#)Wheneever compoent is called first time  constrcutor is called and ngonit.
+
+#)Angular Life Cycle
+->Angular Life is part of hook but it also belong to databound property(Input chnages)until and unless 
+  we are not passing  input  property from parent to child componet  this life cycle never called.
+->ngOnchanges is called befire ngOnit
+->ngOnChanges is one who take one Parameter of type  simplechanges ..it containe the information about
+ which are input property has been changed.
+->it give info about cuurent value and previous value based on  this we can give some logic and cutomize it.
+NgonChnages give benfit track prev and current value.
+#)whenever we want to check the  changes in vasribale then we can useNgonChanges.
+ngOnchange not  fire when input property is array or object  becoz it use dirty checking  to check  the ch
+
+in sucnh case when angular fail to check detect docheckk allow to  implemnt  custom change detection
+
+
+#)ngDoCheck()
+->Called during every change detection run immediately after ngOnChanges and ngOnit().
+
+
+
+
+It captures asynchronous operations like setTimeout, network requests, and event listeners. The reason Angular uses Zone.
+HOw can you complete your work within deadline?
+
+
+
+
+Http Interceptors
+=>Interceptors are a Angular Services that we can implement to intercept incoming or outgoing Http request using the http Client.
+BY intercept we can modify  http request or change the request
+They are typically used for tasks like adding authentication tokens, logging, handling errors, or transforming requests and responses.
+we can person various operation using interceptor
+
+1)Modify the http headers
+2)Modify the request body
+3)set authenticaiton/authorization token
+4)Modify the response  (getting the repsonse in xml fromat convertt into Json format)
+5)Mcok the backend api
+6) We can Also Use Error Hadnling
+
+To implement a interceptorin service class
+run  this command
+ng g interceptor name
+=================================================
+using  this one service claass
+
+To create interceptor we need to implments HttpInterceptor interface
+this interface give a specific method.
+interceptMethod()
+this method take two argument first is request  and next 
+
+=>next HttpHandler type   have handle method  of type http handler that method return our desirable http event oversable
+  that return next.handler(request);
+
+we need to register in provide array
+provide:[
+	
+{provide:HTTP_INTERCEPTORS,useClass:HeadersInterceptors,multi:true}
+];
+
+
+
+
+Explain Yiur Projec
+
+=============
+
+
+Interceptors are an excellent way to modify the HTTP request or response to make it more simple and understandable.
+. They are implemented as services and are often used for tasks such as adding headers, handling authentication, or logging. 
+
+How Does The Interceptor Work?
+Assume we need to do some operation on each request sent through httpClient in the application.
+
+For example, we must provide an auth token in each request so that the server can authenticate and deliver us the required answer. To do this, we will establish a service in between that will allow us to modify our httpRequest or httpResponse accordingly. 
+
+
+How To Create A Simple HTTP Interceptor
+Angular interceptor can be created using the following command:
+
+ng generate interceptor ExampleInterceptor
+#)An angular interceptor will look the same as a service with @Injectable(), which implements HttpInterceptor, which has a method called intercept that allows you to intercept the HTTP request and response.
+
+import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpEvent, HttpRequest, HttpHandler } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable()
+export class ExampleInterceptor implements HttpInterceptor {
+  intercept(httpRequest: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+      //any alteration in httpRequest can be done here
+    return next.handle(httpRequest);
+  }
+}
+
+
+
+Here, Angular gives a reference to the httpRequest object when the intercept() function is used. We can review and alter this request as required. When our logic is finished, we use next.handle and send the revised request back to the application.
+
+
+@NgModule({
+   providers: [
+     { 
+       provide: HTTP_INTERCEPTORS, useClass: ExampleInterceptor, multi:true
+     },
+],})
+
+
+
+
+#)Can We Have Multiple Interceptors?
+Ans)Yes, you may declare many interceptors in the application, each with its own scope of action. For example, you may design one interceptor that is exclusively responsible for setting the authentication header, another for error handling, and so on.
+basically we use one interceptor to perform one task and other interceptor we use to perform to another task
+
+To utilise several angular interceptors, use multi:true when registering in @NgModule.
+
+@NgModule({
+   providers: [
+     { 
+       provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true,
+       provide: HTTP_INTERCEPTORS, useClass: ErrorHandlerInterceptor, multi:true,
+       ...  
+     },
+]})
+
+
+
+
+#)There are multiple real-time senarios where angular interceptors can be really useful:
+
+Modify HTTP headers
+Modifying the request body
+Set authentication/authorization token
+Modify the HTTP response
+Error handling
+Change the Requested URL
+
+
+
+////
+package-lock. json is a file that is automatically generated by npm when a package is installed. 
+It records the exact version of every installed dependency, including its sub-dependencies and their versions.27
+It locks down the specific versions of every installed package, preventing unintended updates.
+
+
+///
+package.json serves as a manifest file for Node projects, containing metadata about the project and its dependencies.
+all third party install in this dependency
+It includes information such as the project name, version, entry point, scripts, and dependencies.
+
+
+
+
+///////////////interceptor Second Example\\\\\\\\\\
+
+#)In Angular, interceptors are services that allow you to intercept and
+Handle HTTP requests and responses globally before they are sent to 
+the server or processed by the application.
+
+
+Purpose:
+They are used to perform common tasks, such as adding headers,
+ modifying requests or responses, handling authentication, or logging, across multiple HTTP requests.
+
+
+
+IMplmntaion:
+Mention that interceptors are classes that implement the HttpInterceptor interface. 
+They typically provide methods like intercept to customize the behavior of HTTP requests and responses.
+import { Injectable } from '@angular/core';
+import {
+  HttpInterceptor,
+  HttpRequest,
+  HttpHandler,
+  HttpEvent
+} from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable()
+export class MyInterceptor implements HttpInterceptor {
+  intercept(
+    request: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
+    // Your interception logic here
+    return next.handle(request);
+  }
+}
+
+
+#)Register
+Explain how interceptors are registered in the application. 
+This is usually done by providing them in the HTTP_INTERCEPTORS multi-provider token when configuring the HttpClientModule
+
+
+{ provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
+
+
+#)Example Use Cases:
+Provide examples of common use cases for interceptors, 
+such as appending authentication tokens to headers, 
+logging requests and responses, or handling errors globally.
+
+
+#)Benefits:
+
+Highlight the benefits of using interceptors in Angular, such as code reusability, 
+separation of concerns, and the ability to handle cross-cutting concerns in a centralized manner.
+
+
+
+//Resume Pe question LEarn 
+=>Explain ur Project.
+#)Differnce bwtween package .json and Package.lock.json
+
+
+
+AtoZ  :https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/
+https://takeuforward.org/playlists/top-array-interview-questions-structured-path-with-video-solutions/
+
+
+React Fresco play
+https://play.fresco.me/course/60/progress/topic/317/content/1924
+
+
+
+//import reactive form module
+//
+
+
+function testing(){
+let data=document.querySelector('#heading');
+for( let i=0;i<100;i++){
+   setTimeout(()=>{
+         data.innerHTML=i;
+    },i* 1000);
+
+ }
+}
+testing();
+
+
+
+//anothwer with  diffenrt syntax\
+
+
+
+////////////////////////////////////////////////////
+#) Angular is the updated version of AngularJS with many major updates and significant changes.
+#)Angular is faster compared to AngularJS and offers many advantages such as mobile-friendly   applications, cross-platform development, SEO support, and a built-in CLI tool.
+#)AngularJS is far less reusable than its new version.
+ Angular provides reusability of the elements due to its component-based architecture
+
+
+
+
+////New feature in Angualr 14
+
+
+
+#)Micro Fontend 
+https://medium.com/@gurunadhpukkalla/implementing-microfrontends-in-angular-15-35c4d2307e36
+
+//???????????????????????///SYSTEM_DESIGN
+https://www.interviewbit.com/system-design-interview-questions/
+
+
+#)Synchronous javascript
+=>As the name suggests synchronous means to be in a sequence
+=>one by one code is executed means one line code   execution is completed then it move to
+next line.
+
+
+
+
+#)Asychronous Javascript
+#)Asychronous we use when we want to run multiple task paralley. 
+#)Asynchronous operations are commonly used in scenarios where there are potentially long-running tasks, such as network requests, file system operations, or timers.
+#)JavaScript provides asynchronous programming mechanisms such as callbacks, Promises, and async/await to handle asynchronous operations effectively.
+
+
+
+#)Angular 15 new version check
+
+
+
+Subject vs Behaviour Subject
+We say that they are same except BehaviourSubject can emit some initial value whereas Subject can't. 
+#)Subject
+Subject is a type of observable which we can make use when you want to share the changes in data across components
+
+
+#)Behavior Subject
+Behavior Subject is a type of Observable which has all the features of a Subject, additionally we can set the initial value and also it will retain the last emitted value.
+
+
+
+#)Standalone Components Are Stable?
+=>In Angular 14 they are release standalone but in angular 15 standalone it is more stable
+=>The standalone components API lets you build Angular applications without the need to use NgModules.
+
+
+Benfit of removing NgModule.
+Less code write.
+Easy to route.
+Easy to lazyLaoding
+
+
+
+
+#)How is Lazy Loading different from another version of angular to angular 17
+Previously what happen like we need to break into module  then using laodChildren load a module
+
+but here  in angular 17 without breaking into moule we are able to add lazy loading syntax is same
+using LoadComponenet we load 
+
+
+
+
+#)The NgOptimizedImage directive is stable
+Adding NgOptimizedImage directive to your component or NgModule can help reduce the download time of images in your Angular application.
+
+
+
+#)EsLint 
+#)WebPack
+#)SSR and CSR
+
+Change Detection
+Change detection is the process through which Angular checks to see whether your application state has changed, and if any DOM needs to be updated.
+
+
+Angular is frmework 
+React is Library
+
+#)mcv and mvvm
+
+
+Framework vs Librayr
+#)Library means some one code is already written that we can reuse them by import or installing in our   system.
+For example we are implemnt infinte scroll in our system so we can import that libray in our system 
+directly implmenet that instread of we wrtite everything  from scratch.
+#)Exp:Data  need to display in grpah to implment the grpah we need grpah libray so use that library 
+display the data in the form of grpah so in this way we are using that code someone wriitten 
+i am not writngn every thing from scratch.
+Linray  is alrady defined bus usse hm call kr ke use krte hau
+
+
+=>React js and Jquery
+
+
+Framwork
+#)Frameeork  is an software
+#)It helps in building a kind of application
+   ex Mobile application and web applicaiton.
+for Ex => we can developer withjout using framework  of html and css js,,but we cannot able build with that effiencitn that why framework came in picture.
+
+create a application using angualr framwork
+
+
+Ex Angular jS,Spring
+
+
+=>Difference
+Libray code is already theier we are just calling and use them program flow we decided
+In Libray  and but in framework  we write the code but flow is deided by framework. 
+
+//when we write  www.google.com how it works
+
+
+Solid Principle
+
+
+
+
+
+
+
+
+https://www.syncfusion.com/blogs/post/angular-template-driven-vs-reactive-forms.aspx'
+
+
+
+Angular 17   New Feturted
+
+Server Side Rendering 
+Stand Alone Compoentn
+Signal
+Deferred Loading
+New Syntex For Control Flow in Templates
+Directive changes
+*ngFor
+*ngSwitch 
+if block ke liye  *ngIf
+else ke liye new Directive
+
+
+#)using routerLink navigate from one component to other componenet
+
+
+///////////////////////////////////////
+Change Psuh detectioin
+Interceptor
+Q)How can we improve the application Performance?
+
+1) Use trackBy in ngFor loops
+2)Use lazy loading
+3) Avoid using ngIf with complex expressions
+  instead of we should use ngSwtich directive or the ngTemplate directive.
+4)Use OnPush change detection strategy.
+5) Use immutable data structures.
+6)Use AOT compilation.
+7)Use Angular Universal for server-side rendering.
+8)Use RxJS and Singals together for reactive programming.
+
+
+Performance improvemnt
+https://medium.com/@chandrabhushan1323/how-to-improve-angular-application-performance-fadde3890e71
+Q)which framework we use Angualr React how to justify?
+
+
+
+////////////////
+
+
+
+
+JWT TOJEN
+https://raghuvardhankaranam.medium.com/implementing-jwt-authentication-using-angular-52bc82096b56
+
+
+
+Featues in Angular  14 Onwards:
+
+1)Server Side Rendering :
+technique that involves rendering web pages on the server rather than in the browser.
+so that when speed is slow it should run in browser also
+In Angular we have server side issue earlier noe after optimised it is  now more seo familiray.
+2)Stand Alone Compoennt: when  ever any Project now component are standlaone ..now are not depend on ngModule .isme appModule.ts
+3)  Signals
+Overall perfomrance arctiectie improve by signals
+With Signals, Angular will be able to determine exactly what parts of the page need to be updated and update only those and nothing more.
+
+4)Deferred Laoding
+5)New Syntax For Control Flo In Template
+change in directive
+instaed of *NgFor we have @ngFor
+
+Singals stable in 17
+https://blog.angular-university.io/angular-signals/
+
+
+Server side Rendering
+https://docs.angular.lat/guide/universal
+
+
+
+
+instead of having a large monolithic application serving all your requests, we divided it into services, allowing each service to be developed, tested, built, and delivered individually. Micro-frontend is the same concept but applied to front-end applications. This approach allows us to create smaller applications, that can be developed, tested, and built individually and will be integrated as part of a larger application, probably using routing to serve each application.
+
+
+
+
+Chnage Detection:
+Change detection is the process through which Angular checks to see whether your application state has changed, and if any DOM needs to be updated
+
+
+
+/////
+function removeOppositeDirections(directions) {
+    const oppositeMap = {
+        "NORTH": "SOUTH",
+        "SOUTH": "NORTH",
+        "EAST": "WEST",
+        "WEST": "EAST"
+    };
+    const stack = [];
+
+    for (let direction of directions) {
+        // If the current direction is the opposite of the last one in the stack, pop it
+        if (stack.length > 0 && stack[stack.length - 1] === oppositeMap[direction]) {
+            stack.pop();
+        } else {
+            stack.push(direction);
+        }
+    }
+
+    return stack;
+}
+
+const inputDirections = ["NORTH", "EAST", "SOUTH", "WEST"];
+const output = removeOppositeDirections(inputDirections);
+console.log(output); // Output will be an empty array since opposite directions cancel each other out
+
+
+
+https://learn-with-bittu.vercel.app/aboutme
+
+
+///cors issues
+when our server running on different port and backedn is running in differeent port then this prblm occur.
+https://www.geeksforgeeks.org/introduction-to-angular-universal/?ref=ml_lbp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//CGANGE PADHO AUR LIKHO
+https://www.google.com/search?q=change+detection+angular+exmaple&rlz=1C1RXQR_en-GBIN1105IN1105&oq=change+&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgwIARAAGEMYgAQYigUyDAgCECMYJxiABBiKBTIGCAMQRRg5MgYIBBAjGCcyDAgFEAAYQxiABBiKBTINCAYQABiDARixAxiABDIMCAcQABhDGIAEGIoFMgwICBAAGEMYgAQYigUyDAgJEAAYQxiABBiKBdIBCTI1NjZqMGoxNagCCLACAQ&sourceid=chrome&ie=UTF-8
+
+
+
+/////////////////////
+<ng-content> is another feature in Angular used for content projection or transclusion. It allows you to pass content into a component from the component's parent component, effectively allowing for the creation of reusable components with customizable content.
+
+Parent Component:
+The parent component encapsulates content that it wants to pass into the child component.
+html
+Copy code
+<app-child>
+    <h1>Hello from parent!</h1>
+</app-child>
+
+
+
+Child Component:
+The child component utilizes <ng-content> to specify where the content from the parent component should be inserted within its template.
+html
+
+Copy code
+<div>
+    <p>This is the child component</p>
+    <ng-content></ng-content>
+</div>
+
+
+
+
+In this example, the content inside the <h1> tag from the parent component will be inserted into the <ng-content> tag of the child component when it's rendered. So, the final rendered output will be:
+
+html
+Copy code
+<div>
+    <p>This is the child component</p>
+    <h1>Hello from parent!</h1>
+</div>
+
+
+
+<div>
+    <p>This is the child component</p>
+    <h1>Hello from parent!</h1>
+</div>
+<ng-content> can also be used multiple times within the child component to project different parts of the parent component's content into different areas of the child component's template. Additionally, you can use the select attribute to specify which content should be projected based on specific criteria, such as CSS selectors. This provides more fine-grained control over how content is projected into the child component.
+
+
+
+view-cotent and view-children
+libray vs framework
+interface vs classes
+
+
+
+
+In summary, ngAfterViewInit is called once after the component's view and its child views are fully initialized,
+ while ngAfterViewChecked is called after every check of the component's view and its child views. 
+These hooks provide opportunities to perform initialization or tasks that depend on the state of the component's view.
+
+
+
+In Angular, "view content" refers to the content that is rendered within the template of a component. This content can include HTML elements, Angular directives, and data bindings. Angular provides various mechanisms to include and manipulate content within a component's view. One such mechanism is through the use of Angular's content projection feature, which
+
+
+
+
+In Angular, a subscriber refers to an object that receives notifications from an Observable or a Subject. Observables are a key concept in Angular's Reactive Extensions (RxJS), which is used for handling asynchronous operations and event-based programming.
+
+When you subscribe to an Observable, you are essentially saying, "I am interested in receiving values emitted by this Observable, and I want to be notified whenever new values are available."
+
+Here's a basic example of how subscription works in Angular:
+
+
+
+
+
+///////////////  CUSTOM PIPE//// Explain to interviewer
+
+
+
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'age'
+})
+export class AgePipe implements PipeTransform {
+  //whenever we used custom pipe we need interface PipeTransform 
+  //implment one method  transform
+  //in one place i need to implemt custom pipe to take date data and covert into age
+
+  transform(value: any, ...args: unknown[]): unknown {
+    //value is data which are applying our pipe
+    //first argument of our pipe where we recevied the data which we are appling  pipe.
+    //second argument  when pipe is taking another argument.//wehn pipe is parametrize then we use seond argument 
+    let currentYear:any=new Date().getFullYear();
+    let userBirthYear:any=new Date(value).getFullYear();
+    let userAge=currentYear-userBirthYear;
+    return userAge;
+  }
+
+}
+
+HML
+
+<div *ngFor="let user of users">
+    {{user.dob| age}}
+
+</div>
+
+
+TS
+
+users:any[]=[
+
+    {id:101,name:'john',city:'delhi',salary:2,dob:new Date("05/10/1989")},
+    {id:102,name:'peter',city:'pune',salary:80000,dob:new Date("05/12/1985")},
+    {id:103,name:'omed',city:'Delhi',salary:5500,dob:new Date("10/10/1991")}
+  ];
+
+
+
+Just like this, we can listen to every mouse event and keyboard event. The two most important decorators that we should know while working with custom directives. They are mentioned below.
+
+I. @HostListener()
+
+This decorator is used to listen to the dom events that occur on our host element. For our example. @HostListener listens to the click event that occurs on the host element and changes the color of our element.
+
+II. @HostBinding()
+
+This decorator allows you to set the values for the properties of our host element.
+
+
+
+
+////
+#)trackBy
+
+=>In Angular, trackBy is a function used in ngFor directive to improve performance when rendering lists or collections.
+
+suppose that we are geeting  that data  using ngFor we bind the data on webpage to kya hota dom  element  me bind 
+hota hai uske elemnt ko remoeve krta hai then bind krta hai...100 data bind  when we do get more 100 data vhi rehta hai 2 aur add oh jata hai.dom element se data ko remove kre ga and again new data add kre ga dom me to this  will impact to our dom.
+so for this we use trackby  ,,trackby identify which is old data and which is new data  puran data  ko as it isrehne data hai new data ko bind krta reht hai.
+
+
+
+Solution :We can use trackBy function which will be helpful for angular to track the item which have  been added or removed.
+TrackBy function will take two arguments first is index and second is current item and we can return the unique identifier 
+asa return argument.
+
+trackByStudent(index:number,student:any):string{
+  return student.studentID
+}
+
+=>When Angular renders a list using ngFor, it tracks the identity of each item in the list by default, using the object          reference. If the list items are changed (e.g., new items added, items removed, or the order changed), Angular re-renders  the entire list to reflect these changes.
+
+=>This function tells Angular how to track items in the list by returning a unique identifier for each item. Angular then uses these identifiers to determine which items have been added, removed, or moved, without re-rendering the entire list.
+
+By using trackBy, Angular can optimize rendering performance, especially in scenarios where you have large lists or frequently changing data.
+
+
+
+
+
+
+async pipe  vs subscribe
+
+In your Angular template, you can use the async pipe to directly display data from an Observable or Promise without manually subscribing to it. The async pipe subscribes to the observable and updates the view whenever new data is emitted.
+
+
+The async pipe simplifies the management of subscriptions and avoids memory leaks, as it automatically unsubscribes when the component is destroyed.
+
+
+Let’s say you have a component with an observable property, and you want to display its value in the template using the async pipe:
+
+import { Component, OnInit } from '@angular/core';
+import { Observable, interval } from 'rxjs';
+
+@Component({
+  selector: 'app-example',
+  template: `
+    <div>
+      <p>Current Time: {{ currentTime$ | async | date:'medium' }}</p>
+    </div>
+  `,
+})
+export class ExampleComponent implements OnInit {
+  currentTime$: Observable<Date>;
+
+  ngOnInit() {
+    // Create an observable that emits the current time every second
+    this.currentTime$ = interval(1000).pipe(map(() => new Date()));
+  }
+}
+In this example, we use the async pipe to display the current time from the currentTime$ observable. The async pipe automatically subscribes to currentTime$ and updates the view with the latest emitted value.
+Async Pipes for direct data rendering in templates
+
+
+#)Merge Map
+We use mergeMap operator to map the response of the first HTTP call to another HTTP call (https://api.example.com/other-data in this case).
+ This allows us to chain multiple asynchronous operations together.
+
+
+Concat  Map
+
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { concatMap } from 'rxjs/operators';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: './example.component.html',
+  styleUrls: ['./example.component.css']
+})
+export class ExampleComponent implements OnInit {
+
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.getData().subscribe(data => {
+      console.log(data);
+    });
+  }
+
+  getData(): Observable<any> {
+    return this.http.get<any>('https://api.example.com/data')
+      .pipe(
+        concatMap(response => {
+          // Process the response or make additional HTTP calls
+          return this.http.get<any>('https://api.example.com/other-data');
+        })
+      );
+  }
+}
+
+
+
+
+It is Simila to merge map
+
+It maps each value to an observable, then flattens those inner observables, but it waits for each inner observable to complete before moving on to the next one. This can be useful in scenarios where you want to ensure the order of operations, especially when dealing with HTTP requests or any asynchronous tasks.
+
+We use concatMap operator to map the response of the first HTTP call to another HTTP call (https://api.example.com/other-data in this case). The key difference here is that it waits for each inner observable to complete before moving on to the next one. This ensures the order of operations.
+
+
+#)forkJoin
+forkJoin is another powerful operator in RxJS used for combining multiple observables into a single observable, and emitting the last values of each observable when all observables complete.
+
+This is particularly useful when you need to make multiple HTTP requests in parallel and wait for all of them to complete before taking further action.
+
+We have an Angular component ExampleComponent which fetches data from two different APIs (https://api.example.com/data1 and https://api.example.com/data2) using HttpClient.
+The getData() method creates two separate observables for each HTTP request.
+We use forkJoin to combine these two observables into a single observable. It will emit an array containing the last value from each observable when both observables complete.
+We subscribe to the combined observable and receive an array containing the data from both API calls. We can then process this data as needed.
+
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, forkJoin } from 'rxjs';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: './example.component.html',
+  styleUrls: ['./example.component.css']
+})
+export class ExampleComponent implements OnInit {
+
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.getData().subscribe(([data1, data2]) => {
+      console.log('Data from first API call:', data1);
+      console.log('Data from second API call:', data2);
+    });
+  }
+
+  getData(): Observable<any[]> {
+    const request1 = this.http.get<any>('https://api.example.com/data1');
+    const request2 = this.http.get<any>('https://api.example.com/data2');
+
+    return forkJoin([request1, request2]);
+  }
+}
+
+Annotaion
+
+These annotations provide additional information about the class, such as its dependencies, how it should be instantiated, and how it should interact with other parts of the application. Annotations are used extensively in Angular for features like dependency injection, routing, and component configuration.For
+
+
+  
+
+
+
+pROVIDER AND VIEW pROVIDER
+a
+
+viewProvider:
+It is Help to improve the performance of the application
+If we create a class we can use in two ways
+#)Module Decorator   
+appModutes 
+[proivider]  so then every component can acces this  class if we declare at the module label
+ providers: [Employee],
+
+#)Component label
+if we declare class label then we are able to use in that class only
+using viewProvider we are to declare in that specific compeoent
+
+
+Provider:Provider metadata is available in the @NgModule() decorator and @Component Decorator.provider metadata is used to 
+configure the provider 
+
+sot this will also impact out performace every time we creare our class at module label .
+Module Level Pe jo services Bnye ge uska object hoga  Voe hmra  singleton object bn jaye ga means usko hm kisi bhi component me us ekr skte hai
+
+viewProviders:[Employee] //use for 
+The viewProviders property allows us to make providers available only for the component view.
+component label me reh ga to jb hm component me jaye ge tbhi voe laod hoga isse hmre app ki performance increase hogyi
+other wise agar ngModule  label pe bnye ge to voe  every time call hoga that will decrease our performance hm voe service use nhi krre ke fir bhi every time voe load hoga.
+
+
+
+we can use the `@Injectable()` decorator on our service class. This decorator is provided by the Angular framework and allows us to register a service as a singleton in the application.
+
+
+
+
+#)What do you mean by singleton design pattern?
+It's a creational design pattern that ensures that at any given point in time there exists only a single instance of a class 
+and provides a way to access it globally.
+
+
+Forgotten Subscriptions: If you create subscriptions to Observables or Subjects but forget to unsubscribe from them, it can lead to memory leaks. It’s essential to always unsubscribe from subscriptions when destroying a component.
+
+Heavy DOM Manipulations: Avoid heavy DOM manipulations or ensure proper cleanup if you are dynamically creating or removing DOM elements.
+Angular Universal: If you are using Angular Universal for server-side rendering, ensure that you are properly managing resources to prevent memory leaks on the server.
+
+
+
+
+
+In Angular, preloading allows you to load lazy-loaded modules in the background while the user is interacting with the initial view of the application. This can significantly improve the perceived performance of your application by reducing the time it takes to navigate to subsequent views.
+
+Angular provides several strategies for preloading modules:
+
+No Preloading: This is the default behavior, where lazy-loaded modules are loaded only when requested by the user. No preloading strategy is employed, and modules are loaded on-demand.
+PreloadAllModules: This strategy preloads all lazy-loaded modules in the background after the initial module is loaded. This ensures that all modules are available immediately when requested by the user.
+PreloadSelectedModules: With this strategy, you can specify which lazy-loaded modules should be preloaded. You can define a custom preload strategy by implementing the PreloadingStrategy interface and specifying the modules to preload based on your criteria.
+To configure preloading in your Angular application, you can use the PreloadAllModules or PreloadSelectedModules strategy in your RouterModule.forRoot() method.
+
+
+
+Custom Preload Method
+With this configuration, all lazy-loaded modules will be preloaded in the background after the initial module is loaded.
+
+If you want to use a custom preloading strategy (PreloadSelectedModules), you can implement the PreloadingStrategy interface and define your own logic for determining which modules to preload.
+
+
+
+import { Injectable } from '@angular/core';
+import { PreloadingStrategy, Route } from '@angular/router';
+import { Observable, of } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CustomPreloadingStrategy implements PreloadingStrategy {
+  preload(route: Route, load: () => Observable<any>): Observable<any> {
+    if (route.data && route.data.preload) {
+      return load();
+    } else {
+      return of(null);
+    }
+  }
+}
+
+
+
+#)impure vs Pure Function
+By default, pipes in angular are pure pipes. Custom pipes can be defined as pure pipes by turning the pure flag to true of the @Pipe decorator.
+
+@Pipe({
+  name: 'purePipe', 
+  pure: true      
+})
+export class PurePipe {}
+
+
+
+///
+Interceptor
+
+
+
+Content : Dealing with the content.
+
+Content Refers to the external content injected into this component using content Projection.
+Content Projection: It is a way to pass the HTML content from parent to child component. we use <ng-conten> to display in
+child component..
+
+
+
+
+View: Dealing with view.
+view refer  to template of the component.
+
+
+
+@HostBinding()
+It's particularly useful when you want to dynamically set properties or attributes on the element that hosts your directive or component.
+
+
+
+
+//////////////
+
+from =>It is used to convert other types into an Observable
+for exmpe => it wil convert ARRAY INTO OBservable
+promise into observable
+
+from(['Alice','Ben','Charlie']).subscribe({
+	next:value => console.log(vaue);
+        complete:()=> console.log('computer');
+})
+Alice
+Ben
+Charlie
+
+//////////////
+const somePromsie=new Promise((resolve,reject) =>{
+reject('Reject');
+
+const obervabeFromPromise=from(somePromise);
+obervabeFromPromise.subscribe({
+next:value =>console.log(value);
+complete:() =>console.log('completed');
+})
+
+
+})
+
+
+
+//ForkJoin
+It will helfull if we call multiple http at same time and  wait for all of them
+response before taken further action
+
+Ex:
+const randomName1=ajax('https://random-data-api.com')
+const randomName2=ajax('https://random-data-api.com')
+const randomName3=ajax('https://random-data-api.com')
+
+randomName1.subscribe(ajaxResponse => console.log(ajaxResponse));
+randomName2.subscribe(ajaxResponse => console.log(ajaxResponse));
+randomName3.subscribe(ajaxResponse => console.log(ajaxResponse));
+
+we receive three response but this are  response not  come in order 
+and every time in
+
+
+all the response come in one place
+and  console.log is ready as soon as we get the  response.
+
+
+#)Using for Join the same  thing i am doing whatever i have done above
+
+forKJoin([randomName1,randomName2,randomName3]).subscribe((ajaxResponse) =>console.log(ajaxResponse);
+
+
+odd  number  into sum
+
+
+
+
+
+unit test case
+
+
+hhtp derver packbge iosntall
+localllytyb test krte hai
+Build and optimization
+web pack
+
+hhtsever dist file kaise bnye ge
+http server click and code
+
+
+#)ConcatMap:It will wait for first observe to complete before moving to next observable
+It guarantee that all incoming vales are handled one after another
+concatMap is safe if we don't want to go in memeory leak and all
+
+
+const odds = [1,3,5];
+const evens = [2,4]
+
+// Array concat
+odds.concat(evens)
+  .forEach(item => console.log(item))
+
+// RxJS concat
+concat(from(odds), from(evens))
+  .subscribe(item => console.log(item))
+    
+  }
+}
+//Observable that sequentially emits all values from the first given Observable and then moves on to the next.
+//it maintain the order
+
+
+
+#)switchMap:As name itself is switchMap so it switch to new one
+If we are not intested in waiting for the previous subscription to finish and would like to start
+new one as quickly as possible switchMap might be a good choice.
+switchMap will always emit the latest 
+
+In Search Operatin we can use switchMap
+Whenever SwitchMap subscribes to a new inner observable, it unsubscribes from the previous one.
+
+
+suppose we have two observable one is click and other is 
+
+
+#)Pipe  we use to combine multiple operator together
+pipe is used to chain operators together.
+
+we can user filer map 
+
+interval : for a particular sec it will print numeric value
+
+
+
+
+Why switchMap() operator is preferred over other mapping or flattening operators?
+
+
+
+
+
+Buld Optimization in Angular?
+Lazy loading:
+Lazy loading allows you to load only the modules that are needed for a particular route, which can significantly improve the performance of your application. To implement lazy loading, you can use the loadChildren property in your routing configuration.
+Tree shaking:
+Tree shaking is a process that removes unused code from your bundle, which can also improve the performance of your application. To enable tree shaking, you need to set the optimization property to true in your tsconfig.json file.
+Ahead-of-time (AOT) compilation:
+AOT compilation compiles your Angular application ahead of time, which can improve the performance of your application by reducing the amount of time it takes to load. To enable AOT compilation, you need to set the aot property to true in your angular.json file.
+Production mode:
+Production mode is a special mode that enables a number of optimizations that are designed to improve the performance of your application. To enable production mode, you need to set the environment property to production in your angular.json file.
+In addition to these general optimization techniques, there are a number of other things you can do to improve the performance of your Angular application. For example, you can use the Angular CLI to generate a production build of your application, which will include all of the optimizations listed above. You can also use the Angular Performance Profiler to identify and fix performance bottlenecks in your application.
+Here are some additional tips for optimizing your Angular build:
+Use the latest version of Angular:
+The latest version of Angular always includes the latest performance optimizations.
+Use a build tool:
+A build tool like Webpack or Rollup can help you to optimize your bundle size and performance.
+Use a content delivery network (CDN):
+A CDN can help to improve the performance of your application by delivering your static assets from servers that are located close to your users.
+Use a caching mechanism:
+A caching mechanism can help to improve the performance of your application by storing frequently accessed data in memory.
+
+Angyalr 17 latest things
+
+https://experionglobal.com/angular-17/
+
+
+///
+https://stackoverflow.com/questions/45242553/how-to-speed-up-the-angular-build-process
+
+
+//////
+What is Karma in Angular?
+Karma is a JavaScript test runner that runs the unit test snippet in Angular. Karma also ensures the result of the test is printed out either in the console or in the file log.
+`
+By default, Angular runs on Karma. Other test runners include Mocha and Jasmine. Karma provides tools that make it easier to call Jasmine tests while writing code in Angular.
+
+
+///////////////////
+
+
+Testing
+
+https://medium.com/swlh/angular-unit-testing-jasmine-karma-step-by-step-e3376d110ab4
+
+
+
+///////////////Routing Query Parameter\\\\\\\\\\\\\\\\
+
+
+#)We can  easily query  parameter in the url  routes
+#)In Angular, query parameters are used to pass optional parameters to routes. These parameters appear in the URL after the ? symbol and are separated by & if there are multiple parameters. Angular provides several ways to work with query parameters, both when defining routes and when navigating between routes.
+
+question mark followed by some tag
+search?keyword=toys&country=usa
+
+
+#)Setting Query Parameters
+ To set query parameters, you can use the Router service to navigate to a route with parameters. 
+
+1. Using RouterLink
+If we are navigating through a template, we can use the [routerLink] directive along with [queryParams]:
+
+ex:<a [routerLink]="['/your-route']" [queryParams]="{ param1: 'value1', param2: 'value2' }">Link</a>
+
+
+2.Using Router.navigate
+If you are navigating programmatically, we can use the navigate method of the Router service:
+import { Router } from '@angular/router';
+
+constructor(private router: Router) { }
+
+navigateWithParams() {
+  this.router.navigate(['/your-route'], { queryParams: { param1: 'value1', param2: 'value2' } });
+}
+
+
+///
+Retrieving Query Parameters
+To retrieve query parameters in a component, you can use the ActivatedRoute service.
+
+3. Using ActivatedRoute Snapshot
+This is useful when you only need to get the parameters once and don't expect them to change.
+
+typescript
+Copy code
+import { ActivatedRoute } from '@angular/router';
+
+constructor(private route: ActivatedRoute) {
+  const params = this.route.snapshot.queryParams;
+  console.log(params.param1); // Output: value1
+}
+4. Using ActivatedRoute Observable
+This is useful when you expect query parameters to change while the component is still active.
+
+typescript
+Copy code
+import { ActivatedRoute } from '@angular/router';
+
+constructor(private route: ActivatedRoute) {
+  this.route.queryParams.subscribe(params => {
+    console.log(params.param1); // Output: value1 (and updates when params change)
+  });
+}
+
+
+
+
+Use the [routerLink] directive or Router.navigate method to set query parameters.
+Use the ActivatedRoute service to retrieve query parameters either via snapshot or observables.
+Query parameters are helpful for passing optional information to routes without changing the route path itself.
+
+
+
+Exmaple:
+Retrieving Query Parameters
+To retrieve query parameters in a component, you can use the ActivatedRoute service.
+
+1. Using ActivatedRoute Snapshot
+This is useful when you only need to get the parameters once and don't expect them to change.
+
+typescript
+Copy code
+import { ActivatedRoute } from '@angular/router';
+
+constructor(private route: ActivatedRoute) {
+  const params = this.route.snapshot.queryParams;
+  console.log(params.param1); // Output: value1
+}
+2. Using ActivatedRoute Observable
+This is useful when you expect query parameters to change while the component is still active.
+
+typescript
+Copy code
+import { ActivatedRoute } from '@angular/router';
+
+constructor(private route: ActivatedRoute) {
+  this.route.queryParams.subscribe(params => {
+    console.log(params.param1); // Output: value1 (and updates when params change)
+  });
+}
+
+
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-home',
+  template: `
+    <h1>Home</h1>
+    <button (click)="goToAbout()">Go to About with Params</button>
+  `
+})
+export class HomeComponent {
+  constructor(private router: Router) {}
+
+  goToAbout() {
+    this.router.navigate(['/about'], { queryParams: { param1: 'hello', param2: 'world' } });
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,371 @@
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+// console.log("Welcome to Programiz!");
+const jUser={
+    
+    name:"hitesh",
+    "full name":"Hitesh Choudray",
+    age:18,
+    location:"Jaipur",
+    email:"adarsh@gmail.com"
+}
+jUser.email="a@gamil.com"
+// Object.freeze(jUser);
+// above we have freeze the object if we again try to chnge the object we cannot change
+// jUser.email="hiteh@gmail.com"
+// console.log(jUser);
+
+jUser.greeting=function(){
+    console.log("hello js User");
+}
+jUser.greeting2=function(){
+    console.log(`hello js User,${this.name}`);
+}
+
+console.log(jUser.greeting());
+console.log(jUser.greeting2());
+
+
+//////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+// this  is  a singleton Object
+const tinderUser=new Object();  
+// THis is  not singlteon Object
+// const tinderUser={}
+tinderUser.id="123abc";
+tinderUser.name="Sammy"
+tinderUser.isLoggedIn=false
+// console.log(tinderUser);
+
+
+const regularUser={
+    email:"some@gmail.com",
+    fullName:{
+        userFullName:{
+            firstName:"hitesh",
+            lastName:"choudray"
+        }
+    }
+}
+// ? mark is optional chaining if ye value  hai to kryoyr nhi to leave it here question mark declare in  this way 
+console.log(regularUser.fullName?.userFullName.firstName);
+
+
+const obj1={1:"a",2:"b"}
+const obj2={3:"a",4:"b"}
+ const obj={obj1,obj2}
+ console.log(obj);
+//  const obj3=Object.assign(obj1,obj2);
+//  anothe syntac
+// {} optional paremeter jitni vlue hai sb combine oh jaye gi garantee hai reuslt vhi aye ga
+// const obj3=Object.assign({},obj1,obj2);
+// console.log(obj3);
+
+const users=[
+    {
+        id:1,
+        email:"hitesh@gmail.com"
+    },
+    {
+        id:2,
+        email:"ad@gmail.com"
+    }
+];
+users[1].email
+console.log(tinderUser);
+console.log(Object)
+
+
+
+//////////////////High Order
+
+const map=new Map()
+map.set("IN","India");
+map.set("USA","United State of America");
+map.set("Fr","France");
+
+// console.log(map);
+
+// for(const key of map)
+// {
+//     console.log(key);
+// }
+
+
+// array destructring
+// for(const [key,value] of map)
+// {
+//     console.log(key,':',value);
+// }
+
+// const myObj={
+//     'game1':'NFS',
+//     'gaame2':'Spiderman'
+// }
+// // below code is not working
+// // const myObj={
+// //     game1:'NFS',
+// //     gaame2:'Spiderman'
+// // }
+// // abov obj is not iterable
+
+// for(const [key,value] of map)
+// {
+//     console.log(key,':',value);
+// }
+
+// using this object ki keys bhi nikal skta hu
+
+const myObject={
+    js:"javascript",
+    cpp:"C++",
+    rb:"ruby",
+    swift:"swift by apple",
+}
+for(const key in myObject)
+{
+   console.log(`${key} shortcut is for ${myObject[key]}`);   
+}
+
+//  for in hmri key niklta 
+// progtamming[key] se hm vakue nikal lenge
+const programming =["js","rb","py","java","cpp"]
+for(const key in programming)
+{
+   console.log(key);   
+   console.log(programming[key]);
+   
+}
+
+//object ke upat for in looop
+//array ke upar for of loop lg jaye  ga
+
+/////////////////////ForEach  ka kamal///////////
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+// higher order funciton
+// for each loop 
+const  coding =["Js","Ruby","Java","python","cpp"];
+// inside that is callbak function  that why name is  not therefor 
+//  for each array ke ake  pe chake index lr rha hai
+// coding.forEach(function (item){
+//     console.log(item);
+// })
+// for arrow function first we right arrow and then function
+//syntax  for this is  
+    //coding.forEach( () =>{})
+    //()=> this represnt arrow function
+     //{} => this represent funtion
+// coding.forEach((item) =>{
+//     console.log(item);
+// })
+
+// function printMe(item)
+// {
+//     console.log(item);
+// }
+// // only we passa refernce we are not clling here
+// coding.forEach(printMe)
+
+
+// coding.forEach((item,index,arr)=>{
+    
+//     console.log(item,index,arr);
+// });
+
+
+const myCoding=[
+            {
+                languageName:"javascript",
+                languageFileName:"js"
+            },
+            {
+                languageName:"java",
+                languageFileName:"java"
+            },
+            {
+                languageName:"python",
+                languageFileName:"py"
+            },
+    ]
+
+myCoding.forEach((value)=>{
+    console.log(value.languageName);
+})
+
+
+
+
+
+////////////////////////////////////////////////////////FILTER MAP AND REDUCE ////////////////////////////////////////////////////////
+const coding=["js","ruby","java","python","cpp"];
+// coding.forEach((item)=>{
+//     console.log(item);
+    
+// })
+//Herer we are storing in variable and return 
+// we use foreach value pe hme kuch krna pdta hoga to 
+//  const value= coding.forEach((item)=>{
+//     // console.log(item);
+//     return item;
+    
+// })
+// console.log(value)
+// undefined here for eachh not retrun any value
+
+// in some case if we want to return value 
+// so filter return the value 
+// const myNums=[1,2,3,4,5,6,7,8,9,10];
+// //   const newNums= myNums.filter((num)=>num>5)
+// // console.log(newNums);
+// // ver imp  in curly bracket we return onject that why we 
+// // explicitya add  return keyword
+// const newNums= myNums.filter((num)=>{
+//     return  num>5
+  
+// })
+// console.log(newNums);  
+
+
+
+
+
+// const newNums=[];
+// const myNums=[1,2,3,4,5,6,7,8,9,10];
+// myNums.forEach((num)=>{
+//     if(num>4)
+//     {
+//         newNums.push(num)
+//     }
+    
+// })
+// console.log(newNums)
+
+
+
+const books=[
+    { title:'Book One',genre:'Fiction',publish:1981,edition:2004},
+    { title:'Book Two',genre:' Non Fiction',publish:1992,edition:2008},
+    { title:'Book Three',genre:'Fiction',publish:1999,edition:2007},
+    { title:'Book Four',genre:'Fiction',publish:1989,edition:2010},
+    { title:'Book Five',genre:'Science',publish:2009,edition:2014},
+    { title:'Book Six',genre:'Fiction',publish:1987,edition:2010},
+    { title:'Book Seven',genre:'History',publish:1986,edition:1996},
+    { title:'Book Eight',genre:'Science',publish:2011,edition:2016},
+    { title:'Book Nine',genre:'Non-Fiction',publish:1981,edition:1989},
+    ]
+    
+    
+
+    // const userBooks=books.filter((bk)=>{
+    //     return bk.genre =='History';
+    // })
+    // console.log(userBooks);
+    
+    // // voe sari books dikhavho  jiska edition 2007 se jda hoga
+    // const userBooks=books.filter((bk)=>{
+    //     return bk.edition>=1995 && bk.genre =="History"
+        
+    // })
+    // console.log(userBooks);
+    
+    
+    // const myNumbers=[1,2,3,4,5,6,7,8,9,10];
+    //   const newNums=myNumbers
+    //   .map((num) =>  num*10)
+    //   .map((num) =>num+1)
+    //   .filter((num)=>num>=40)
+    // console.log(newNums); 
+    
+///////////////////Redu ce
+// const myNums=[1,2,3];
+// const myTotal=myNums.reduce(function(acc,currVal) {
+//     console.log(`acc:${acc} and currVal :${currVal}`);
+//     return acc+currVal
+// },0)
+// console.log(myTotal);
+
+
+
+////////////
+const myNums=[1,2,3];
+// const myTotal=myNums.reduce(function(acc,currVal) {
+//     console.log(`acc:${acc} and currVal :${currVal}`);
+//     return acc+currVal
+// },0)
+// console.log(myTotal)
+
+// const myTotal=myNums.reduce((acc,curr) =>acc+curr,0)
+// console.log(myTotal);
+
+// ''
+
+
+const shoppingCart=[
+            { 
+                itemName:"js Count",
+                price:29996
+            },
+            { 
+                itemName:"py Count",
+                price:2999
+            },
+            { 
+                itemName:"mobile dev Count",
+                price:5999
+            },
+            { 
+                itemName:"data science couses",
+                price:12999
+            }
+    ]
+    //  shopping card ke andar  jitne bhi prcing hai sb add kr doe
+    
+     const priceToPay=shoppingCart.reduce((acc,item)=>acc+item.price,0)
+     console.log(priceToPay);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,6 +14,7 @@ Simpler DevOps
 --------------------------------------------------------------
 
 ✅ WAR (traditional Java)
+
 “WAR files require an external server like Tomcat/GlassFish/JBoss.
 You deploy WAR into that server.”
 

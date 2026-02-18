@@ -1,0 +1,817 @@
+Synamtic and non Symnatic element kyu use kliya jata haiu
+Meta tags  seo se kaise link use hote 
+Dom teree kaun bnta 
+CRP (KAisee render ake website ko)  v.imp
+<mg  in alt tag  when we use
+ 
+#ALT)
+
+The required alt attribute specifies an alternate text for an image, if the image cannot be displayed.
+
+The alt attribute provides alternative information for an image if a user for some reason cannot view it (because of slow connection, an error in the src attribute, or if the user uses a screen reader).
+
+
+center 
+differmce between Local storage and seesion storage and cookeiss and uska kb expiry hota hai 
+notepa css2 and css3
+////
+
+
+
+
+
+Csss Precedence  (Kb kaun sa style apply hoga pcuh jaeye  ga) 
+id , class  , name who ahve higher priority css specificity
+rem and em 
+
+
+visibiltu hiddena  and dispalynaone
+
+
+
+
+
+Precporessor in css
+SAss
+CSS
+STYLUS
+
+js
+conversion and coercison  
++ sign use krte hai to
+
+
+DSA
+HASH TABLE
+
+Revers string array
+deep copy and shallow copy khud se kaise fuxniton bnye v
+
+
+
+
+
+///////////////////Do Before interview
+Swmantic and Non Semantic Element
+
+A semantic element clearly describes its meaning to both the browser and the developer. Examples of non-semantic elements: <div> and <span> — Tells nothing about its content. Examples of semantic elements: <form> , <table> , and <article> — Clearly defines its content.
+
+Semantic tags are HTML tags that have a specific meaning. For example, the <h1> tag is a semantic tag that represents a heading. The <p> tag is another semantic tag that represents a paragraph. Semantic tags are important because they help to make your HTML code more readable and understandable for both humans and machines.
+
+
+
+<h1>: Heading
+<p>: Paragraph
+<img>: Image
+<a>: Linkkj
+<table>: Table
+<ul>: Unordered list
+<ol>: Ordered lis
+
+
+
+#)Non Semantic Element
+
+Non-semantic tags are HTML tags that do not have a specific meaning. For example, the <div> tag is a non-semantic tag that can be used to group elements together. The <span> tag is another non-semantic tag that can be used to style text. Non-semantic tags are often used for layout purposes, but they can also be used to add structure to your HTML code.
+<div>: Container
+<span>: Styled text
+<br>: Line break
+<hr>: Horizontal rule
+<input>: Form input
+<select>: Form select
+<textarea>: Form textarea
+
+
+It is generally recommended to use semantic tags whenever possible. This will make your HTML code more readable and understandable for both humans and machines. However, there are times when you may need to use non-semantic tags, such as when you are using them for layout purposes.
+
+
+
+use semantic tags:
+
+They make your HTML code more readable and understandable for humans and machines. This is because semantic tags have a specific meaning, which makes it easier for people and machines to understand what your code is doing.
+#)They can help to improve the SEO of your website. Search engines can use semantic tags to understand the content of your web pages, which can help to improve your ranking in search results.
+They can help to make your web pages more accessible to people with disabilities. Screen readers and other assistive technologies can use semantic tags to understand the structure of your web pages, which can make them easier to navigate.
+
+
+use non-semantic tags:
+
+You may need to use non-semantic tags for layout purposes. For example, you might need to use the <div> tag to create a container for a group of elements.
+You may need to use non-semantic tags to add style to text. For example, you might need to use the <span> tag to apply a font style to a specific piece of text.
+
+
+
+
+Q)Differnce between html and html5
+1)Html5 is latest version of the Html
+2)Html5 intro new semantic element 
+ ex <header>,<nav>,<article>,<section>,<footer>
+3) Html5 introduce form with input types 
+ex <input type="Date" > and <input type-
+4) Html5 support audio and  video support <audio>,<video>
+5)Mobile Compatibilty
+6)Write the coding simpler than coparsion to html.
+#)intro of audio and video: 
+Audio and Video tags are the two major addition to HTML5. It allows developers to embed a video or audio on their website.
+
+Q)HTML
+It is used to design web pages using a markup language. HTML is a combination of Hypertext and Markup language. Hypertext defines the link between the web pages. A markup language is used to define the text document within the tag which defines the structure of web pages. This language is used to annotate (at the note for the computer) text so that a machine can understand it and manipulate text accordingly.
+->HTML Has Introduced api  and dom  and also like 
+
+
+
+Q)HTML=> html is stand for hyper text markup language used to create a static web page.
+hyper  stand for anchor tag.  
+The <a> tag defines a hyperlink, which is used to link from one page to another.
+
+Markup :that define the structure of the document using element ,like  heading ,paragraph and links.
+Programming langauage where we define  the variable and funciton to perform some logic and run the loop but  html is markup language their we cannot able to do these things.
+
+alt tag in img?
+
+
+#)What are tags and attributes in HTML?
+
+#)Tags
+HTML Tags:
+HTML Tags are the starting and ending parts of an HTML element. They begin with < symbol and end with > symbol. Whatever is written inside < and > are called tags.
+->HTML tags are composed of three things: an opening tag, content and ending tag.
+
+Some tags are unclosed tags.
+->Tags are the primary component of the HTML that defines how the content will be structured/ formatted, 
+
+
+#)HTML elements
+The HTML element consists of both the opening and closing tags as well as what’s inside those tags.
+
+##IMP
+HTML tag starts with < and ends with >
+Whatever written within a HTML tag are HTML elements.
+HTML attributes are found only in the starting tag.
+
+
+
+Attributes=> We  use attributes with the html tags   to define the characteristics of the element.
+ For example, <p align=” center”>Interview questions</p>, in this the ‘align’ is the attribute using which we will align the paragraph to show in the center of the view
+
+
+#)What are void elements in HTML?
+HTML elements which do not have closing tags or do not need to be closed are Void elements. For Example <br />, <img />, <hr />, etc.
+
+HTML elements with no content are called empty elements. For example: <br>, <hr> etc.
+
+
+#)What is the difference between HTML elements and tags?
+HTML elements communicate to the browser to render text. When the elements are enclosed by brackets <>, they form HTML tags. Most of the time, tags come in a pair and surround content.
+<br> tag - Usually <br> tag is used to separate the line of text. It breaks the current line and conveys the flow to the next line
+
+
+ <!DOCTYPE html> is used to instruct the web browser about the HTML page.
+
+#)Type Of List In Angular?
+->Unordered List
+->Ordered List
+
+
+
+#)What is the difference between the ‘id’ attribute and the ‘class’ attribute of HTML elements?
+=>ID should be unique it should be add only  in one html elmeents.
+=>If we want to add css in multiple  element then we used  class attribute.
+Multiple elements in HTML can have the same class value.
+
+
+#) Can we display a web page inside a web page or Is nesting of webpages possible?
+Yes, we can display a web page inside another HTML web page. HTML provides a tag <iframe> using which we can achieve this functionality.
+
+<iframe src=”url of the web page to embed” />
+
+
+
+
+
+
+Q)Differnce between html and Xhtml?
+Xhtml is extensible HyperText Markup Langauge is a markup langauge that follow the rule of xml to defien the structire of web page.
+#)Xhtml is also created before html5 .
+#)Xhtml combination of xml+ HtML.
+
+#)Differnce between Html5 and xhtml?
+
+=>html/Html5                                      
+Is doesn't follow strict syntax rule.
+Html is not case-sentive
+Captial letter we can use here at  the tag
+<DIV> ,<P>
+Html is widely supportd by all browser  and web browser
+
+
+=>Xhtml
+is follow strict syntax rule
+xHTML is case Senstive
+<div> ,<p> will work
+Xhtml has limited supported by browser.
+
+
+#)Interpreter vs Compiler
+
+#)Purpose of DOCTYPE IN HTML?
+  doctype we use to specify the version  of html5.
+  doctype tells the browser which verison of  html it is  and how to interpet the  code.
+  It helps the browser understand how to render the content correctly.
+ The <!DOCTYPE> declaration is always the first line in an HTML document, before the <html> tag.
+
+#)What if i remove the doctype from html?
+browser can  still render the page but they will not not able to validate the verision of html
+therforw it may casuse  a compatibilty issue  with seo or debugging.
+
+
+#)Head and body  differnce  where to palce js lInk refernce?
+<head> element is where we palce our meta-information(Information aboout the document)
+for ex: <title>.<meta>,<link>,<script>  <style> are normally kept under head element.
+
+#)where we place js Link refernce ?
+=>It depend on situation
+=>Head will load before  the body ,therefore ,if you are manipulating html elements  in your js
+functions,then place the js link at the end of the  body section  becoz untill then all elements
+ will be loaded.else place  it inside the head tag.
+
+Title tag in html is used to define the title of web page.
+Seo :Search Engine use the title as the main heading for section results.
+
+Q)meta tag 
+Meta tags in html are elements used to  provide metadata or additional information about a web page.
+
+5 type of meta tag are:
+
+1)charset  => the charset="UTf-8" attribute ensures  that character  from different  langauge will be dispalyed correctly in the browser.
+2)viewport  =>viewports is resposible for repposvie web design
+3)description
+4)3keywords
+5)author
+
+
+
+
+#)When to use scripts in the head and when to use scripts in the body?
+If the scripts contain some event-triggered functions or jQuery library then we should use them in the head section.
+ If the script writes the content on the page or is not inside a function then it should be placed inside the body section at the bottom. In short, follow below three points:
+
+Place library scripts or event scripts in the head section.
+Place normal scripts that do not write anything on the page, in the head section until there is any performance issue.
+Place scripts that render something on the web page at the bottom of the body section.
+
+
+#)Inline and block elements in HTML5?
+#)Inline
+Inline elements just take up the space that is absolutely necessary for the content and does not start from a new line.
+Example:- <span>, <a>, <strong>, <img>, <button>, <em>, <select>, <abbr>, <label>, <sub>, <cite>, <abbr>, <script>, <label>, <i>, <input>, <output>, <q>, etc.
+
+
+#)Block
+Block elements start on a new line and consume the full width of the page available.
+Example:- <div>, <p>, <header>, <footer>, <h1>...<h6>, <form>, <table>, <canvas>, <video>, <blockquote>, <pre>, <ul>, <ol>, <figcaption>, <figure>, <hr>, <article>, <section>, 
+
+Q)How to convert a block level element to inline via CSS?
+
+
+
+########)CSSSSSSSSSSSSSSS
+
+If you have used inline, internal, and external all the 3 stylings in HTML for a single element then which style will be applied?
+
+#)As Inline has the highest priority, any styles that are defined in the internal and external style   sheets are overridden by Inline styles.
+#)Internal or Embedded stands second in the priority list and overrides the styles in the external style  sheet.
+#)External style sheets have the least priority. If there are no styles defined either in inline or     internal style sheet then external style sheet rules are applied for the HTML tags.
+
+
+
+
+
+Ordered list - The ordered list displays elements in numbered format. It is represented by <ol> tag.
+Unordered list - The unordered list displays elements in bulleted format. It is represented by <ul> tag.
+Definition list - The definition list displays elements in definition form like in dictionary. The <dl>, <dt> and <dd> tags are used to define description list.
+
+
+
+#)Header and Footer:
+#)Footer is placed at the end of the web page while Header is placed at the start of the web page. By using <header> and <footer> HTML5 elements, the browser will know what to load first and what to load later. 
+figure and figcaption output
+#)Nav tag 
+#)Responsive images
+#)Local Storage
+
+
+=>
+////understnd this topic
+flex and grid
+
+make resposive 
+
+
+expres
+cmd
+node js 
+evenloop
+and callback
+autheticatin
+paymenty integraton
+respsive  kasam kiyua
+-> dom
+what are new feature in   html
+
+
+////////////////////////////////////////////////////////
+Q)what are css Selector?
+
+1)In CSS, selectors  select the  HTML element(s)  that we want to style.
+2)It is also referred as a link between the HTML document and the style sheet.
+3)There are several different types of selectors in CSS: -
+
+Exmaple RIght
+#)CSS Element Selector.
+#)CSS Id Selector.
+#)CSS Class Selector.
+#)CSS Universal Selector.
+#)CSS Group Selector.
+
+
+#)Element Selector
+The element selector selects HTML elements based on the element name.
+
+Example=>
+
+HTML
+<p>And me!</p>
+
+CSS
+p {
+  text-align: center;
+  color: red;
+}
+
+
+#)CSS Id Selector.
+Id selector uses id  attribute of an html element .
+Id selector  is used to selct one unqie element
+To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+Note: An id name cannot start with a number!
+HTML
+<p id="para1">Hello World!</p
+
+Css
+#para1 {
+  text-align: center;
+  color: red;
+}
+
+
+
+#)Class Selector
+The class selector selects HTML elements with a specific class attribute.
+To select elements with a specific class, write a period (.) character, followed by the class name.
+
+HTML
+
+<p class="para1">Hello World!</p>
+
+css
+.para1 {
+  text-align: center;
+  color: red;
+}
+
+
+Example2
+HTML
+<h1 class="center">This heading will not be affected</h1>
+<p class="center">This paragraph will be red and center-aligned.</p> 
+
+CSS
+p.center {
+  text-align: center;
+  color: red;
+}
+
+Example Sb ka
+
+HTML elements can also refer to more than one class.
+HTML
+<p class="center large">This paragraph will be red, center-aligned, and in a large font-size.</p> 
+
+
+CSS
+p.center {
+  text-align: center;
+  color: red;
+}
+
+p.large {
+  font-size: 300%;
+}
+Q)The CSS Universal Selector
+ The universal selector (*) selects all HTML elements on the page.
+
+
+HTML
+<p id="para1">Me too!</p>
+<p>And me!</p>
+
+CSS
+* {
+  text-align: center;
+  color: blue;
+}
+
+
+#)The CSS Grouping Selector.
+The grouping selector selects all the HTML elements with the same style definitions.
+Look at the following CSS code (the h1, h2, and p elements have the same style definitions):
+
+ex:
+h1 {
+  text-align: center;
+  color: red;
+}
+
+h2 {
+  text-align: center;
+  color: red;
+}
+
+p {
+  text-align: center;
+  color: red;
+}
+
+It will be better to group the selectors, to minimize the code.
+To group selectors, separate each selector with a comma.
+
+
+HTML
+<h1>Hello World!</h1>
+<h2>Smaller heading!</h2>
+<p>This is a paragraph.</p>
+
+CSS
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
+
+
+
+
+Q)Pseudo-class:
+A pseudo-class is used to define a special state of an element.
+A pseudo-class consists of a colon (:) followed by the pseudo-class name (e.g., :hover).
+For example,
+it can be used to:Style an element when a user mouses over itStyle visited and unvisited links differentlyStyle an element when it gets focus
+
+<a href="default.asp" target="_blank">This is a link</a>
+Ex:a:hover {
+  color: red;
+}
+
+#)Pseudo-element
+
+#)A CSS pseudo-element is used to style specified parts of an element.
+For example, it can be used to:
+
+Style the first letter, or line, of an element
+Insert content before, or after, the content of an element
+
+
+
+========== Syntax of pseudo-elements:================
+
+selector::pseudo-element {
+  property: value;
+}
+
+#)The ::first-line Pseudo-element
+#)The ::first-line pseudo-element is used to add a special style to the first line of a text.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+</style>
+</head>
+<body>
+
+<p>You can use the ::first-letter pseudo-element to add a special effect to the first character of a text!</p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+Try with Example to understand--------------------------------------------------------
+
+#)Position in Csss
+button:hover {  color: blue;}
+1)The CSS position property is used to set position for an element. it is also used to place an element behind another.
+  we can position the element using the top ,bottom ,left and right properties.these propertes can after position       property  is set first.
+
+
+2)The position CSS property sets how an element is positioned in a document. The top,right, bottom, and left properties
+  ap position are (static, relative, fixed, absolute or sticky).
+
+#)position: static;
+1)HTML elements are positioned static by default.Static positioned elements are not affected by the top, bottom, left, and right properties.
+2)it is always positioned according to the normal flow of the page:
+3)Static positioned elements are not affected by the top, bottom, left, and right properties.
+
+
+HTML
+<div class="static">
+This div element has position: static;
+</div>
+
+
+CSS
+div.static {
+  position: static;
+  border: 3px solid #73AD21;
+}
+
+
+
+
+
+#)position:
+1) relative;An element with position relative is positioned relative to its normal position.
+2)Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. 
+Other content will not be adjusted to fit into any gap left by the element.
+
+
+Ex:
+
+<div class="relative">
+This div element has position: relative;
+</div>
+
+
+div.relative {
+  position: relative;
+  left: 30px;
+  border: 3px solid #73AD21;
+}
+
+#)position: fixed;An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.
+A fixed element does not leave a gap in the page where it would normally have been located.
+
+#)absolute:position absolute krvu ga na to document ke flow se bhar a jaye ga
+and they overlap on each other
+
+#)HTML
+<div class="relative">This div element has position: relative;
+  <div class="absolute">This div element has position: absolute;</div>
+</div>
+
+#)CSS
+div.relative {
+  position: relati
+ve;
+  width: 400px;
+  height: 200px;
+  border: 3px solid #73AD21;
+} 
+
+div.absolute {
+  position: absolute;
+  top: 150px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid #73AD21;
+}
+
+
+
+
+Q)The z-index It is used to define the order of elements if they overlap on each otheproperty specifies the stack order of an element.i.e (which element should be placed in front of, or behind, the others).
+An element can have a positive or negative stack order:
+ zindex(1000);
+ex
+
+
+
+1)how to make div in center.
+
+#)Difference between  flex box and grid.
+->The Flex Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+->flexbox was designed for layout in one dimension - either a row or a column.   
+-> Grid was designed for two-dimensional layout - rows, and columns at the same time
+->This means Flexbox can work on either row or columns at a time, but Grids can work on both.With CSS Grid we can set relationships horizontally and vertically but at                     the same time. Flexbox, on the other hand, is stuck doing either vertical or horizontal layouts.
+Flexbox takes basis in the content while Grid takes basis in the layout.                           
+GRID Grid Layout, is a two-dimensional grid-based layout system with rows and columns, making it easier to design web pages without having to use floats and positioning'
+
+
+#)Dispply:flex
+display: flex in CSS is used to create a flexible box layout that allows you to design complex layouts more easily and efficiently.
+To use display: flex, you need to set it on a container element. This container then becomes a flex container, and its children become flex items.
+
+.container {
+  display: flex;
+}
+
+#)Grid 
+display: grid in CSS is used to create a grid layout, which allows for the arrangement of elements into rows and columns. This layout model provides more control over the alignment, spacing, and sizing of items in a container, making it a powerful tool for building complex web designs.
+ 
+
+Example 
+
+Example
+#) Media QueryMedia query are used to set different style rules for different  sized screen we use breakpoint  to set the condition of a media query.
+
+Exmaple
+
+#)Media queries are used in responsive web design to create different layouts based on the size of the viewport. They can also be used to detect other things about the environment your site is running on, such as: Whether the user is using a touchscreen rather than a mouseThe user's device, browser, or system settingsWhether the page is printed
+
+Q)Box Model:
+=>It is used to create the design and layout of web pages.
+=>our web page act like a box model.
+=>The web browser renders every element as a rectangular box according to the CSS box model.
+//shi kro
+#)Box Model Contain multiple Properties
+In  this order it is dispaly in web  page   (Margin sb se bhar rehta hau)
+Margin: while margin is used to create space  between elements (border and element ).
+Border:Lies between the padding and margin.
+Padding :Padding is used to create space within an element(content and its border),  
+Content: Content Refer where actual data  text and image are appear.
+
+ #)Padding is used to create space within an element(content and its border),  
+ #) while margin is used to create space  between elements (border and element ).
+#)content: This contains the actual data in the form of text, images, or other media forms and it can be sized using the  width & height property.padding: Padding is used to create space within an element(content and its border).border: This  property is used to cover the content
+#).margin: This property is used to create space around the element ie., around the border area.
+border..
+
+////
+Marign:Margin is the space outside an element's border. It creates space between the element and surrounding elements. Margins do not have a background color and are transparent by default.
+/////
+
+Padding is the space between the element's content and its border. It creates space inside the element. Padding is useful for adding internal spacing to elements without affecting their size or the layout of surrounding elements.
+
+
+
+
+visibilty hidden and none 
+#) What is the float property of CSS?The CSS float property is used to move the image to the right or left along with the texts to be wrapped around it. It doesn't change the property of the elements used before itvisibility: hidden hides the element, but it occupies space and affects the layout of the documedisplay: none also: hides the element but not occupy space. It will not affect the layout of the document     
+
+#)What is the difference between CSS2 and CSS3?
+The main difference between CSS2 and CSS3 is that CSS3 is divided into different sections which are also known as modules. 
+Unlike CSS2, CSS3 modules are supported by many browsers.
+
+Padding: A shorthand property for all the padding-*properties.• Visibility: It specifies whether or not an element is visible.• Display: It specifies how a certain HTML element should bedisplayed.
+//ye bhi
+Q)how to div make in center diffent way
+div center using flex<!DOCTYPE html> <html>   <head>     <style>         .center {             display: flex;             justify-content: center;             color: green;         }     </style> </head>   <body>     <h2 style="color:green">GeeksforGeeks</h2>     <div class='center'>         This text is centered     </div> </body>   </html>
+
+/////////////////////#) If we want to center the <div> horizontally and vertically, we just add height: 500px; in the CSS part of the code.<!DOCTYPE html> <html> 
+<head> 	<style> 		.center { 			display: flex; 			justify-content: center; 			align-items: center;      height: 500px; 					} 	</style> </head> 
+<body> 	<h2 style="color:green">GeeksforGeeks</h2> 	<div class="center"> 		This text is centered 	</div> </body> 
+</html> 
+
+
+Q) What is VH/VW (viewport height/ viewport width) in CSS?
+ It’s a CSS unit used to measure the height and width in percentage with respect to the viewport.
+ It is used mainly in responsive design techniques. The measure VH is equal to 1/100 of the height of the viewport. If the height of the browser is 1000px, 1vh is equal to 10px. Similarly, if the width is 1000px, then 1 vw is equal to 10px.
+
+
+
+
+#)Session Storage:
+It stores data of the current session only. It means that the data stored in session storage clear automatically when the browser is closed.
+
+#)Local Storage:
+Local storage is another type of HTML5 Web Storage. In local storage, data is not deleted automatically when the current browser window is closed.
+Local log darte nhi hai to browser ke close krne pe bnd nhi hoga
+
+Cookies:it is use for storage type;
+by aksshaynsaini
+
+Div center krne ke tarike
+
+
+
+
+
+/how to implwmtn inifinie scroll
+
+
+viewPort=>the area of the window in which web content can be seen .
+
+
+Q)HOw many Waye to import css and js
+#)Internal or Embeded Css
+
+#)Internal or Embedded CSS:
+ Internal or Embedded CSS is defined within the HTML document’s <style> element. It applies styles to specified HTML  elements, The CSS rule set should be within the HTML file in the head section i.e. the CSS is embedded within the  <style> tag inside the head section of the HTML 
+
+new feaures in css3
+Opactity
+css grid
+Meadia Query
+Flexbox
+Transformations: CSS3 introduces a range of transformation functions, such as translate(), rotate(), scale(), and skew(), which enable designers to modify the appearance and position of elements in 2D and 3D space.
+
+
+Q)box-sizing:
+it will add padding and   margin to a box
+
+
+
+#)External Css With the help of link tag
+ <link rel="stylesheet" href="style.css">
+
+
+Js  
+and
+css
+Duve center 
+Code Ke sath practice kro
+
+
+
+event bubbling and capturing 
+Event bubbling in JavaScript can be defined as the method by which an event which got triggered
+Event bubbling and event capturing are two mechanisms through which browser events propagate through the DOM (Document Object Model) tree.
+Event bubbling : it start from child to parent .
+
+
+ When an event occurs on a particular element, such as a click or a keypress, it can trigger handlers not only on that specific element but also on its ancestors in the DOM
+
+event bubbling mechanism in the DOM, where events traverse from the target element up to its ancestors, allowing multiple elements to respond to the same event
+Ex see techinal uneja
+
+ Event Capturing:
+
+//event  progate nhi hoga means ye vle event  chle ga nhi 
+event.stopPropgation();
+
+
+//By default behvauoyr ko print na krne de
+by defua;t behvaiour hai uska stop krna  hai .
+PreventDefault();
+
+
+
+Opacity:The
+#) opacity property specifies the transparency of an element.
+#)The opacity property can take a value from 0.0 - 1.0. The lower the value, the more transparent:
+
+img {
+  opacity: 0.5;
+}
+
+
+
+DIve in ener
+.container {
+            display: flex;
+            justify-content: center;
+            height: 100vh; /* For vertical centering */
+            align-items: center; /* For vertical centering */
+        }
+
+Using Position and Transform
+Use transform: translate(); and position: relative; properties. Shift the element 50% from the top and 50% from the left to align it at the center.
+
+Syntax:
+div {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+}
+
+
+
+.container{
+display:flex;
+justify-content:center;
+align-item:center;
+}
+
+
+
+{
+ potion:relative;
+top:50$
+left:50%
+            transform: translate(-50%, -50%);
+
+
+}
+
+

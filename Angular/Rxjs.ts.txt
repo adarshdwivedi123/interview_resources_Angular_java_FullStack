@@ -1,0 +1,32 @@
+(#)RXJS(Reactive Extension of javascript)
+
+#)Rxjs operator we use if we want to do multiple HTTP request parallel and 
+wait for them .
+
+#)The of operator in RxJS is a creation operator that allows you to create an Observable from a sequence of values.
+#)This operator is very useful when you need to create an Observable from a static set of values, and it emits these values sequentially before comp
+
+#)Usage: It  typically used for creating simple observation  for testing or when u need to emit a series of values.
+
+
+import {of} from 'rxjs';
+const observable=of(value1,value2, value3 , ....);
+
+=======================================================================================================================
+
+
+
+
+
+Summary
+The of operator is a straightforward way to create an Observable that emits specified values.
+It is useful for creating simple, static Observables, particularly for testing and demonstration purposes.
+In the provided example, the of operator helps simulate an asynchronous data source,
+ making it easy to demonstrate how to work with Observables in Angular without needing a real backend service.
+
+
+
+/////////////////////////////////From/////////////////////////////////////////////////////////////////////////////////////
+
+
+https://medium.com/@mlkpatel0/rxjs-operators-in-angular-fd199de5143e

@@ -1,0 +1,10 @@
+Template-Driven Forms:
+
+Simpler setup, more declarative.
+Better for simple forms.
+Validation and form control are managed in the template.
+
+Reactive Forms:
+More control and flexibility.
+Better for complex forms with dynamic fields.
+Validation and form control are managed in the component class.

@@ -1,0 +1,17 @@
+core
+services
+class
+constant
+enum
+guards
+helper funcitons
+intercepto
+pages
+model 
+
+  -component
+    
+shared
+resuable component
+directives
+pipe

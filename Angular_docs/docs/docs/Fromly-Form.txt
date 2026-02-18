@@ -1,0 +1,201 @@
+Why we use Formly Form?
+1) Their are complex form in our project  more than 10 to 15  fields are required so insted of going with normal we decided go with formly form.also for ehncament purpose we   use that formly form.
+2)we have see this frormly form suppoert angyular library weekly downlaod is more than 1lakh.
+becoz of this we choose formly form.
+
+Q)What is formly form?
+Dynamic Forms: Formly allows you to create forms dynamically based on JSON configurations. This means we can define  form structure in a JSON object rather than writing HTML templates for each form field. This makes it easier to maintain and modify forms, especially when dealing with complex or dynamic forms where fields may change based on user interactions or data.
+
+
+Also THeir are other feires how can we reuse formlu form and add vlaidation thise are thing aare aviable in documentaion itself
+
+
+Problem :
+Problem Faacing diffculty   while installing the formly form  ..after checking compatibilty with angualr verison on documention i am able to instlal that ...it was also challenging faocnig .
+Also facing lott issue while api calling in thst formly becoz their little differnt that comapre to normal form .
+
+
+What is Formly Form?
+
+In Angular. Formly form is a dynamic form library for Angular that simplifies the process of creating complex forms.
+formly form  create from structure in json format and  formly form handling the rendering process and all internlly.
+
+Reusable Form Components: With Formly, you can define form field configurations once and reuse them across multiple forms.
+ This promotes code reusability and helps keep your codebase clean and organized.
+
+Built-in Validation: Formly supports built-in validation features, allowing you to easily add validation rules to your form fields. Validation rules can be defined in the form configuration, making it straightforward to manage form validation logic.
+
+
+
+
+
+ we can create by allowing you to define the form structure in JSON and letting Formly handle the rendering.
+
+
+Diffulty that  i am facing after install  version mismtach isssue it is not working propely once install the specific veriosn it is working fine
+api integtation fist time it is tksing time to do that 
+
+Mvc ->
+
+https://eugeniucozac.medium.com/the-mvc-architecture-in-angular-9eecd586bb94
+mvvm->
+Explain Project in Detial
+how this keyword will work in differnt scneario 
+can you explain with some exmple?
+differnt with div and span?
+diffence betwen  == and ===   explin some scenario where we have use
+what is aglie and scrum
+Hooks learn Complete?
+mvc 
+HttMl 
+css 
+Notes bnavo
+Iframe=>
+Reusable Compoent
+
+1)
+ == And ===
+
+When comparing against null or undefined:
+
+== allows you to check if a value is null or undefined regardless of its type.
+When dealing with user input or external data:
+
+Sometimes when dealing with data from external sources, such as user input or APIs, you may need to use == to handle various types of inputs without strict type checking.
+javascript
+Copy code
+var userInput = "10";
+if (userInput == 10) {
+    // This condition will be true even though userInput is a string
+}
+When comparing values of different types that you know will coerce correctly:
+
+In certain cases, you might know the possible types of values being compared and that they will coerce correctly. In such scenarios, using == can be more concise.
+javascript
+Copy code
+var num = 10;
+if (num == "10") {
+    // This condition will be true since "10" will be coerced to a number
+}
+
+
+===
+
+The === operator in JavaScript performs strict equality comparison, checking both the value and the type
+
+
+1)Checking for strict equality when dealing with truthy or falsy values:
+2)When you want to distinguish between 0 and false, null and undefined, or empty strings and false, === is the appropriate choice.
+var x = 0;
+if (x === false) {
+    // This condition will always be false
+}
+
+When comparing against literals with a specific type:
+
+If you want to ensure that the type of a value matches a specific literal, === ensures both the value and the type match.
+javascript
+Copy code
+var str = "10";
+if (str === 10) {
+    // This condition will be false because the types are different
+}
+
+
+//////
+
+https://www.linkedin.com/posts/subharoop-ghosh-943669150_kolkatajobs-kolkatahiring-kolkatadiaries-activity-7163927620588437505-vSIC?utm_source=share&utm_medium=member_desktop
+
+
+
+
+#)The this keyword in JavaScript behaves differently depending on the context in which it is used
+
+=>)Global Context:
+#)When used in the global context (outside of any function), 
+this refers to the global object, which is window in a web browser and global in Node.js.
+console.log(this === window); // true in a browser environment
+#)when we use outside the function this will behave like global object. 
+
+#)Function Context:
+Function Context:
+
+Inside a function, the value of this depends on how the function is called:
+If the function is called as a standalone function (not attached to any object), this will again refer to the global object (window in a browser, global in Node.js in non-strict mode, and undefined in strict mode).
+In strict mode, this will be undefined if the function is called as a standalone function.
+
+function myFunction() {
+    console.log(this);
+}
+
+myFunction(); // this refers to the global object
+
+
+
+
+
+The this keyword in JavaScript behaves differently depending on the context in which it is used. Here's how it works in different scenarios:
+
+
+#)Method Context:
+When a function is called as a method of an object, 
+inside the object if we have method
+this refers to the object on which the method is called.
+
+
+var obj = {
+    name: "John",
+    greet: function() {
+        console.log("Hello, " + this.name);
+    }
+};
+
+obj.greet(); // this refers to obj
+
+
+Constructor Context:
+
+Inside a constructor function (a function invoked with the new keyword), this refers to the newly created instance.
+javascript
+Copy code
+function Person(name) {
+    this.name = name;
+}
+
+var person1 = new Person("Alice");
+console.log(person1.name); // "Alice"
+
+
+
+
+
+Explicit Binding:
+
+You can explicitly set the value of this using call(), apply(), or bind() methods.
+javascript
+Copy code
+function greet() {
+    console.log("Hello, " + this.name);
+}
+
+var obj = { name: "John" };
+
+greet.call(obj); // explicitly sets this to obj
+
+
+
+
+///<!-- Assignment: 
+Create a Reactive form to collect the below details from the user and store it in JSON file. 
+First Name (Textbox and required) 
+Last Name (Textbox and required) 
+Email (Textbox, required and Email validation) 
+Phone (Text box and required and number validation) @ 
+Create service to store the collected user into a JSON file and
+ use same service to retrieve the data in the list view. 
+Create New component to show the list of user details in the User details JSON file.  -->
+
+
+
+
+

@@ -1,0 +1,29 @@
+Difference between Async pipe and subscribe
+NgDestrpy
+
+
+Thoda DSA STRT KRTE HAI 
+
+
+Set and patch
+
+Synram
+<!-- Create a formgroup and inside that form create dynamic formcontrols 
+such as whatever we input in a field it should become a formcontrol 
+as we click on an add button. -->
+
+
+
+two sum problem
+how can we verify the token
+state amangement
+middle ware
+pagination 
+
+
+
+
+
+<!-- Create a formgroup and inside that form create dynamic formcontrols 
+such as whatever we input in a field it should become a formcontrol 
+as we click on an add button. -->

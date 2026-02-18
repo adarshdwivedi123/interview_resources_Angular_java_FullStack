@@ -1,0 +1,80 @@
+#)define
+A JSON Web Token (JWT) is a secure way to send information between a client and a server.
+It is mainly used  verify users and prevent unauthorized access.
+A JWT is JSON data secured with a cryptographic signature.
+
+1)These are token are created when we log in.
+2) these help  the website remember our login session.
+
+BUilding block of jwt 
+JWTs are made up of three parts: a header, a payload, and a signature. 
+1)Header
+2)Payload
+3)Signature
+
+1. Header (What algorithm is used)
+The Header tells which algorithm is used to sign the token.
+Example:
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+alg = algorithm (HS256, RS256 etc.)
+typ = JWT
+
+ This part tells us what kind of token we’re dealing with (which is JWT) and the algorithm used for creating the signature.
+
+2. Payload: 
+Payload contains actual data of the user.
+➡️ Purpose:
+To carry user information securely.
+
+This is where the user data is stored. It’s also where you’ll find details about when the token was issued and when it will expire.
+
+3.Signature: Think of the signature as a safety seal. It’s created by taking the encoded header, the encoded payload, and a secret key, then running them through a special algorithm. The resulting signature helps confirm that the token hasn’t been tampered with.
+
+------------------------------------------------------------
+Header: algorithm + token type
+Payload: user info (claims)
+Signature: verifies data is unchanged.
+Header + Payload are Base64 encoded, Signature keeps token secure.
+--------------------------------------------------------------------
+
+
+#)How JWT Authentication Works
+=>Login: You enter your username and password on the website. If the details are correct, the server generates a JWT and sends it back to you.
+
+=>Store and Send: Your browser then stores this token (often in a place called local storage). Every time you visit a new page on the site or request a protected resource, your browser automatically sends the JWT along in the headers of the HTTP request.
+
+=>Verify and Allow: The server gets this request, and the JWT with it. It checks the JWT’s signature to make sure it’s legit and hasn’t been messed with. If everything checks out, the server provides the resources you asked for.
+
+In short, JWT helps websites remember who’s logged in and keeps your session active as you move around the site.
+
+
+#)What are the ways to store authentication tokens in Angular apps?
+
+There are three possible ways of storing access tokens in an Angular app. They are:
+->In-memory storage
+->HTML5 web storage
+->Cookie storage
+
+Q)What are Interceptors?
+In Angular, Interceptors are like having checkpoints where changes can be made, 
+like adding headers to a request or logging responses from a server. 
+In our case, we’ll use an interceptor to automatically add our JWT to every request that needs it.
+
+
+
+https://raghuvardhankaranam.medium.com/implementing-jwt-authentication-using-angular-52bc82096b56
+https://www.syncfusion.com/blogs/post/best-practices-for-jwt-authentication-in-angular-apps
+
+
+
+
+my current inclinationis  towrds  exploring angualr new verison learnif hoiw to angualr applicaiton also parally working on perosnl project that is rent applciation.
+
+
+
+
+
+

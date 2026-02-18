@@ -1,0 +1,3 @@
+“Signals hold a value and update the UI automatically when the value changes.
+Observables handle async data like API responses and events and need subscriptions.
+I use signals for UI state and observables for backend communication

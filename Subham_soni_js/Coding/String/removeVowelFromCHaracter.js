@@ -1,0 +1,1 @@
+//remove vowel  from  character  and return a new  array

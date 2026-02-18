@@ -1,0 +1,38 @@
+
+
+//////////Custom Directive///
+ng g d direcive_name
+
+
+import {Directive ,ElementRef,HostListener,Input} from '@angular/core';
+
+@Directive({
+  selector:'[appCustomButton]'
+
+})
+
+export class AppCustomButton Directive {
+   @Input() customColor :string =' ';
+    constructor(private elementRef: ElementRef){}
+
+
+@HostListener('mouseenter') omMouseEnter(){
+     this.applyCustomStyle(this.customColor);
+}
+
+@HostListener('mouseleave') omMouseLeave(){
+     this.applyCustomStyle(null);
+}
+
+private applyCustomStyle(color:any){
+this.elementRef.nativeElement.style.backgroundColor=color;
+}
+
+
+
+}
+
+
+//////////
+HTML
+<button appButtonbackground color="pink" >Blue Color</button>

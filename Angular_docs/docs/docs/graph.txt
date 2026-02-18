@@ -1,0 +1,232 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+    int n;
+    cout<<"Ente the number of nodes "<<endl;
+    cin>>n;
+    vector<vector<int>>adj(n,vector<int>(n,0));
+    int e;
+    cout<<"Enter the number of edged";
+    cin>>e;
+    
+    for(int i=0;i<e;i++)
+    {
+        int u,v;
+        cin>>u>>v;
+        // mark 1
+        adj[u][v]=1;
+    }
+    // prinitng
+    
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            cout<<adj[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    
+}
+
+
+
+//////////////////////////grpah wirh adjaency list
+
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<vector>
+using namespace std;
+#include<list>
+#include<unordered_map>
+
+class Graph{
+    public:
+    unordered_map<int,list<int>>adjList;
+    
+    void addEdge(int u,int v, bool direction)
+    {
+        // direction =0 -> undirected graph
+        // direction =1 -> directed graph
+        // create an edge from u to v
+        adjList[u].push_back(v);
+        if(direction == 0)
+        {
+            // undirected edge
+             ///create an edge from v to u
+            adjList[v].push_back(u);
+        }
+        
+        
+    }
+    void printAdjacencyList(){
+        for(auto node: adjList)
+        {
+            cout<<node.first<<"->";
+            
+            for(auto neighbours:node.second){
+                    cout<<neighbours <<",";     
+                    
+            }
+            cout<<endl;
+        }
+    }
+};
+
+int main() {
+    // Write C++ code here
+//   int n;
+//     cout<<"Ente the number of nodes "<<endl;
+//     cin>>n;
+//     vector<vector<int>>adj(n,vector<int>(n,0));
+//     int e;
+//     cout<<"Enter the number of edged";
+//     cin>>e;
+    
+    // undirected graph
+    // Graph g;
+    // g.addEdge(0,1,0);
+    //   g.addEdge(1,2,0);
+    //       g.addEdge(0,2,0);
+    //       cout<<endl;
+    // g.printAdjacencyList();
+    
+    
+    
+    // directed edge]
+     Graph g;
+    g.addEdge(0,1,1);
+    g.addEdge(1,2,1);
+    g.addEdge(0,2,1);
+    cout<<endl;
+    g.printAdjacencyList();
+    
+  
+}
+
+
+
+
+
+////////////////////weight graph
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<vector>
+using namespace std;
+#include<list>
+#include<unordered_map>
+
+class Graph{
+    public:
+    unordered_map<int,list<pair<int,int>>>adjList;
+    
+    void addEdge(int u,int v,int weight, bool direction)
+    {
+        // direction =0 -> undirected graph
+        // direction =1 -> directed graph
+        // create an edge from u to v
+        adjList[u].push_back({v,weight});
+        if(direction == 0)
+        {
+            // undirected edge
+             ///create an edge from v to u
+            adjList[v].push_back({u,weight});
+        }
+        
+        
+    }
+    void printAdjacencyList(){
+        for(auto node: adjList)
+        {
+            cout<<node.first<<"->";
+            
+            for(auto neighbours:node.second){
+                    cout<<"("<<neighbours.first <<"->"<<neighbours.second<<")";   
+                    
+            }
+            cout<<endl;
+        }
+    }
+};
+
+int main() {
+    // Write C++ code here
+//   int n;
+//     cout<<"Ente the number of nodes "<<endl;
+//     cin>>n;
+//     vector<vector<int>>adj(n,vector<int>(n,0));
+//     int e;
+//     cout<<"Enter the number of edged";
+//     cin>>e;
+    
+    // undirected graph
+    // Graph g;
+    // g.addEdge(0,1,0);
+    //   g.addEdge(1,2,0);
+    //       g.addEdge(0,2,0);
+    //       cout<<endl;
+    // g.printAdjacencyList();
+    
+    
+    
+    // directed edge]
+     Graph g;
+    //  g.addEdge(source,destnode,weight,direction);
+    g.addEdge(0,1,5,1);
+    g.addEdge(1,2,8,1);
+    g.addEdge(0,2,6,1);
+    cout<<endl;
+    g.printAdjacencyList();
+    
+  
+}
+
+
+
+
+////////////////////////////////////DFS
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+
+
+
+// o(v+e)
+// Linear TimeCompelexity space and time complexity
+void bfs(int src)
+{
+    queue<int>q;
+    unordered_map<int,bool>visited;
+    q.push(src);
+    visited[src]=true;
+    while(!q.empty())
+    {
+        int frontNode=q.front();
+        q.pop();
+        cout<<frontNode<<", ";
+        // insert neighbour
+        for(auto neighbour:adjList[fromNode]){
+            if(!visted[neighbour]){
+                q.push(neighbour);
+                visted[neighbour]=true;
+            }
+        }
+    }
+}
+
+
+main()
+{
+    
+    
+    //disconnected  component hadle krna oh to 
+    // then haar node ko source mn ke call kre ge
+    // agar single  grpah hot to ake call me hi pura ka graph viste //oh jata
+    // but sdisconnec grpah hai to but sare soruce ke liye differnt //diff call bhejni pde gi
+    
+}

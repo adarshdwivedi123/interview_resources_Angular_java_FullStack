@@ -1,0 +1,464 @@
+=> PIE Graph JSON
+
+  public graph = {
+    data: [
+      {
+        values: [25, 50, 25,],
+        labels: ['Completed', 'In Progess', 'Yet To Start'],
+        domain: { column: 1 },
+        name: 'Batch Details',
+        hoverinfo: 'label+percent+name',
+        hole: .6,
+        type: 'pie'
+      },
+    ],
+    layout: {
+      annotations: [
+        {
+          font: {
+            size: 20
+          },
+          showarrow: false,
+          text: 'Batch ',
+          x: 0.5,
+          y: 0.5
+        },
+
+      ],
+      height: 580,
+      width: 480,
+      showlegend: true,
+      legend: { x: 1.3, y: 0.5 }
+    }
+  };
+
+
+
+
+/////////////////////////
+
+Node Creation Json
+
+nodes:[
+
+      {
+
+        id:'1',
+
+        label:"Start",
+
+        data:{
+
+          backgroundColor:"#009EFF",
+
+          nodeHovered:false,
+
+          nodeSelected:false,
+
+
+         result:[{
+
+          dispName:"Total",
+
+          value:100,
+
+          iconData:{ icon: "info", viewValue: "Total" , color: "primary", class: ""}
+
+          },
+
+          {
+
+          dispName:"Success",
+
+          value:10,
+
+          iconData:{ icon: "check_circle", viewValue: "Success", color: "green", class:"green" }
+
+          },
+
+          {
+
+          dispName:"Failed",
+
+          value:20,
+
+          iconData:{ icon: "cancel", viewValue: "Failed" , color: "warn", class: " "}
+
+          },
+
+          {
+
+            dispName:"Total",
+
+            value:100,
+
+            iconData:{ icon: "info", viewValue: "Total" , color: "primary", class: ""}
+
+            },
+
+            {
+
+            dispName:"Success",
+
+            value:10,
+
+            iconData:{ icon: "check_circle", viewValue: "Success", color: "green", class:"green" }
+
+            },
+
+            {
+
+            dispName:"Failed",
+
+            value:20,
+
+            iconData:{ icon: "cancel", viewValue: "Failed" , color: "warn", class: " "}
+
+            },
+
+            {
+
+              dispName:"Total",
+
+              value:100,
+
+              iconData:{ icon: "info", viewValue: "Total" , color: "primary", class: ""}
+
+              },
+
+              {
+
+              dispName:"Success",
+
+              value:10,
+
+              iconData:{ icon: "check_circle", viewValue: "Success", color: "green", class:"green" }
+
+              },
+
+              {
+
+              dispName:"Failed",
+
+              value:20,
+
+              iconData:{ icon: "cancel", viewValue: "Failed" , color: "warn", class: " "}
+
+              }]
+
+        }
+
+      },
+
+      {
+
+        id:'2',
+
+        label:"Validation",
+
+        data:{
+
+          backgroundColor:"#009EFF",
+
+          nodeHovered:false,
+
+          nodeSelected:true,
+
+          result:[{
+
+            dispName:"Total",
+
+            value:100,
+
+            iconData:{ icon: "info", viewValue: "Total" , color: "primary", class: ""}
+
+            },
+
+            {
+
+            dispName:"Success",
+
+            value:20,
+
+            iconData:{ icon: "check_circle", viewValue: "Success", color: "green", class:"green" }
+
+            },
+
+            {
+
+            dispName:"Failed",
+
+            value:30,
+
+            iconData:{ icon: "cancel", viewValue: "Failed" , color: "warn", class: " "}
+
+            },
+
+            {
+
+              dispName:"Failed",
+
+              value:30,
+
+              iconData:{ icon: "cancel", viewValue: "Failed" , color: "warn", class: " "}
+
+              }]
+
+        }
+
+      },
+
+      {
+
+        id:'3',
+
+        label:"Ingestion",
+
+        data:{
+
+          backgroundColor:"#009EFF",
+
+          nodeHovered:false,
+
+          nodeSelected:true,
+
+          result:[{
+
+            dispName:"Total",
+
+            value:100,
+
+            iconData:{ icon: "info", viewValue: "Total" , color: "primary", class: ""}
+
+            },
+
+            {
+
+            dispName:"Success",
+
+            value:40,
+
+            iconData:{ icon: "check_circle", viewValue: "Success", color: "green", class:"green" }
+
+            },
+
+            {
+
+            dispName:"Failed",
+
+            value:50,
+
+            iconData:{ icon: "cancel", viewValue: "Failed" , color: "warn", class: " "}
+
+            }]
+
+        }
+
+      },
+
+      {
+
+        id:'4',
+
+        label:"Generate Certification",
+
+        data:{
+
+          backgroundColor:"#009EFF",
+
+          nodeHovered:false,
+
+          nodeSelected:false,
+
+          result:[{
+
+            dispName:"Total",
+
+            value:100,
+
+            iconData:{ icon: "info", viewValue: "Total" , color: "primary", class: ""}
+
+            },
+
+            {
+
+            dispName:"Success",
+
+            value:50,
+
+            iconData:{ icon: "check_circle", viewValue: "Success", color: "green", class:"green" }
+
+            },
+
+            {
+
+            dispName:"Failed",
+
+            value:60,
+
+            iconData:{ icon: "cancel", viewValue: "Failed" , color: "warn", class: " "}
+
+            }]
+
+        }
+
+      },
+
+      {
+
+        id:'5',
+
+        label:"Registration",
+
+        data:{
+
+          backgroundColor:"#009EFF"
+
+          nodeHovered:false,
+
+          nodeSelected:false,
+
+          result:[{
+
+            dispName:"Total",
+
+            value:100,
+
+            iconData:{ icon: "info", viewValue: "Total" , color: "primary", class: ""}
+
+            },
+
+            {
+
+            dispName:"Success",
+
+            value:60,
+
+            iconData:{ icon: "check_circle", viewValue: "Success", color: "green", class:"green" }
+
+            },
+
+            {
+
+            dispName:"Failed",
+
+            value:70,
+
+            iconData:{ icon: "cancel", viewValue: "Failed" , color: "warn", class: " "}
+
+            }]
+
+        }
+
+      },
+
+      {
+
+        id:'6',
+
+        label:"Stop",
+
+        data:{
+
+          backgroundColor:"#009EFF",
+
+          nodeHovered:false,
+
+          nodeSelected:false,
+
+          result:[{
+
+            dispName:"Total",
+
+            value:100,
+
+            iconData:{ icon: "info", viewValue: "Total" , color: "primary", class: ""}
+
+            },
+
+            {
+
+            dispName:"Success",
+
+            value:70,
+
+            iconData:{ icon: "check_circle", viewValue: "Success", color: "green", class:"green" }
+
+            },
+
+            {
+
+            dispName:"Failed",
+
+            value:80,
+
+            iconData:{ icon: "cancel", viewValue: "Failed" , color: "warn", class: " "}
+
+            }]
+
+        }
+
+      }
+
+
+    ],
+
+
+      links:[
+
+      {
+
+      source: '1',
+
+      target: '2',
+
+      label: '',
+
+      },
+
+      {
+
+        source: '2',
+
+        target: '3',
+
+        label: '',
+
+        },
+
+      {
+
+        source: '3',
+
+        target: '4',
+
+        label: '',
+
+        },
+
+        {
+
+          source: '4',
+
+          target: '5',
+
+          label: '',
+
+          },
+
+          {
+
+            source: '5',
+
+            target: '6',
+
+            label: '',
+
+            }
+
+        ]
+
+
+
+
+ 

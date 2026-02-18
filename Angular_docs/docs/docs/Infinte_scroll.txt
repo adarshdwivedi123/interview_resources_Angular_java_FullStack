@@ -1,0 +1,31 @@
+Infinite Scroll
+ Instead, they can opt for one of two common alternatives: pagination and load-more buttons.
+
+
+Virtual Scrolling
+https://javascript.plainenglish.io/infinite-scrolling-vs-virtual-scrolling-in-angular-57f6e60f128
+
+
+
+Q)Which Problem We are solving here?
+While Testing notification more than 10000 notifcation page become unrepsosive that becoz we are direclty shoing notificaiton
+...
+
+THzen we dedec go with infinte scroll linray we use this lbray after checking weekly downlaoded and  compatiabilty with veriosn
+
+How it works
+we use infintee scroll directive when we scroll at the bottom 
+Likho
+
+
+Probklem that i face  while integrating
+Compatbilty issue coming ...article are vert less fir understand thisin angular
+
+
+
+
+
+How You Spend Your days
+Wirking On Ui Enhcament part and also optimaization part  some time also do integration end to end with whole tema
+
+Enhcmane part i have work on formly form and  and for optimixzation  i have implemnt lazy laoding and to imporve the perfomance of the application..

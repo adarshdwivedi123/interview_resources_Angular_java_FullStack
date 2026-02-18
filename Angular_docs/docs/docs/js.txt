@@ -1,0 +1,8 @@
+scope means wat are variable  and function acces inside the blocks tht is knowm blaock scope
+var a=10;
+let b=20;
+const c =30;
+
+b and c are hosted
+b and c are hoisted  in seprated bloack assigned undefiend
+a is global stater

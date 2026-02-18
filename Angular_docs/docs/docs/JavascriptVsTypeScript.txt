@@ -1,0 +1,62 @@
+What is TypeScript? Why use it over JavaScript?
+
+Expected points:
+
+Superset of JS
+Static typing
+Compile-time error detection
+Better tooling & IDE support
+Large-scale app maintainability
+
+
+
+Q)Differnce betwen Typescrip and javascript
+
+=>TypeScript always highlights errors at compilation time during the time of development, whereas JavaScript points   out errors at the runtime.
+TypeScript being converted into JavaScript means it runs anywhere that JavaScript runs!
+
+
+
+Type Assignment
+When creating a variable, there are two main ways TypeScript assigns a type:
+
+#)Explicit
+#)Implicit
+
+#)Explicit - writing out the type:
+
+let firstName: string = "Dylan";
+Explicit type assignment are easier to read and more intentional.
+
+
+#)Implicit Type
+Implicit - TypeScript will "guess" the type, based on the assigned value:
+
+let firstName = "Dylan";
+
+TypeScript Special Types
+Type: any
+any is a type that disables type checking and effectively allows all types to be used.
+
+Type: any
+any is a type that disables type checking and effectively allows all types to be used.
+
+
+Explain how optional chaining works in TypeScript.
+Optional chaining allows you to access properties and call methods on them in a chain-like fashion. You can do this using the ‘?.’ operator.
+
+TypeScript immediately stops running some expression if it runs into a ‘null’ or ‘undefined’ value and returns ‘undefined’ for the entire expression chain.
+
+
+
+typescript me
+
+
+
+
+
+
+
+
+
+

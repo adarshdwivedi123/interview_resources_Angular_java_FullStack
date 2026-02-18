@@ -1,0 +1,135 @@
+// Maximum sum of a continuous subarray
+// from a given array of integers
+//Find maximum sum of a continuous subarray
+//continous means kadane alforithm
+//Three Loop se bhi kr skte hai
+
+// Given an integer array arr, find the contiguous subarray (containing at least one number) which
+// has the largest sum and returns its sum and prints the subarray
+function sumAlgo(arr){
+    let maxi = Number.MIN_SAFE_INTEGER
+    for(i=0;i<arr.length;i++)
+    {
+        sum=0;
+        //in subarray  j=i se strt hota  hai
+        for(j=i;j<arr.length;j++)
+        {
+            //we don't want to this sum= arr[i]+arr[j];
+            sum=sum+arr[j];
+            //dynam do sum niklate ja rha haiand check krte ja rha 
+            //max hai ki nhi loopke bhar likboge tutanth check nhikr paye ga  max sum
+            
+            maxi=Math.max(sum,maxi);
+        }
+        // if(sum>maxi)
+        // maxi=sum;
+        
+    }
+    console.log(maxi);
+
+    
+    
+}
+
+
+
+arr=[-2,1,-3,4,-1,2,1,-5,4];
+sumAlgo(arr);
+
+
+
+//Using Kadanle ALgorithm
+// Kadane Algorith keep moving in array 
+// if we found sum<0  then
+// sum=0 assign
+//  value iterate  next element untill sum>0
+// if sum>0
+// find the max
+
+
+
+
+function sumAlgo(arr){
+    
+    let maxi =Number.MIN_SAFE_INTEGER;
+    let sum =0;
+    for(let i=0;i<arr.length;i++)
+    {
+        sum+=arr[i];
+        
+        if(sum >maxi)
+        {
+          maxi=Math.max(maxi,sum);
+        }
+        
+        if(sum<0)
+        {
+            sum=0;
+        }
+        // To consider the sum of the empty subarray
+       // uncomment the following check:
+   
+       //if (maxi < 0) maxi = 0;
+    }
+    
+    console.log(maxi);
+   //   return maxi; 
+   }
+   
+   
+   
+   
+   arr=[-2, 1, -3, 4, -1, 2, 1, -5, 4];
+   //arr=[-2,-1,-3] empty array reh ga
+   sumAlgo(arr);
+
+
+
+
+   //one follow up print the maximum subarray
+   
+function maxSubarraySum(arr, n) {
+    let maxi = Number.MIN_SAFE_INTEGER; // maximum sum
+    let sum = 0;
+
+    let start = 0;
+    let ansStart = -1, ansEnd = -1;
+    for (let i = 0; i < n; i++) {
+
+        if (sum == 0) start = i; // starting index
+
+        sum += arr[i];
+
+        if (sum > maxi) {
+            maxi = sum;
+
+            ansStart = start;
+            ansEnd = i;
+        }
+
+        // If sum < 0: discard the sum calculated
+        if (sum < 0) {
+            sum = 0;
+        }
+    }
+
+    //printing the subarray:
+    console.log("The subarray is: [");
+    for (let i = ansStart; i <= ansEnd; i++) {
+        console.log(arr[i] + " ");
+    }
+    console.log("]n");
+
+    // To consider the sum of the empty subarray
+    // uncomment the following check:
+
+    //if (maxi < 0) maxi = 0;
+
+    return maxi;
+}
+
+let arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+let n = arr.length;
+let maxSum = maxSubarraySum(arr, n);
+console.log("The maximum subarray sum is: " + maxSum);
+

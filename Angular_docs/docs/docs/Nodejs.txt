@@ -1,0 +1,297 @@
+what is idempotent
+kaun sa idempotent hai
+Four Type http Reuqest
+Get-retrive the data
+Put -update the data
+Post ->submit the data
+Delete ->delete the data
+
+ frame work we  usr thast is Express is use to create a network
+=>Mongodb is no-sql data base we can store the data 
+->document
+->key-value pair
+->graph
+
+
+const express=require("express");  
+we import using require statement
+app=express(path, callback);
+
+//using Port is like addres  agar hme address nhi pta hoga to kha postcard bheje ke 
+same like if we don't know port so  run kha krye ge
+PORT=4000:  
+
+//node js me jb hme middle ware use krna hota hai to hm app.use krte hai 
+//It is mostly used to set up middleware for your application.
+app.use()
+
+differnce between sql and noSql Data base
+
+node js me data hmra object ke form store oh rha hai 
+mongo me data hmra  document ke form store ohr hai 
+inke beach mapping ko odm(Object data modeling) sambhlta hai
+
+app.get()
+//app.type() we  ahve to use
+app.type()
+
+
+Differnce between Frontend and backend
+#)Forontend refer to client side                                     backend to refer to server side
+=>HTML, CSS, Bootstrap, jQuery, JavaScript, AngularJS,                     Java, PHP, Python, C++, and React.js are essential front-end development technologies.
+
+Node.js, etc., are the technologies required for back-end development.
+
+////////////////////////////////////////////////////////////////////Start/////////////////////////////////
+#) whar is Node ?
+=>node is neither a language nor a frameowrk.
+=> Node/nodejs Provide runtime envormnt to excute our js Program on the server side.
+=> becoz of nodejs  javscript   run on server side  becoz it create to excurte js
+=>Browser excute  js on the client side and similary Nodejs excutes js  on the server side.
+=>v8 is js engine for the  js language.
+
+#)RunTime envorment:Primarly focuses on providing  the necessary infrastructure for code excution
+including services like memory mangement and i/o operations.
+
+
+
+
+
+
+How is Node.js better than other most popular frameworks?
+
+=>js makes development simple because of its non-blocking I/O and even-based model. This simplicity     results in short response time and concurrent processing, unlike other frameworks where developers use     thread management.
+=> js runs on a chrome V8 engine which is written in C++. It enhances its performance highly with constant     improvement.
+=> With Node.js, we will use JavaScript in both the frontend and backend development that will be much       faster.
+
+
+#)Express
+=>Express.js is a framework built on the top Node.js .
+=>it is simplify the process of building web application  and api providing set 
+of features  like simple  routing system ,middleware.
+
+Express.js is a popular open-source web application framework for 
+Node.js, a JavaScript runtime that allows developers to build 
+scalable, high-performance server-side applications.
+
+With Express.js, developers can quickly create server-side 
+applications that handle HTTP requests, process data, and 
+respond with dynamic content or data from a database. It also 
+supports a wide range of middleware that can be used to add 
+functionality, such as authentication, compression, logging, and 
+more.
+
+
+#)Difference between ClientSide(Browaser) and server Side(Node js)?
+Browser   ======>   Request to client-Side (Angular,React)   =======>Server Side   ====> Backedn  Table
+
+
+after backedn table send resposne back to the serverside and then client side and then browser
+client Side(Browser).
+->Runs on the user Browser.
+->HTML,CSS js.
+-> Handle Ui display ,interaction and client-side logic.
+
+
+Server Side(Node/Server)
+#)Runs on Server.
+#)js langauge we use.
+#)Handle Bussines logic ,data storage/acess ,authentication,authorization etc.
+
+
+
+#)7 main featues of node js?
+Single Threaded 
+Asynchronous
+Event Driven()
+V8 js Engine (Build On v8 js Engine  Google, chrome,Node js  excutes code fast)
+Cross Platform  (it can run any platform like windows,Linuk)
+Real time capbilty (bIdirectional capabiltes like chat applciaiotn)
+
+=>Single threaded Pzrograming
+#)it single threaded lagauge it will excute one line at  a time.
+  so once one taks is completed then it move to  other line  other wise it will wait  first task to      completed then move to next line.
+#)excute code line by line run one line  at a time.
+this is also called as a synchronus programming lang.
+
+
+=>multi threaded programming?
+Im a multi threaded applicatoin multiple threads can excute  multiple tasks simultaneously
+ and parallelly.
+
+=>As soon as one thread start a task the next task is immediately intiated by creaitng  a second thread.
+
+
+
+#)Asynchronous
+Asynchronous operations are typically non-blocking.
+aysncheonus task run  in parallel way  
+
+
+
+
+
+
+
+
+
+#)What is npm? What is the main functionality of npm?
+
+
+
+What is a first class function in Javascript?
+When functions can be treated like any other variable then those functions are first-class functions. There are many other programming languages, for example, scala, Haskell, etc which follow this including JS. Now because of this function can be passed as a param to another function(callback) or a function can return another function(higher-order function). map() and filter() are higher-order functions that are popularly used.
+
+
+#) Explain Node.js web application architecture?
+ A web application distinguishes into 4 layers:
+#)Client Layer: The Client layer contains web browsers, mobile browsers or applications which can make an HTTP request to the web server.
+
+#)Server Layer: The Server layer contains the Web server which can intercept the request made by clients and pass them the response.
+
+#)Business Layer: The business layer contains application server which is utilized by the web server to do required processing. This layer interacts with the data layer via database or some external programs.
+
+#)Data Layer: The Data layer contains databases or any source of data.
+
+
+#)Nodejs 
+ Modules are useful because of their reusability and ability to reduce the complexity of code into smaller pieces. Some examples of modules are. http, fs, os, path, etc.
+
+#)What is middleware?
+Middleware is the function that works between the request and the response cycle. Middleware gets executed after the server receives the request and before the controller sends the response.
+
+Middleware functions are the perfect place to modify the req and res objects with relevant information. For instance, after a user has logged in, you could fetch their user details from a database, and then store those details in res.user.
+
+#)Middleware functions are the functions that access to the request and response object (req, res) in request-response cycle.
+
+
+It can execute any code.
+It can make changes to the request and the response objects.
+It can end the request-response cycle.
+It can call the next middleware function in the stack.
+
+
+
+#) when to use Nodejs?
+-> IDea  for real time application like chat applicaiton ,online gmaing.
+-> Excellent for building light weight and scalable restful api.
+-> Well-Suited for building microservices based architecture and make scalable system.
+
+When Not to use Nodejs
+-> avoid for applocaiton that involves  heavy cpu  processing(image/video processing ,Data encryption /Decryption).
+
+
+ What is REPL in Node.js?
+REPL in Node.js stands for Read, Evaluate, Print, and Loop. It is a computer environment similar to the shell which is useful for writing and debugging code as it executes the code in on go.
+
+
+ What is package.json in Node.js?
+package.json is a file that is used to store the metadata of all the contents of the project. It is used to describe the module used, run commands, and other useful information about the project.
+
+
+#) What is event-driven programming in Node.js?
+ Event-driven programming is used to synchronize the occurrence of multiple events and to make the program  as simple as possible. The basic components of an Event-Driven Program are:
+
+ A callback function ( called an event handler) is called when an event is triggered.
+ An event loop that listens for event triggers and calls the corresponding event handler for that event.
+
+Explain crypto module in Node.js
+The crypto module is used for encrypting, decrypting, or hashing any type of data. This encryption and decryption basically help to secure and add a layer of authentication to the data. The main use case of the crypto module is to convert the plain readable text to an encrypted format and decrypt it when required.
+
+
+. What is CORS in Node.js?
+
+
+#)How can we implement authentication and authorization in Node.js?
+Authentication is the process of verifying a user’s identity
+while authorization is determining what actions can be performed. 
+We use packages like Passport and JWT to implement authentication and authorization.
+JWT.
+
+#)How to handle database connection in Node.js?
+To handle database connection in Node.js we use the driver for MySQL and libraries like Mongoose for connecting to the MongoDB database. These libraries provide methods to connect to the database and execute queries.
+
+
+What is web socket?
+Web Socket is a protocol that provides full-duplex (multiway) communication i.e. allows communication in both directions simultaneously. It is a modern web technology in which there is a continuous connection between the user’s browser (client) and the server. In this type of communication, between the web server and the web browser, both of them can send messages to each other at any point in time.
+
+
+What is REST API?
+Representational State Transfer (REST) is an architectural style that defines a set of constraints to be used for creating web services. REST API is a way of accessing web services in a simple and flexible way without having any processing.
+
+We can make changes to the request-response objects
+Middleware can also End the request-response cycle.
+
+
+#)Event  Driven Architectture
+It means  operastions in Node are drive or based  by events.
+
+
+#)Npm
+=>Npm is stand for node package Manger.
+=>IT is used to  manage  the dependecies  for our node project.
+
+
+
+Node_modules folder contains all the dependecies of the node project.
+
+
+#)why we use Package.json?
+package.json contain information about meta data(meta data means infomation about project ) 
+
+Ex:
+Project name
+project infomation
+project verison
+description
+
+
+#)What are modules?
+=>Module contains  a specfic fucntionality  that can we easily reused within a node js application.
+=>Ideally in nodejs ,a js file can be treated as a module.
+
+#)Diffenrce between fucntion and module?
+=>Module contains multiple  functions and variables.
+
+
+#)How many wasy to export module?
+1)Module.exports  => Object can be used to exports the module
+2)exports.sayHello  => OBject can be used directly to export the module.
+3)
+
+#)what will happen to export the module?
+then that module  we aree not able to use then
+
+how to imports  single and multiple fuunction?
+
+
+#)How to import single and multiple funciton in form a module?
+#)how to module wrapper function?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Links
+https://www.geeksforgeeks.org/node-interview-questions-and-answers/

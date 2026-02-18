@@ -1,0 +1,126 @@
+Distributed System  and three Priccipal
+these are three principla we should follow to make robust and scalable system
+
+1) Single Responsibilty Principle
+if a component performs multiple tasks break it down into 
+smaller components ,performing a single task.
+each component should ideally have a single responsibilty.
+
+2) No Single point  of failure Principle
+In our system find all the single point of failures and add 
+redundant copies of them so that if one copy falls other can 
+take over.
+
+3) No bottle-neck Principle
+whenever we design a system think of the data flowing through
+it find out the compoonent which  can slow the overall performance 
+of the system increase their performae either by vertical scaling
+or horizontal scaling
+
+#vertialScaling :vertical scaling is upgrading the existing hardware 
+or software.
+#horizontalScaling:Means adding multiple system to imporve the 
+performance.
+
+Example jo btya hai vie note kro
+Functional-requirment: tells what the system should do 
+Non-functional:how system should behave
+
+
+5 steps design a system
+1)Requirment Analysis
+2)Api Design
+3)Define Data model
+4)High Level Design
+5)Scale the design
+
+
+
+
+Scaling:
+The Process of growing or shrinking of the system to handle data is 
+called scaling.
+
+Vertical Scaling:Vertical Scaling means upgrading the hardware/sofware
+of the existing  system.
+Adding more power to it more Ram ,Cpu and HDD 
+#)but with vertical scaling there is always a limit a max beyond
+which it cannot go higher
+for ex: like  i play conter so i am able to upgreade till that point 
+but we never able to run entire Facebook on your single machine
+no matter how mich system is upgraded.
+to overcome with this drawback we go with  horizontal scaling
+
+=>Horiziatal Scaling :We add muliple resources i.e multiple system
+to improve the performance 
+ex:Facebook won't be able to run on a single machine but waht if we divide teh
+functionality and put   them across thoussand of machine we are using
+power of thposusnad of  machine to run Facebook. it is very much possible
+and this is how Facebook actually works
+
+
+LOAD Balancing:
+Load Balancer helps to distribute incoming traffice across 
+servers or database.there are 2 type of Load balancers hardware and
+ software.
+Hardware are genearally expensive but very effective
+
+.You can use mulitple load balancers to avoid single point of failure 
+we can use loadbalancers Active-active  and active-passive Load Balancers
+
+
+////
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "test": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "preprod": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ],
+              "outputHashing": "all"
+            }
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
