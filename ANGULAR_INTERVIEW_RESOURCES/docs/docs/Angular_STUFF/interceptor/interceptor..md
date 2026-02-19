@@ -1,3 +1,4 @@
+
 #)Definiton
 “Interceptor is a service that intercepts all HTTP requests/responses.
 I use it for adding JWT token, global error handling, logging, modifying headers, and showing loaders.
@@ -62,7 +63,10 @@ export const authInterceptor = (req, next) => {
 Return type of interceptor
 
 “The return type of the intercept() method is Observable<HttpEvent<any>>,
-because Angular processes HTTP requests as an observable stream and every interceptor must return the same stream so the next interceptor or HttpClient can continue the chain.”
+because Angular processes HTTP requests as an observable stream and every interceptor must return 
+ same stream so the next interceptor or HttpClient can continue the chain.”
+
+
 
 
 
@@ -129,5 +133,15 @@ Example:
 provideHttpClient(
   withInterceptors([authInterceptor])
 );
+
+
+---------------------------------------------
+What is Interceptor Chaining?
+
+In Angular, you can register multiple HTTP interceptors.
+
+When multiple interceptors exist:
+
+👉 They execute in a chain (one after another)
 
 

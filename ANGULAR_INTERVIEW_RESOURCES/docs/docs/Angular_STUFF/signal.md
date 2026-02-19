@@ -15,6 +15,7 @@ Signals make Angular:
 Faster
 Simpler
 No need for change detection everywhere
+
 Less code
 No manual unsubscribe
 Better performance

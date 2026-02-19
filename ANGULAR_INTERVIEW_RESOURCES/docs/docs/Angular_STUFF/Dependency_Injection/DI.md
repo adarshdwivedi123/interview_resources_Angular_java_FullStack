@@ -1,11 +1,20 @@
-Component ko jo bhi service chahiye hoti hai, Angular khud provide karta hai. Component ko new keyword se object banane ki zaroorat nahi padti.
+DI
+#)DI in angular  is a deisgn pattern where rather  than creating object manually inside a
+componenet .angualr create and provide the required dependecy.
+
+Ex:
+a component need a services ->angular  automatically inject the services into the component via
+constructor.
 
 
 #)Why DI is used and benfit?
-Reusability – same service can be used by many components
-Maintainability – code becomes clean and modular
-Loose coupling – components don't depend directly on service creation
-Testability – easy to mock services
+1)Reusability – same service can be used by many components
+2)Maintainability – code becomes clean and modular
+3)Loose coupling – component are not depend  on services ,if we replace a service
+component code stay same.
+4)angualr create one instance shared services  in all over component.
+5)Testability – easy to mock services
+
 
 
 
@@ -185,7 +194,7 @@ If not found anywhere, Angular throws an error.
 
 This shows you understand hierarchical lookup.
 
-
+--------------------------------------------------------------------------------------------
 Angular uses hierarchical dependency injection where injectors are arranged in a tree structure.
 Angular first looks for a dependency in the current injector, then in parent injectors, and finally in the root injector.
 Services provided in root are singletons, while services provided in components create new instances scoped to that component.

@@ -1,12 +1,55 @@
 
 #)RxJS (Reactive Extensions for JavaScript) is a library used in Angular to work with async data streams such as:
 
+
+It is used heavily in Angular:
+
+HTTP requests
+
+Form events
+
+Router events
+
+WebSocket
+
+State management
+
+Real-time UI updates
+
 API calls
 User events (click, scroll, type)
 Timers
 WebSockets
 Real-time data
+RxJS make them easy and predictable.
 
+
+
+-----------------------------------
+Observable → Stream of data
+
+Observer → Listens to the stream
+
+Subscription → Starts the observable
+
+Operators → Transform the stream
+
+
+
+------------------------------------------
+
+this.http.get('/users').pipe(
+  retry(2),
+  map(res => res['data']),
+  catchError(err => of([]))
+).subscribe(data => console.log(data));
+What RxJS is doing here:
+
+If API fails → try 2 more times
+
+Transform response → map()
+
+If still fails → return empty array
 ----------------------------------------------------
 #)Why Angular uses RxJS everywhere?
 
@@ -66,6 +109,12 @@ If you have normal data, of() makes it compatible with RxJS pipelines.
 
 ------------------------------------------------------------------
 tap() — side effects
+we used to print value for debugging .
+to log the  api respons. 
+
+
+
+
 tap(v => console.log("value: ", v))
 
 
