@@ -2,7 +2,7 @@ A signal is like a special variable that automatically updates the UI when the v
 
 
 1)Signals are a new Angular feature used for reactive data.
-2)They store a value, and whenever this value changes, Angular updates the UI automatically.
+2)They store a value, and whenever the value changes, Angular updates the UI automatically.
 3)They don’t need subscriptions, they improve performance, and they make code simple.
 4)We can use signal(), computed(), and effect() to manage UI data in a very clean way.”
 

@@ -38,3 +38,19 @@ sortFunc(arr);
 //optimal approach
 //Es6
 //swap vle sre kro 
+function sort01(arr){
+    let left = 0, right = arr.length - 1;
+
+    while(left < right){
+        if(arr[left] === 0){
+            left++;
+        } else { 
+            // arr[left] === 1 → swap with right
+            [arr[left], arr[right]] = [arr[right], arr[left]];
+            right--;
+        }
+    }
+    return arr;
+}
+
+console.log(sort01([1,0,1,0,0,1]));

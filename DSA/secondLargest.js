@@ -44,6 +44,48 @@
 //optimal
 
 
+function findSecondValues(arr){
+
+    // Step 1: Smallest
+    let smallest = Infinity;
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] < smallest){
+            smallest = arr[i];
+        }
+    }
+
+    // Step 2: Second Smallest
+    let secondSmallest = Infinity;
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] < secondSmallest && arr[i] !== smallest){
+            secondSmallest = arr[i];
+        }
+    }
+
+    // Step 3: Largest
+    let largest = -Infinity;
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] > largest){
+            largest = arr[i];
+        }
+    }
+
+    // Step 4: Second Largest
+    let secondLargest = -Infinity;
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] > secondLargest && arr[i] !== largest){
+            secondLargest = arr[i];
+        }
+    }
+
+    return { secondSmallest, secondLargest };
+}
+
+console.log(findSecondValues([5, 1, 9, 2, 7]));
+//-----------------------------------------------------------
+//Optimal apparoch
+
+
 function secondLargestOptiomal(arr){
     firstLargest= -Infinity
     secondLargest= -Infinity
@@ -64,3 +106,6 @@ function secondLargestOptiomal(arr){
 
 arr=[4,9,20,100 ,100];
 secondLargestOptiomal(arr);
+
+
+

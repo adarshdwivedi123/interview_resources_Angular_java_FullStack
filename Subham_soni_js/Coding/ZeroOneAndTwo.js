@@ -44,7 +44,12 @@ countVar(arr);
 
 /////////////////////////////////////////////////
 Optimal Approach using
+// Best Method → Dutch National Flag Algorithm
+// If arr[mid] == 0 → swap with low → low++, mid++
 
+// If arr[mid] == 1 → mid++
+
+// If arr[mid] == 2 → swap with high → high--
 
 using kadane algorithm
 ye teen pointer le lo issi ko arrange kro
@@ -58,3 +63,26 @@ swap karo low and mid ko mid ++ low++
 mid =1 Mid++
 mid =2
 swap mid and high  and high--(See here caref high-- hona chayoye)
+-----
+function sort012(arr){
+    let low = 0, mid = 0, high = arr.length - 1;
+
+    while(mid <= high){
+        if(arr[mid] === 0){
+            [arr[low], arr[mid]] = [arr[mid], arr[low]];
+            low++;
+            mid++;
+        }
+        else if(arr[mid] === 1){
+            mid++;
+        }
+        else { // arr[mid] === 2
+            [arr[mid], arr[high]] = [arr[high], arr[mid]];
+            high--;
+        }
+    }
+
+    return arr;
+}
+
+console.log(sort012([2,0,1,2,0,1]));

@@ -6,21 +6,21 @@
 
 
 
-// // function  test(arr,flag){
-// //     // for(let i=0;i<arr.length;i++)
-// //     // {
-// //     //     temp=[];
-// //     //     if(flag)
-// //     //     {
-// //     //         if(arr[i] !=0)
-// //     //         {
-// //     //           temp.push(arr[i])         
-// //     //         }
-// //     //         for(j=0;j<arr.length;j++)
-// //     //         {
-// //     //             arr[j]=0;
-// //     //         }
-// //     //         for(j=)
+// function  test(arr,flag){
+    // for(let i=0;i<arr.length;i++)
+    // {
+    //     temp=[];
+    //     if(flag)
+    //     {
+    //         if(arr[i] !=0)
+    //         {
+    //           temp.push(arr[i])         
+    //         }
+    //         for(j=0;j<arr.length;j++)
+    //         {
+    //             arr[j]=0;
+    //         }
+    //         for(j=)
             
             
 // //     //     }
@@ -159,6 +159,7 @@ checkAlgo(arr,boolean)
 // p=checkAlgo(arr,boolean)
 // console.log(p);
 
+// Question:in case of true add zero first and in case of false add zero last
 
 function rearrangeZeros(arr, addZeroFirst) {
     // Filter out zeros and non-zeros

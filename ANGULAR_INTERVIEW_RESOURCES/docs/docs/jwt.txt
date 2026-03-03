@@ -12,6 +12,7 @@ JWTs are made up of three parts: a header, a payload, and a signature.
 2)Payload
 3)Signature
 
+----------------------------------------------------------------------
 1. Header (What algorithm is used)
 The Header tells which algorithm is used to sign the token.
 Example:
@@ -19,6 +20,7 @@ Example:
   "alg": "HS256",
   "typ": "JWT"
 }
+
 alg = algorithm (HS256, RS256 etc.)
 typ = JWT
 

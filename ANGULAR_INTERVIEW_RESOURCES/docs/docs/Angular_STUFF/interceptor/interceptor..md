@@ -47,7 +47,7 @@ if (req.headers.has('skip')) {
   return next.handle(req);
 }
 
-------------------------------
+--------------------------------------------------
 What is HttpInterceptor in Angular 15 vs Angular 16+?
 
 Angular 16 introduced functional interceptors:
@@ -59,7 +59,7 @@ export const authInterceptor = (req, next) => {
 
   return next(modified);
 };
---------------------------------------
+---------------------------------------------------------
 Return type of interceptor
 
 “The return type of the intercept() method is Observable<HttpEvent<any>>,

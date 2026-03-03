@@ -9,7 +9,10 @@ Because closures allow a function to remember data even after the outer function
 for (var i = 1; i <= 3; i++) {
   setTimeout(function () {
     console.log(i);
-  }, 1000);
+  }, 1000)
+  
+  
+  ;
 }
 Output:
 

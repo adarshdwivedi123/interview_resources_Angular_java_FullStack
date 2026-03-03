@@ -1,3 +1,27 @@
 “Signals hold a value and update the UI automatically when the value changes.
 Observables handle async data like API responses and events and need subscriptions.
 I use signals for UI state and observables for backend communication
+
+
+
+DIffernce between them
+signal
+A signal is like a special variable that automatically updates the UI when the value changes.
+1)hold one value 
+2)sync
+3)signal we don't need unsubscribe.
+4)we can use for ui state ,counters
+
+
+-------------------------------------
+Observable
+A stream of data over time (async).
+1)rxjs is async in nature
+2)Must unsubscribe (except async pipe)
+2)support multiple operatos(map,filter,debounce)
+3)used for
+Http calls
+websockets
+event
+
+

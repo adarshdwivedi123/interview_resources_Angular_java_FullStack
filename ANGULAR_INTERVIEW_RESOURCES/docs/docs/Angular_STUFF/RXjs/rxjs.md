@@ -5,11 +5,8 @@
 It is used heavily in Angular:
 
 HTTP requests
-
 Form events
-
 Router events
-
 WebSocket
 
 State management

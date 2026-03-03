@@ -10,6 +10,7 @@ const person = {
         console.log(this.first+" "+this.last,city,
         country)
         //this function we are using in p1
+        //in case of ployfill we are adding temporaty function so that we can   
     }
 }
     const p1 ={first:"Adarsh",last:"Dwivedi"}
