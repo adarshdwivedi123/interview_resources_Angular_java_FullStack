@@ -38,4 +38,107 @@ NgOptimitaize image directive
 on  psuh change detection we can use
 use angular life cycle
 
+------------------------------------------------------------------------------
+Angular application performance can be improved by reducing unnecessary API calls,
+ and loading only required resources
+ Lazy Loading Modules
+
+1)Lazy loading 
+loads modules only when required, instead of loading the entire application initially
+Benefit:
+{
+ path: 'dashboard',
+ loadChildren: () =>
+ import('./dashboard/dashboard.module')
+ .then(m => m.DashboardModule)
+}
+
+Benfit
+1)Faster initial load
+2)Smaller bundle size
+
+
+--------------------------------------------------------------------
+2️⃣ Use OnPush Change Detection
+Angular normally checks every component for changes.
+Using OnPush reduces unnecessary checks.
+
+Example:
+
+@Component({
+ changeDetection: ChangeDetectionStrategy.OnPush
+})
+
+Benefit:
+Faster UI updates
+Less CPU usage
+-------------------------------------------------------------------
+Use trackBy in ngFor
+
+Without trackBy, Angular re-renders the entire list.
+--------------------------------------------------------
+Use Virtual Scroll for Large Lists
+
+For large datasets (like 1 lakh notifications in your project).
+
+Use Angular CDK virtual scroll.
+----------------------------------------------
+Use Async Pipe Instead of Subscribe
+
+Async pipe automatically handles subscriptions.
+
+Example:
+
+{{users$ | async}}
+
+Benefit:
+
+Avoid memory leaks
+
+Cleaner code
+-----------------------------------------------
+Avoid Unnecessary API Calls
+
+Use techniques like:
+
+1)Debounce
+2)Caching
+3)Pagination
+
+Example:
+
+debounceTime(300)
+--------------------------------------------
+9️⃣ Use Standalone Components (Modern Angular)
+Angular 21 encourages Standalone Components instead of NgModules.
+Standalone components reduce module complexity and improve build optimization.
+
+--------------------------------------------
+#)Optimize Bundle Size
+
+Use:
+Tree shaking
+Remove unused libraries
+Lazy load modules
+---------------------------------------
+#)Use AOT Compilation
+
+Angular supports Ahead-of-Time compilation.
+Benefit:
+Faster rendering
+Smaller bundle
+-----------------------------------
+#)Use Signals for State Management
+reducing unnecessary change detection.
+
+Benfit
+Automatic UI updates
+Faster rendering
+Less RxJS complexity
+-----------------------------------
+In one of our projects we handled large notification data using infinite scroll and optimized change detection to prevent UI freezing.
+
+
+
+
 

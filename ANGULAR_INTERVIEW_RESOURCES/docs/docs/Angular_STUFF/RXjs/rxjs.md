@@ -182,6 +182,7 @@ best for independent or parallel API calls.
 ----------------------------------------------------------------
 concatMap() — strict order execution
 suppose we have two api once first api call is done then second is calling 
+WHEN We get response form api api then usko use kr ke second api called hoga.
 What it does
 this.apiService.getUser().pipe(
   concatMap((user: any) => {

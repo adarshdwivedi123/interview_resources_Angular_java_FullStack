@@ -14,7 +14,7 @@ It basically acts like a video replay → when someone joins late, they still ge
 
 --------------------
 1)ReplaySubject keeps a memory of past emitted values.
-2)You control how many values to remember using a buffer size.
+2)WE CAN control how many values to remember using a buffer size.
 const sub = new ReplaySubject(2); 
 
 
