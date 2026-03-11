@@ -1,3 +1,12 @@
+#)CRP
+“The Critical Rendering Path is the process in which the browser takes HTML, CSS, and JavaScript 
+and converts them into the actual UI that appears on the screen.
+
+
+
+Agar CRP slow ho, to page late load hoga.
+Isliye hum CRP optimize karte hain: CSS ko minimize karke, JS ko defer/async karke, aur unused CSS/JS remove karke.”
+
 How does the browser rendering engine work?
 In order to render content the browser has to go through a series of steps:
 1. Document Object Model(DOM)
@@ -5,3 +14,24 @@ In order to render content the browser has to go through a series of steps:
 3. Render Tree
 4. Layout
 5. Paint.
+
+
+
+---------------------------------------------------------
+If interviewer asks: How do you optimize CRP?
+Answer like a pro:
+CSS blocking resources kam karo (minify, combine, critical CSS)
+JS ko async/defer se load karo
+Images compress karo
+Unused CSS/JS remove karo
+Render-blocking resources ko delay karo
+----------------------------------------------------------
+
+
+
+CRP Important kyu hota hai?
+Agar CRP fast hoga:
+✔ Page jaldi load hoga
+✔ User ko page fatafat dikhega
+✔ SEO ranking bhi better hoti hai
+✔ Performance fast lagti hai

@@ -47,6 +47,8 @@ let newString2 = newString1.map((data) => {
     return data.split("").reverse().join("");
 });
 console.log(newString2);
+
+do without this funciton
 ////////////////////////////
 
 //find the how many pallindrom in a array ?

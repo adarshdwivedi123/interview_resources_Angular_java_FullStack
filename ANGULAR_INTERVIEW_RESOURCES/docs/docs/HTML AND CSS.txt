@@ -51,12 +51,17 @@ deep copy and shallow copy khud se kaise fuxniton bnye v
 
 
 
-///////////////////Do Before interview
+///////////////////Do Before interview////////////////////////////////////////////
 Swmantic and Non Semantic Element
 
-A semantic element clearly describes its meaning to both the browser and the developer. Examples of non-semantic elements: <div> and <span> — Tells nothing about its content. Examples of semantic elements: <form> , <table> , and <article> — Clearly defines its content.
+A semantic element clearly describes its meaning to both the browser and the developer.
+ Examples of non-semantic elements: <div> and <span> — Tells nothing about its content.
+  Examples of semantic elements: <form> , <table> , and <article> — Clearly defines its content.
 
-Semantic tags are HTML tags that have a specific meaning. For example, the <h1> tag is a semantic tag that represents a heading. The <p> tag is another semantic tag that represents a paragraph. Semantic tags are important because they help to make your HTML code more readable and understandable for both humans and machines.
+Semantic tags are HTML tags that have a specific meaning. For example,
+ the <h1> tag is a semantic tag that represents a heading. 
+ The <p> tag is another semantic tag that represents a paragraph. 
+ Semantic tags are important because they help to make your HTML code more readable and understandable for both humans and machines.
 
 
 
@@ -143,7 +148,7 @@ Some tags are unclosed tags.
 #)HTML elements
 The HTML element consists of both the opening and closing tags as well as what’s inside those tags.
 
-##IMP
+##V.IMP
 HTML tag starts with < and ends with >
 Whatever written within a HTML tag are HTML elements.
 HTML attributes are found only in the starting tag.

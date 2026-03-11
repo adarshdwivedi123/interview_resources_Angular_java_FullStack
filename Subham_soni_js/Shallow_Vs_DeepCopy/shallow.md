@@ -24,6 +24,27 @@ if we change in copy object it will reflect in orgianlOBJect
     // change in copy object  effect in orginal object also
 
 
+
+  --------------------------------------------------
+Example 1️⃣ Primitive Value (No Effect)
+let obj1 = {
+  name: "Adarsh",
+  age: 25
+};
+
+let obj2 = { ...obj1 };
+
+obj1.name = "Rahul";
+
+console.log(obj1.name); 
+console.log(obj2.name);
+
+Output
+--------------------------------
+Rahul
+Adarsh
+--------------------------------------------------------
+
 //shallow copy we have to do in 4 ways
 ------------------------------------------------------------
 //1)using spread
