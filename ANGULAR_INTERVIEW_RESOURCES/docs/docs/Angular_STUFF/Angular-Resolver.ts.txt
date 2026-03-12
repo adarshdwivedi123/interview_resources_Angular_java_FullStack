@@ -1,0 +1,20 @@
+https://medium.com/@singhkrishnapal0818/angular-resolver-with-example-cf23f6d38f7f
+
+
+
+1)An Angular Resolver is used to fetch data before navigating to a route.
+
+Means
+The route will wait for the data to load first, and then the component will open.
+This improves user experience because the page does not load with empty data.
+
+
+===============================================================
+Key Difference Resolver and Guard
+
+Resolver	                            Guard
+
+Fetch data before route loads	        Control route access
+Used for API data	                    Used for security
+Runs before component loads	            Runs before route activation
+===========================================================================

@@ -67,6 +67,26 @@ In our case, we’ll use an interceptor to automatically add our JWT to every re
 
 
 
+-----------------------------
+How does JWT authentication work?
+
+Flow:
+
+User login
+     ↓
+Server verifies credentials
+     ↓
+Server generates JWT token
+     ↓
+Frontend stores token
+     ↓
+Token sent in Authorization header
+     ↓
+Backend verifies token
+------------------
+
+
+
 https://raghuvardhankaranam.medium.com/implementing-jwt-authentication-using-angular-52bc82096b56
 https://www.syncfusion.com/blogs/post/best-practices-for-jwt-authentication-in-angular-apps
 
