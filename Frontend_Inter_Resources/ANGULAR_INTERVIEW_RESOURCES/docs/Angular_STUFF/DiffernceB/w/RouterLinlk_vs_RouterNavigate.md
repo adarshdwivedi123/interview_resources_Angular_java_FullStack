@@ -14,10 +14,9 @@ Example
 <a [routerLink]="['/dashboard']">Go to Dashboard</a>
 Key Characteristics
 
-Works only in HTML templates
-
-Best for static navigation
-No logic or conditions can run before navigation
+1)Works only in HTML templates
+2)Best for static navigation
+3)No logic or conditions can run before navigation
 
 ------------------------------------------------
 #)router.navigate

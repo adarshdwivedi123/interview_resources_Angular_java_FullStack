@@ -1,12 +1,40 @@
 In Angular (before standalone), we used Modules:
 
 Definiton
-“forRoot() is used to provide global configuration and singleton services at the root level.
-It initializes features like the router only once.
+forroot and forchild  we use till angular 16 becoaz after angular17 standlone concept came in pirctiure
+1)ForRoot() we are using at  root module  to set applicaion main routing configuration
+2)“forRoot() is used to provide global configuration and singleton services at the root level.
 
----------------------------------------------------------------
+
+forChild() feature modules me use hota hai jahan additional routes define kiye jaate hain without creating a new router instance.
+
 forChild() is used in feature or lazy-loaded modules to add routes without recreating global services.
 ------------------------------------------------------
+
+
+AppModule
+   ↓
+RouterModule.forRoot()
+   ↓
+FeatureModule
+   ↓
+RouterModule.forChild()
+=================================================
+
+
+Why should RouterModule.forRoot() be used only once?
+
+RouterModule.forRoot() sirf ek baar use karna chahiye, usually AppModule me.
+
+Reason:
+
+Kyunki forRoot() Router service ka singleton instance create karta hai.
+
+Agar hum ise multiple modules me use karenge, to multiple router instances create ho jayenge, jo application routing me problems create kar sakta hai.
+
+
+
+===============================
 
 
 

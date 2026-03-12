@@ -4,7 +4,7 @@ componenet .angualr create and provide the required dependecy.
 
 Ex:
 a component need a services ->angular  automatically inject the services into the component via
-constructor.
+constructor or inject() .
 
 
 #)Why DI is used and benfit?
@@ -43,6 +43,9 @@ This creates a new instance of UserService only for this component.
 
 #)What is a Provider?
 Answer:
+simple menaing
+Providers are used to register services so Angular can inject them where needed.
+
 A Provider tells Angular HOW to create and deliver a dependency (service) when a component or another service needed.
 
 Define
@@ -185,7 +188,7 @@ If none of the injectors contain a provider, Angular throws a NullInjectorError.
 
 
 -----------------------------------------------------------------
-Best one
+#)Best one  tellt  this in interview
 Angular uses hierarchical dependency injection where injectors are arranged in a tree structure.
 When Angular injects a service, it first checks the current component injector.
 If not found, it checks the parent injector.
