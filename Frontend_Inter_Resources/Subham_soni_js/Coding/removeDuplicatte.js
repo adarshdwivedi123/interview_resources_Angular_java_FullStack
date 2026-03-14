@@ -39,7 +39,6 @@ console.log(data);
 
 
 
-----------------------------------------
 
 
 
@@ -51,7 +50,8 @@ console.log(data);
 
 
 
-Using HashMap (Manual Way – Interview Friendly)
+
+// Using HashMap (Manual Way – Interview Friendly)
 function removeDuplicates(arr) {
     let map = {};
     let result = [];

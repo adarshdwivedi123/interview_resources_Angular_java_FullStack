@@ -19,6 +19,7 @@ function leftShift(arr){
 arr=[1,2,3,4,5];
 temp=[];
 let p=leftShift(arr)
+
 console.log(p);
 
 //Optimial Approach

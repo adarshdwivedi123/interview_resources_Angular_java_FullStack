@@ -1,3 +1,4 @@
+
 JDK, JRE, and JVM
 #)JDK (Java Development Kit)
 • Role: It's the tool for making Java programs.
@@ -21,6 +22,19 @@ translates it into machine code that your computer can execute.
 Ye shi hai
 How They Work Together:
 JDK: You use it to write and compile Java programs.
-JRE: Provides the environment and libraries needed to run Java programs.
+JRE: Provides the environment and libraries needed to run Java programs.(JRE me R hai to run our java program)
 JVM: The JVM reads the bytecode (compiled Java code) and
 translates it into machine code that your computer can execute.
+
+SHORT ME
+JDK → Used to write and compile Java programs
+JRE → Used to run Java programs
+JVM → Used to execute bytecode
+
+===========================================
+Complete Flow (Very Important)
+Write Code → JDK
+Compile Code → JDK (javac)
+
+Run Program → JRE
+Execute Bytecode → JVM

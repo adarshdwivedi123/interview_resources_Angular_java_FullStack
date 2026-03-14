@@ -155,7 +155,7 @@ public class Main {
 
 Parent constructor: Adarsh
 Child constructor
----------------------------------------
+-------------------------------------------------------
 can we make constructor static()
 staric keyword belong to class not obejct
 it give compile time error

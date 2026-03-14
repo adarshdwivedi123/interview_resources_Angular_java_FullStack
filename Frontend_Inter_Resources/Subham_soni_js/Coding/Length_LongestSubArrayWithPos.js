@@ -19,7 +19,7 @@ for(i=0;i<arr.length;i++)
                     len=p
                       
                 }
-                //or   directly use this;
+                //or   directly use this=;
               //len= Math.max(len,j-i+1);   
             }
             

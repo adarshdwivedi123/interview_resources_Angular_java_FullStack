@@ -55,18 +55,26 @@ function moveZeroToLast(arr) {
 //Two pointer in plcare
 o(n)
 
-function moveZeroes(arr) {
-    let i = 0;  // position for non-zero
+function moveZeroes(arr){
 
-    for (let j = 0; j < arr.length; j++) {
+  let j = 0;
 
-        if (arr[j] !== 0) {
-            [arr[i], arr[j]] = [arr[j], arr[i]];
-            i++;
-        }
+  for(let i = 0; i < arr.length; i++){
+
+    if(arr[i] !== 0){
+
+      let temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+
+      j++;
     }
 
-    return arr;
+  }
+
+  return arr;
 }
 
-console.log(moveZeroes([0,1,0,3,12]));
+let arr = [0,1,0,3,12];
+
+console.log(moveZeroes(arr));

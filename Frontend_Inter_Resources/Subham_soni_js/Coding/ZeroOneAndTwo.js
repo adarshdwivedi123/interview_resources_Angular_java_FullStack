@@ -1,45 +1,59 @@
 //Brute approach directly sort it will be arrange inoreder 0 1 and 2
 
 //
-function countVar(arr)
-{
-    let c0=c1=c2=0;
-    for(let i=0;i<arr.length;i++)
+
+//Approach 1 (Counting Method – Easy)
+
+//Count number of 0s, 1s, 2s
+//Fill array again
+
+function sort012(arr){
+    let zero = 0;
+  let one = 0;
+  let two = 0;
+  for(let i=0 ;i<arr.length;i++)
+  {
+    if(arr[i]==0)
     {
-        if(arr[i]==0)
-        {
-            c0++;
-        }
-        else if(arr[i] ==1){
-            c1++;
-            
-        }
-        else{
-            c2++;
-        }
+        
+        zero++;
     }
-    for(i=0;i<c0;i++)
+    else if(arr[i] ==1)
     {
-        arr[i]=0;
+        one++;
     }
-    for(i=c0;i<c1;i++)
-    {
-        arr[i]=1;
+    else{
+        two++;
     }
-    for(i=c2;i<arr.length;i++)
-    {
-        arr[i]=2;
-    }
-    for(i=0;i<arr.length;i++)
-    {
-        console.log(arr[i]);
-    }
+  }
+  //here we are fililing in the array 
+  i=0;
+  for(let j=0 ;j<zero;j++)
+  {
+          arr[i]=0;
+          i++;
+      
+  }
+  for(let j=0 ;j<two ;j++)
+  {
+          arr[i]=1;
+          i++;
+      
+  }
+   for(let j=0 ;j<one ;j++)
+  {
+          arr[i]=2;
+          i++;
+      
+  }
+  
+  return arr;
     
 }
 
-arr=[0, 2, 1, 2, 0, 1];
-countVar(arr);
-
+arr=[2,0,1,2,1,0]
+let p= sort012(arr);
+console.log(p);
 
 
 /////////////////////////////////////////////////
