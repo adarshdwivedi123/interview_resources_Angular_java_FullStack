@@ -11,6 +11,20 @@ Example
 throw new IllegalArgumentException("Invalid input");
 
 
+class Test {
+    public static void main(String[] args) {
+
+        int age = 16;
+
+        if(age < 18){
+            throw new ArithmeticException("Not eligible to vote");
+        }
+
+        System.out.println("Eligible to vote");
+    }
+}
+
+
 
 
 
@@ -27,4 +41,20 @@ If my method might raise an exception but I want the caller to handle it, I use 
 
 
 
+import java.io.*;
 
+class Test {
+
+    static void readFile() throws IOException {
+        FileReader file = new FileReader("test.txt");
+        BufferedReader br = new BufferedReader(file);
+    }
+
+    public static void main(String[] args) {
+        try {
+            readFile();
+        } catch (IOException e) {
+            System.out.println("File not found");
+        }
+    }
+}
