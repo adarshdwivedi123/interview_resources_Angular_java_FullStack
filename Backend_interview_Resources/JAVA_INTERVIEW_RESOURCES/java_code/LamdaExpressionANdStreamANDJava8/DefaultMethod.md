@@ -1,7 +1,11 @@
 #)What is a Default Method?
 
-A default method is a method in an interface that has a method body (implementation).
+1)A default method is a method in an interface that has a method body (implementation).
 It is defined using the default keyword.
+
+
+2)Before Java 8, interfaces could only have abstract methods (no body).
+With default methods, we can provide implementation inside the interface.
 
 
 interface MyInterface {

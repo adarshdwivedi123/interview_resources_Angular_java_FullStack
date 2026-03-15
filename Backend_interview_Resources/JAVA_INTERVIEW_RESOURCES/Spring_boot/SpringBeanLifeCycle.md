@@ -1,5 +1,7 @@
-#)A bean = an object created by Spring
-bean is an objet that spring manges.
+#)A bean = an object created by Spring(spring ioc container)
+Instead of creating objects using new, Spring creates and manages them automatically.
+(bean is an objet that spring manges.)
+
 
 #)when we  create a class:
 
@@ -24,15 +26,10 @@ Bean Life Cycle means – how a bean is created, initialized, used, and destroye
 We can use @PostConstruct for initialization and @PreDestroy for destruction.”
 
 Spring manages the complete life of a bean:
-
 Bean Instantiation → Spring creates object
-
 Dependency Injection → Spring injects dependencies
-
 Initialization → Spring calls init methods
-
 Bean is Ready to Use
-
 Destruction → Spring calls destroy methods before shutdown
 
 

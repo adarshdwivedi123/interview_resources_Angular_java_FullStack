@@ -1,4 +1,4 @@
-#)What is collection?
+o#)What is collection?
 1)collection is a group of Object presnet in java.util package
 2)Framework provide  us  the  architecture to manage these "group of objects " i.e add ,update ,delete .search etc.
 #)when we want  to rep group of individual onject as a single entity then we  should go for strema.

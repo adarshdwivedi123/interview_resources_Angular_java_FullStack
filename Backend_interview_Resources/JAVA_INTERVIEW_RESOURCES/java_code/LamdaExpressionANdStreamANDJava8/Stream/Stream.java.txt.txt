@@ -84,6 +84,7 @@ peek(Consumer)	Used for debugging/logging
 
 ---------------------------------------------------------------------
 #)What are Terminal Operations in Streams?
+These produce the final result and end the stream.
 A terminal operation is the final operation in a Stream pipeline that produces the result and closes the stream. 
 Examples: forEach(), toList(), collect(), count(), reduce(), max(), min(), findFirst().
 

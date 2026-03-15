@@ -1,5 +1,22 @@
 #)what is jpa?
+(Java Persistence API)
 JPA helps Java programs talk to the database using Java objects instead of SQL queries.
+
+
+========================================================
+
+In simple words:
+👉 JPA helps convert Java objects ↔ Database tables
+
+This concept is called ORM (Object Relational Mapping).
+===============================================================
+
+
+Advantages of JPA
+✔ Less SQL code
+✔ Automatic table mapping
+✔ Easy CRUD operations
+✔ Works with multiple databases
 
 -------------------------------------------------------------------------------------------
 JPA does not provide any implementation

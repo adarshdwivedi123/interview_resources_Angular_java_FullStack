@@ -269,13 +269,9 @@ Why do we use Hibernate in Spring Boot?
 Because:
 
 1️⃣ Spring Boot uses Hibernate by default
-
 When you use Spring Data JPA, internally it uses Hibernate as the default ORM provider.
-
 2️⃣ Saves development time
-
 No SQL, no JDBC boilerplate, no connection management.
-
 3️⃣ Integrates deeply with Spring Data JPA
 
 JpaRepository

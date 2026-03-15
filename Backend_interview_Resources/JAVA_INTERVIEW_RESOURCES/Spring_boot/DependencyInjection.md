@@ -16,9 +16,6 @@ Q)What is Dependency Injection in Spring Boot?
 Spring scans classes, creates beans using reflection, stores them in ApplicationContext, and automatically injects dependencies through constructors, fields, or setters using autowiring.”
 -
 
-👉 In simple words:
-Spring creates objects for you and connects them together.
-
 
 ----------------------------------------------------------------------------------
 ✅ Types of Dependency Injection

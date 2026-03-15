@@ -5,7 +5,6 @@ Java 8 new feature
 3)Streams API
 4)Functional Interfaces
 5)Predicate
-6)Double colon operator(::)
 7)Default and Static Methods in Interfaces
 8)Data and TIme Api
 
