@@ -5,9 +5,7 @@ Spring Boot handles auto-configuration using the mechanism called
 which automatically configures beans based on:
 
 What dependencies are present on the classpath
-
 Default Spring Boot configurations
-
 Existing beans in the application context
 
 You don’t need to manually configure common components like DataSource, JPA, MVC, MessageConverters, Embedded Server, etc.
@@ -22,27 +20,20 @@ When you start a Spring Boot app, you use:
 This actually includes three annotations:
 
 @Configuration
-
 @ComponentScan
-
 @EnableAutoConfiguration ← This enables auto-config
-
 So @EnableAutoConfiguration tells Spring Boot:
 
 "Scan classpath, detect libraries, and automatically configure required beans."
-
+==========================================================================================
 ✅ 2. Auto-config works using spring.factories / auto-config metadata
 
 Spring Boot contains many auto-config classes (e.g., WebMvcAutoConfiguration, DataSourceAutoConfiguration).
-
 These classes are listed under:
-
 META-INF/spring.factories   (Spring Boot 2)
 META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports (Spring Boot 3)
-
-
 Spring reads these files and loads auto-config classes at runtime.
-
+=============================================================================================
 ✅ 3. Auto-Configuration applies only when needed
 
 Spring Boot uses conditional annotations to check whether to configure something or not.

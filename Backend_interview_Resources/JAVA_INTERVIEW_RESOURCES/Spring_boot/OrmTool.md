@@ -1,11 +1,4 @@
 #)DIffernce between JPA AND ORM
-JPA is just a standard that defines how to do ORM in Java.
-Hibernate is a framework that provides the actual implementation of JPA and performs ORM operations.
-
-ORM Tool — Definition
-
-ORM stands for Object–Relational Mapping.
-
 1)ORM stands for Object Relational Mapping.
 2)It is a technique used to map Java objects to database tables automatically.
 3)Instead of writing SQL queries manually, an ORM tool allows you to work with Java objects, and the ORM converts them into SQL queries.

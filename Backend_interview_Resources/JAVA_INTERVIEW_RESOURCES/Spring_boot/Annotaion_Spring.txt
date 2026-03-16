@@ -86,17 +86,20 @@ So, it marks your main class as the configuration class
 
 ---------------------------------------------------------------------
 1)@ConponentScan:
-Spring scan a package and create object from that what @ComponentScan  does
+1)Spring scan a package and create object from that what @ComponentScan  does
+2)It tells Spring where to search for classes like 
+@Component, @Service, @Repository, and @Controller.
 or
 Spring needs to know which packages to scan and create objects from.
 That’s what @ComponentScan does.
 
-#)“@ComponentScan tells Spring which packages to scan for annotated components like @Component, @Service, @Repository, and @Controller.
+===================================================================
+#)Why we use @ComponentScan
+Instead of manually creating objects, Spring will automatically
+ find and create beans from the specified package.
+ ================================================================
  #)It is used when our beans are located outside the package of the main Spring Boot application.
   By default, Spring scans the package of the main class and all its sub-packages
-
-  here we want to check in package ke andar component  hai kya.
-it is typically placed on the main class of the application.
 
 -------------------------------------------------------------
 @EnableAutoConfiguration:
@@ -360,6 +363,7 @@ MessageService messageService;
 #)What is @Component?
 1)@Component marks a class as a Spring-managed bean.
 Spring automatically creates its object and handles dependency injection.”
+2)@Component tells Spring: "Create an object of this class and manage it."
 
 “We use @Component to let Spring automatically detect and manage classes as beans.
 It enables dependency injection and removes manual object creation.”
@@ -395,6 +399,8 @@ public class UserService {
 #)What is @Bean?
 @Bean is used inside a @Configuration class to manually create and register a Spring bean.
 It is commonly used for third-party classes or when you need full control over object creation.
+
+@Bean → Developer manually creates object
 
 ------------------------------------------------------------------------------
 #)When to use @Bean?
@@ -466,10 +472,6 @@ a controller class that handles HTTP requests and returns a view (JSP/HTML/Thyme
 ✅ Use @RestController instead (returns JSON)
 --------------------------------------------------------------------
 
--->@SpringBootConfiguration ->we can configuration bean
--->@EnableAutoConfiguration:
-------------------------------------------------------------------------------
-
 #)What is AutoConfiguration in Spring Boot?
 AutoConfiguration means Spring Boot automatically configures your
  application based on the dependencies present in your classpath.
@@ -535,9 +537,10 @@ it returns json/text directly.
 --------------------------------------------------------------------
 #)@RequestMapping ("/api") 
 What is @RequestMapping in Spring Boot?
-@RequestMapping is an annotation used to map HTTP requests (like GET, POST, PUT, DELETE)
- to specific methods or classes in a Spring MVC controller.
+1)@RequestMapping is an annotation used to map HTTP requests(GET,post ,put) to controller methods.
 It tells Spring:
+2)It can define a base URL like /api/v1 for all APIs in the controller.
+
 👉 “When a request comes to this URL, call this method.”
 -------------------------------------------------------------
 Mapping Specific HTTP Methods
@@ -630,9 +633,12 @@ You want to receive JSON data from the client
 @ResponseBody is used when we want to return data (like JSON)
  directly to the client instead of returning a view.
 
-@RestController automatically applies @ResponseBody to all methods.
 
+ ===================================================
 
+"@RequestBody client se aane wale JSON ko Java object me convert karta hai aur
+ @ResponseBody Java object ko JSON me convert karke client ko bhejta hai.
+ ================================================
 
 ✅ 9. @RequestBody – Extract JSON from the request body
 Map jsonBody to object
@@ -690,7 +696,8 @@ Add dependecy -> spring-boot-starter-validation
 #)@Profile
 Profile
 #)What is a Profile in Spring Boot? (Simple Answer)
-A Profile in Spring Boot is a way to define different configurations for different environments — like dev, test, stage, prod.
+A Profile in Spring Boot  to define different configurations for different environments —
+ like dev, test, stage, prod.
 You activate one profile at a time depending on where your application is running.
 
 #)How do you have diffenrt configuaration for differnt enviroments?

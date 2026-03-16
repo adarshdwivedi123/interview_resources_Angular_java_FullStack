@@ -5,6 +5,12 @@
 Q)What is Dependency Injection in Spring Boot?
 #)Dependency Injection (DI) is a design pattern where Spring creates and provides the required objects (dependencies) to your class automatically, instead of we creating them manually using new.
 
+Why do we need DI?
+Loose coupling – classes depend on interfaces, not concrete classes.
+Easy to test – you can inject mock objects.
+Reusable code – no tight bonding between objects.
+Cleaner, maintainable code – no new keywords everywhere.
+Spring manages the object lifecycle.
 `
 ----------------------------------------------------------------------------------------------
 “Dependency Injection in Spring Boot is a technique where Spring creates and provides the required objects to our classes. It removes the need for manual object creation and helps maintain loose coupling. Spring manages these objects in the IOC container, and dependencies are injected using constructor, setter, or field injection. Constructor injection is considered the best practice.”
@@ -150,12 +156,7 @@ public class OrderService {
 
 
 ---------------------------------------------------------------------------------
-Why do we need DI?
-Loose coupling – classes depend on interfaces, not concrete classes.
-Easy to test – you can inject mock objects.
-Reusable code – no tight bonding between objects.
-Cleaner, maintainable code – no new keywords everywhere.
-Spring manages the object lifecycle.
+
 
 
 

@@ -13,8 +13,6 @@ In simple words:
 
 This concept is called ORM (Object Relational Mapping).
 ===============================================================
-
-
 Advantages of JPA
 ✔ Less SQL code
 ✔ Automatic table mapping

@@ -26,7 +26,7 @@ by defualt natural sorting in asc order.
 Comparable we have one method 
 compare 
 
-#)Comparator
+#)Comparator   
 If we want to  use custom  soring order  then we use comparator.
 It has two methid
 if class  implmente the Comparator

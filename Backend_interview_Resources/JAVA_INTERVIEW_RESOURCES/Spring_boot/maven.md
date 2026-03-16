@@ -3,6 +3,8 @@
 Maven is a project management and build tool for Java.
 We use it to manage dependencies, build the project, run tests, and package applications easily.
 
+
+-------------------------------------------------------------------------
 ✅ Why do we use Maven? (Interview Points)
 ✅ 1. Dependency Management
 
@@ -56,7 +58,6 @@ Maven plugins allow automated tasks:
 ✅ 5. Transitive Dependencies
 
 If you add Spring Web:
-
 spring-boot-starter-web
 
 

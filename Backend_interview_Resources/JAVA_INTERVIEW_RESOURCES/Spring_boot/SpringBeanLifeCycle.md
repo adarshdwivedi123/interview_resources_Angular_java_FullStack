@@ -19,7 +19,6 @@ But you don’t write this, Spring writes it internally.
 ✅ Spring creates it, injects it, destroys it.
 
 
-
 -----------------------------Spring bean Life Cycle-----------
 
 Bean Life Cycle means – how a bean is created, initialized, used, and destroyed by Spring.

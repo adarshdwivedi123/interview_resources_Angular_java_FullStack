@@ -10,6 +10,9 @@ catch block is used to handle the exception.`
 ----------------------------------------------------------------
 #)what happen exception occur in the finally block?
 
+
+If both try and finally throw exceptions, the finally exception is considered.
+
 If an exception occurs in the finally block, 
 it will override (replace) any exception thrown in the try or catch block.
 The finally exception becomes the actual exception thrown from the method.

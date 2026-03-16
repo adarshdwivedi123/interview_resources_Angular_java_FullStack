@@ -1,9 +1,18 @@
 1) WAR vs JAR in Spring Boot
 ✅ JAR (default in Spring Boot)
 
+A JAR file can include:
+Compiled Java classes (.class)
+Libraries
+Images / resources
+Metadata
+Manifest file
+Example structure:
+
 “Spring Boot applications run as a JAR because they contain an embedded server (Tomcat/Jetty/Undertow).
 So you just run java -jar app.jar.”
 
+---------------------------------------------------------------------
 ✅ Advantages of JAR
 
 No external Tomcat needed
@@ -17,7 +26,7 @@ Simpler DevOps
 
 “WAR files require an external server like Tomcat/GlassFish/JBoss.
 You deploy WAR into that server.”
-
+----------------------------------------------------------------------------
 ❌ Disadvantages
 Must install Tomcat separately
 Manual deployment
@@ -30,7 +39,6 @@ More complex
 #)What happens when Spring Boot starts the embedded server? (Simple)
 
 When you run:
-
 java -jar app.jar
 
 

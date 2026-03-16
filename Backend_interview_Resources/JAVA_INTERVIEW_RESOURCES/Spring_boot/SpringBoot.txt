@@ -17,29 +17,19 @@ You don’t need to manually write configuration classes.
 
 
 ----------------------------------------------------------------
-
-
-
-
 #)ResponseEnity
 “ResponseEntity is used to send custom HTTP responses (status + headers + body) in a REST API.”
 
 --------------------------------------------------------------------------------
 Why do we use ResponseEntity? 
 1️⃣ To return proper HTTP status codes
-
 Ex: 200 OK, 201 CREATED, 404 NOT FOUND, 400 BAD REQUEST
-
 2️⃣ To send custom headers
-
 Example: tokens, metadata, pagination info
-
 3️⃣ To return custom JSON body
-
 Clean and consistent responses
 
 4️⃣ Helps create RESTful APIs
-
 REST requires correct response structure → ResponseEntity supports that
 
 
@@ -83,6 +73,13 @@ or
 #)What are Starter dependencies?
 Starters are a collection of pre-configured depencies that makes
 it easier to develop particular kinds of aoolications.
+=======================================================================
+or
+Starter dependency ek ready-made dependency bundle hota hai
+ jisme multiple required libraries already included hoti hain.
+Isse hume alag-alag dependencies manually add nahi karni padti.
+=========================================================================
+
 spring-boot-starter-web => web se related sare  configuraiton and dependecy rlhu jaise  hi use kiya sb jldi se downlaod ho jata hai.
 #) These startes include all of the dependecies ,version control and configarion needed to amke certain features of a speing boot  applicaiton funcitonal.
 #)spring-boot-starter-web is a starter used to build web applications.
@@ -112,24 +109,15 @@ When you add this in pom.xml:
 Spring Boot automatically includes:
 
 ✅ 1. Spring MVC
-
 For handling web requests (controllers, endpoints)
-
 ✅ 2. Embedded Tomcat Server
-
 Spring Boot’s default web server (runs on port 8080)
-
 ✅ 3. Jackson
-
 For JSON serialization/deserialization
 (Java objects ↔ JSON)
-
 ✅ 4. Validation API
-
 For request validation (@Valid, @NotNull, etc.)
-
 ✅ What can you build with spring-boot-starter-web?
-
 ✅ REST APIs
 ✅ Web MVC apps (Thymeleaf/JSP)
 ✅ Microservices
@@ -248,35 +236,7 @@ Spring Initializer is a web application that helps you to create an initial
 spring boot project structure and provides a maven
 
 ---------------------------------------------------------------------
-#)Hibernate is a ORM (Object Relational Mapping) framework in Java.
-It helps you convert Java objects ↔ Database tables automatically.
 
-#)Hibernate removes the need to write raw SQL queries for most CRUD operations.
-You work with Java classes, and Hibernate handles the database.
-
-
-#)Why is Hibernate used?
-Because it makes database handling easier:
-✔ No need to write SQL for CRUD
-Hibernate auto-generates SQL like:
-INSERT
-UPDATE
-SELECT
-DELETE
---------------------------------------------------------------
-Why do we use Hibernate in Spring Boot?
-
-Because:
-
-1️⃣ Spring Boot uses Hibernate by default
-When you use Spring Data JPA, internally it uses Hibernate as the default ORM provider.
-2️⃣ Saves development time
-No SQL, no JDBC boilerplate, no connection management.
-3️⃣ Integrates deeply with Spring Data JPA
-
-JpaRepository
-
-CrudRepository
 
 
 -------------------------------
