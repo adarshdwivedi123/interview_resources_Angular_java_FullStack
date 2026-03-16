@@ -5,6 +5,7 @@ A request is idempotent if calling it one time or 100 times has the same effect 
 
 ✅ GET
 1)Used to retrieve data from the server.
+
 2)It does not modify anything on the server.
 
 3)Sends data in the URL as query parameters.

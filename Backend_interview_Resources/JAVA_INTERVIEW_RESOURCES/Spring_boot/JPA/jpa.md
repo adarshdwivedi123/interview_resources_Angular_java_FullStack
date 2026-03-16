@@ -2,6 +2,9 @@
 (Java Persistence API)
 JPA helps Java programs talk to the database using Java objects instead of SQL queries.
 
+1)JPA helps Java objects interact with a relational database.
+It uses ORM (Object Relational Mapping).
+
 
 ========================================================
 

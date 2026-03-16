@@ -15,6 +15,7 @@ and more readable way using functional programming
 
 without stream
 we need manuallu run the lop and add if condiotn
+explaint the below exmaple
 import java.util.*;
 
 class Main {

@@ -1,4 +1,8 @@
 what is oops?
+
+1)OOPs (Object-Oriented Programming System) is a programming approach where programs are designed using objects and classes.
+follows principles like encapsulation, inheritance, polymorphism, and abstraction
+
 #)oops is programing languge is to bind together the data  and the fucniton that operate on this 
 so that no other part of code can acess this data expect that function.
 

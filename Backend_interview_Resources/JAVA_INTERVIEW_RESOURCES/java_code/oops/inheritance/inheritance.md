@@ -95,6 +95,45 @@ Parent child Relationship is called Inheritance
 Whenever an object is used  in other class its a called HAS-A relationship.
 Relationship could be one to one ,one to many , many to one.
 
+
+
+A Car contains an Engine, so we say Car has an Engine
+
+exmaple
+========================================================
+class Engine {
+
+    void start(){
+        System.out.println("Engine started");
+    }
+
+}
+
+class Car {
+
+    Engine engine = new Engine();   // HAS-A relationship
+
+    void drive(){
+        engine.start();
+        System.out.println("Car is driving");
+    }
+
+}
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        Car c = new Car();
+        c.drive();
+
+    }
+
+}
+
+
+================================================
+
 Aggregration(Week Relatiionship)
 Composition(Strong Relationship)
 
