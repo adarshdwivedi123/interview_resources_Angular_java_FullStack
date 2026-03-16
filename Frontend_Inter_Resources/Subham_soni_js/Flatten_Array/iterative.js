@@ -1,5 +1,5 @@
-// //stack  se aek ake value niklte ja reh hai push krte ja reh hai 
-// //dusre array me
+ //stack  se aek ake value niklte ja reh hai push krte ja reh hai 
+ //dusre array me
 
 var arr=[1,2,[3,4,5],6,[7,8,[9,10,11]],12,13];
 

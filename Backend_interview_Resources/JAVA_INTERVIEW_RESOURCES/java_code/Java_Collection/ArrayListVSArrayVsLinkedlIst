@@ -29,8 +29,20 @@ List<Integer> list = new ArrayList<>();
 6)List has many helper methods — like add(), remove(), contains() etc.
 
 
-4).What is the difference between ArrayList and LinkedLis
+4).What is the difference between ArrayList and LinkedList
 t?
+=================================================================================
+"Both ArrayList and LinkedList are implementations of the List interface in the Java
+
+1️⃣ ArrayList uses dynamic array, while LinkedList uses doubly linked list.
+2️⃣ ArrayList is faster for accessing elements because it supports index-based system.
+3️⃣ LinkedList is fast for insertion and deletion, as it just changes the links between nodes.
+
+When to use
+If searching is frequent → ArrayList
+If insertion/deletion is frequent → LinkedList
+
+=================================================================================
 
 “Both ArrayList and LinkedList are classes that implement the List interface in Java.
 The main difference is how they store data.
@@ -41,6 +53,34 @@ On the other hand, LinkedList uses a doubly linked list, so it’s fast for inse
 However, accessing elements is slower, because it needs to traverse from the beginning.
 So, I would prefer ArrayList when I need fast access, and LinkedList when I need frequent insertions or deletions.”
 
+
+
+
+==================================================================================
+Differncw between List and set?
+1️⃣ List allows duplicate elements, but Set does not allow duplicates.
+2️⃣ List maintains insertion order, while Set usually does not maintain order.
+3️⃣ List supports index-based access, but Set does not support indexing
+
+=====================================================================================
+
+=========================================================
+HashSet vs TreeSet
+1️⃣ HashSet stores elements in random order, while TreeSet stores elements in sorted order.
+
+2️⃣ HashSet uses Hash Table, while TreeSet uses Red-Black Tree.
+
+3️⃣ HashSet is faster, while TreeSet is slightly slower because it maintains sorting.
+
+
+===================================================
+"HashMap and HashTable are used to store data in key-value pairs."
+
+Differences:
+1️⃣ HashMap is not synchronized, while HashTable is synchronized.
+2️⃣ HashMap is faster, because it is not thread-safe by default.
+3️⃣ HashMap allows one null key, but HashTable does not allow null keys or values.
+========================================================
 
 How do you iterate around an ArrayList using Iterator?
 

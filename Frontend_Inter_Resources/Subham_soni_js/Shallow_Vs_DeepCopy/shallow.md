@@ -1,3 +1,7 @@
+shallow copy if we change in copy varible it will be affect to orginal object deep if we change in copy varible it will be not affect to orginal object this understinfin is fine
+----------------------------
+
+
 //JS Does Shallow copy by for Non Primitive Type
 
 

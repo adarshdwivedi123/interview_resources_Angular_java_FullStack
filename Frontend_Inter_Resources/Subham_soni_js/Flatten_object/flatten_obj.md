@@ -11,80 +11,54 @@
 // };
 
 
-
-2ndOupti
-
-
-let obj={
-  "name": "India",
-  "child": {
-    "name": "Karnataka",
-    "child": {
-      "name": "Bangalore"
-    }
-  }
-}
-
-
-
-const newObj={};
-function flattenObj(obj){
-    for(key in obj)
-    {
-        if(typeof obj[key] == "object" && !Array.isArray(obj[key])){
-                flattenObj(obj[key]);
-        }
-        else{
-            newObj[key]=obj[key];
-            console.log(newObj[key])   sirf vlaue print ye console print krava doe
-            
-            
-        }
-    }
-}
-
-flattenObj(obj)
-console.log(newObj);
-
-
-
-<!-- keya  and  value dono print krna hai to -->
-
-let obj={
-  "name": "India",
-  "child": {
-    "name": "Karnataka",
-    "child": {
-      "name": "Bangalore"
-    }
-  }
-}
-
-
-const newObj = {};
+let newObj = {};
 
 function flattenObj(obj, parentKey = "") {
-    for (let key in obj) {
 
-        let newKey = parentKey ? parentKey + "." + key : key;   // <-- only required addition
+  for (let key in obj) {
 
-        if (typeof obj[key] == "object" && !Array.isArray(obj[key])) {
-            flattenObj(obj[key], newKey);   // <-- pass newKey
-        }
-        else {
-            newObj[newKey] = obj[key];      // <-- use newKey
-            console.log(newObj[newKey]);
-        }
+    let newKey = parentKey ? parentKey + "." + key : key;
+
+    if (typeof obj[key] === "object" && obj[key] !== null && !Array.isArray(obj[key])) {
+        console.log(newKey);
+      flattenObj(obj[key], newKey);
     }
+    else {
+      newObj[newKey] = obj[key];
+      //console.log(newObj[newKey]);
+    }
+
+  }
 }
 
+let obj = {
+  name: "India",
+  child: {
+    name: "Karnataka",
+    child: {
+      name: "Bangalore"
+    }
+  }
+};
+
 flattenObj(obj);
+
 console.log(newObj);
 
 
 
-{
-  name: 'India',
-  'child.name': 'Karnataka',
-  'child.child.name': 'Bangalore'
+how to Check array or object? 
+let value = [1,2,3];   // try changing this to {a:1}
+
+if (Array.isArray(value)) {
+  console.log("It is an Array");
 }
+else if (typeof value === "object" && value !== null) {
+  console.log("It is an Object");
+}
+else {
+  console.log("Not Array or Object");
+}
+
+Use Array.isArray(value) to detect arrays.
+Use typeof value === "object" && value !== null to detect objects.

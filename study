@@ -204,3 +204,143 @@ shallowCOpy and deepCopy
 
 -------------------------------
 add regrading  project 
+
+
+------------------------ Flatten objec tkro
+
+
+1️⃣ Count Total Keys in Nested Object
+Example
+let obj = {
+  a: 1,
+  b: {
+    c: 2,
+    d: {
+      e: 3
+    }
+  }
+};
+Output
+5
+Solution
+function countKeys(obj) {
+  let count = 0;
+
+  for (let key in obj) {
+    count++;
+
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      count += countKeys(obj[key]);
+    }
+  }
+
+  return count;
+}
+
+console.log(countKeys(obj));
+2️⃣ Sum All Numbers in Nested Object
+Example
+let obj = {
+  a: 10,
+  b: {
+    c: 20,
+    d: {
+      e: 30
+    }
+  }
+};
+Output
+60
+Solution
+function sumValues(obj) {
+  let sum = 0;
+
+  for (let key in obj) {
+    if (typeof obj[key] === "number") {
+      sum += obj[key];
+    }
+    else if (typeof obj[key] === "object") {
+      sum += sumValues(obj[key]);
+    }
+  }
+
+  return sum;
+}
+
+console.log(sumValues(obj));
+3️⃣ Find a Key in Nested Object
+Example
+let obj = {
+  a: 1,
+  b: {
+    c: 2,
+    d: {
+      target: 5
+    }
+  }
+};
+Output
+true
+Solution
+function findKey(obj, target) {
+
+  for (let key in obj) {
+
+    if (key === target) {
+      return true;
+    }
+
+    if (typeof obj[key] === "object") {
+      if (findKey(obj[key], target)) {
+        return true;
+      }
+    }
+
+  }
+
+  return false;
+}
+
+console.log(findKey(obj, "target"));
+4️⃣ Get All Keys From Nested Object
+Output
+["a","b","c","d","e"]
+Code
+function getKeys(obj, arr = []) {
+
+  for (let key in obj) {
+    arr.push(key);
+
+    if (typeof obj[key] === "object") {
+      getKeys(obj[key], arr);
+    }
+  }
+
+  return arr;
+}
+5️⃣ Deep Clone Nested Object (Very Famous)
+function deepClone(obj) {
+
+  let copy = {};
+
+  for (let key in obj) {
+
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      copy[key] = deepClone(obj[key]);
+    }
+    else {
+      copy[key] = obj[key];
+    }
+
+  }
+
+  return copy;
+}
+⭐ Most Asked Nested Object Questions
+
+1️⃣ Flatten Object
+2️⃣ Deep Clone Object
+3️⃣ Sum values in nested object
+4️⃣ Find key in nested object
+5️⃣ Convert nested object to array
+6️⃣ Count total keys in nested object

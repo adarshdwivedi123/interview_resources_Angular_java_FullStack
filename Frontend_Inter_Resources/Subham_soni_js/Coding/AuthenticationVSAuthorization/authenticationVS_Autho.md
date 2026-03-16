@@ -9,6 +9,7 @@ while authorization determines what that user can access.
 
 
  Airport security
+ 
 When you go through airport security, you show your ID to authenticate your identity.
  Then, when you arrive at the gate, you present your boarding pass to the flight attendant to authorize you to board your flight.
 

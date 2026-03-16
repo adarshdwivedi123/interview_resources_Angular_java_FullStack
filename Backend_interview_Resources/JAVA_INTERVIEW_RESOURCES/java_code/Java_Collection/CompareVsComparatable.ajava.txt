@@ -1,6 +1,14 @@
 #)Comparator vs Comparable
 
 
+"Both Comparable and Comparator are used for sorting objects."
+
+Differences:
+1️⃣ Comparable is used for natural sorting, while Comparator is used for custom sorting.
+2️⃣ Comparable uses compareTo() method, while Comparator uses compare() method.
+3️⃣ Comparable modifies the class itself, while Comparator can be defined separately.
+
+
 
 #)Comparator
 

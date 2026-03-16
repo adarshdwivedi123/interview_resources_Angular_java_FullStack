@@ -3,7 +3,8 @@
 // It means that by using them, we can use the methods of one object into
 // a different object without having to make a copy of that method and maintain
 //  it in two separate places.
-
+//or
+//Whenever we want one object’s function to be used by another object
 
 const person = {
     fullName(city,country){
@@ -40,7 +41,7 @@ const person = {
 
 
 
-//Whenever we want one object’s function to be used by another object
+
 
 
 let car1={

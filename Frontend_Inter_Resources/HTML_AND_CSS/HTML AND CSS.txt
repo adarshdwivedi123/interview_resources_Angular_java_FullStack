@@ -54,11 +54,13 @@ deep copy and shallow copy khud se kaise fuxniton bnye v
 ///////////////////Do Before interview////////////////////////////////////////////
 Swmantic and Non Semantic Element
 
+
 A semantic element clearly describes its meaning to both the browser and the developer.
  Examples of non-semantic elements: <div> and <span> — Tells nothing about its content.
   Examples of semantic elements: <form> , <table> , and <article> — Clearly defines its content.
 
 Semantic tags are HTML tags that have a specific meaning. For example,
+The tag itself tells what type of content is inside it.
  the <h1> tag is a semantic tag that represents a heading. 
  The <p> tag is another semantic tag that represents a paragraph. 
  Semantic tags are important because they help to make your HTML code more readable and understandable for both humans and machines.
@@ -73,6 +75,10 @@ Semantic tags are HTML tags that have a specific meaning. For example,
 <ul>: Unordered list
 <ol>: Ordered lis
 
+#)Benefits:
+Better SEO
+Better accessibility
+Easier to understand code
 
 
 #)Non Semantic Element
@@ -85,6 +91,9 @@ Non-semantic tags are HTML tags that do not have a specific meaning. For example
 <input>: Form input
 <select>: Form select
 <textarea>: Form textarea
+
+Non-semantic tags do not describe the content meaning.
+They are mainly used for layout or styling.
 
 
 It is generally recommended to use semantic tags whenever possible. This will make your HTML code more readable and understandable for both humans and machines. However, there are times when you may need to use non-semantic tags, such as when you are using them for layout purposes.
@@ -127,6 +136,9 @@ It is used to design web pages using a markup language. HTML is a combination of
 Q)HTML=> html is stand for hyper text markup language used to create a static web page.
 hyper  stand for anchor tag.  
 The <a> tag defines a hyperlink, which is used to link from one page to another.
+
+Markup:
+HTML is a markup language used to define the structure of web pages like  heading ,paragraph and links.
 
 Markup :that define the structure of the document using element ,like  heading ,paragraph and links.
 Programming langauage where we define  the variable and funciton to perform some logic and run the loop but  html is markup language their we cannot able to do these things.
@@ -523,6 +535,7 @@ p::first-letter {
 Try with Example to understand--------------------------------------------------------
 
 #)Position in Csss
+position in CSS controls how an element is placed on the webpage.
 button:hover {  color: blue;}
 1)The CSS position property is used to set position for an element. it is also used to place an element behind another.
   we can position the element using the top ,bottom ,left and right properties.these propertes can after position       property  is set first.

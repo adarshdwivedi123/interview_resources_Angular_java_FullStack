@@ -5,6 +5,15 @@
 // a different object without having to make a copy of that method and maintain
 //  it in two separate places.
 
+//or
+//Whenever we want one object’s function to be used by another object
+
+//Difference between call, apply and bind
+//call() invokes the function immediately and allows you to pass arguments one by one.
+//apply() also invokes the function immediately but allows you to pass arguments as an array.
+//bind() does not invoke the function immediately. Instead, it returns a new function with a specified this value and optional arguments. You can call this new function later. 
+
+
 var obj={ name:"Piyush"};
 function sayHello(age){
 return "Hello"+ this.name;

@@ -10,9 +10,14 @@ Each key is unique, and each key maps to exactly one value.
 #)What is a HashMap?
 
 HashMap is a part of Java’s Collection Framework.
-It stores data in key-value pairs.
-Keys are unique, and each key maps to exactly one value.
-It provides fast retrieval and insertion based on the key.
+It stores elements in key-value pairs, where, Keys are unique. and Values can be duplicated.
+It uses hashing to store and retrieve data efficiently."
+
+(Hashing is a technique used to convert a key into a fixed integer value called a hash code,
+ which is used to determine the index (bucket) where the data will be stored).
+
+
+
 HashMap does not maintain any order (like insertion order).
 --------------------------------------------------------------
 What are the different methods in a HashMap?
@@ -96,6 +101,47 @@ Equal =>Equal is the one which compare the two object.
 
 Internal Working of hashMap
 ------------------------------------------------------------------------------------------------
+============================================================================
+Step 1️⃣ hashCode()
+
+When we insert:
+map.put(key, value);
+Java calls:
+key.hashCode()
+This decides which bucket the key should go to.
+-------------------------------------------------
+Step 2️⃣ Bucket
+
+Using the hashCode, Java finds the bucket index where the data will be stored.
+Example:
+index = hashCode % size
+-----------------------------------------------------------------------------
+Step 3️⃣ equals()
+
+If two keys go to the same bucket (collision), then Java checks:
+key.equals(existingKey)
+This ensures the correct key is found.
+---------------------------------------------------------------------------------
+Step 4️⃣ Store or Return Value
+
+If key already exists → value is updated
+If key is new → new node is created
+----------------------------------------------------------------------------
+Example
+map.put("A", 10);
+map.put("B", 20);
+map.put("A", 30);
+
+Result:
+
+A → 30
+B → 20
+
+Because equals() detected same key "A" and updated value.
+
+
+================================================================================
+
 
 
 Jais hi 
