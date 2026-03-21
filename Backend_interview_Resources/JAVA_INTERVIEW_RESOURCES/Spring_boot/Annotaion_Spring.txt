@@ -626,7 +626,7 @@ String brand
 -----------------------------------------------------------
 @RequestBody is used when we want to read JSON data from the request body and
  convert it into a Java object.
- 
+ client se json usek java objec  me convert ke ke dalo
 You want to receive JSON data from the client
 ✔ Convert JSON → Java Object automatically
 ----------------------------------------------------------------------------

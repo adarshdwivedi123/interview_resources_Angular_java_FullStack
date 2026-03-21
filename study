@@ -344,3 +344,237 @@ function deepClone(obj) {
 4️⃣ Find key in nested object
 5️⃣ Convert nested object to array
 6️⃣ Count total keys in nested object
+
+
+----------------------------------------------------------
+let str = "hello";
+
+let count = {};
+
+for (let char of str) {
+  count[char] = (count[char] || 0) + 1;
+}
+
+console.log(count);
+
+
+
+
+Find Duplicate Elements in Array
+let arr = [1,2,3,2,4,5,3];
+
+let duplicates = arr.filter((item,index)=> arr.indexOf(item) !== index);
+
+console.log([...new Set(duplicates)]);
+
+
+
+Debounce Function
+function debounce(fn, delay){
+  let timer;
+
+  return function(){
+    clearTimeout(timer);
+
+    timer = setTimeout(()=>{
+      fn();
+    }, delay);
+  }
+}
+
+
+
+1️⃣1️⃣ Find Longest Word in String
+let str = "I am learning javascript programming";
+
+let longest = "";
+
+for(let word of str.split(" ")){
+  if(word.length > longest.length){
+    longest = word;
+  }
+}
+
+console.log(longest);
+
+
+------------------------
+1️⃣4️⃣ Find Maximum Occurring Character
+let str = "javascript";
+
+let map = {};
+let maxChar = "";
+let maxCount = 0;
+
+for(let ch of str){
+  map[ch] = (map[ch] || 0) + 1;
+
+  if(map[ch] > maxCount){
+    maxCount = map[ch];
+    maxChar = ch;
+  }
+}
+
+console.log(maxChar);
+
+
+---------------------------------\
+Merge Two Arrays Without Duplicates
+let arr1 = [1,2,3];
+let arr2 = [3,4,5];
+
+let merged = [...new Set([...arr1,...arr2])];
+
+console.log(merged);
+
+
+-------------------------------------------------------------------------------------------
+
+
+1️⃣ Closure Example
+
+Question: What will be the output?
+
+for (var i = 1; i <= 3; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, 1000);
+}
+Output
+4
+4
+4
+Why?
+
+var has function scope, not block scope.
+
+By the time setTimeout runs, the loop finished and i = 4.
+
+Fix
+for (let i = 1; i <= 3; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, 1000);
+}
+
+Output
+
+1
+2
+3
+2️⃣ Event Loop Question
+console.log("A");
+
+setTimeout(() => {
+  console.log("B");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("C");
+});
+
+console.log("D");
+Output
+A
+D
+C
+B
+Why?
+
+Execution order:
+
+Synchronous code → A, D
+
+Microtasks → Promise → C
+
+Macrotasks → setTimeout → B
+
+3️⃣ this Keyword
+const obj = {
+  name: "Adarsh",
+  greet: function () {
+    console.log(this.name);
+  }
+};
+
+obj.greet();
+
+Output
+
+Adarsh
+
+But:
+
+const greet = obj.greet;
+greet();
+
+Output
+
+undefined
+
+Because this depends on how the function is called.
+
+4️⃣ Call / Apply / Bind
+const person = {
+  name: "Adarsh"
+};
+
+function greet() {
+  console.log("Hello " + this.name);
+}
+
+greet.call(person);
+
+Output
+
+Hello Adarsh
+Difference
+Method	Execution
+call()	immediate
+apply()	immediate (array args)
+bind()	returns new function
+5️⃣ Hoisting Question
+console.log(a);
+var a = 10;
+
+Output
+
+undefined
+
+Because:
+
+var a;
+console.log(a);
+a = 10;
+6️⃣ Promise Chain
+Promise.resolve(5)
+.then(x => x * 2)
+.then(x => {
+  throw new Error("Error");
+})
+.then(x => console.log(x))
+.catch(err => console.log("Caught"));
+
+Output
+
+Caught
+
+Because error skips next .then() and goes to .catch().
+
+7️⃣ Array Map Trick
+console.log([1,2,3].map(parseInt));
+
+Output
+
+[1, NaN, NaN]
+Why?
+
+map() passes 3 arguments:
+
+(value, index)
+
+So it becomes:
+
+parseInt(1,0) → 1
+parseInt(2,1) → NaN
+parseInt(3,2) → NaN

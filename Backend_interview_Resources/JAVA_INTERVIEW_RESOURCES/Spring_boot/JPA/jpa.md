@@ -14,7 +14,7 @@ In simple words:
 This concept is called ORM (Object Relational Mapping).
 ===============================================================
 Advantages of JPA
-✔ Less SQL code
+✔ Less SQL codeo
 ✔ Automatic table mapping
 ✔ Easy CRUD operations
 ✔ Works with multiple databases
