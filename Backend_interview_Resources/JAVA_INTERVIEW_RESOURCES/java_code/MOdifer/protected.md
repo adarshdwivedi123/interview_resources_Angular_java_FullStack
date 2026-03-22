@@ -3,7 +3,7 @@
 Accessible in:
 Same class ✔
 Same package ✔
-Subclass in different package ✔ (but only through inheritance)
+Different package me subclass ke through ✅✔ (but only through inheritance)
 Non-subclass in another package ✖
 
 ----------------------------------------------------------------------------------

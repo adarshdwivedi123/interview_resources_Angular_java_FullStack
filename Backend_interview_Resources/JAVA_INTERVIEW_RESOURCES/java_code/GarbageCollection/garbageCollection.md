@@ -41,6 +41,7 @@ No reference variable like Employee e = ... → so it is an anonymous object
 
 
 
+
 #)“Garbage Collection is JVM’s automatic memory management process that removes unreachable objects.
 It runs when objects are no longer referenced or memory is low.
 
