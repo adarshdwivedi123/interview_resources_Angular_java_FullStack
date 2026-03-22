@@ -100,7 +100,7 @@ Without synchronization, result may be less (like 1500 or 1800) ❌
 “Synchronization ensures only one thread can access a method or variable at a time, avoiding inconsistent results.”
 
 -------------------------------------------------------------------------------------------------------
-Can you give an example of a synchronized block?
+##############)Can you give an example of a synchronized block?
 💬 Simple Explanation:
 
 A synchronized block locks only a specific part of code — not the whole method.

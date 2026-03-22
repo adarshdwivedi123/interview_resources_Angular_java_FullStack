@@ -1,3 +1,31 @@
+“Comparable is used for default (natural) sorting.”
+that provided by jvm.
+
+Key Points
+
+👉
+Defined inside the class
+Only one sorting logic
+Method: compareTo()
+
+---------------------------------------------
+2. Comparator
+✅ What is Comparator?
+
+👉
+“Comparator is used for custom sorting.”
+
+🧠 Key Points
+👉
+Defined outside the class
+Can have multiple sorting logics
+Method: compare()
+
+--------------------------------------------
+
+
+
+
 #)Comparator vs Comparable
 
 

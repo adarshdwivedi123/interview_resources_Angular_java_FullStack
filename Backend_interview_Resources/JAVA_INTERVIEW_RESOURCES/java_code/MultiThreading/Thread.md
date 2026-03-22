@@ -133,7 +133,8 @@ t.start(); // run() is executed internally
 
 3️⃣ join()
 
-Purpose: Makes the current thread wait until the target thread finishes.
+join() is used when one thread wants to wait for another thread to finish execution.
+“First complete that thread, then continue me.”
 
 t.join(); // Main thread waits for t to complete
 
@@ -147,6 +148,9 @@ Thread.sleep(1000); // pauses thread for 1 second
 💡 Note: sleep() does not release any locks.
 
 5️⃣ yield()
+“I am willing to pause, you can give chance to other threads.”
+👉 Simple Meaning:
+“Maybe let others run, I can wait.”
 
 Purpose: Suggests to the thread scheduler that the current thread is willing to pause and let other threads execute.
 

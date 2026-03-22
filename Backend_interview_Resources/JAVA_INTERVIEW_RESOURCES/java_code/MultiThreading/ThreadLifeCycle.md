@@ -1,3 +1,4 @@
+n R*R B T
 Thread LifeCycle
 A thread life cycle means the different stages a thread goes through — from creation to completion.
 

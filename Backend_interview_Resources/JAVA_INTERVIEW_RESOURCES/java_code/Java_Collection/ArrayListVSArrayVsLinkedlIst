@@ -16,9 +16,17 @@ int[] arr = new int[5]
 
 
 #)ArrayLIst
+Def:
+its work like  dynaimic array internally it uses a normal array to store elemnts .but it can grow
+automatically  when  more items are added.
+yes ,arrayList can store null 
+
 1)A dynamic collection (interface) that can grow or shrink in size.
 2)Can store only objects (e.g., Integer, String).
 3)Has many built-in methods (add(), remove(), contains(), etc.).
+4)ArrayLsit can store null multiple times since null is treated like a normal element .each one 
+add it different position.
+
 
 List<Integer> list = new ArrayList<>();
 1)Array size is fixed — once created, you can’t change its length.
@@ -35,12 +43,18 @@ t?
 "Both ArrayList and LinkedList are implementations of the List interface in the Java
 
 1️⃣ ArrayList uses dynamic array, while LinkedList uses doubly linked list.
-2️⃣ ArrayList is faster for accessing elements because it supports index-based system.
+2️⃣ ArrayList is faster for accessing elements because it supports index-based system.  
+where as linnkedist  elements are connectet using nodes (Each nodes point to next node)
+to find the elment ,jva must start from the first node and move one by one until  reached to target
 3️⃣ LinkedList is fast for insertion and deletion, as it just changes the links between nodes.
+4)Linked List slower for search operaion becoz it does use idnexing like array
 
 When to use
 If searching is frequent → ArrayList
 If insertion/deletion is frequent → LinkedList
+
+
+
 
 =================================================================================
 
@@ -81,6 +95,13 @@ Differences:
 2️⃣ HashMap is faster, because it is not thread-safe by default.
 3️⃣ HashMap allows one null key, but HashTable does not allow null keys or values.
 ========================================================
+
+“LinkedHashMap stores key-value pairs and maintains insertion order,
+ while LinkedHashSet stores only unique elements and also maintains insertion order.”
+
+ ================================================================================
+
+
 
 How do you iterate around an ArrayList using Iterator?
 

@@ -9,6 +9,8 @@ Why we use Collection
 1️⃣ Dynamic size (array ki tarah fixed size nahi hota)
 2️⃣ Easy data manipulation (add, remove, search)
 3️⃣ Many built-in data structures available
+Ready To use Ds :LIst,set ,map
+Common:ops:add ,remove,sort ,search,iterate.
 ==============================================================================
 
 #)Why we need collection framework is required?
@@ -17,14 +19,135 @@ Framework provided us classes and interface so thast we can reuse that code inst
 #)before collection  we  have array , vector hash tables.
 #)but problem with that is there is no common interface so its difficult to remember the methods for each.
 
+#)Main interface of the java Colleciton framework?
+Colleciton(root)
+List( Orderred ,duplicate allow)
+set(unique ,duplicate not allow)
+Queue(FIFO)
+Map(Key-value ,separate from collection)
 
 #)Interable is  interface
 
 Interable =>iterable  used to traverse the collections.
-1)iterator()  => it return iterator object
-2) Using ForEach() :iterate collection useing Lambda expression .Lambda expressoni is called foreach element in the collection.
+1)iterator()  =>
+2)“Iterator in Java is an interface used to traverse elements of a collection one by one.”
+ it return iterator object.
+3) “It helps to loop through collection elements like List, Set without using index.”
+4)Only forward movement
+5)ListIterator =backward +insert +update( it work for List )
+
 
 -------------------------------------------------------
+
+WHy iterator is used?
+allows safe removal while iterating.”
+✔ No need of index
+✔ Works with all collections
+✔ Safe removal of elements
+
+===================================================
+The Iterator interface has mainly 3 methods:
+
+Iterator<E> it = collection.iterator();
+🔹 Methods:
+hasNext()
+👉 checks if next element exists
+next()
+👉 returns next element
+remove()
+👉 removes current element safely
+if we use for loop rmeove give the ConcurrentModificationException
+
+
+================================================
+✅ 5. Why not use for loop?
+or
+what happen  if we modifying a list  while iterting using for-each loop?
+
+👉
+“Using Iterator is safer because it prevents ConcurrentModificationException when removing elements.”
+✅ 6. Bonus Point (Very Important 🔥)
+👉
+“Iterator is forward-only. If we want bidirectional traversal, we use ListIterator.”
+
+
+=============================================================================
+
+How hashSet ensure thst  there are no dupolicate?
+HashSet user HashMap internally.
+
+-------------------------------------------------
+What happens  two keys havev the same hash code in hashMAp?
+if we two key generare same hascode they go in same bucker then collision will happen 
+Before  java 8 bucket store in LinkedList 
+after  java 8  if bucket list is big its changes redBalanced  tree for faster serch.
+
+------------------------------------
+#)ConcurrentModificationException why happen how we preent it ?
+two taks simulantessouly 
+You are looping and modifying the list at the same time.
+(one thread update the collection while other is iterating it )
+
+To prevent we use
+1)To avoid it, we use iterator.remove() or removeIf().”
+2)or we can any concurrent safe collection
+CopyOnWriteList/concurrentHasMap    (becoz these class are build to handle safely)
+
+=================================================================================
+“Collections in Java do not work with primitive types because they are designed to store objects only.
+ So we use wrapper classes like Integer instead of int.”
+
+
+=======================================================================================
+#)can we design our own collection  ?
+yes we can do this
+ ->implementing the collection interface 
+ -> Extendin an exisiting class like abstraction
+
+--------------------------------------------------------
+
+
+How could we use collection thread safe?
+WE could use colleciton.SynchrnoziedList() .Colleciton.SynchrnoziedSet() and 
+Colleciton.SynchrnoziedMap() to make our  thread safe
+=======================================================
+
+==================================
+10-Second Memory Trick
+
+👉
+List = index + duplicate
+Set = unique
+Map = key-value
+
+👉
+Hash = random
+Linked = order
+Tree = sorted
+
+======================================
+
+What is Hashing? (Basic)
+
+👉
+“Hashing is a technique to convert an object into a number 
+(hash code) to store and retrieve data quickly.”
+Ex:
+You give object → Java generates number (hashCode)
+That number decides where to store data (bucket)
+==========================================
+What is hashCode?
+👉
+“hashCode() returns an integer value that represents the object.”
+
+==========================================================
+What is equals?
+
+👉
+“equals() is used to compare two objects logically.”
+
+
+
 
 
 hierarchy of collection

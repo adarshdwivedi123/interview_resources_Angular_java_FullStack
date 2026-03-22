@@ -1,3 +1,15 @@
+“Fail-fast iterators throw ConcurrentModificationException 
+if you’re iterating over a collection and we have done some operaion like 
+adding and removing then it will throw  Concurrent modifcation Exeptiopn
+
+when a collection is modified during iteration,
+ while fail-safe iterators work on a copy of the collection and do not throw exceptions.”
+ 1)it works on a separate copy, so even if the original collection is structurally 
+ modified during iteration, no exception is thrown.
+ 2)those changes won't immediately affect the original collection while you're iterating
+
+=---------------------------------------
+
 What is difference between fail-safe and fail-fast iterators?
 147. What are the important interfaces related to the Set interface?
 Interface	Description

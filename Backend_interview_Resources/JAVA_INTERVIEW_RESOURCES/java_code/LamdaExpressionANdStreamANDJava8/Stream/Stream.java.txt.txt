@@ -2,7 +2,7 @@
 
 ->strema is an interface represtn in java.util.stream.
 -> Stream is as pipline throught which  our collection elements passes thorugh.
-->Wjile element passes through it perform various operation like  sorting ,filtering  ,etc.
+->Wjile element passes through it perform various operation like  sorting ,filtering filter, map, sort, ,etc.
 -> usefull when deals  with bulk processing  (Can do parallel processing).
 
 #)Why stream api is required?
@@ -98,7 +98,7 @@ count()	Counts elements
 reduce()	Combines elements to a single value
 findFirst()	Returns the first element
 allMatch(), anyMatch()	Test conditions on elements
-----------------
+--------------------------------------
 
 
 #)Highlight key benefits you experienced
@@ -106,6 +106,12 @@ Reduced boilerplate loops (for, while).
 Easier to read and maintain.
 Can process large data in parallel using parallelStream() for better performance.
 
+=============================================
+Q9: What is collect()?
+👉
+Used to convert stream → List/Set/Map
+
+===========================================
 
 
 #)Different Way to create Stream

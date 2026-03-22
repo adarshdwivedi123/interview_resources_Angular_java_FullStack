@@ -301,14 +301,11 @@ Built-in functional interfaces exist in java.util.function package.
 
 
 217. What is a Predicate?
-
-Predicate<T> is a functional interface that represents a boolean-valued function of one argument.
+1)“Predicate is a functional interface that takes one input and returns a boolean (true/false).”
+2)Predicate = condition check (true or false)
 
 ✅ Method:
-
 boolean test(T t);
-
-
 ✅ Example:
 
 import java.util.function.Predicate;
@@ -320,6 +317,13 @@ public class PredicateExample {
         System.out.println(isEven.test(7));  // false
     }
 }
+
+
+List<Integer> list = Arrays.asList(1, 2, 3, 4);
+
+list.stream()
+    .filter(x -> x % 2 == 0) // Predicate
+    .forEach(System.out::println);
 
 
 📘 Usage: Often used in filter() with streams.
