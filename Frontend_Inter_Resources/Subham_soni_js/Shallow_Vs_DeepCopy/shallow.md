@@ -1,3 +1,8 @@
+shallow copy means if we change in nested  object  it reflect in new object
+shared same memroy refercne
+
+
+--------------------------------------------------------------------
 shallow copy if we change in copy varible it will be affect to orginal object
  deep copy if we change in copy varible it will be not affect to orginal object this understinfin is fine
 ----------------------------

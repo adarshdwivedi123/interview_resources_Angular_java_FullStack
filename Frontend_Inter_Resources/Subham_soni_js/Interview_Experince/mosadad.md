@@ -59,6 +59,7 @@ export class App {
 //observable 
 //observabel and  promsie kuch real use case
 //template driven form me kaise call  krna tha dekh lo
-}life cycle hook
+}life cycle hook 
+services
 
 bootstrapApplication(App);

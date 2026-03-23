@@ -1,3 +1,8 @@
+Deepcopy menas if we change in nested  object it will not reflect on the  new 
+object  becoz both share diff memory addres .
+
+
+=================================================
 //Primitive are immutuable and its always create deep copy
 //#Because of primitive type it always create deep copy
 //#)Note:shallow copy and deep copy  we are using with array and object only 

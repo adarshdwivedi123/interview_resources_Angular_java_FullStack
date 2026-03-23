@@ -1,6 +1,7 @@
 What is Event Delegation? 
 Event delegation is a design pattern in which a single event listener is attached to a common ancestor,
  rather than attaching listeners to multiple individual elements.
+ (single event  hm parent  pe laga dete rather than hm child pe ja kr event lgye)
 
 
  Event Delegation is basically a pattern to handle events efficiently. 
