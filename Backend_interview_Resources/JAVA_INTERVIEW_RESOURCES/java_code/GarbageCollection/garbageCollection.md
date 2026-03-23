@@ -6,7 +6,11 @@
     by removing objects that are  not referenced by any variable
 ->Helps prevent memory leaks.
 
- ->Best practices include nullifying references, avoiding unnecessary objects, using        try-with-resources, and monitoring memory usage.”
+ ->Best practices include 
+ 1)nullifying references, 
+ 2)avoiding unnecessary objects,
+ 3)try-with-resources, 
+4)and monitoring memory usage.”
 
 #)How can be object unReferenced?
 1) By nulling a reference:

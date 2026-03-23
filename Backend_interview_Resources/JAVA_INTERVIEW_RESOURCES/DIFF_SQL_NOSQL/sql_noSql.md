@@ -30,3 +30,6 @@ Flexible schema (structure can change anytime)
 
 MongoDB
 Cassandra
+
+------------------------------------
+how to decode which db should be use?
