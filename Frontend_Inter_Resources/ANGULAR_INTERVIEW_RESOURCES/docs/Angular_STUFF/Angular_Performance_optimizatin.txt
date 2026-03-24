@@ -1,3 +1,15 @@
+1)lazy lading  and preloading
+2)use trackBy
+3)Async Pipe
+4)onPUsh change Detection
+NgOptimitaize image directive
+5)CodeSplitting &  TreeShaking
+6)Use a Bundler Optimizer
+7)use Signals
+8)use standalone
+
+
+====================================
 HMR
 Hot module reloading
 HmR is a feature that allows  all kinds of module to be updated at runtime wihtput needing a full referesh  this improve
