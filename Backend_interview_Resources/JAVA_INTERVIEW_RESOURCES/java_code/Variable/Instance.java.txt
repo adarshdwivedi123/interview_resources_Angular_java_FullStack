@@ -1,6 +1,7 @@
-1)Instance Variable :instance varible declare  at class leve we can acces inside the mehtod any where
-insstwcen class ke bhar  hm object bna ke use kre ge
+1)Instance Variable :
+#)An instance variable is a variable that belongs to an object (instance) of a c
 2)instance varible get memory at a run time 
+#)instsnce varible created when an object is create destroyed when the object is destroyed.
 instacen varible take some space 
 int a;
 System.out.println(a);
@@ -12,15 +13,10 @@ Stored in the heap memory, since objects are stored in heap.
 Key Characteristics
 
 Scope → Accessible by all methods, constructors, and blocks inside the class (via the object).
-
 Lifetime → Created when an object is created, destroyed when the object is destroyed (garbage collected).
-
 Default Values → Unlike local variables, instance variables get default values (e.g., 0 for int, null for objects, false for boolean).
-
 Memory → Stored in the heap memory, since objects are stored in heap.
-
 Access → Can use access modifiers (public, private, etc.).
-
 Object-specific → Each object has its own copy of instance variables (unless they are declared static).
 
 

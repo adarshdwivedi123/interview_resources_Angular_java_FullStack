@@ -12,6 +12,7 @@
 ---------------------------------------------------
 Stream API is required to process collections in a faster, cleaner, 
 and more readable way using functional programming
+--------------------------------------------------
 
 without stream
 we need manuallu run the lop and add if condiotn
@@ -41,6 +42,12 @@ import java.util.*;
 
 class Main {
     public static void main(String[] args) {
+    Arrays.asList(2,3,4)
+        ↓
+Creates a List backed by array
+
+✔ It does NOT create normal ArrayList
+✔ It creates a fixed-size list
         
         List<Integer>list =Arrays.asList(2,3,4);
         List<Integer>even =list.stream()
@@ -85,8 +92,9 @@ peek(Consumer)	Used for debugging/logging
 
 ---------------------------------------------------------------------
 #)What are Terminal Operations in Streams?
-These produce the final result and end the stream.
-A terminal operation is the final operation in a Stream pipeline that produces the result and closes the stream. 
+1)These produce the final result and end the stream.
+or
+1)A terminal operation is the final operation in a Stream pipeline that produces the result and closes the stream. 
 Examples: forEach(), toList(), collect(), count(), reduce(), max(), min(), findFirst().
 
 🧩 Examples:

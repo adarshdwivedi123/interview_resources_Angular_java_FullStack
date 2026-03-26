@@ -38,6 +38,7 @@ class Test {
             .forEach(System.out::println);
     }
 }
+//so here forEach return void so here print krna hoga
 
 Output
 

@@ -1,7 +1,13 @@
 
 what is annotaion?
 #)annotaion is jave is the metadata start with(@)give that provide additional information  to the compiler.
-#)Annotations help remove boilerplate code and make configuration easier, cleaner, and more readable.
+#)Annotations help remove boilerplate code and make configuration 
+✔ Less code
+✔ Easy to understand
+✔ Faster development
+#)“Earlier, we used XML configuration which was complex and hard to maintain.
+ Annotations simplified this by making the code cleaner, readable, and reducing boilerplate.”
+
 #)We use annotations to simplify configuration.
 Instead of writing long XML or configuration classes, annotations let us declaratively define:
 

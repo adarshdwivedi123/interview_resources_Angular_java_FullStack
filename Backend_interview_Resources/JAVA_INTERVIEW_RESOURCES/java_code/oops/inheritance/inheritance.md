@@ -9,7 +9,11 @@ Typed of inheritance
 1)Single
 2)Multilevel
 3)MUltiple Inheritance
-4)Hybrid inheritance
+4)Hybrid inheritance:
+because it creates ambiguity when two parent classes have the same method. T
+Java does NOT support hybrid inheritance using classes
+because it leads to ambiguity (Diamond Problem)
+Java supports hybrid inheritance using interfaces ✅
 ---------------------------------------------------------------------------------
 
 why we need inheritance?
