@@ -16,7 +16,7 @@ function  frequeny(arr)
     return obj
     console.log(obj);
 }
-str="my name is bittu";
+str=[1,2,2,3,4,4,5,6,6];
  let data=frequeny(str);
  console.log(data);
  let arr1=[];
@@ -82,3 +82,24 @@ function countCharacter(str) {
 // console.log("cc",countCharacter("my name is bittu"));
 
 (charCount[s] || 0) uses the logical OR (||) operator to set the count to 0 if s is not already a key in charCount. Otherwise, it uses the current count.
+///counr freq nukmber
+// let obj={}
+// function countFrequency(arr){
+//   for(let data of arr){
+//        if(obj[data]=== undefined)
+//        {
+//            obj[data]=1;
+//        }
+//        else{
+//            obj[data]=obj[data]+1;
+//        }
+       
+//   }
+//    return obj;
+    
+// }
+
+
+// str="abcbcabcbabcaabb";
+// let data =countFrequency(str);
+// console.log(data);

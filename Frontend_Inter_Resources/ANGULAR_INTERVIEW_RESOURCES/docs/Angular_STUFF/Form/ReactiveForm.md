@@ -1,4 +1,5 @@
 #)“Reactive Forms in Angular use FormControl, FormGroup, and FormArray to build forms entirely in TypeScript.
+#)Reactive we use when we want to complex form with dynnamics filed.
 
 #)They are scalable, testable, and perfect for complex enterprise forms with dynamic fields, 
  
@@ -119,7 +120,6 @@ Not clean
 
 ===========================================================================================
 Q6. What is FormBuilder and why we use it?
-
 1)with the help  form builder we can write  the code in cleaner and in shorter way.
 
 2)FormBuilder is a service provided by Angular’s Reactive Forms module that helps you create form controls, form groups, and form arrays easily with less boilerplate code.

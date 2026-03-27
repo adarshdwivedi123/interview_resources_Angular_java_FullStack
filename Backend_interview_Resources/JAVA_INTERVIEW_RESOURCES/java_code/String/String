@@ -64,7 +64,8 @@ String password = "1234";
 DriverManager.getConnection(dbURL, username, password);
 
 
-2)If String were mutable, someone could change the password value after it’s passed to a method, which could lead to security breaches.
+2)If String were mutable, someone could change the password value after it’s passed to a method, 
+which could lead to security breaches.
 Immutability ensures that once created, the data can’t be altered.
 
 

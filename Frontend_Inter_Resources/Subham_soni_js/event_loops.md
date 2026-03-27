@@ -9,4 +9,4 @@ JavaScript can execute only one task at a time.
 There are 3 main parts:
 1️⃣ Call Stack
 2️⃣ Web APIs
-3️⃣ Callback Queue / Microtask Queue
+3️⃣ Callback Queue / Microtask Queuec

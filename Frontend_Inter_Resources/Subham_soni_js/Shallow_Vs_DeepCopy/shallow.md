@@ -1,5 +1,6 @@
 shallow copy means if we change in nested  object  it reflect in new object
 shared same memroy refercne
+it will work in nested object not in primitive type.
 
 
 --------------------------------------------------------------------

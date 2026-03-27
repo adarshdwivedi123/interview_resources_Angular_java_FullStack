@@ -1,3 +1,7 @@
+Closure means a function can remember variables even after the outer function has finished execution.
+
+
+
 //why we are using closure?
 //Closure provides a means to encapsulate data within functions, allowing for controlled access to that data while keeping it hidden from the outside scope. This concept is crucial for maintaining data integrity, preventing unintended modifications, and creating more modular and organised code.
 
@@ -5,7 +9,7 @@
 
 why should use
 Because closures allow a function to remember data even after the outer function is finished.
-
+//var is blockscope
 for (var i = 1; i <= 3; i++) {
   setTimeout(function () {
     console.log(i);
@@ -20,12 +24,15 @@ Output:
 4
 4
 
+//let is block scope
 Using closure fix:
-for (var i = 1; i <= 3; i++) {
-  (function(i){
-    setTimeout(() => console.log(i), 1000);
-  })(i);
+for (let i = 1; i <= 3; i++) {
+  setTimeout(() => console.log(i), 1000);
 }
+✅ Output:
+1
+2
+3
 Output:
 
 1

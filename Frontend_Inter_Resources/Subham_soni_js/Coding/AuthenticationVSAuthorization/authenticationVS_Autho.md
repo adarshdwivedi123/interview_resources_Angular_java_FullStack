@@ -14,11 +14,10 @@ When you go through airport security, you show your ID to authenticate your iden
  Then, when you arrive at the gate, you present your boarding pass to the flight attendant to authorize you to board your flight.
 
 
-
+==================================================================================
  Authentication ka matlab hota hai user ki identity verify karna. Jaise jab user login karta hai to system username aur password check karta hai ki user valid hai ya nahi.
 
-Authorization ka matlab hota hai check karna ki authenticated user ko system me kya access milna chahiye. Ye usually user ke role ya permissions par depend karta hai.
-
+Authorization ka matlab hota hai check karna ki authenticated user ko system me kya access milna chahiye. Ye usually user ke role ya permissions par depend karta hai
 
 ===================================IMP===========
 

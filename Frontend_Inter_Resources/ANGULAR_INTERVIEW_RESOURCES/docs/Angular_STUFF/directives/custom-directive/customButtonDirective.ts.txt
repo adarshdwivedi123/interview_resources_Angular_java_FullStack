@@ -1,3 +1,24 @@
+TRICK TO WRITE 
+====================================================
+Is it:
+- Attribute Directive?
+- Structural Directive?
+- Pipe?
+
+✔ This removes confusion instantly
+
+✅ Step 2: Decide Tools
+
+👉 Use this cheat sheet:
+
+Attribute Directive → ElementRef / Renderer2 / HostListener
+Structural Directive → TemplateRef / ViewContainerRef
+Pipe → PipeTransfor
+
+=========================================================
+
+
+
 
 
 //////////Custom Directive///
@@ -36,3 +57,141 @@ this.elementRef.nativeElement.style.backgroundColor=color;
 //////////
 HTML
 <button appButtonbackground color="pink" >Blue Color</button>
+
+
+
+-----------------------------------------------
+✅ 2. Disable Button Directive
+👉 Question
+
+Disable button after one click
+
+💻 Solution
+@Directive({
+  selector: '[appDisableAfterClick]'
+})
+export class DisableAfterClickDirective {
+
+  constructor(private el: ElementRef) {}
+
+  @HostListener('click')
+  onClick() {
+    this.el.nativeElement.disabled = true;
+  }
+}
+📌 Use
+<button appDisableAfterClick>Submit</button>
+💡 Explanation
+
+✔ Prevents multiple clicks (real use case)
+
+
+----------------------------------
+🟢 3. Auto Focus Directive
+import { Directive, ElementRef, AfterViewInit } from '@angular/core';
+
+@Directive({
+  selector: '[appAutoFocus]'
+})
+export class AutoFocusDirective implements AfterViewInit {
+
+  constructor(private el: ElementRef) {}
+
+  ngAfterViewInit() {
+    this.el.nativeElement.focus();
+  }
+}
+
+------------------------
+import { Directive, ElementRef, HostListener } from '@angular/core';
+
+@Directive({
+  selector: '[appUppercase]'
+})
+export class UppercaseDirective {
+
+  constructor(private el: ElementRef) {}
+
+  @HostListener('input')
+  onInput() {
+    this.el.nativeElement.value = this.el.nativeElement.value.toUpperCase();
+  }
+}
+--------------------------------------
+🔴 9. Custom *ngIf
+@Directive({
+  selector: '[appIf]'
+})
+export class AppIfDirective {
+
+  constructor(
+    private templateRef: TemplateRef<any>,
+    private viewContainer: ViewContainerRef
+  ) {}
+
+  @Input() set appIf(condition: boolean) {
+    this.viewContainer.clear();
+
+    if (condition) {
+      this.viewContainer.createEmbeddedView(this.templateRef);
+    }
+  }
+}
+
+
+------------------------------------------------------
+✅ Role Directive (Final Version)
+import { Directive, Input, TemplateRef, ViewContainerRef, OnInit } from '@angular/core';
+
+@Directive({
+  selector: '[appRole]'
+})
+export class RoleDirective implements OnInit {
+
+  @Input() appRole!: string | string[]; // support single or multiple roles
+
+  private userRole: string = '';
+
+  constructor(
+    private templateRef: TemplateRef<any>,
+    private viewContainer: ViewContainerRef
+  ) {}
+
+  ngOnInit() {
+    // 🔥 In real project → get from AuthService / API
+    this.userRole = 'admin'; // example
+
+    this.updateView();
+  }
+
+  private updateView() {
+    this.viewContainer.clear();
+
+    if (this.checkAccess()) {
+      this.viewContainer.createEmbeddedView(this.templateRef);
+    }
+  }
+
+  private checkAccess(): boolean {
+    if (Array.isArray(this.appRole)) {
+      return this.appRole.includes(this.userRole);
+    }
+    return this.userRole === this.appRole;
+  }
+}
+
+
+
+==========================================
+6. Must-Practice Questions (DO THESE 💯)
+
+👉 If you master these, you’ll feel confident:
+
+Highlight directive
+Click outside directive
+Role directive
+Custom *ngIf
+Capitalize pipe
+
+
+

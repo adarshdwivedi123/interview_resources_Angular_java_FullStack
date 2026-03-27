@@ -13,7 +13,7 @@ forChild() is used in feature or lazy-loaded modules to add routes without recre
 
 
 AppModule
-   ↓
+   ↓  
 RouterModule.forRoot()
    ↓
 FeatureModule

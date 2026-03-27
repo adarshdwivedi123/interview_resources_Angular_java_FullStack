@@ -11,7 +11,8 @@ Angular (Code)
 3)Input and output passing data
 4)subject  and behvaiourt subject
 5)SearchBar debounce and throtllinh
-
+6)Rxjs prartice
+7)signal
 
 #)java
 1)Strema

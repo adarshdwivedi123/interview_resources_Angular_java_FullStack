@@ -39,7 +39,65 @@ return  userAge;
 }
 
 -------------------------------------------
+✅ 1. Capitalize Pipe (VERY COMMON 🔥)
+👉 Question
+
+Capitalize first letter
+
+💻 Solution
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'capitalize'
+})
+export class CapitalizePipe implements PipeTransform {
+
+  transform(value: string): string {
+    return value.charAt(0).toUpperCase() + value.slice(1);
+  }
+}
+📌 Use
+<p>{{ 'hello' | capitalize }}</p>
+
+-----------------------------------------------------------------------
+
 first case captial
 transform(value: string): string {
   return value.charAt(0).toUpperCase() + value.slice(1);
+}
+---------------------------------
+Example (Attribute Directive)
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+
+  constructor(private el: ElementRef) {
+    this.el.nativeElement.style.color = 'red';
+  }
+}
+📌 Use
+<p appHighlight>Text</p>
+---------------------------------------
+
+
+🟢 1. Truncate Pipe
+
+👉 Limit text length
+
+✅ Code
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'truncate'
+})
+export class TruncatePipe implements PipeTransform {
+
+  transform(value: string, limit: number = 10): string {
+    if (!value) return '';
+
+    return value.length > limit 
+      ? value.substring(0, limit) + '...' 
+      : value;
+  }
 }
