@@ -1,6 +1,6 @@
 🎯 What are the @defer triggers?
-
-Angular supports multiple triggers to decide WHEN to load a component.
+Loads components only when needed, improving performance.
+or
 Defer loading is a new feature in Angular 17 used to load a part of the template only when needed.
 This can significantly improve initial load times.
 
@@ -18,7 +18,6 @@ Let’s explain each one.
 🔥 1. on immediate
 
 Loads the component asynchronously but immediately when condition becomes true.
-
 🟢 Most common and safest.
 
 Example:
@@ -29,20 +28,15 @@ Example:
 Meaning:
 
 Component loads ASAP
-
 But non-blocking
-
 Allows Angular to finish UI updates first
-
 👉 Perfect for your Jitsi loading after validations.
-
 
 -----------------------------------------------------------------------------
 
 🔥 2. on interaction
 
 Loads the component when the user interacts (click, hover, focus).
-
 Example:
 
 @defer (on interaction) {

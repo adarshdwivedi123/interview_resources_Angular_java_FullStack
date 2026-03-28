@@ -89,6 +89,7 @@ form.patchValue({
 });
 
 
+s for sab updaate kr doe
 setValue :if we want to update  the entire form then we have to use setValue  .
 If any field is missing, Angular throws an error.
 structure is missmatch then give issues.
@@ -221,6 +222,45 @@ How to create reusable custom validator functions
 
 --------------------------------------------------------------------------------------------
 
-“Template-driven forms are simple and driven by HTML using ngModel. Angular builds the form controls automatically, but they are harder to test and not suitable for dynamic/complex forms.
+1)“Template-driven forms are simple and driven by HTML using ngModel. Angular builds the form controls automatically, but they are harder to test and not suitable for dynamic/complex forms.
+Use template-driven form when:
+
+1)form is simple
+2)login
+  contact us
+  feedback form
+3)less validation is needed
+ required
+ email
+ min length
+4)form fields are fixed
+5)no dynamic fields
+6)quick development is needed
+  less code
+  easy to implement
+----------------------------------------------
+🎯 When to use Reactive Form
+
+Use reactive form when:
+
+1)form is complex
+ registration
+ onboarding
+ profile update
+  multi-step form
+2)dynamic fields are required
+  fields show/hide based on user input
+3)custom validation is needed
+  password and confirm password match
+  date validation
+  age validation
+4)better control is needed
+form value
+form status
+error handling
+5)unit testing is important
+6)future changes are expected
+
 
 Reactive forms are model-driven, created in TypeScript using FormControl, FormGroup, and FormArray. They are more scalable, testable, and ideal for complex forms with validations, dynamic fields, and API integration.”
+I prefer reactive forms because they offer better control over form state, validation, dynamic form generation, custom validators, and unit testing.

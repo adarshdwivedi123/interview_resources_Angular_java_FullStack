@@ -9,6 +9,19 @@ NgModule Remove\Fast laoding
 
 
 
+---------------KEy Featuet in angualr 20 and 21------------
+1)Signals stabilized
+2)Zone less
+3)MCP Server
+4)1) Signal Forms (Still under expermantional face)
+Forms using signals instead of reactive forms
+5)New control flow statement
+
+
+
+
+
+
 ng new --standalone==false
 
 -----------------------------------------------------------------
@@ -19,6 +32,9 @@ ng new --standalone==false
 — Control flow syntax
 — Deferred loading
 — Server-side rendering improvements
+- easy to implments lazy laoding 
+-reucde boilterpalte code
+-DI mangement easy kr diya hai
 
 
 1. Smaller Bundle Size

@@ -27,7 +27,10 @@ function removeDuplicate(arr){
 
 
 //indexOf return fitrs index of the element in the array if it is present,
-//  else it returns -1. So, if the index of the current element is equal to the current index,
+//  else it returns -1. So,
+// 
+
+if the index of the current element is equal to the current index,
 //  it means that this is the first occurrence of the element in the array, 
 // and we can include it in the result. If not,
 //  it means that this element has already been included in the result, and we can skip it.      

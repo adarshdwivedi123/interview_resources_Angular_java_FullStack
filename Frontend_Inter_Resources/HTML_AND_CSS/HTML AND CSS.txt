@@ -60,10 +60,11 @@ A semantic element clearly describes its meaning to both the browser and the dev
   Examples of semantic elements: <form> , <table> , and <article> — Clearly defines its content.
 
 Semantic tags are HTML tags that have a specific meaning. For example,
-The tag itself tells what type of content is inside it.
+#)The tag itself tells what type of content is inside it.
  the <h1> tag is a semantic tag that represents a heading. 
  The <p> tag is another semantic tag that represents a paragraph. 
- Semantic tags are important because they help to make your HTML code more readable and understandable for both humans and machines.
+ Semantic tags are important because they help to make your HTML code more readable
+  and understandable for both humans and machines.
 
 
 
@@ -102,9 +103,15 @@ It is generally recommended to use semantic tags whenever possible. This will ma
 
 use semantic tags:
 
-They make your HTML code more readable and understandable for humans and machines. This is because semantic tags have a specific meaning, which makes it easier for people and machines to understand what your code is doing.
-#)They can help to improve the SEO of your website. Search engines can use semantic tags to understand the content of your web pages, which can help to improve your ranking in search results.
-They can help to make your web pages more accessible to people with disabilities. Screen readers and other assistive technologies can use semantic tags to understand the structure of your web pages, which can make them easier to navigate.
+They make your HTML code more readable and understandable for humans and machines. 
+This is because semantic tags have a specific meaning, 
+which makes it easier for people and machines to understand what your code is doing.
+
+#)They can help to improve the SEO of your website.
+ Search engines can use semantic tags to understand the content of your web pages, 
+ which can help to improve your ranking in search results.
+They can help to make your web pages more accessible to people with disabilities.
+ Screen readers and other assistive technologies can use semantic tags to understand the structure of your web pages, which can make them easier to navigate.
 
 
 use non-semantic tags:
@@ -125,10 +132,13 @@ ex <input type="Date" > and <input type-
 5)Mobile Compatibilty
 6)Write the coding simpler than coparsion to html.
 #)intro of audio and video: 
-Audio and Video tags are the two major addition to HTML5. It allows developers to embed a video or audio on their website.
+Audio and Video tags are the two major addition to HTML5.
+ It allows developers to embed a video or audio on their website.
 
 Q)HTML
-It is used to design web pages using a markup language. HTML is a combination of Hypertext and Markup language. Hypertext defines the link between the web pages. A markup language is used to define the text document within the tag which defines the structure of web pages. This language is used to annotate (at the note for the computer) text so that a machine can understand it and manipulate text accordingly.
+It is used to design web pages using a markup language. HTML is a combination of Hypertext and Markup language. Hypertext defines the link between the web pages.
+ A markup language is used to define the text document within the tag which defines the structure of web pages. 
+ This language is used to annotate (at the note for the computer) text so that a machine can understand it and manipulate text accordingly.
 ->HTML Has Introduced api  and dom  and also like 
 
 
@@ -657,6 +667,7 @@ Exmaple
 #)Media queries are used in responsive web design to create different layouts based on the size of the viewport. They can also be used to detect other things about the environment your site is running on, such as: Whether the user is using a touchscreen rather than a mouseThe user's device, browser, or system settingsWhether the page is printed
 
 Q)Box Model:
+evert element in browser treat like a box
 =>It is used to create the design and layout of web pages.
 =>our web page act like a box model.
 =>The web browser renders every element as a rectangular box according to the CSS box model.

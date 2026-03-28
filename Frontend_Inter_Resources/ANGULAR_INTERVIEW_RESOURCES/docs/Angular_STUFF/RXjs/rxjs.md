@@ -1,6 +1,18 @@
 
 #)RxJS (Reactive Extensions for JavaScript) is a library used in Angular to work with async data streams such as:
 
+-------------------------------
+
+mergeMap → parallel calls
+concatMap → sequential calls
+forkJoin → wait for all, then final result
+
+
+mergeMap executes multiple API calls in parallel, while concatMap executes them sequentially in the same order.
+
+
+
+------------------------------------
 
 It is used heavily in Angular:
 
@@ -176,6 +188,21 @@ best for independent or parallel API calls.
 ✔ Notifications
 ✔ Chat messages
 ✔ Parallel API calls
+
+
+All 3 APIs run together.
+
+API 1 ──┐
+API 2 ──┼── together
+API 3 ──┘
+
+Whichever finishes first prints first.
+
+Example output:
+
+user3
+user1
+user2
 
 
 

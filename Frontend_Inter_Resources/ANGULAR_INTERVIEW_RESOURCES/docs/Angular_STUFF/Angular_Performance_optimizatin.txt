@@ -1,12 +1,35 @@
 1)lazy lading  and preloading
 2)use trackBy
+Angular kabhi-kabhi puri list ko dubara render/check kar sakta hai.
+👉 unnecessary DOM updates
+👉 performance issue in large list
 3)Async Pipe
 4)onPUsh change Detection
-NgOptimitaize image directive
+
 5)CodeSplitting &  TreeShaking
 6)Use a Bundler Optimizer
 7)use Signals
 8)use standalone
+9)NgOptimitaize image directive
+
+
+#)Before  problem 
+when we use  NgFor  for rendering a large list 
+Angular may unnecessarily re-render multiple DOM elements when the list changes.
+angualae not able to  identify this list ko  render kiya hai ya nhi
+Problem = unnecessary DOM re-render
+Solution = track items by unique id
+#)trackBy
+trackBy Angular ko bolta hai:
+har item ko unique id se track karo
+so only changed or new elements are updated, which improves performance.
+------------------------------------------
+@for (user of users; track user.id) {
+  <li>{{ user.name }}</li>
+}
+
+
+
 
 
 ====================================

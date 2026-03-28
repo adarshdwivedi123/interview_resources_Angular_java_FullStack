@@ -1,32 +1,62 @@
 Angualr 21  featue  by default Zonlkess featue
 
 
-“NgZone allows Angular to automatically run change detection whenever an async task completes.
-It tracks events like timers, promises, or API calls and refreshes the UI without the developer manually calling detectChanges().
+#)“NgZone is angualr service  that usses zone.js allows Angular to automatically run change detection whenever an async task completes.
+In simple words:
+Whenever async work finishes, Angular automatically updates the UI
+API call
+setTimeout
+click event
+promise
+interval
 
 
 
-#)When do WE use NgZone manually?
-In most cases, Angular handles it automatically.
-But we use NgZone manually when:
 
+Problem it so lves
+Without NgZone, Angular would not know when async task completed.
+#)How will Angular know UI needs update?
+👉 NgZone detects this async completion and runs change detection.
 
+Disadvnteg
+Angular starts checking many components
+This can   performance issues in large apps.
 
+#)HOw on push problem solve?
+How OnPush solves this
 
----------------------------------------------------------
-#)Why is Angular removing Zone.js?
-Because Zone.js:
-Patches many browser APIs
-Adds overhead (slows the app)
-Triggers too many change detections
-Makes debugging harder
+With OnPush:
 
-Modern Angular is moving toward:
-✔ signal-based reactivity
-✔ manual change detection
-✔ event-driven rendering
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+unnecessary component checks
+Angular checks component only when needed
 
-MUCH faster and cleaner.
+now on push check only when their is input or state change unnessary it will not check the compoent
+1) @Input() reference changes
+@Input() user: any;
+If parent sends new object reference → component updates.
+2) event happens inside component
+(click)="save()"
+3) observable emits using async pipe
+{{ user$ | async }}
+4) manual trigger
+this.cdr.markForCheck();
+=-----------------------------------
+#)Now if changeDetectio is already their why signla cam?
+OnPush
+
+Agar component me 10 bindings hain:
+
+<h1>{{ name }}</h1>
+<p>{{ count }}</p>
+<p>{{ age }}</p>
+
+Agar count change hua, Angular pura component bindings check karega.
+
+in case of signal only count vli line update hogyi baki kuch touch nhi hoga variebale.
+
 
 ------------------------------------------------------
 “Traditionally Angular uses NgZone and Zone.js to automatically run change detection whenever async tasks happen.
