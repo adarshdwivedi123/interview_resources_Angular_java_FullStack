@@ -3,7 +3,7 @@
 Angular kabhi-kabhi puri list ko dubara render/check kar sakta hai.
 👉 unnecessary DOM updates
 👉 performance issue in large list
-3)Async Pipe
+3)Async Pipe(remove the need of subscription and unsubscription)
 4)onPUsh change Detection
 
 5)CodeSplitting &  TreeShaking

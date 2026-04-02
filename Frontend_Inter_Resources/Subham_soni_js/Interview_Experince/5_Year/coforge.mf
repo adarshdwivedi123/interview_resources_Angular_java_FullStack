@@ -1,0 +1,16 @@
+fullstack interview  ask only fontend
+
+
+project explantion
+Project explanation acaga 
+Jitsi how we are using
+[21:09, 01/04/2026] Adarsh Dwivedi(Ajju): Idfc
+[10:13, 02/04/2026] Adarsh Dwivedi(Ajju): How can track router 
+Custom directive how u have implement
+
+pipe
+share data between compoent
+
+
+
+wat are the challenges u are faincg day to day

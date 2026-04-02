@@ -19,6 +19,8 @@ Async/await is a cleaner syntax built on top of Promises that makes code look sy
 "In Promise, we use chaining with then and catch, which can become complex when multiple async operations are involved. With async/await, the same logic is written in a synchronous style using try-catch, making the code easier to read, maintain, and debug."
 
 
+
+
 ------------------------------------------------------------------------
 🎯 Direct Comparison
 Promise (Chaining)

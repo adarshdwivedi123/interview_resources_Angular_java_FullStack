@@ -41,6 +41,14 @@ What are Standalone Components?
 👉 Standalone components are components that do NOT need NgModule
 Why Angular Introduced Standalone?
 
+
+_-----------------------------------------------------
+“NgModule introduced extra complexity like boilerplate, tight coupling, and confusion in managing dependencies. Angular introduced standalone components to simplify development, improve readability, and enable better performance and lazy loading.”
+
+
+
+-----------------------------------------------------------------
+
 👉 Problem with Modules ❌
 1)Too much boilerplate
 2)Extra files

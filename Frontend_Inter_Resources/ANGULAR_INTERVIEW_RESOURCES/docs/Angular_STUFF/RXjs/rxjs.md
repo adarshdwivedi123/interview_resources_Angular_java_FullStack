@@ -220,6 +220,17 @@ this.apiService.getUser().pipe(
   console.log("User's Posts:", result);
 });
 
+============================================
+concat (Sequential Execution)
+
+In RxJS (concat):
+
+First API runs
+Waits for it to complete
+Then second API runs
+Then third… and so on
+===================================
+
 
 Runs API calls one by one
 Maintains order
@@ -239,6 +250,18 @@ Why is exhaustMap used? (Real Developer Reason)
 ✔ Protect server from extra requests
 ✔ Ensure only 1 active request at a time
 ✔ Ignore rapid repeated triggers
+
+It will call ONLY ONE time, not 5 times.
+
+🧠 How it works
+
+When you click multiple times:
+
+Click 1 → API call starts
+Click 2 → ❌ ignored
+Click 3 → ❌ ignored
+Click 4 → ❌ ignored
+Click 5 → ❌ ignored
 
 
 ---------------------------------------------------------------
