@@ -1,4 +1,16 @@
+what probelm annotioan solve?
+Why we use annotations in Java
+1. ✅ Reduce boilerplate code
+2)❌ Too many external configuration files (XML)(lot configuraiton need to to )
+3)❌ Manual work for frameworks
+Developers had to manually:
+Inject objects
+Map database tables
+Handle APIs
 
+
+
+-------------------------------------------------------------
 what is annotaion?
 #)annotaion is jave is the metadata start with(@)give that provide additional information  to the compiler.
 #)Annotations help remove boilerplate code and make configuration 
@@ -61,7 +73,6 @@ applies auto-configuration, and finally starts the embedded server like Tomcat.
 It creates and manages all beans and handles dependency injection.” 
 it is similar  to  ioc container
 -------------------------------------------------------------------------
-
 
 1)@SpringBootApplication
 we use @SpringBootApplication annotation launch our application

@@ -1,3 +1,6 @@
+A custom directive in Angular is basically a way to teach HTML new behavior. Instead of repeating logic everywhere,
+ you attach behavior once and reuse it.
+
 TRICK TO WRITE 
 ====================================================
 Is it:

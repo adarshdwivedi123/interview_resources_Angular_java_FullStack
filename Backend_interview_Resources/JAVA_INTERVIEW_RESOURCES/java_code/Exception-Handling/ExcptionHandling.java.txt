@@ -3,6 +3,9 @@ An exception is an unwnated or unexpected  event which occur during  the executi
 at a run time.
 (run time that disrupt the normal flow of the program)
 
+1)We cna handle the error  at the runtime so that our program is not crashing.
+2)We can show the custom  message so that user can understnad 
+3)
 
 Why exception handling is important?
 #)Exception handling is important because it helps a program handle runtime errors gracefully without crashing.

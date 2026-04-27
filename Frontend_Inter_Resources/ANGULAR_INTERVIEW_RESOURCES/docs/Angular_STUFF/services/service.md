@@ -11,3 +11,4 @@ For example, in a real project, we use services for API calls, authentication, o
 This improves code maintainability, 
 reduces duplication,
  and keeps components clean and focused only on UI.
+ 

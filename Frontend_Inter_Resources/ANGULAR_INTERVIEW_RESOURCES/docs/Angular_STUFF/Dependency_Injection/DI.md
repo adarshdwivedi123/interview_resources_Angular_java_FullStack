@@ -45,6 +45,7 @@ This creates a new instance of UserService only for this component.
 Answer:
 simple menaing
 //privide ke andar hi servies register krte hai
+with the hekp of providers we regiser a servies inside a compoent.
 Providers are used to register services so Angular can inject them where needed.
 
 A Provider tells Angular HOW to create and deliver a dependency (service) when a component or another service needed.
@@ -82,7 +83,7 @@ constructor(private api: ApiService, private auth: AuthService) {}
 Angular manages all nested dependencies automatically.
 ---------------------------------------------------------------
 ✅ What is @Injectable() in Angular?
-(@Injeactblke inject krta hai then elgible DI)
+(@Injeactblke inject krta c then elgible DI)
 @Injectable() is a decorator in Angular that marks a class as eligible for Dependency Injection (DI).
 Without @Injectable(), Angular cannot inject dependencies inside the service.
 Error: Can't resolve all parameters for UserService
@@ -123,6 +124,7 @@ bootstrapApplication(AppComponent, {
 });
 
 -------------------------------------------------------------------
+#)in a compoent can we inject mulitple  services
 
 
 
@@ -195,7 +197,7 @@ If none of the injectors contain a provider, Angular throws a NullInjectorError.
 Angular uses hierarchical dependency injection where injectors are arranged in a tree structure.
 When Angular injects a service, it first checks the current component injector.
 If not found, it checks the parent injector.
-If still not found, it checks the root .injector
+If still not found, it checks the root .injectorc
 If not found anywhere, Angular throws an error.
 
 This shows you understand hierarchical lookup.

@@ -7,4 +7,4 @@ Large projects	Hard to maintain	        Easier to maintain
 
 
 //Type is decided at runtime
-//Type is fixed at compile time
+//Type is fixed at compile time``

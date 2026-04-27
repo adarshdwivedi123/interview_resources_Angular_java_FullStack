@@ -4,8 +4,29 @@ what is oops?
 are designed using objects and classes. 
 follows principles like encapsulation, inheritance, polymorphism, and abstraction
 
-#)oops is programing languge is to bind together the data  and the fucniton that operate on this 
+#)oops is programing 
+ is to bind together the data  and the fucniton that operate on this 
 so that no other part of code can acess this data expect that function.
 
 #)The goal of OOPS is to make code modular, reusable, flexible, and easier to maintain
 
+--------------------------------------
+package Variable;
+#Object are real word entity
+which has two things
+Properties => know as state
+Behaviour => known as Function
+
+
+#)Car is Object
+Properties like :Color ,Type ,Brans ,weight
+Behaviour like :Apply break ,Drive , Increase Speed etc.
+
+Class is blue print Of object
+
+
+public class Object {
+
+}
+
+------------------------------------------
