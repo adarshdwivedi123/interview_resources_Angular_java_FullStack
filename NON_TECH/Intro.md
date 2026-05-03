@@ -3,6 +3,13 @@ Hi, my name is Adarsh Dwivedi. I have around 5 years of experience as a Full Sta
 Currently, I am working at IIIT Bangalore, where I am involved in developing and maintaining a healthcare product.
 
 
+Hi, my name is Adarsh Dwivedi. I have around 5 years of experience as a Frontend Developer. I have worked with Angular from version 13 to 21.
+
+Currently, I am working at IIIT Bangalore(EHRC), where I am involved in developing and maintaining a healthcare product,.
+
+I am also actively exploring and learning the latest Angular 21 features like Signals, defer, and the new control flow syntax.
+
+
 -------------------------------------------------------------------------------------------
 ABOUT PROJECT
 -----------===========================================================

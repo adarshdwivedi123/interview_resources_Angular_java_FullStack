@@ -1,20 +1,26 @@
-// //Debounce funciton wait a certain amount of time before it run again
-// const ele=document.querySelector('input');
-// ele.addEventListener('keyup',function(){
-//     console.log("data storage recevied from server");
-// })
+we use debouncing and throttling to improve performance and user experience
 
-//Debouncing is a useful technique for improving the performance of web applications.
-//it use prevent unnessary  network call
+1)Debouncing is a useful technique for improving the performance of web applications.
+it use prevent unnessary  network call
+2)the function would be called every time the user types a character,
+ which could lead to performance problems.
+ to prevent this  we use deboucing  “Run the function only after the user stops doing something.”
+
+
+ You are typing in a search box:
+
+You type: a → ab → abc
+Without debounce → API called 3 times ❌
+With debounce → API called only once after you stop typing ✅
+
 // It can be used to prevent functions from being called too often in response to events, 
 //such as user input or scroll events.
 
 //This is useful in situations where a function is called repeatedly in response to an event,
 // such as a user typing in a search bar.
 
-//  debouncing, the function would be called every time the user types a character,
-// which could lead to performance problems
 
+“In Angular, we often use RxJS operators like debounceTime and throttleTime to handle these scenarios efficiently.”
 
 
 

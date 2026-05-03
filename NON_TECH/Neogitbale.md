@@ -1,0 +1,3 @@
+Based on my 5 years of experience in Angular, including working with the latest versions and building scalable production-level applications, I’m expecting a compensation in the range of X–Y. I believe this aligns with current market standards and the value I can bring to the team.
+
+Also, at a personal level, I have some important financial responsibilities this year, so I would really appreciate if we can come closer to this range.

@@ -97,7 +97,8 @@ Non-semantic tags do not describe the content meaning.
 They are mainly used for layout or styling.
 
 
-It is generally recommended to use semantic tags whenever possible. This will make your HTML code more readable and understandable for both humans and machines. However, there are times when you may need to use non-semantic tags, such as when you are using them for layout purposes.
+It is generally recommended to use semantic tags whenever possible.
+ This will make your HTML code more readable and understandable for both humans and machines. However, there are times when you may need to use non-semantic tags, such as when you are using them for layout purposes.
 
 
 
@@ -111,7 +112,9 @@ which makes it easier for people and machines to understand what your code is do
  Search engines can use semantic tags to understand the content of your web pages, 
  which can help to improve your ranking in search results.
 They can help to make your web pages more accessible to people with disabilities.
- Screen readers and other assistive technologies can use semantic tags to understand the structure of your web pages, which can make them easier to navigate.
+ Screen readers and other assistive technologies can
+  use semantic tags to understand the structure of your web pages,
+   which can make them easier to navigate.
 
 
 use non-semantic tags:
@@ -188,8 +191,11 @@ HTML elements with no content are called empty elements. For example: <br>, <hr>
 
 
 #)What is the difference between HTML elements and tags?
-HTML elements communicate to the browser to render text. When the elements are enclosed by brackets <>, they form HTML tags. Most of the time, tags come in a pair and surround content.
-<br> tag - Usually <br> tag is used to separate the line of text. It breaks the current line and conveys the flow to the next line
+HTML elements communicate to the browser to render text.
+ When the elements are enclosed by brackets <>, they form HTML tags.
+  Most of the time, tags come in a pair and surround content.
+<br> tag - Usually <br> tag is used to separate the line of text. 
+It breaks the current line and conveys the flow to the next line
 
 
  <!DOCTYPE html> is used to instruct the web browser about the HTML page.
@@ -247,6 +253,12 @@ Xhtml has limited supported by browser.
  The <!DOCTYPE> declaration is always the first line in an HTML document, before the <html> tag.
 
 #)What if i remove the doctype from html?
+1)Uses outdated rendering behavior
+2)CSS box model breaks (width calculation issues)
+3)Responsive design may fail
+4)UI becomes inconsistent across browsers
+5)Hard to debug issues
+
 browser can  still render the page but they will not not able to validate the verision of html
 therforw it may casuse  a compatibilty issue  with seo or debugging.
 
@@ -298,6 +310,15 @@ Block elements start on a new line and consume the full width of the page availa
 Example:- <div>, <p>, <header>, <footer>, <h1>...<h6>, <form>, <table>, <canvas>, <video>, <blockquote>, <pre>, <ul>, <ol>, <figcaption>, <figure>, <hr>, <article>, <section>, 
 
 Q)How to convert a block level element to inline via CSS?
+You can use the display property.
+element {
+  display: inline;
+}
+
+Convert inline → block using CSS
+element {
+  display: block;
+}
 
 
 
@@ -654,7 +675,9 @@ To use display: flex, you need to set it on a container element. This container 
 }
 
 #)Grid 
-display: grid in CSS is used to create a grid layout, which allows for the arrangement of elements into rows and columns. This layout model provides more control over the alignment, spacing, and sizing of items in a container, making it a powerful tool for building complex web designs.
+display: grid in CSS is used to create a grid layout, which allows for the arrangement of elements into rows and columns.
+ This layout model provides more control over the alignment, spacing, and sizing of items in a container,
+  making it a powerful tool for building complex web designs.
  
 
 Example 
@@ -672,25 +695,21 @@ evert element in browser treat like a box
 =>our web page act like a box model.
 =>The web browser renders every element as a rectangular box according to the CSS box model.
 //shi kro
-#)Box Model Contain multiple Properties
-In  this order it is dispaly in web  page   (Margin sb se bhar rehta hau)
-Margin: while margin is used to create space  between elements (border and element ).
-Border:Lies between the padding and margin.
-Padding :Padding is used to create space within an element(content and its border),  
-Content: Content Refer where actual data  text and image are appear.
 
- #)Padding is used to create space within an element(content and its border),  
- #) while margin is used to create space  between elements (border and element ).
-#)content: This contains the actual data in the form of text, images, or other media forms and it can be sized using the  width & height property.padding: Padding is used to create space within an element(content and its border).border: This  property is used to cover the content
-#).margin: This property is used to create space around the element ie., around the border area.
-border..
+1. Content
+Actual text / image inside the element
+Padding = space inside the element
+Margin = space outside the element
+border=
 
-////
-Marign:Margin is the space outside an element's border. It creates space between the element and surrounding elements. Margins do not have a background color and are transparent by default.
-/////
-
-Padding is the space between the element's content and its border. It creates space inside the element. Padding is useful for adding internal spacing to elements without affecting their size or the layout of surrounding elements.
-
+-==================================================
+Real-life example
+Padding = space inside a button
+Margin = space between two buttons
+content:Text inside the button
+Border:Outline of the button
+✔️ “Border = button ka outer line”
+======================================================
 
 
 
@@ -763,35 +782,6 @@ it will add padding and   margin to a box
 #)External Css With the help of link tag
  <link rel="stylesheet" href="style.css">
 
-
-Js  
-and
-css
-Duve center 
-Code Ke sath practice kro
-
-
-
-event bubbling and capturing 
-Event bubbling in JavaScript can be defined as the method by which an event which got triggered
-Event bubbling and event capturing are two mechanisms through which browser events propagate through the DOM (Document Object Model) tree.
-Event bubbling : it start from child to parent .
-
-
- When an event occurs on a particular element, such as a click or a keypress, it can trigger handlers not only on that specific element but also on its ancestors in the DOM
-
-event bubbling mechanism in the DOM, where events traverse from the target element up to its ancestors, allowing multiple elements to respond to the same event
-Ex see techinal uneja
-
- Event Capturing:
-
-//event  progate nhi hoga means ye vle event  chle ga nhi 
-event.stopPropgation();
-
-
-//By default behvauoyr ko print na krne de
-by defua;t behvaiour hai uska stop krna  hai .
-PreventDefault();
 
 
 

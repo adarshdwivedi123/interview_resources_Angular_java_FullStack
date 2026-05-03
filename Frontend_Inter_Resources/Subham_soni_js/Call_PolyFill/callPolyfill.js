@@ -11,7 +11,9 @@
 //Difference between call, apply and bind
 //call() invokes the function immediately and allows you to pass arguments one by one.
 //apply() also invokes the function immediately but allows you to pass arguments as an array.
-//bind() does not invoke the function immediately. Instead, it returns a new function with a specified this value and optional arguments. You can call this new function later. 
+//bind() does not invoke the function immediately. Instead, 
+// it returns a new function with a specified this value and optional arguments.
+//  You can call this new function later. 
 
 
 var obj={ name:"Piyush"};
