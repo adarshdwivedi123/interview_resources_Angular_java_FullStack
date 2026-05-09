@@ -11,6 +11,8 @@ Now Angular tracks it automatically.
 5)easier state management(Old way → Service + BehaviorSubject)ment
 now we can use singal for state mange
 
+Exmaple preopare();
+
 ----------------------------no manual subsciption unsubscription
 count = signal(0);
 

@@ -8,6 +8,7 @@ export class UserService {}
 Service is registered in the root injector
 Only ONE instance (singleton) is created
 Shared across the entire application
+The data needs to be shared across the whole app.
 
 Behavior
 
@@ -15,6 +16,11 @@ Same instance used in:
 All components
 All modules
 Data is shared globally
+providedIn: 'root'  ← registered globally
+NOte
+ A root provider stays alive for the entire app lifetime — it never gets cleaned up until the page closes.
+
+AuthService (logged-in user everywhere), ThemeService (dark/light mode), NotificationService.
 
 
 @Component({...})
@@ -34,15 +40,18 @@ export class BComponent {
 Service is registered in the component-level injector
 A new instance is created for that componen
 ParentComponent and ChildComponent share the same instance (scoped to parent)
+Note
+A component provider gets destroyed the moment the component is removed from the DOM. Angular automatically cleans up the service instance and calls ngOnDestroy on it if you implement it.
+#)Example
+  providers: [FormStateService]  ← registered here
 
 
 -------------------------------------------------------------
 What happens if service is provided in BOTH root and component?
-
 👉 Component provider wins
-
 Angular uses the closest injector
 So component gets new instance, NOT root one
+
 
 
 ----------------------------------------

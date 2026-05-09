@@ -1,5 +1,9 @@
 //👉 Converting a function with multiple arguments
 // into a chain of single-argument functions.
+or
+//normal currying  copy here
+Currying is a function programming concept that involves transforming  a fucniton  that takes
+multiarugument  into a sequence  of a function that  each take single argument.Currying
 
 Example:
 
@@ -51,9 +55,7 @@ function f(a,b){
 }
 
 
-//normal currying  copy here
-Currying is a function programming concept that involves transforming  a fucniton  that takes
-multiarugument  into a sequence  of a function that  each take single argument.Currying
+
 
 
 //#)Benfit

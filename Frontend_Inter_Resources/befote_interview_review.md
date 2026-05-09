@@ -24,3 +24,8 @@ Angular (Code)
 Html And css
 
 
+
+Seacmrion
+How we are creaitn resuable compeint 
+how we are creating behvaiout subject and subject?
+hiowe we suing signal ?

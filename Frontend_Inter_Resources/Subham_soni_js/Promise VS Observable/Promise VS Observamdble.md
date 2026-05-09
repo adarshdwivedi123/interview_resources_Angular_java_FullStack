@@ -1,3 +1,15 @@
+1)In Angular, Observables are unicast by default, meaning every time we subscribe, 
+it creates a new execution.
+For example, if we call an HTTP API and subscribe twice, 
+ it will trigger two separate API calls.
+
+To avoid this, we use multicast, where multiple subscribers share the same execution. 
+This can be achieved using operators like shareReplay or using Subjects.
+
+In real projects, we use multicast to avoid duplicate API calls and improve performance, especially for shared data like user info or dashboard data
+
+===========================================================================
+
 //Here  it  return stram of data
 myObservable= new Observable((observer)=>{
     console.log("observer started");

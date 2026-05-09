@@ -1,4 +1,6 @@
-
+“@ViewChild is used to get a reference of a 
+child component or DOM element in the parent component and is available
+ after ngAfterViewInit lifecycle hook.”
 
 <p #highlight>THis is important </p>
 
@@ -19,3 +21,33 @@ syntax
     
 output 
 This is important of red color
+
+
+
+What is { static: true | false } in @ViewChild?
+👉 You can say:
+
+“static: true means the ViewChild is available before change detection, so we can access it inside ngOnInit.”
+
+===============================================================================
+
+static: false (default)
+
+👉 You can say:
+
+“static: false means the ViewChild is available after the view is initialized,
+ so we access it in ngAfterViewInit.”
+ @ViewChild('myInput', { static: false }) input!: ElementRef;
+ @ViewChild('myInput', { static: true }) input!: ElementRef;
+
+ngOnInit() {
+  console.log(this.input); // ✅ available here
+}
+==========================================================
+
+ngAfterViewInit() {
+  console.log(this.input); // ✅ available here
+}
+🧠 When to use?
+Element is conditionally rendered
+Inside *ngIf, *ngFor

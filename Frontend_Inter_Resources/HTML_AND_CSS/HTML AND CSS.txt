@@ -54,7 +54,6 @@ deep copy and shallow copy khud se kaise fuxniton bnye v
 ///////////////////Do Before interview////////////////////////////////////////////
 Swmantic and Non Semantic Element
 
-
 A semantic element clearly describes its meaning to both the browser and the developer.
  Examples of non-semantic elements: <div> and <span> — Tells nothing about its content.
   Examples of semantic elements: <form> , <table> , and <article> — Clearly defines its content.
@@ -714,6 +713,10 @@ Border:Outline of the button
 
 
 visibilty hidden and none 
+hide an element from the user, but the key difference is that
+ visibility: hidden keeps the element's space in the layout,
+ while display: none removes the element entirely from the layout — as if it doesn't exist."
+ 
 #) What is the float property of CSS?The CSS float property is used to move the image to the right or left along with the texts to be wrapped around it. It doesn't change the property of the elements used before itvisibility: hidden hides the element, but it occupies space and affects the layout of the documedisplay: none also: hides the element but not occupy space. It will not affect the layout of the document     
 
 #)What is the difference between CSS2 and CSS3?

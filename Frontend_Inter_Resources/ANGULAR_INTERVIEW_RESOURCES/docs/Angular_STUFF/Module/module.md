@@ -6,6 +6,20 @@ has atleast one @NgModule  class that is root module which is conventionally
 named appMoulde.
 
 
+ key metadata
+ @NgModule({
+  1)declarations: [AppComponent, HeaderComponent],  // Used to register components, directives, and pipes that belong to this module.
+
+  2)imports: [BrowserModule, FormsModule],          // "Imports are modules whose features we want to use inside this module."
+  BrowserModule → needed to run app in browser
+FormsModule → enables template-driven forms like ngModel
+  3)providers: [UserService],                       // "Providers are used to register services for dependency injection."
+  4)exports: [HeaderComponent],                     /"Exports are used to share components with other modules."
+ 5) bootstrap: [AppComponent]                       // "Bootstrap tells Angular which component should load first."
+})
+export class AppModule { }
+
+
 
 --------------------------------------------------
 Without modules:
@@ -25,7 +39,7 @@ Scalable ✅
 
 
 ----------------------------------------------------------------------------------
-Standalone components were introduced to remove the extra abstraction layer of NgModule. They simplify application structure, reduce boilerplate code, make dependency management local to the component, and improve lazy loading and performance.
+Standalone components were introduced to  simplify application structure, reduce boilerplate code, make dependency management local to the component, and improve lazy loading and performance.
 
 To use one component, Angular first had to check:
 
@@ -43,7 +57,14 @@ Why Angular Introduced Standalone?
 
 
 _-----------------------------------------------------
-“NgModule introduced extra complexity like boilerplate, tight coupling, and confusion in managing dependencies. Angular introduced standalone components to simplify development, improve readability, and enable better performance and lazy loading.”
+“NgModule introduced extra complexity
+1)like boilerplate,
+2)tight coupling, and 
+3)confusion in managing dependencies.
+  Angular introduced standalone components to 
+1)simplify development, 
+2)improve readability,
+3)and enable better performance and lazy loading.”
 
 
 
@@ -111,4 +132,11 @@ bundle splitting
 tree shaking
 initial load time
 This helps performance.
+
+#). Improved Testability
+
+9. Simplified Routing and Bootstrapping
+You can bootstrap an entire Angular app with a single standalone component — no AppModule needed:
+
+Build times improve — less code to process
 

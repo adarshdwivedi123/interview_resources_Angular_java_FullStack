@@ -17,6 +17,8 @@ Key Characteristics
 1)Works only in HTML templates
 2)Best for static navigation
 3)No logic or conditions can run before navigation
+  
+  
 
 ------------------------------------------------
 #)router.navigate

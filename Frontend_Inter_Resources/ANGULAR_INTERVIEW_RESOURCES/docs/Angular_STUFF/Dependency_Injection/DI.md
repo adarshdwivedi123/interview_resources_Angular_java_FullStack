@@ -6,12 +6,14 @@ Ex:
 a component need a services ->angular  automatically inject the services into the component via
 constructor or inject() .
 
+inject()=>inject is a function that we use for DI .that allows us to inject dependencies without using a constructor.
+
 
 #)Why DI is used and benfit?
 1)Reusability – same service can be used by many components
 2)Maintainability – code becomes clean and modular
 3)Loose coupling – component are not depend  on services ,if we replace a service
-component code stay same.
+component code stay same.(serices nhi reh ga to bhi shi rehga )
 4)angualr create one instance shared services  in all over component.
 5)Testability – easy to mock services
 
@@ -104,10 +106,27 @@ export class UserService {}
 ----------------------------------------------------
 
 2️⃣ providedIn: 'any'
+Every lazy-loaded module gets its own separate service instance
 
 New instance for every lazy-loaded module.
 
 @Injectable({ providedIn: 'any' })
+
+=========================================================
+Imagine your app has:
+User module
+Admin module
+
+If you use:
+providedIn: 'any'
+👉 Then:
+User module → gets its own service
+Admin module → gets its own service
+
+❗ They do NOT share data
+
+
+===================================================
 
 
 3️⃣ Component-level provider

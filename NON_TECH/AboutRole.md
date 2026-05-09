@@ -12,6 +12,9 @@ I am responsible for the end-to-end development of frontend features, from under
 2)I also collaborate with backend developers, QA teams, and product managers to understand requirements and deliver stable and scalable solutions.
 3)here we have flexibilty to interact with cdirect client take the requiemtn got the oppurnity visit at client lication test  with them. 
 4)I am also  handling  vendor realted requirment.
+i ahve work on 4 produciton  apps here 
+ "I worked on Angular projects at my company." That tells the interviewer nothing. You have real numbers: 2500+ counseling sessions, 100,000+ records, 4 production apps solo, Angular v7 to v21. T
+
 
 ----------------mention in resu,e
 here only one guy handle the fontend part 

@@ -1,10 +1,7 @@
 
 #)RxJS (Reactive Extensions for JavaScript) is a library used in Angular to work with async data streams such as:
 
--------------------------------
-
-
-
+---------------------------------------------------------------------------------------
 mergeMap → parallel calls
 concatMap → sequential calls
 forkJoin → wait for all, then final result
@@ -114,9 +111,12 @@ obs.pipe(
 
  #)of() is a creation operator in RxJS that creates an Observable from the values you pass.
 
- To convert normal values → Observable
+ #)To convert normal values → Observable
 Angular ecosystem heavily uses Observables.
 If you have normal data, of() makes it compatible with RxJS pipelines.
+of(1,2,3).subscribe(console.log);
+
+
 
 ------------------------------------------------------------------
 tap() — side effects
@@ -141,7 +141,8 @@ Interview:
 
 
 #What is from() in RxJS?
-from array and promise convert into obserbale 
+#)from array and promise convert into obserbale 
+of([1, 2, 3]).subscribe(console.log);
 
 👉 Converts array, promise, string into a stream
 👉 Emits each item separately
@@ -167,7 +168,7 @@ Naya request aate hi purana request CANCEL ho jata hai.”
 
 When a new value comes in → cancel the previous inner observable
 Cancels previous request and starts new one. 
-Used in: Search box, live typing, auto-suggest
+#)Used in: Search box, live typing, auto-suggest
 New search request cancels old ones.
 
 
@@ -194,6 +195,12 @@ best for independent or parallel API calls.
 ✔ Notifications
 ✔ Chat messages
 ✔ Parallel API calls
+====================================================
+IN case of  merge  map all the api call parelly  
+which ever finish the first give the result 
+Result: emitted one by one, but in completion order (unpredictable).
+order not maintain
+============================================================
 
 
 All 3 APIs run together.
@@ -232,6 +239,11 @@ Then API1
 
 ----------------------------------------------------------------
 concatMap() — strict order execution
+
+in  case of concat map if we have three api call 
+ionce first api is called done then we are calling second api and tthenn thiered
+— One by One, In Strict Order
+
 
 
 =============================================
@@ -350,8 +362,6 @@ Accepts first request
 Ignores rest until completed
 
 -----------------------------------------------------------------------
-
-
 distinctUntilChanged() — prevent duplicate emissions
 search$.pipe(
   distinctUntilChanged()
@@ -365,6 +375,36 @@ again input adarsh then api claled nhi hoga
 ✔ Do not hit API repeatedly with same input
 ✔ Dropdown selection change detection
 
+------------------------------------------
+shareReplay()
+is used to share a single execution of an Observable and replay the last emitted values to new subscriber 
+It helps avoid multiple API calls and improves performance.”
+
+🔥 What shareReplay(1) means
+share → share single execution
+replay(1) → store last emitted value
+
+
+Problem (Without shareReplay)
+this.http.get('/api/data').subscribe();
+this.http.get('/api/data').subscribe();
+
+👉 Result:
+
+2 subscriptions → 2 API calls
+🔹 Solution: shareReplay
+✅ Example
+data$ = this.http.get('/api/data').pipe(
+  shareReplay(1)
+);
+this.data$.subscribe();
+this.data$.subscribe();
+
+👉 Result:
+
+Only 1 API call
+Data is shared + cached
+
 -----------------------------------------------------------------------------------
 
 combineLatest() — latest values of all streams
@@ -374,7 +414,8 @@ combineLatest([
   form.name.valueChanges,
   form.email.valueChanges
 ])
-
+Note 
+“combineLatest will not emit anything until all Observables emit at least once.”
 
 combineLatest() do ya zyada Observables ka latest value lekar ek combined output deta hai.
 
@@ -471,6 +512,12 @@ Example: For every user ID, call API.
 Runs multiple APIs together
 Waits for all APIs to finish
 Gives ONE final combined result
+API 1 ──┐
+API 2 ──┼── all run in parallel, wait for ALL to complete
+API 3 ──┘
+
+Then emits ONCE:
+  [user1, user2, user3]
 
 👉 Used when loading page data (user + orders + settings together).
 

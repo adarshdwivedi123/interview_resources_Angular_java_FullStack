@@ -1,3 +1,12 @@
+“Lazy loading improves performance by reducing the initial bundle size and loading modules only when required.”
+How to mention all 3 in one interview answer
+"Angular has three levels of lazy loading. 
+1)Route-level, 
+where a full module loads on navigation. Component-level using 
+2)loadComponent for standalone components. And template-level using
+ 3)@defer — where a block inside a page defers loading until it's needed, like when it enters the viewport. 
+ I've used all three — loadChildren at TCS for feature modules,
+  loadComponent and @defer at IIIT for the Angular 21 apps I built."
 Lazy Loading in Angular 14
 #)Using LoadChidren
 

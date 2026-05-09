@@ -5,6 +5,7 @@ SSR
 Laxy LAoding 
 Standalone
 nrew control ngFor
+@if @for @Switch 
 NgModule Remove\Fast laoding
 
 
