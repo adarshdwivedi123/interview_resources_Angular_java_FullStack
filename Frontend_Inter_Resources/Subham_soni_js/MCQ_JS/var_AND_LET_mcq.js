@@ -7,6 +7,7 @@ Temporal Dead Zone
 // let with setTimeout
 
 //variable shadowing  in js
+var ignores block boundaries — the inner var a overwrites the outer one. That's exactly
 function test() {
     let a = 'Hello';
 

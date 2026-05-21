@@ -3,7 +3,8 @@ why we have move from 13 to 14 likho kyu chnage liya hmne?
 1)Reason we are moving form 13 to 14 beooz a azure also not supporting  angualr veriosn 14 .
 2)and also we se each new version come with indulcde permonace optimization and new features.
 
-Performance Improvements: Each new version of Angular typically includes performance optimizations and improvements. Updating to a newer version may provide faster rendering, reduced bundle sizes, and overall better performance for our application.
+Performance Improvements: Each new version of Angular typically includes performance optimizations and improvements.
+ Updating to a newer version may provide faster rendering, reduced bundle sizes, and overall better performance for our application.
 we try to creste everthing dynamcis ..once we change in tempalte file it will  reflect in html file alos.
 Azure also not supporting node js 14 and 16 it support 18 onward that why we upgrade that
 

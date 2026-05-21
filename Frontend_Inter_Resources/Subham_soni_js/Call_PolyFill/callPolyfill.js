@@ -13,7 +13,10 @@
 //apply() also invokes the function immediately but allows you to pass arguments as an array.
 //bind() does not invoke the function immediately. Instead, 
 // it returns a new function with a specified this value and optional arguments.
-//  You can call this new function later. 
+//  You can call this new function later.
+Sometimes a function belongs to one object, but we want to use it with another object.
+
+call(), apply(), and bind() help achieve this. 
 
 
 var obj={ name:"Piyush"};

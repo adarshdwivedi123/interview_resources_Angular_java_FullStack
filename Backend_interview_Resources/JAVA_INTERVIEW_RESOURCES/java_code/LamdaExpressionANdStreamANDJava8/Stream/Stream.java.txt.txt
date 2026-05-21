@@ -1,3 +1,12 @@
+Java Streams were introduced in Java 8 to solve problems related to:
+complex data processing
+large loops
+boilerplate code
+readability
+parallel processing
+Before Java 8, processing collections was imperative — lots of loops and temporary variables.
+
+
 #)What is Stream?
 
 ->strema is an interface represtn in java.util.stream.
@@ -9,6 +18,12 @@
 ➡ Less code
 ➡ More readable
 ➡ No extra variables
+ lots of loops and temporary variables.
+
+ every stream have three Part
+ 1)source
+ 2)Intermediate (return strema)
+ 3)Terminal Opertioan ( retrurn result)
 ---------------------------------------------------
 Stream API is required to process collections in a faster, cleaner, 
 and more readable way using functional programming

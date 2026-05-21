@@ -1,9 +1,13 @@
 FULL Stack Responsibilty
-At IIIT Bangalore, I work as a Full Stack Developer on a healthcare platform. My role mainly involves developing and maintaining frontend features using Angular.
+At IIIT Bangalore, I work as a Full Stack Developer on a healthcare platform. My role mainly involves developing and maintaining healthcare products.
 
-I also work on  REST APIs developement using Java and Spring Boot to ensure smooth communication between the frontend and backend.
-alos done the code refactoring of backned.
+On the frontend side, I am the sole developer handling the entire project, including UI development, feature implementation, and maintenance.
 
+On the backend side, I work on REST API development using Java and Spring Boot to ensure smooth communication between the frontend and backend systems.
+
+I have also worked on backend code refactoring to improve code quality, maintainability, and performance.
+
+-----------------------------------------------------------------------------------------------
 
 
 

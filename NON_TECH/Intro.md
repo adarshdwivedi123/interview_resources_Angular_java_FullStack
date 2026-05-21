@@ -1,7 +1,33 @@
-Hi, my name is Adarsh Dwivedi. I have around 5 years of experience as a Full Stack Developer, with strong expertise in frontend development using Angular, and I have worked with Angular versions 13 to 21. workes on tha angular migration forom 7 to 17 veriosn  I also have hands-on experience with Java and Spring Boot on the backend.
+---------------------------------------------------------------------------------------
+Hi, my name is Adarsh. I have around 5 years of experience as a Full Stack Developer, with strong expertise in frontend development using Angular. I have worked on Angular versions from 7 to 21 and have experience handling Angular migration projects across multiple versions.
+
+Along with frontend development, I also have around 2 year of hands-on experience in backend development using Java and Spring Boot, mainly focused on REST API development, integration.
+
+Currently, I am working at IIIT Bangalore, where I am involved in developing and maintaining healthcare products and working on end-to-end application development.
+
+---------------------------------------------------------------------------------------
+I have around 5 years of experience as a Full Stack Developer, with strong expertise in frontend development using Angular. I have worked with Angular versions from 7 to 21 and have good experience in Angular migration projects across different versions.
+
+I also have hands-on experience with Java and Spring Boot for backend development.
 
 Currently, I am working at IIIT Bangalore, where I am involved in developing and maintaining a healthcare product.
 
+
+=====================================================================================
+Hi, my name is Adarsh. I have around 5 years of experience as a Full Stack Developer, with strong expertise in frontend development using Angular. I have worked on Angular versions from 7 to 21 and have experience handling Angular migration projects across multiple versions.
+
+Along with frontend development, I also have around 1 year of hands-on experience in backend development using Java and Spring Boot, mainly focused on REST API development, integration, and full stack feature implementation.
+
+Currently, I am working at IIIT Bangalore, where I am involved in developing and maintaining healthcare products and working on end-to-end application development.
+
+
+
+
+=============================================================================================
+Hi, my name is Adarsh Dwivedi. I have around 5 years of experience as a Full Stack Developer, with strong expertise in frontend development using Angular, and I have worked with Angular versions 7 to 21. workes on tha angular migration forom 7 to 17 veriosn  I also have hands-on experience with Java and Spring Boot on the backend.
+
+Currently, I am working at IIIT Bangalore, where I am involved in developing and maintaining a healthcare product.
+====================================Frontend ROLE ===============================================
 
 Hi, my name is Adarsh Dwivedi. I have around 5 years of experience as a Frontend Developer. I have worked with Angular from version 13 to 21.
 
@@ -41,6 +67,11 @@ in fortend i have worked one of the module that developing a video call app for 
 where i used jitis iframe  develping this vido 
 in backedn worked on code refacotoring  
 we are using jitsi it is self hosted  and free of cost and eascy to integrarte.
+websocket
+live notifiviotn
+multiloanguage featute 
+used signal +defer 
+
 
 challegesn its opensource  no one is thier to know any thing about 
 after tryhing and hit and  trial and  it 15 to 20 days develped a small  end to call .

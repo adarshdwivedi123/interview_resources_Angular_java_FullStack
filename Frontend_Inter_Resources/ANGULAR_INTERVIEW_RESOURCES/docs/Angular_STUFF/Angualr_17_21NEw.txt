@@ -2,6 +2,7 @@ new ngFor  new Syntax
 we wwant to implement ngFor then need to import
 signal
 SSR
+Angualr univseral
 Laxy LAoding 
 Standalone
 nrew control ngFor

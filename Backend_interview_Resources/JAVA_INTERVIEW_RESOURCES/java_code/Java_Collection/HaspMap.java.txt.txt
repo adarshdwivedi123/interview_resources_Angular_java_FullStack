@@ -16,6 +16,36 @@ It uses hashing to store and retrieve data efficiently."
 (Hashing is a technique used to convert a key into a fixed integer value called a hash code,
  which is used to determine the index (bucket) where the data will be stored).
 
+ 2. Does HashMap Allow Duplicate Keys?
+
+❌ No
+
+map.put(1, "A");
+map.put(1, "B");
+========================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======================================================================================
+
 
 
 HashMap does not maintain any order (like insertion order).

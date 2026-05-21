@@ -1,6 +1,85 @@
 MIcroFomtned
 Obserbanel vs Promise
 Hot vs cold observable
+XSS ATTACK
+NgiF and Nzzzgfor interannly 
+pure and impure pipe
+manul change detectionad and detect changes
+3) Explain change detection in Angular. Difference between detectChanges and markForCheck. Role of NgZone
+ Use of ViewChild, ContentChild, ViewChildren
+ ) Cold vs Hot observables. Unicast vs Multicast
+-------------------------------------------------
+ Custom directive using ElementRef, HostListener, Renderer2
+ 9) How to render dynamic components using ViewContainerRef.createComponent()
+10) Create a reusable input component using ControlValueAccessor
+Topic	Must Know
+Structural directives :	TemplateRef + ViewContainerRef
+EmbeddedViewRef
+
+
+DOM APIs
+Attribute directives	: ElementRef + Renderer2
+ElementRef
+Renderer2
+HostListener
+HostBinding
+Angular converts `*ngIf` into an `ng-template`.
+
+The HTML inside becomes a `TemplateRef`.
+
+Angular uses `ViewContainerRef` as a placeholder container.
+
+When condition becomes true:
+`createEmbeddedView()` inserts template into DOM.
+
+When false:
+`clear()` removes it.
+
+This is why `*ngIf` is called a structural directive because it changes DOM structure dynamically.
+---------------------------------------------------
+
+===============================================================
+
+
+If you can speak to all 20 fluently, no notes, you're ready.
+
+What does the * in *ngIf actually do?
+Why does my structural directive need TemplateRef?
+What is ViewContainerRef? How is it different from ElementRef?
+Difference between createEmbeddedView and createComponent.
+Why use a setter (set appIf) instead of ngOnChanges?
+Why is pure: true the default? When is pure: false justified?
+Why doesn't Angular ship a filter pipe?
+How does the async pipe avoid memory leaks?
+What is @HostBinding? Give an example.
+What is @HostListener? When does Angular auto-clean it?
+What's the difference between ElementRef.nativeElement and Renderer2?
+How would I write a directive that uses IntersectionObserver?
+Can two structural directives go on the same element? Why or why not?
+What is ControlValueAccessor? Why would a directive implement it?
+How does a structural directive support the else template?
+How does let user = $implicit work?
+Can a pipe inject services? Show me how.
+What's a pipe-chain evaluation order?
+Why is {{ getUser() }} in a template an anti-pattern?
+How does *ngFor track items efficiently? Why does trackBy matter?
+async pipe interannly use
+----------------------
+two type of  custom directiver 
+structural Attribute
+Attribute direcive
+
+
+========================
+MCQ 
+Let Var and const   and closure 
+
+this  and arrow 
+
+
+
+===========================================================
+
 
 
 angular ke term me ooops

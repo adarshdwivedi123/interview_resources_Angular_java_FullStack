@@ -1,6 +1,7 @@
 #)Default Constructor
 If their is no construcotr in a class compiler automatically create defult constructor
-#)Purpose of a defualt construcotr is used to provide the defualt values  to object like 0 ,null ,etc
+#)Purpose of a defualt construcotr is used to provide the defualt values  to object 
+like 0 ,null ,etc
 
 
 ------------------------------------

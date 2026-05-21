@@ -38,6 +38,127 @@ interviwewr ko axhe se smjha nhi  pa rha hu why
 
 
 
+=====================================================================
+Deloiite interview second  totallly on backned  it was full stack 
+
+Two REST APIs can communicate asynchronously in multiple ways.
+1)java 17  which  feature you have used in project.
+2)HashMap and HashTable
+3)equals and ==
+4)Diffence HashMAp and hashTable.
+5)Why we are using stream API wat problem it solve
+
+Find the top 3 most frequent words in a list of strings, ignoring case, and excluding common 
+"stop words" like "is" or "the".
+mainWords ("Apple", "Banana","this", "apple","is","cherry", "banana", "apple", "the", "is");
+
+stopWords = ("the", "is");
+repating  count  the number exclude  this  stopwords 
+
+public class  test{
+
+public static void main(String[] args){
+
+	List<String>mainWords = Array.asList("Apple", "Banana","this", "apple","is","cherry", "banana", "apple", "the", "is");
+
+Set<String>stopWords=Set.of("the", "is");
+List<Map.Entry<String, Long>>result=mainWords.stream() 
+ 
+.map(String::toLowerCase)
+.filter(word -> !stopWords.contains(word))
+.collect(Collectors.groupingBy)
+Collectors.counting()))c
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+=================================================
+1. Message Queue (Most Common)
+
+One API sends a message to a queue, and another API processes it later.
+
+Flow
+API A → pushes message to queue
+Queue stores message
+API B → consumes/processes message asynchronously
+Technologies
+Apache Kafka
+RabbitMQ
+Amazon SQS
+Example
+
+Order Service → sends "order created" event
+Payment Service → listens and processes payment later.
+
+Benefits
+Loose coupling
+Better scalability
+Retry support
+High performance
+2. Webhook Communication
+
+One API calls another API later using callback URL.
+
+Flow
+API A sends request with callback URL
+API B processes data
+API B calls callback URL after completion
+Example
+
+Payment gateway:
+
+You send payment request
+Payment system processes asynchronously
+Later sends webhook response to your API
+3. Event-Driven Architecture
+
+Services publish events, other services subscribe.
+
+Example
+
+User Registered Event:
+
+Email Service sends welcome mail
+Notification Service sends SMS
+Analytics Service stores data
+
+All happen independently.
+
+4. Polling
+
+Client keeps checking API status repeatedly.
+
+Flow
+API request starts processing
+API returns jobId
+
+Client calls:
+
+GET /status/{jobId}
+When completed → result returned
+Used When
+Long-running operations
+File processing
+Report generation
+
+=====================
+
+
+
+
+
+
+
+
 16) standlalone ka fayida kya hai
 
 --------------------------------

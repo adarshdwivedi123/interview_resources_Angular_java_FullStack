@@ -3,10 +3,11 @@ Java 8 new feature
 1)Lambda Expressions
 2)Functional Interface
 3)Streams API
-4)Functional Interfaces
+4)Optional class
 5)Predicate
 7)Default and Static Methods in Interfaces
 8)Data and TIme Api
+
 
 
 Interfaces can now have method implementations.

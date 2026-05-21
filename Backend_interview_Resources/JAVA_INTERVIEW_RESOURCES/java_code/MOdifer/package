@@ -30,7 +30,7 @@ com
 Here:
 
 com.company → main package
-com.company.service → subpackage
+com.company.service → subpackage 
 com.company.service.impl → subpackage inside a subpackage
 
 ---------------------------------------------------------------
@@ -58,7 +58,7 @@ sources.
 
 
 1. Interpreter: Translates code line-by-line.
-2. Compiler: Translates entire code at once.
+2. Compiler: Translates entire code at once.(Complete )
 3. Assembler: Converts assembly language to machine code.
 
 ---------------------------------------------------------------------------------

@@ -1,23 +1,4 @@
-let obj={};
-function  frequeny(arr)
-{
-    arr.forEach((x)=>{
-       if(obj[x] == undefined)
-       {
-           obj[x]=1;
-       }
-       else{
-           obj[x]++;
-       }
-    });
-    
-    
-    console.log(obj);
-    
-}
-arr=[1,2,1,2,1,2,3,1,3,4,3,4];
-frequeny(arr);
-
+c
 
 
 /// try with reduce

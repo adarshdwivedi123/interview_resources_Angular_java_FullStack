@@ -29,7 +29,6 @@ Without modules:
 3)Not scalable ❌
 
 👉 With modules:
-
 Application is well-structured ✅
 Easy to maintain ✅
 Scalable ✅

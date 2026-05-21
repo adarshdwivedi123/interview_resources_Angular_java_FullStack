@@ -365,3 +365,35 @@ API calls (HttpClient returns Observable)
 WebSocket data stream
 Real-time values
 RxJS operators like mergeMap, switchMap
+
+
+===================================
+
+Why Signals Are Not Fully Used for Async Operations?
+
+Angular Signals are reactive, but they are mainly designed for:
+
+synchronous state
+
+not complex async streams.
+
+Main Reason
+
+Async operations need features like:
+
+✅ cancellation
+✅ retry
+✅ debounce
+✅ multiple async values
+✅ stream handling
+✅ operators (switchMap, mergeMap)
+
+Signals do NOT provide these features directly.
+
+That is why Angular still uses:
+
+Observable + RxJS
+
+for async data.
+
+==================

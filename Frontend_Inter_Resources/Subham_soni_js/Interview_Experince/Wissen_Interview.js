@@ -53,6 +53,21 @@ ob1={
 
 };
 
+1. Lodash isEqual — the standard answer
+javascriptimport { isEqual } from 'lodash';
+
+isEqual({ x: 1, y: 2 }, { x: 1, y: 2 });           // true
+isEqual({ a: 1, b: 2 }, { b: 2, a: 1 });           // true — key order doesn't matter
+isEqual({ a: { b: { c: 1 } } }, { a: { b: { c: 1 } } });  // true — handles nesting
+isEqual([1, 2, 3], [1, 2, 3]); 
+----------------------------------------------------------------------------
+
+JSON.stringify — quick and dirty
+javascriptJSON.stringify(a) === JSON.stringify(b);  // true if contents match
+Works for simple plain objects. But it breaks when:
+
+Keys are in different order — {a:1,b:2} vs {b:2,a:1} → false even though equal
+
 // arr.reduce()
 
 //Debouucing impemtaiom in search  bar

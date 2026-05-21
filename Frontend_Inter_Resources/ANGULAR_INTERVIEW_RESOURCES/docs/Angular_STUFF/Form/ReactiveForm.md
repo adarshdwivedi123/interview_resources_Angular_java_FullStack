@@ -238,7 +238,7 @@ Use template-driven form when:
 6)quick development is needed
   less code
   easy to implement
-----------------------------------------------
+---------------------------------------------------------------------------------------
 🎯 When to use Reactive Form
 
 Use reactive form when:

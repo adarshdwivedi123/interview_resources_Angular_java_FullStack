@@ -8,9 +8,10 @@ we can use  with
 
 Static varibole :
 1)static keyword is java  used for memory mangement   we can apply static keyword with  variable ,methods, 
-2)when a variable is declared a static then a single copy of variable is created and shared among all 
-object at class level.
+2)when a variable is declared a static then a single copy of variable is 
+created and shared among all  object at class level.
 3)Static variable get memory only onece in the class area of time of  class loading.
+
 
 
 
@@ -21,6 +22,12 @@ object at class level.
 2)static method can be invoked  without the need for creating an object of a class.
 3)static method can acces static data member  and can changes value of it.
 4)static methid belong to class  not an object becoz object ki need nhi hai.
+
+
+static method
+1)A method  that is declared  as static is know as the static method.
+2)in static method  thier  is no need of object creation we can  direclty call className.variable
+
 --------------------------------------------------------------------------------
 we have  class employee  an employee we have empID, name ,companyName,now all  instance data memeber 
 will get memory each time when  the object is created so here wastages of memory .
@@ -50,9 +57,6 @@ onlybwhen  the object is created  .it give compile tiem error.
 
 ------------------------------------------------------------------------------
 
-static method
-1)A method  that is declared  as static is know as the static method.
-2)in static method  thier  is no need of object creation we can  direclty call className.variable
 
 
 

@@ -277,3 +277,10 @@ ngOnInit() {
 "ngAfterViewInit() is a lifecycle hook that executes once after Angular fully initializes the component’s view. At this point, the DOM, template, and all @ViewChild or @ViewChildren elements are available.
 I use it when I need to access or manipulate the DOM, focus an input, initialize a chart, or call methods of child components. It cannot be used in ngOnInit because the view is not yet ready."
 -------------------------------------------------------------------------
+
+
+ngAfterViewInit is mainly used when we need access to the fully initialized component view or DOM elements.
+
+It is commonly used for ViewChild access, focusing input fields, reading element properties, or initializing third-party libraries such as charts, video players, or Jitsi integrations.
+
+This hook runs only once after Angular finishes rendering the component view.

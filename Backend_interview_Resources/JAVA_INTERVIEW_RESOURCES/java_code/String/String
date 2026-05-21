@@ -1,3 +1,5 @@
+
+----------------------------------------=
  1)String is an object that represents sequence of characters.
  2)One important thing to notice about string object is that string objects
 are immutable that means once a string object is created it cannot be

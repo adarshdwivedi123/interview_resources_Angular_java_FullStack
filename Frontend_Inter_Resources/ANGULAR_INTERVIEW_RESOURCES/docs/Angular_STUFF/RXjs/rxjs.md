@@ -1,6 +1,17 @@
 
 #)RxJS (Reactive Extensions for JavaScript) is a library used in Angular to work with async data streams such as:
 
+
+
+=================================================================================
+Q26. switchMap vs mergeMap vs concatMap vs exhaustMap — give a use case for each.
+
+switchMap — typeahead search. Cancel previous request when a new one arrives.
+mergeMap — parallel independent requests (uploading multiple files in parallel).
+concatMap — ordered/sequential requests (save A, then save B, no overlap).
+exhaustMap — login button. While the request is in-flight, ignore further clicks.
+
+==================================================================================
 ---------------------------------------------------------------------------------------
 mergeMap → parallel calls
 concatMap → sequential calls

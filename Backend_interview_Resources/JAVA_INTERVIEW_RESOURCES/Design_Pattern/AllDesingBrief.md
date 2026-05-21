@@ -1,0 +1,1 @@
+Ensures only one instance of a class exists. Used everywhere in Spring.

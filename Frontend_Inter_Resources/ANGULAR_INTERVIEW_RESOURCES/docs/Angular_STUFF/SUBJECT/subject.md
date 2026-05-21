@@ -8,6 +8,7 @@ AsyncSubject (emits last value on complete)
 
 ------------------------------------------------------------------------------
 #)ReplaySubject
+(REplay tb kre ga jb past value store ka)
 ReplaySubject is an RxJS Subject that stores past values and replays them to new subscribers.
 
 It basically acts like a video replay → when someone joins late, they still get the past important events.

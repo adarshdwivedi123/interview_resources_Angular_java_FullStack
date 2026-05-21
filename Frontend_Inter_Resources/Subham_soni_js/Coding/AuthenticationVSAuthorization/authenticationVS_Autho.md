@@ -21,7 +21,7 @@ Authorization ka matlab hota hai check karna ki authenticated user ko system me 
 
 ===================================IMP===========
 
-Jab user login karta hai aur system username aur password verify karta hai, us process ko authentication bolte hain.
+Jab user login karta hai aur system username aur password verify karta hai, us process ko authentication bolte haiin.
 Login hone ke baad user kya kya kar sakta hai — jaise admin page access kar sakta hai ya nahi — usko authorization bolte hain.
 
 

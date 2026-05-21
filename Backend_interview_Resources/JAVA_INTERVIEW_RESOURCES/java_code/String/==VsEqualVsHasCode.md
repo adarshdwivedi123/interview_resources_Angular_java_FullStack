@@ -1,3 +1,46 @@
+equals() checks actual content/value.
+"== is an operator that compares references
+
+“== compares object references,
+ while equals() compares object values/content.”
+ 
+String a = new String("Hello");
+String b = new String("Hello");
+
+System.out.println(a.equals(b)); //true
+System.out.println(a == b);   false
+
+
+========================================
+String s1 = "hello";
+String s2 = "hello";
+
+String s3 = new String("hello");
+String s4 = new String("hello");
+
+System.out.println(s1 == s2);         // true  (string pool)
+System.out.println(s3 == s4);         // false (new objects)
+System.out.println(s1 == s3);         // false (pool vs heap)
+
+System.out.println(s1.equals(s2));    // true
+System.out.println(s3.equals(s4));    // true
+System.out.println(s1.equals(s3));    // true
+========================================
+String a = "Java";
+String b = "Java";
+System.out.println(a == b);
+Output:
+
+true
+
+Because Java stores string literals in the String Pool.
+Both references point to same memory.
+
+
+====================================================================
+
+
+
 == compares memory/address.
 .equals() compares values.
 

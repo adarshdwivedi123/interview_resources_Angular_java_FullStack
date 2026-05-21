@@ -106,7 +106,9 @@ export class PhotoGalleryComponent {
 }
 
 #)Bootstrapping an application using a standalone component
- An Angular application can be bootstrapped without any NgModule by using a standalone component as the  application's root component. This is done using the bootstrapApplication API:
+ An Angular application can be bootstrapped without any 
+ NgModule by using a standalone component as the  
+ application's root component. This is done using the bootstrapApplication API:
 
 // in the main.ts file
 import {bootstrapApplication} from '@angular/platform-browser';

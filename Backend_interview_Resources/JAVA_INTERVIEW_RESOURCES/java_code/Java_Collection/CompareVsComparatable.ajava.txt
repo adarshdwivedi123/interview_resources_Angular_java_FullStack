@@ -1,5 +1,20 @@
+#)Both Comparable and Comparator are used to sort objects in Java
 “Comparable is used for default (natural) sorting.”
 that provided by jvm.
+
+
+========================================================
+Comparable provides the natural ordering inside the class itself,
+ while Comparator provides custom ordering in a separate class 
+===============================================================
+
+Quick Memory Trick
+ComparableComparatorMnemonic"Class is comparable to 
+itself""I'll rate them externally"MethodcompareTo(other) 
+— has tocompare(o1, o2) — both as argsWhereInside the classOutside the class
+
+
+==============================================================
 
 Key Points
 

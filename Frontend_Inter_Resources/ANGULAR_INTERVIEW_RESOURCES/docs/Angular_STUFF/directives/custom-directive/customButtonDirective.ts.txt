@@ -1,5 +1,7 @@
-A custom directive in Angular is basically a way to teach HTML new behavior. Instead of repeating logic everywhere,
+A custom directive in Angular is basically a way to teach HTML new behavior.
+ Instead of repeating logic everywhere,
  you attach behavior once and reuse it.
+
 
 TRICK TO WRITE 
 ====================================================
@@ -7,6 +9,40 @@ Is it:
 - Attribute Directive?
 - Structural Directive?
 - Pipe?
+
+
+THESE ARE COMMON SYNTAX THAT WE NEED REMBER THAT
+
+#)Struttutr rember for sturture directive?
+@Directive({ selector: '[appX]', standalone: true })
+export class XDirective {
+  constructor(
+    private tpl: TemplateRef<unknown>,
+    private vc: ViewContainerRef
+  ) {}
+
+  @Input() set appX(value: any) {
+    // logic here
+  }
+}
+
+
+#)structure rember for Attribute directive?
+@Directive({ selector: '[appY]', standalone: true })
+export class YDirective {
+  constructor(
+    private el: ElementRef<HTMLElement>,
+    private renderer: Renderer2
+  ) {}
+
+  @HostListener('event') onEvent() { /* … */ }
+  @HostBinding('class.active') isActive = false;
+}
+
+
+
+
+=============================================
 
 ✔ This removes confusion instantly
 

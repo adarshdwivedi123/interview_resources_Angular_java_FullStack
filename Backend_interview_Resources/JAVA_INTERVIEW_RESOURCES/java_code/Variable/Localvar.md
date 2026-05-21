@@ -5,9 +5,6 @@
 4)They are stored in the stack memory, making them thread-safe by default.
 5)Local variables cannot be declared as static or use access modifiers (like public, private), but they can be declared as final.
 
-
-
-
 -----------------------------------------------------------------------------------------------------
 #)interview Exp
 Key Points (Interview Style)

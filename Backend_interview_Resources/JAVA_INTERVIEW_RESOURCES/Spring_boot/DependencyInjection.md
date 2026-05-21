@@ -35,6 +35,9 @@ Spring injects dependency using setter methods.
 Injecting directly into the variable.
 
 -------------------------------------------------------------------------------
+Constructor Injection is the most recommended approach because it provides better immutability, testability, and cleaner dependency management.
+
+Field Injection is simpler but generally not recommended for production applications due to testing and maintainability issues.
 
 
 1. Autowiring By Type (MOST COMMON)
