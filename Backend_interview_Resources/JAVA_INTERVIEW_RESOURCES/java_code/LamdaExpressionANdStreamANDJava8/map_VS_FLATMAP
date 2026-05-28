@@ -6,6 +6,7 @@ Example: user → username
 
 -------------------------------------------------------------------
 ✨ Use flatMap():
+flatMap() converts nested streams into a single stream.
 If each element transforms into multiple values
 If your result is a stream of lists / stream of arrays
 When you want to flatten nested lists

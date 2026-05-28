@@ -1,9 +1,11 @@
 ---------------------------------------------------------------------------------------
 Hi, my name is Adarsh. I have around 5 years of experience as a Full Stack Developer, with strong expertise in frontend development using Angular. I have worked on Angular versions from 7 to 21 and have experience handling Angular migration projects across multiple versions.
 
-Along with frontend development, I also have around 2 year of hands-on experience in backend development using Java and Spring Boot, mainly focused on REST API development, integration.
+Along with frontend development, I also have around 2 year of hands-on experience in backend development using Java and Spring Boot, mainly focused on REST API development, .
 
-Currently, I am working at IIIT Bangalore, where I am involved in developing and maintaining healthcare products and working on end-to-end application development.
+Currently, I am working at IIIT Bangalore, where I am involved in developing and maintaining healthcare products .
+
+and working on end-to-end application development.
 
 ---------------------------------------------------------------------------------------
 I have around 5 years of experience as a Full Stack Developer, with strong expertise in frontend development using Angular. I have worked with Angular versions from 7 to 21 and have good experience in Angular migration projects across different versions.
@@ -86,3 +88,7 @@ corantly 2500 vidoe consultiaon have done so far.
 Reachout 
 
 multilangugre feature
+
+
+-----------------
+How do you implemnt o role basedapplciaiton

@@ -1,8 +1,10 @@
 #)What is synchronization of threads?
 
 💬 Simple Explanation:
-#)Synchronization in Java is a process that allows only one thread to access at a time — to prevent data inconsistency or race conditions.
-#)Synchronization ensures only one thread can access a method or variable at a time, avoiding inconsistent results.
+#)Synchronization in Java is a process that allows only one thread to access at a time 
+ to prevent data inconsistency or race conditions.
+#)Synchronization ensures only one thread can access a method or variable at a time, 
+avoiding inconsistent results.
 #)When multiple threads try to modify the same data simultaneously, it can cause unexpected results.
 Synchronization ensures thread safety by locking the resource until one thread finishes its work.
 

@@ -1,8 +1,220 @@
 Java 21 is a Long-Term Support (LTS) release (after Java 17), 
 and it focuses on improving performance, simplifying code,
 
----------------------------------------------------------
 
+Good to say if job description mentions Java 21 or Spring Boot 3.2+
+
+1)✔ Virtual Threads
+java// application.properties — just ONE line you added
+spring.threads.virtual.enabled=true
+2)✔ Records + Record Patterns
+✅ Records — Used for DTOs
+"Record is a special class in Java for holding immutable data. 
+JVM auto-generates constructor, getters, equals, hashCode, toString — you write ZERO boilerplate."
+3)✔ Pattern Matching Switch
+4)✔ Sequenced Collections
+5. String Templates (Preview)
+Better string formatting
+6. Unnamed Classes & Instance Main Method
+Simplifies beginner code.
+
+
+Before:
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello");
+    }
+}
+
+Java 21:
+
+void main() {
+    System.out.println("Hello");
+}
+
+Explanation of each
+1. Virtual Threads
+Old Java:
+one thread = heavy
+creating many threads = memory issue
+Java 21:
+virtual threads are lightweight
+can create thousands easily
+
+Simple meaning:
+Better performance for APIs and microservices.
+=======================================================
+2. Pattern Matching
+checking type and creating variable in one step.
+Here:
+
+check type
+manually cast
+Two steps.
+
+
+
+Before:
+
+if(obj instanceof String){
+    String s = (String) obj;
+}
+
+Java 21:
+
+if(obj instanceof String s){
+    System.out.println(s);
+}
+Now:
+
+type check
+variable creation
+casting
+
+all in one line.
+
+Simple meaning:
+
+Type check + variable creation together.
+
+Less code.
+
+======================================================
+Record  pattenr
+Record Patterns allow direct extraction of data from record objects 
+without manually calling getter methods.
+Record is shortcut class.
+
+Example:
+
+record Person(String name, int age) {}
+
+Equivalent old class:
+
+class Person {
+
+    String name;
+    int age;
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+==========
+Now Record Pattern means:
+
+directly extracting values from record object.
+Without Record Pattern:
+Person p = new Person("Adarsh", 25);
+
+System.out.println(p.name());
+System.out.println(p.age());
+
+Need getter methods.
+
+With Record Pattern:
+
+Object obj = new Person("Adarsh", 25);
+
+if (obj instanceof Person(String name, int age)) {
+
+    System.out.println(name);
+    System.out.println(age);
+}
+
+
+
+=======================================================
+5. String Templates
+
+Before:
+
+String msg = "Hello " + name;
+
+Java 21:
+
+String msg = STR."Hello \{name}";
+
+Simple meaning:
+
+Easier string formatting.
+
+Similar to JavaScript:
+
+`Hello ${name}`
+
+
+
+=======================================================================
+. Sequenced Collections
+Easier way to get first and last element.
+If you worked with Lists/Sets and needed first/last element:
+java// BEFORE — awkward old way
+String first = list.get(0);
+String last  = list.get(list.size() - 1);
+
+// AFTER — Java 21 you used
+String first = list.getFirst();
+String last  = list.getLast();
+
+// Reversed iteration you used
+list.reversed().forEach(item -> process(item));
+
+================================================================================
+
+
+
+Recrod Example:
+The Problem — Old DTO Was Ugly
+java// BEFORE — Old DTO class (50+ lines for simple data)
+public class UserDTO {
+    private String name;
+    private String email;
+    private int age;
+
+    // Constructor
+    public UserDTO(String name, String email, int age) {
+        this.name = name;
+        this.email = email;
+        this.age = age;
+    }
+
+    // Getters
+    public String getName()  { return name; }
+    public String getEmail() { return email; }
+    public int getAge()      { return age; }
+
+    // equals & hashCode
+    @Override
+    public boolean equals(Object o) { ... } // 10 lines
+
+    @Override
+    public int hashCode() { ... } // 5 lines
+
+    // toString
+    @Override
+    public String toString() {
+        return "UserDTO{name=" + name + ", email=" + email + "}";
+    }
+}
+java// AFTER — Java 21 Record (1 line!)
+record UserDTO(String name, String email, int age) {}
+
+// That's it! Auto-generated:
+// ✅ Constructor
+// ✅ name(), email(), age() — getters
+// ✅ equals() and hashCode()
+// ✅ toString()
+// ✅ Immutable by default  
+
+
+
+
+
+-----------------------------------------------------------------------
 1. Virtual Threads (Most Important)
 
 Helps you create thousands of lightweight threads easily.
@@ -11,11 +223,11 @@ Simple:
 👉 Runs tasks faster
 👉 Uses very little memory
 👉 Best for high-load apps (APIs, servers)
----------------------------------------------------------
+-------------------------------------------------------------------------
 
 2. Pattern Matching for Switch
-
-Switch can now check types directly.
+"Switch in Java 21 can match by TYPE, not just value. You can also add conditions.
+No casting needed — compiler handles it.
 
 Example:
 

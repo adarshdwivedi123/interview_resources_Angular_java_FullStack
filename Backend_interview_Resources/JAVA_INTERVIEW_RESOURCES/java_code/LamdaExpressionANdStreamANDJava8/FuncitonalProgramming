@@ -1,5 +1,9 @@
 #)What is Functional Programming in Java?
 
+"Functional programming is a style of writing code where we focus on what to do rather than how to do it.
+ We use pure functions that always give the same output for the same input, 
+ avoid changing data, and use lambdas and streams in Java. It makes code cleaner and easier to read."
+
 Functional programming in Java means writing code using functions instead of classes and objects
  to perform actions. It focuses on what to do, not how to do it.
 From Java 8, we can use 
@@ -18,7 +22,7 @@ for (Integer n : numbers) {
     if (n % 2 == 0) {
         System.out.println(n);
     }
-}
+}f
 
 
 With Functional Programming (Java 8+):

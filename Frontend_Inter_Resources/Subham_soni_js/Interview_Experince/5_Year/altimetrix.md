@@ -1,8 +1,19 @@
 why we  ormitive and not primtive top define
 object.freexe and  and spread
-what is standlaone true
+what is standlaone true?
+
+call by value and call by referce?>
+Primitive → copied by value
+Object/Array → reference value gets copied
+
+Nullish means null or undefined values in JavaScript. The nullish coalescing operator (??) returns the right-side value only when the left-side value is null or undefined.
+
+
 
 ===================================================================
+In JavaScript (and many languages), we have primitive and non-primitive data types
+
+because they are stored and handled differently in memory.
 
 saerch box  with quey paramertere  if we do search watever data  after search that will dsipaly 
 in ui

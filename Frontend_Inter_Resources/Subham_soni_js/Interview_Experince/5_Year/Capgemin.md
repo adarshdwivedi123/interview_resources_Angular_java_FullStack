@@ -91,3 +91,114 @@ Method	Description	Usage
 9	ViewEncapsulation.None	Component CSS becomes global
 10	Using @import	Import global files into one stylesheet
 
+
+
+-----------------------------------------------------------------------------------
+//split and join   dekhi
+let data = "Hello world";
+let stringData = data.split(' ');
+//ye lo becoz pura swap krna 
+console.log(stringData);
+let output = stringData.reverse().join(' ');
+console.log(output);
+-----------------------------------------------
+
+
+//input ="Hello world";
+//world hello
+//ouput =>"Hel$o" w$r$d"
+
+//input "world hello"
+
+
+// function findDuplicate(str){
+//     let data=str.split('');
+//      let rev=  data.reverse();
+//      console.log(rev.join(''));
+  
+
+// }
+// str="Hello world";
+// findDuplicate(str);
+
+
+--------------------------------------------------
+
+
+
+// let str = "hello world";
+
+// let result = str
+//   .split(" ")
+//  .map(x => x.split("").reverse()
+//   .join(""))
+//  .join(" ");
+
+// console.log(result);
+
+
+
+
+
+
+// let data = "Hello world";
+// let stringData = data.split(' ');
+// //ye lo becoz pura swap krna 
+// console.log(stringData);
+// let output = stringData.reverse().join(' ');
+// console.log(output);
+
+
+
+// let  data ="Hello world";
+//   let stringData =data.split('');
+//   console.log(stringData.reverse().join(' '))
+
+
+
+//input ="Hello world";
+//world hello
+//ouput =>"Hel$o" w$r$d"
+
+//input "world hello"
+
+
+// function findDuplicate(str){
+//     let data=str.split('');
+//      let rev=  data.reverse();
+//      console.log(rev.join(''));
+  
+// }
+// str="Hello world";
+// findDuplicate(str);
+
+
+//--------------------------------------------------
+
+
+
+// let str = "hello world";
+
+// let result = str
+//   .split(" ")
+//  .map(x => x.split("").reverse()
+//   .join(""))
+//  .join(" ");
+
+// console.log(result);
+
+
+
+function findDuplicate(str){
+    let data=str.split('');
+     let set =new Set(data);
+     console.log(set);
+  
+}
+str="Hello world";
+findDuplicate(str);
+
+
+
+
+

@@ -26,3 +26,10 @@ here my role is developinj the product fomr sctrach and resposible deploying fro
 ----------------------------------------------------------------------------------------------
 “In my project, I implemented role-based UI using Angular Signals and created a custom structural directive *hasRole to make templates cleaner and reusable. Instead of repeating complex *ngIf conditions everywhere, I centralized the logic in one directive which reacts automatically to role changes using signals.”
 -------------------------------------------------------------------------------------------------
+
+How to resove produciton isseu?
+“For frontend production issues, I first check browser console and network tab, identify whether the issue is UI or API related, verify recent deployments and environment configuration, reproduce the issue locally/staging, apply minimal safe fixes, test properly, and monitor after deployment.”
+
+
+-------------------------------------------------------------------
+MOst crticla isseu resolve in prodcution?

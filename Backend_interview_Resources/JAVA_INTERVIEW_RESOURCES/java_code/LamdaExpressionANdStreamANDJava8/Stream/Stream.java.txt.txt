@@ -1,17 +1,19 @@
+#why stream is needed?
 Java Streams were introduced in Java 8 to solve problems related to:
-complex data processing
-large loops
-boilerplate code
-readability
-parallel processing
+1)complex data processing
+2)large loops
+3)reduce the boilerplate code
+4)improve the readability
+5)parallel processing
 Before Java 8, processing collections was imperative — lots of loops and temporary variables.
 
 
 #)What is Stream?
-
 ->strema is an interface represtn in java.util.stream.
+(#)Java Stream is used to process collections (List, Set, etc.) in a simple and clean way.
 -> Stream is as pipline throught which  our collection elements passes thorugh.
-->Wjile element passes through it perform various operation like  sorting ,filtering filter, map, sort, ,etc.
+->While element passes through it perform various operation like  
+    sorting ,filtering filter, map, sort, ,etc.
 -> usefull when deals  with bulk processing  (Can do parallel processing).
 
 #)Why stream api is required?
@@ -224,6 +226,8 @@ Stream has already operated
 #)Parallel Stream
 Parallel stream uses multiple threads
 Main thread is NOT doing all the work
+or
+Work gets divided among multiple threads to improve performance.
 
 
 Main(){

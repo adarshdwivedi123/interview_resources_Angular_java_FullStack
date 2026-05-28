@@ -17,7 +17,7 @@ All components
 All modules
 Data is shared globally
 providedIn: 'root'  ← registered globally
-NOte
+#Note
  A root provider stays alive for the entire app lifetime — it never gets cleaned up until the page closes.
 
 AuthService (logged-in user everywhere), ThemeService (dark/light mode), NotificationService.

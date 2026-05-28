@@ -703,7 +703,7 @@ border=
 
 -==================================================
 Real-life example
-Padding = space inside a button
+Padding = space inside a button(Pad andar  phena jata hai)
 Margin = space between two buttons
 content:Text inside the button
 Border:Outline of the button
