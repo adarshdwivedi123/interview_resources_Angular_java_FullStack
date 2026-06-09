@@ -24,7 +24,7 @@ b)diff microservice can use different programming lanaguge
 c)Diff microservice can use diff architecture well.
 
 Advantrage
-1)All the services are independent of each other  .Therefor testing and deployment is easy as compare to monolith APPLICAINTO
+1)All the services are independent of each other  .Therefor testing and deployment is easy as compare to monolith APPLICAINTO`
 2)microservice architeucure .its easy to buld complex applicaiotn
 3)if there is bug in one microservice it has an impact only on a particule service and does not affect the
 entire application.
@@ -96,6 +96,31 @@ create this microservices.
 
 
 
+#)APIGAteway
+An API Gateway is a server that acts as a single entry point for multiple backend services or APIs.
+
+Instead of clients calling many microservices directly, they send requests to the API Gateway, which then routes the requests to the correct service.
+
+
+1)Simpler Client
+Clients call one endpoint instead of many services.
+
+2)Better Security
+Centralized authentication and protection.
+
+3)Scalability
+Works well with microservices architecture.
+
+========================================================
+How does an API Gateway manage traffic?
+1)An API Gateway helps manage traffic by directing requests to the right part of the
+application and spreading the workload evenly to avoid overloading any single service.
+2) It can limit the number of requests to maintain smooth operation and prevent crashes during busy
+times.
+
+Can you explain how an API Gateway can handle load balancing?
+1)it spread out incoming request to mulriple services or servers.
+2)it prevebt it is not affceting one part of the applciaiton many requests and possibly slowing down or crashing
 
 
 

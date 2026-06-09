@@ -7,6 +7,12 @@ Server	        External	                      Embedded
 Dependency Management	Manual	                Spring Boot Starters
 Deployment	    WAR	                                JAR (standalone)
 --------------------------------------------------------------------------------------
+#)Spring boot over Spring?
+1)because it requires less manual configuration
+2)setup, offers production-ready features out of the box like embedded servers and metrics,
+3)simplifies dependency management.
+This makes it easier and faster to create new applications and microservices, reducing the learning curve and development time.
+
 
 1)what is springboot?
 ->Spring Boot is java framework that makes it easier to create and run java applicaitons.

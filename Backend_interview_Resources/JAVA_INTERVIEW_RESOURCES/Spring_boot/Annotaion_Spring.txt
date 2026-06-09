@@ -809,6 +809,22 @@ public class UserService {
 
 example
 
+----------------------------
+
+@EnableAsync: The @EnableAsync annotation in Spring enables asynchronous
+method execution. It allows methods to run in the background on a separate thread,
+improving performance by freeing up the main thread for other tasks.
+
+@Scheduled: The @Scheduled annotation in Spring triggers methods to run at fixed
+intervals or specific times. It enables scheduling tasks automatically based on cron
+expressions, fixed delays, or fixed rates, facilitating automated and timed execution
+of methods.
+
+. @EnableScheduling: @EnableScheduling is an annotation in Spring Framework used
+to enable scheduling capabilities for methods within a Spring application. It allows
+methods annotated with @Scheduled to be executed based on specified time
+intervals or cron expressions.
+
 
 
 
