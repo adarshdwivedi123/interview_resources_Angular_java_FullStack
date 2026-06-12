@@ -60,6 +60,7 @@ _-----------------------------------------------------
 1)like boilerplate,
 2)tight coupling, and 
 3)confusion in managing dependencies.
+======================================
   Angular introduced standalone components to 
 1)simplify development, 
 2)improve readability,

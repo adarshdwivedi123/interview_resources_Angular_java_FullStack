@@ -14,3 +14,24 @@ let str = "hello world from javascript";
  
 
 console.log(result);
+
+
+//without function
+//logic
+//first character of string and first character after space is capital
+//rest of character is small
+let str = "hello world from javascript";
+let result = "";
+
+for(let i = 0; i < str.length; i++) {
+    if(i === 0) {
+        result += str[i].toUpperCase();  // first char of string
+    } else if(str[i - 1] === " ") {
+        result += str[i].toUpperCase();  // first char after space
+    } else {
+        result += str[i];  // rest of characters
+    }
+}
+
+console.log(result);
+// Output: Hello World From Javascript

@@ -38,7 +38,7 @@ export class BComponent {
 --------------------------------------
 🔵 2. Component Provider (providers: [])
 Service is registered in the component-level injector
-A new instance is created for that componen
+A new instance is created for that component
 ParentComponent and ChildComponent share the same instance (scoped to parent)
 Note
 A component provider gets destroyed the moment the component is removed from the DOM. Angular automatically cleans up the service instance and calls ngOnDestroy on it if you implement it.

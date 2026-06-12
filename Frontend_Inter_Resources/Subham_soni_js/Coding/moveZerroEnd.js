@@ -5,7 +5,33 @@
 // The last N-X places of the original array will be then filled with zero. Now, our task is completed.
 
 //non zero element ko hmne ake temporarry  array me dala hai
+
 //
+
+let arr = [1, 0, 3, 0, 5, 0, 6];
+
+let left = 0;  // 👆 points to zero
+let right = 1; // 👆 points to non zero
+
+while (right < arr.length) {
+
+    if (arr[left] === 0 && arr[right] !== 0) {
+        // swap
+        let temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+        left++;
+        right++;
+    } else if (arr[left] !== 0) {
+        left++;
+        right++;
+    } else {
+        right++;
+    }
+
+}
+
+console.log(arr); // [1, 3, 5, 6, 0, 0, 0]
 temp=[];
 function  swapKaro(arr){
     for( let i=0;i<arr.length;i++)

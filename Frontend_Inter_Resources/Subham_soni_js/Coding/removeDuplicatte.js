@@ -1,3 +1,45 @@
+// arr=[1,2,3,4,4,5];
+// let set =new Set(arr);
+// console.log(Array.from(set));
+
+
+
+
+// function findDuplicate(arr){
+// let duplicate  = arr.filter((item ,index)=>{
+//       return arr.indexOf(item)===index;
+// }); 
+// console.log(duplicate);
+// }
+//  function findDuplicate(arr){
+// let duplicate  = arr.filter((item ,index)=>{
+//       return arr.indexOf(item)!==index;
+// }); 
+// console.log(duplicate);
+// }
+// arr=[1,2,3,3,4,4,5,5];
+// findDuplicate(arr);
+
+
+//using two for loop
+// let arr = [1, 2, 3, 4, 4, 5, 5];
+// let duplicates = [];
+
+// for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+
+//         if (arr[i] === arr[j]) {
+//             if (!duplicates.includes(arr[i])) {
+//                 duplicates.push(arr[i]);
+//             }
+//         }
+
+//     }
+// }
+
+// console.log(duplicates); // [4, 5]
+
+
 //remove the dup[licate]
 //[1, 2, -2, 4, 5, 4, 7, 8, 7, 7, 71, 3, 6]
 //i need  to retutn unique array

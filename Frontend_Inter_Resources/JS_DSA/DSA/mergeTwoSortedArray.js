@@ -12,7 +12,7 @@ function mergeArray(arr1, arr2) {
     arrNew.push(arr2[j]);
   }
 
-  console.log(arrNew);
+  console.log(arrNew);note
   return arrNew;
 }
 
@@ -72,7 +72,6 @@ var merge = function(nums1, m, nums2, n) {
         if(p2>=n || (p1 <m && nums1Copy[p1] <nums2[p2])){
             nums1[i]=nums1Copy[p1];
             p1++;
-
         }
         else{
             nums1[i]=nums2[p2];
@@ -89,3 +88,8 @@ var merge = function(nums1, m, nums2, n) {
 
 arr=[1,3,5,7]
 arr2=[7,2,4,6,8]
+
+------------------------------------------------
+//One Liner
+//merge +remove duplciate
+javascriptconst result = [...new Set([...arr1, ...arr2])].sort((a, b) => a - b);

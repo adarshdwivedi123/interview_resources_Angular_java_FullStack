@@ -1,4 +1,4 @@
-@ContentChild aur @ContentChildren kya hote hain?
+\@ContentChild aur @ContentChildren kya hote hain?
 
 
 #)@ContentChild usse phele 

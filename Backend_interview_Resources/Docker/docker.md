@@ -95,3 +95,22 @@ docker exec: Runs a command in a running container, allowing access to its termi
 docker build: Creates a new image from a Dockerfile in the current directory.
 docker logs: Fetches logs from a specific running container for troubleshooting.
 docker inspect: Provides detailed information about a container or image.
+
+
+
+<!-- Docker install install  -->
+docker run -d --name db -e POSTGRES_PASSWORD=mysecretpassword postgres:14
+
+
+docker run -d --name pgadmin -e PGADMIN_DEFAULT_EMAIL=user@domain.com -e PGADMIN_DEFAULT_PASSWORD=SuperSecret dpage/pgadmin4     
+
+using docker network commicate one network to other network
+
+remove both continer
+docker rm -f db pgadmin
+
+docker network create my-network 
+
+
+----------------------
+docker run -d --name db  --network my-network -e POSTGRES_PASSWORD=mysecretpassword postgres:14
