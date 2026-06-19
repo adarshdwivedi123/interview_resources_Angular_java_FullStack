@@ -2,9 +2,29 @@ Types of Subjects:
 
 Subject
 BehaviorSubject (stores last value)
-ReplaySubject (stores history)
-AsyncSubject (emits last value on complete)
+ AsyncSubject (emits last value on complete)
+==============================================================================
+BehaviorSubject are Multicast.Both Subject and BehaviorSubject are Multicast.
+NOTE:All subscribers get the same value.
 
+mnulticast
+const subject = new Subject<number>();
+subject.subscribe(val => console.log('A:', val));
+subject.subscribe(val => console.log('B:', val));
+
+subject.next(Math.random());
+// A: 0.123
+// B: 0.123 — same value, shared!
+
+
+Unicast   
+Each subscriber gets its own execution.
+const obs$ = new Observable(observer => {
+  observer.next(Math.random()); // runs separately for each subscriber
+});
+
+obs$.subscribe(val => console.log('A:', val)); // A: 0.123
+obs$.subscribe(val => console.log('B:', val)); // B: 0.456 — different value!
 
 ------------------------------------------------------------------------------
 #)ReplaySubject

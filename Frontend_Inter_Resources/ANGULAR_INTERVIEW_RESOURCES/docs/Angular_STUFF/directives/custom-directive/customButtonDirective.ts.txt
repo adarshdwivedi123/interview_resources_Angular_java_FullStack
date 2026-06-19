@@ -14,7 +14,11 @@ Is it:
 THESE ARE COMMON SYNTAX THAT WE NEED REMBER THAT
 
 #)Struttutr rember for sturture directive?
-@Directive({ selector: '[appX]', standalone: true })
+@Directive({ 
+  selector: '[appX]', // used as attribute on HTML element
+ standalone: true    // no need to declare in NgModule
+ })
+ //[appX] in square brackets means it's an attribute selector
 export class XDirective {
   constructor(
     private tpl: TemplateRef<unknown>,
@@ -25,6 +29,10 @@ export class XDirective {
     // logic here
   }
 }
+Holds a reference to the HTML template
+Think of it as the blueprint of the DOM block
+The content is not rendered yet — just stored
+<unknown> means the context type is not strictly typed here
 
 
 #)structure rember for Attribute directive?
@@ -218,6 +226,44 @@ export class RoleDirective implements OnInit {
     return this.userRole === this.appRole;
   }
 }
+
+-------------------------------------------------
+ @Directive({
+    selector: '[appHasRole]',
+    standalone: true,
+  })
+  export class HasRoleDirective {
+    private templateRef = inject(TemplateRef<unknown>);
+    private viewContainer = inject(ViewContainerRef);
+    private auth = inject(AuthService);
+
+    private allowedRoles: UserRole[] = [];
+    private isRendered = false;
+
+    @Input()
+    set appHasRole(roles: UserRole | UserRole[]) {
+      this.allowedRoles = Array.isArray(roles) ? roles : [roles];
+    }
+
+    constructor() {
+      // Re-evaluate whenever the current role changes (login / logout / forced
+      // session swap). effect() runs in this directive's injection context.
+      effect(() => {
+        const current = this.auth.userRole();
+        const shouldRender =
+          current !== null && this.allowedRoles.includes(current);
+
+        if (shouldRender && !this.isRendered) {
+          this.viewContainer.createEmbeddedView(this.templateRef);
+          this.isRendered = true;
+        } else if (!shouldRender && this.isRendered) {
+          this.viewContainer.clear();
+          this.isRendered = false;
+        }
+      });
+    }
+  }
+
 
 
 

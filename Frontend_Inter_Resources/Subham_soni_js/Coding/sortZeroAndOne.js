@@ -1,4 +1,30 @@
 
+//logic
+//start =0  /if start ==0 then start++  else swap with end and end--
+//end = arr.length-1
+
+let arr = [ 0, 1, 0, 1, 1, 1 ];
+
+start=0;
+end=arr.length-1;
+let temp;
+while(start<=end)
+{
+    if(arr[start]==0)
+    {
+           start++;
+    }
+    else{
+        temp=arr[start];
+        arr[start]=arr[end];
+        arr[end]=temp;
+        
+        end--;
+        
+    }
+}
+console.log(arr);
+
 //first using loop  count the zero
 //
 //phele  loop chla ke count nikal loe

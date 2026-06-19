@@ -25,4 +25,4 @@ str2="hsradaa";
 
 reverseString(str1,str2);
 
-//another way
+//another way  without fucnotn

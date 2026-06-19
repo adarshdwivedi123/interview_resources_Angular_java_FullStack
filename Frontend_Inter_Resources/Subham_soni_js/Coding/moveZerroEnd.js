@@ -1,3 +1,23 @@
+let arr = [0, 1, 0, 1, 4, 5];
+let pos = 0;
+
+// move all non-zero to front  in another array
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] !== 0) {
+    arr[pos] = arr[i];
+    pos++;
+  }
+}
+
+// fill remaining with 0s
+while (pos < arr.length) {
+  arr[pos] = 0;
+  pos++;
+}
+
+console.log(arr); // [1, 1, 4, 5, 0, 0]
+
+
 
 // Suppose, there are N-X zeros and X non-zero elements in the array. We will first copy those 
 //X non-zero elements from the original array to a temporary array. 

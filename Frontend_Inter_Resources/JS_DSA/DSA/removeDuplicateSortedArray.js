@@ -17,6 +17,10 @@
 
 
 
+
+///logic if current is greater than previous then we will increase the count and assign the current value to the count index and return count + 1 as the length of the array without duplicates.
+
+
 /**
  * @param {number[]} nums
  * @return {number}
@@ -31,6 +35,6 @@ var removeDuplicates = function(nums) {
             nums[x]=nums[i];
         }
     }
-    return x+1;
+    return x+1;   //ye gadabd htoa ao
     
 };

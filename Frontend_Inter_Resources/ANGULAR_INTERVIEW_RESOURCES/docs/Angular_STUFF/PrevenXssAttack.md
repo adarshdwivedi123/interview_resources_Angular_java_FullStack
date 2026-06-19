@@ -87,3 +87,11 @@ window.location.href = userInput;
 const safeUrl = this.sanitizer.sanitize(
   SecurityContext.URL, userInput
 );
+
+
+1)User Angular DataBiding  that is interpolation
+2)Santinize the input and text filed 
+3)Avoid direct DOm manipulation
+use “Renderer2 is used in Angular to safely manipulate the DOM in a platform-independent way.
+4)Use HtttpSecure onlu cookie
+5)Add the content secuity policy in server.ts

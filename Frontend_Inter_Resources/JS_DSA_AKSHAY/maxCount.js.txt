@@ -1,3 +1,8 @@
+
+Given a binary array nums, return the maximum number of consecutive 1's in the array.
+//in case of if find  the maxArray
+//else me nhi mila to zero count;
+
 var findMaxConsecutiveOnes = function(nums) {
     let count = 0;
     let max = 0;
@@ -18,7 +23,6 @@ var findMaxConsecutiveOnes = function(nums) {
 
 
 
-Given a binary array nums, return the maximum number of consecutive 1's in the array.
 
  
 

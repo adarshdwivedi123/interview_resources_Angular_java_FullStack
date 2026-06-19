@@ -62,3 +62,5 @@ else {
 
 Use Array.isArray(value) to detect arrays.
 Use typeof value === "object" && value !== null to detect objects.
+
+object we can check instance of

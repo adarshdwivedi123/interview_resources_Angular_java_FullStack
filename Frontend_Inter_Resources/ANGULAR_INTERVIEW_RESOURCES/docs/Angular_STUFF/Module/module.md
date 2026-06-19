@@ -38,7 +38,10 @@ Scalable ✅
 
 
 ----------------------------------------------------------------------------------
-Standalone components were introduced to  simplify application structure, reduce boilerplate code, make dependency management local to the component, and improve lazy loading and performance.
+Standalone components were introduced to  simplify application structure,
+ reduce boilerplate code,
+  make dependency management local to the component, 
+  and improve lazy loading and performance.
 
 To use one component, Angular first had to check:
 
@@ -58,13 +61,16 @@ Why Angular Introduced Standalone?
 _-----------------------------------------------------
 “NgModule introduced extra complexity
 1)like boilerplate,
-2)tight coupling, and 
+2)tight coupling,(When modules depend heavily on each other — a change in one breaks the other.) and 
+PatientModule imports DoctorModule directly
+If DoctorModule changes — PatientModule breaks
 3)confusion in managing dependencies.
 ======================================
   Angular introduced standalone components to 
 1)simplify development, 
 2)improve readability,
 3)and enable better performance and lazy loading.”
+using loadCompoenent we are doing lazy loading 
 
 
 
@@ -129,7 +135,7 @@ That’s it.
 5) Better performance ⚡
 Because Angular can directly load only required standalone components, it improves:
 bundle splitting
-tree shaking
+tree shaking  
 initial load time
 This helps performance.
 
@@ -140,3 +146,18 @@ You can bootstrap an entire Angular app with a single standalone component — n
 
 Build times improve — less code to process
 
+
+StandAlone:true
+
+Before Standalone (NgModules)
+Every component had to be declared in a module to work:
+Component couldn't work without the module.
+With Standalone: true
+Component is self contained — no module needed:
+ts@Component({
+  standalone: true,              // ← I don't need a module
+  imports: [CommonModule],       // ← I manage my own imports
+  template: `...`
+})
+export class PatientComponent {}
+Component owns its own dependencies.

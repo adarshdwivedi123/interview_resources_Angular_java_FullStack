@@ -9,7 +9,7 @@ Closure means a function can remember variables even after the outer function ha
 
 why should use
 Because closures allow a function to remember data even after the outer function is finished.
-//var is blockscope
+//var is blockscope 
 for (var i = 1; i <= 3; i++) {
   setTimeout(function () {
     console.log(i);

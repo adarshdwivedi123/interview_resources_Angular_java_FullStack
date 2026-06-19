@@ -22,7 +22,9 @@ const arr2 = [2, 4, 6, 8];
 mergeArray(arr, arr2);
 
 
-
+//sort 
+//spreat operator use kr
+//if thwy want duplocate hatto set use kar dena 
 
 //Another way to merge two sorted arrays and return a sorted array`
 

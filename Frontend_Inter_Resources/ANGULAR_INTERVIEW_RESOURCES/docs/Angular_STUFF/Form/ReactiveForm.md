@@ -38,16 +38,50 @@ used when the number of form fields can grow or shrink.
 
 ---------------------------------------------------------------------
 
-Q1. What are valueChanges & statusChanges?
-
+Q1. 
 valueChanges → emits whenever value changes.
+#)Emits every time the form/field value changes.
 Used for dynamic validation, auto-save, filtering, search box.
 
-this.form.valueChanges.subscribe(val => console.log(val));
 
-statusChanges → emits when status changes: VALID, INVALID, PENDING.
-this.form.statusChanges.subscribe(status => console.log(status));
+this.form.get('email')?.valueChanges.subscribe(val => {
+  console.log('email changed:', val);
+});
 
+// or entire form
+this.form.valueChanges.subscribe(val => {
+  console.log('form changed:', val);
+});
+
+
+statusChanges → 
+Emits every time the form/field status changes.
+
+this.form.get('email')?.statusChanges.subscribe(status => {
+  console.log('email status:', status); // VALID or INVALID
+});
+
+// or entire form
+this.form.statusChanges.subscribe(status => {
+  console.log('form status:', status);
+});
+
+
+1.RealUseCase
+1. Search as you type
+tsthis.form.get('search')?.valueChanges.pipe(
+  debounceTime(300),
+  distinctUntilChanged()
+).subscribe(val => {
+  this.searchApi(val);
+});
+
+2. Enable button only when valid
+tsthis.form.statusChanges.subscribe(status => {
+  this.isSubmitEnabled = status === 'VALID';
+});
+
+---------------------------------------------------------------
 
 
 #)What is updateOn: ‘blur’ | ‘change’ | ‘submit’?
@@ -263,4 +297,4 @@ error handling
 
 
 Reactive forms are model-driven, created in TypeScript using FormControl, FormGroup, and FormArray. They are more scalable, testable, and ideal for complex forms with validations, dynamic fields, and API integration.”
-I prefer reactive forms because they offer better control over form state, validation, dynamic form generation, custom validators, and unit testing.
+I prefer reactive forms because they offer better control over form state, validation, dynamic form generation, custom validators, and unit testing.What are valueChanges & statusChanges?

@@ -1,4 +1,4 @@
-Angualr 21  featue  by default Zonlkess featue
+ Angualr 21  featue  by default Zonlkess featue
 
 
 #)“NgZone is angualr service  that usses zone.js allows Angular to automatically run change detection whenever an async task completes.

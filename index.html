@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Role-Based Routing — Interview Notes</title>
+<style>
+  :root {
+    --bg: #0f172a; --card: #1e293b; --line: #334155;
+    --text: #e2e8f0; --muted: #94a3b8; --accent: #38bdf8; --good: #34d399; --warn: #fbbf24;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6; padding: 24px;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  h1 { font-size: 1.8rem; margin: 0 0 4px; }
+  h2 { color: var(--accent); border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-top: 40px; }
+  h3 { color: var(--good); margin-bottom: 4px; }
+  .sub { color: var(--muted); margin-top: 0; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin: 16px 0; }
+  .one-liner { font-size: 1.05rem; border-left: 4px solid var(--accent); padding-left: 14px; }
+  pre { background: #0b1220; border: 1px solid var(--line); border-radius: 8px; padding: 14px; overflow-x: auto; font-size: 0.85rem; }
+  code { font-family: "Fira Code", Consolas, monospace; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); font-size: 0.92rem; }
+  th { color: var(--accent); }
+  .role { display: inline-block; background: #0b1220; border: 1px solid var(--line); border-radius: 20px; padding: 3px 12px; margin: 3px; font-size: 0.85rem; }
+  .q { color: var(--warn); font-weight: 600; margin-top: 18px; }
+  .a { color: var(--text); margin-top: 4px; }
+  .pill { background: var(--good); color: #06281d; border-radius: 6px; padding: 1px 8px; font-size: 0.75rem; font-weight: 700; }
+  .step { display: flex; gap: 12px; align-items: flex-start; margin: 10px 0; }
+  .num { background: var(--accent); color: #06283a; font-weight: 700; border-radius: 50%; min-width: 26px; height: 26px; display: grid; place-items: center; }
+  .note { background: #2a2410; border: 1px solid #5c4a0f; border-radius: 8px; padding: 12px 16px; color: #fcd34d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>🔐 Role-Based Routing — Interview Notes</h1>
+  <p class="sub">Project: RM Tool (Angular) · Simple words, ready to explain</p>
+
+  <div class="card one-liner">
+    <b>Say this first:</b> "When a user logs in, the backend tells us their <b>role</b>.
+    We save it. Then <b>route guards</b> check the role before opening any page.
+    The <b>sidebar menu</b> is also built from the role, and a <b>custom directive</b>
+    hides individual buttons. The <b>backend</b> does the real security check."
+  </div>
+
+  <h2>👮 The 5 Roles</h2>
+  <div class="card">
+    <span class="role">district_entry</span>
+    <span class="role">district_approver</span>
+    <span class="role">spc</span>
+    <span class="role">ministry</span>
+    <span class="role">admin</span>
+  </div>
+
+  <h2>🏢 Explain it like I'm 5 (the office building)</h2>
+  <div class="card">
+    <p>Think of the app as an <b>office building</b>:</p>
+    <ul>
+      <li><b>Login</b> = security desk gives you an <b>ID badge</b> with your role.</li>
+      <li><b>Route guards</b> = <b>door locks</b>. Your badge only opens your doors. Wrong badge → sent back to the lobby.</li>
+      <li><b>Sidebar menu</b> = a <b>personalized directory</b> — you only see floors your badge reaches.</li>
+      <li><b>Custom directive</b> = some <b>drawers stay locked</b> — buttons like "Approve" only show for the right role.</li>
+      <li><b>Backend</b> = the <b>vault</b> — even with a fake badge, the vault checks who you really are.</li>
+    </ul>
+  </div>
+
+  <h2>🧩 The 4 + 1 Building Blocks</h2>
+  <div class="card">
+    <table>
+      <tr><th>Piece</th><th>File</th><th>Job</th></tr>
+      <tr><td>AuthService</td><td>auth.service.ts</td><td>Stores role (signal + sessionStorage), <code>hasRole()</code></td></tr>
+      <tr><td>Guards</td><td>auth.guard.ts</td><td>Allow or redirect — <b>page level</b></td></tr>
+      <tr><td>Routes</td><td>app.routes.ts</td><td>Attach a guard to each route</td></tr>
+      <tr><td>Sidebar</td><td>sidebar.ts</td><td>Shows only that role's menu</td></tr>
+      <tr><td><span class="pill">NEW</span> Directive</td><td>has-role.directive.ts</td><td>Show/hide single buttons — <b>element level</b></td></tr>
+    </table>
+  </div>
+
+  <h2>💻 The Code (memorize these 4)</h2>
+
+  <h3>1. The check — AuthService</h3>
+  <pre><code>readonly userRole = computed(() =&gt; this.currentUser()?.role ?? null);
+
+hasRole(...roles: UserRole[]): boolean {
+  const current = this.userRole();
+  return current !== null && roles.includes(current);
+}</code></pre>
+
+  <h3>2. The guard factory — auth.guard.ts</h3>
+  <pre><code>function roleGuard(...allowedRoles: UserRole[]): CanActivateFn {
+  return (route, state) =&gt; {
+    const auth = inject(AuthService);
+    const router = inject(Router);
+    if (auth.isLoggedIn() && auth.hasRole(...allowedRoles)) return true;   // allow
+    if (!auth.isLoggedIn()) { router.navigate(['/login']); return false; } // not logged in
+    router.navigate(['/app/dashboard']); return false;                     // wrong role
+  };
+}
+
+export const adminGuard       = roleGuard('admin');
+export const approverOrSpcGuard = roleGuard('district_approver', 'spc');</code></pre>
+
+  <h3>3. The wiring — app.routes.ts</h3>
+  <pre><code>{
+  path: 'app',
+  canActivate: [authGuard],                                  // must be logged in
+  children: [
+    { path: 'dashboard',     loadComponent: ... },           // everyone
+    { path: 'admin-users',   canActivate: [adminGuard], ... },// admin only
+    { path: 'pending-review',canActivate: [approverOrSpcGuard], ... }, // 2 roles
+  ]
+}</code></pre>
+
+  <h3>4. The custom directive — has-role.directive.ts <span class="pill">NEW</span></h3>
+  <pre><code>@Directive({ selector: '[appHasRole]', standalone: true })
+export class HasRoleDirective {
+  private tpl  = inject(TemplateRef&lt;unknown&gt;);
+  private vcr  = inject(ViewContainerRef);
+  private auth = inject(AuthService);
+
+  @Input({ required: true }) set appHasRole(roles: UserRole[]) {
+    this.vcr.clear();
+    if (this.auth.hasRole(...roles)) this.vcr.createEmbeddedView(this.tpl); // show
+  }                                                                          // else: removed
+}</code></pre>
+  <pre><code>&lt;button *appHasRole="['district_approver']"&gt;Approve&lt;/button&gt;
+&lt;button *appHasRole="['spc', 'admin']"&gt;Export Report&lt;/button&gt;</code></pre>
+  <p class="sub"><b>Real usage in this project:</b> the Documents page (<code>documents.html</code>)
+  gates the "Download Roster Template" button with
+  <code>*appHasRole="['district_entry','spc','admin']"</code> — so the Approver (read-only there)
+  never sees it. The directive is added to the component's <code>imports</code> array.</p>
+
+  <h2>🔄 The Flow (tell it as a story)</h2>
+  <div class="card">
+    <div class="step"><div class="num">1</div><div>User logs in → backend sends role → saved in a <b>signal</b> + sessionStorage.</div></div>
+    <div class="step"><div class="num">2</div><div>User clicks a page → Angular runs the route's <b>guard</b> first.</div></div>
+    <div class="step"><div class="num">3</div><div>Guard asks AuthService <code>hasRole(...)</code> → <b>true</b> = show page, else <b>redirect</b>.</div></div>
+    <div class="step"><div class="num">4</div><div>The <b>sidebar</b> is built from the role, so the menu matches access.</div></div>
+    <div class="step"><div class="num">5</div><div>On shared pages, <code>*appHasRole</code> hides buttons the user can't use.</div></div>
+    <div class="step"><div class="num">6</div><div>Every API call carries the token → <b>backend</b> does the real check.</div></div>
+  </div>
+
+  <h2>🎤 Likely Interview Questions</h2>
+  <div class="card">
+    <p class="q">Q: What if a user edits their role in sessionStorage to "admin"?</p>
+    <p class="a">They only fake the UI. Every API call carries a signed JWT, and the backend checks the role from the token — not from what the frontend claims. Guards are UX; the server is the real security.</p>
+
+    <p class="q">Q: CanActivate vs CanMatch?</p>
+    <p class="a">CanActivate runs after the route matches — decides if you can enter. CanMatch runs during matching, can skip the route entirely and stop the lazy chunk from even downloading. We use CanActivate.</p>
+
+    <p class="q">Q: Why signals instead of Observables?</p>
+    <p class="a">Simpler and synchronous — <code>auth.userRole()</code> just reads the value. Guards and the menu react automatically, no subscribe/unsubscribe, no leak risk.</p>
+
+    <p class="q">Q: Why sessionStorage, not localStorage?</p>
+    <p class="a">sessionStorage is per-tab and clears on close — safer for an internal tool. A BroadcastChannel also blocks the same user running two sessions.</p>
+
+    <p class="q">Q: A route for multiple roles?</p>
+    <p class="a">The factory takes a rest param: <code>roleGuard('district_approver','spc')</code>. <code>hasRole()</code> uses <code>includes()</code>, so any role in the list passes.</p>
+
+    <p class="q">Q: Why a directive when you already have *ngIf?</p>
+    <p class="a">Reusable and declarative — one directive instead of repeating <code>*ngIf="auth.hasRole(...)"</code> everywhere. It removes the element from the DOM and reuses the same hasRole() logic, so role rules live in one place.</p>
+
+    <p class="q">Q: What would you improve?</p>
+    <p class="a">I added the <code>*appHasRole</code> directive for element-level control. Next: a single permissions map (role → allowed routes) as the source of truth, switch to CanMatch so unauthorized chunks never load, and a token-expiry interceptor.</p>
+  </div>
+
+  <div class="note">
+    <b>Maturity line to drop in:</b> "Frontend guards and the directive are for navigation and UX —
+    the real security is the backend validating the token's role on every request. The frontend just
+    shouldn't show what it can't use."
+  </div>
+
+</div>
+</body>
+</html>
