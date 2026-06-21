@@ -84,3 +84,8 @@ We also handle the isRendered flag to prevent duplicate elements when the role s
 
 
 The benefit is — role logic lives in one place, it's fully reactive, no manual subscribe or unsubscribe, and we just use it in the template like:
+
+
+
+
+-----------------------------------------------------

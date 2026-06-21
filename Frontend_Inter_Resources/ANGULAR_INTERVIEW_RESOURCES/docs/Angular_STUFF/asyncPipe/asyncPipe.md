@@ -10,7 +10,7 @@ Unsubscribe automatically (very important)
 Because it:
 ✔ Prevents memory leaks
 ✔ Reduces code
-✔ Handles subscription lifecycle
+✔ Handles subscription lifecycle 
 ✔ Improves performance
 ✔ Works perfectly with Angular Signals
 ✔ Works perfectly with SSR & hydration

@@ -18,3 +18,13 @@ The new syntax provides cleaner, more readable templates with better performance
   <div>No Users Found</div>
 
 }
+
+
+Old Syntax
+<div *ngIf="isLoggedIn">
+  Welcome Adarsh
+</div>
+New Syntax (Angular 17+)
+@if (isLoggedIn) {
+  <div>Welcome Adarsh</div>
+}

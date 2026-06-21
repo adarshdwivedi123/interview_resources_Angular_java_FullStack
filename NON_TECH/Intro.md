@@ -31,9 +31,9 @@ Hi, my name is Adarsh Dwivedi. I have around 5 years of experience as a Full Sta
 Currently, I am working at IIIT Bangalore, where I am involved in developing and maintaining a healthcare product.
 ====================================Frontend ROLE ===============================================
 #)Frontend INTRO
-Hi, my name is Adarsh Dwivedi. I have  5 years of experience as a Frontend Developer. I have worked with Angular from version 13 to 21 strong experince in migraiotn of applciaiotn of migration of one veriso to otehr verision.
+Hi, my name is Adarsh Dwivedi. I have  5 years of experience as a Frontend Developer. I have worked with Angular from version 13 to 21 strong experince in migraiotn of applciaiotn of migration  7 to 19 of one veriso to otehr verision.
 I am working at IIIT Bangalore(EHRC), where I am involved in developing and maintaining a healthcare product,.
- currently i am learning and exploring claude and build the eniter product from claude where we user latest Angular 21 features like Signals, defer, and the new control flow syntax.
+ currently i am learning and exploring claude AI and build the eniter product from claude where we user latest Angular 21 features like Signals, defer, and the new control flow syntax.
 
 
 -------------------------------------------------------------------------------------------

@@ -161,3 +161,16 @@ ts@Component({
 })
 export class PatientComponent {}
 Component owns its own dependencies.
+
+
+const routes: Routes = [
+
+  {
+    path: 'admin',
+
+    loadChildren: () =>
+      import('./features/admin/admin.module')
+        .then(m => m.AdminModule)
+  }
+
+];

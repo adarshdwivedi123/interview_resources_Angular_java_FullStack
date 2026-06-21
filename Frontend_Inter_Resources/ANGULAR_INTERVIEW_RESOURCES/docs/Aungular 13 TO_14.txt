@@ -1,12 +1,16 @@
+
+
+
 Update Angular 13 to 14
 https://update.angular.io/?v=13.0-14.0
 
 These are changes in Angular 14
 https://blog.ninja-squad.com/2022/06/02/what-is-new-angular-14.0/
 
-
-#)Issues that i am Getting navigation is not working ..lazy loading not wokring
-#)whenever path is empty  we have to add pathMatch:'full'
+How we started in anguallr by defualt offical mentio how to updte
+1)Issues that i am Getting navigation is not working ..
+2)lazy loading not wokring
+3))whenever path is empty  we have to add pathMatch:'full'
   {
     path:'',
     redirectTo:'',
@@ -16,7 +20,7 @@ https://blog.ninja-squad.com/2022/06/02/what-is-new-angular-14.0/
 in appRoudleModule,i just enable :true:debug  why navogaiton is not working got not issue becoz 
 pathMatch:full  not there that why it is  giving issue.
 
- 
+4)Thirt party librayr are not supporing in old verison  then will compatainlitry issue with each verions 
 #)if other things are not working properly either we have update that version or may
 be it giving some error
 compatiblity issue in breadcumb ,so after checkl which version is suaitable for vbrad it is working .

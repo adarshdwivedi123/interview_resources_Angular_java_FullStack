@@ -117,9 +117,9 @@ export class AppIfDirective {
   ) {}
 
   @Input() set appIf(condition: boolean) {
-    this.vc.clear();
+    this.vc.clear();  //hide 
     if (condition) {
-      this.vc.createEmbeddedView(this.tpl);
+      this.vc.createEmbeddedView(this.tpl);  // ✅ SHOW
     }
   }
 }

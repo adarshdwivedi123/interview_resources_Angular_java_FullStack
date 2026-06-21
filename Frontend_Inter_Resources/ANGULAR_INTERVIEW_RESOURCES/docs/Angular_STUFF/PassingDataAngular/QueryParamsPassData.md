@@ -7,4 +7,4 @@ Navigation State	Pass objects without showing them in the URL
 Shared Service (RxJS/Signals)	Component-to-component communication
 @Input()	Parent → Child
 @Output()	Child → Parent
-Local Storage / Session Storage	Persist data across refreshes
+Local Storage / Session Storage	Persist data across refreshes  

@@ -1,0 +1,120 @@
+// shared/form-input/form-input.component.ts
+@Component({
+  selector: 'app-input',
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
+  template: `
+    <div class="field">
+
+      <!-- Label -->
+      <label>{{ label }}
+        <span class="required" *ngIf="required">*</span>
+      </label>
+
+      <!-- Input -->
+      <input
+        [type]="type"
+        [placeholder]="placeholder"
+        [formControl]="control"
+        [class.error]="isInvalid" />
+
+      <!-- Error Message -->
+      <span class="error-msg" *ngIf="isInvalid">
+        {{ errorMessage }}
+      </span>
+
+    </div>
+  `,
+  styles: [`
+    .field        { display:flex; flex-direction:column; gap:5px; margin-bottom:16px; }
+    label         { font-size:14px; font-weight:500; color:#333; }
+    .required     { color:red; margin-left:3px; }
+    input         { padding:10px 12px; border:1px solid #ccc;
+                    border-radius:5px; font-size:14px; outline:none; }
+    input:focus   { border-color:#1F4E79; }
+    input.error   { border-color:red; }
+    .error-msg    { font-size:12px; color:red; }
+  `]
+})
+export class FormInputComponent {
+  @Input() label        = '';
+  @Input() type         = 'text';      // text|email|password|number|date
+  @Input() placeholder  = '';
+  @Input() required     = false;
+  @Input() errorMessage = 'This field is required';
+  @Input() control!:  FormControl;
+
+  get isInvalid() {
+    return this.control.invalid && this.control.touched;
+  }
+}
+
+-------------------------------------------------------
+@Component({
+  selector: 'app-register',
+  standalone: true,
+  imports: [FormInputComponent, ReactiveFormsModule],
+  template: `
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <app-input
+        label="Full Name"
+        type="text"
+        placeholder="Enter your name"
+        [required]="true"
+        [control]="form.get('name')">
+      </app-input>
+
+      <app-input
+        label="Email"
+        type="email"
+        placeholder="Enter your email"
+        [required]="true"
+        errorMessage="Please enter valid email"
+        [control]="form.get('email')">
+      </app-input>
+
+      <app-input
+        label="Password"
+        type="password"
+        placeholder="Enter password"
+        [required]="true"
+        errorMessage="Password is required"
+        [control]="form.get('password')">
+      </app-input>
+
+      <app-input
+        label="Age"
+        type="number"
+        placeholder="Enter age"
+        [control]="form.get('age')">
+      </app-input>
+
+      <app-input
+        label="Date of Birth"
+        type="date"
+        [control]="form.get('dob')">
+      </app-input>
+
+      <button type="submit" [disabled]="form.invalid">
+        Register
+      </button>
+
+    </form>
+  `
+})
+export class RegisterComponent {
+  form = new FormGroup({
+    name:     new FormControl('', Validators.required),
+    email:    new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required),
+    age:      new FormControl(''),
+    dob:      new FormControl(''),
+  });
+
+  onSubmit() {
+    if (this.form.valid) {
+      console.log(this.form.value);
+    }
+  }
+}

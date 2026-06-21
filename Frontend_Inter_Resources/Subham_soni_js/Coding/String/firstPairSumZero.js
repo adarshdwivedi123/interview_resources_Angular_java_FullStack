@@ -1,4 +1,11 @@
+//here we can use two pointers
+// Without sort → random order → two pointer won't work
+//[-3, -1, 2, 3, 1]  ← can't use two pointer here
 
+//After sort  → ordered → two pointer works perfectly
+//[-3, -1, 1, 2, 3]  ✅
+// sum TOO BIG   → kill the big side   → right--
+// sum TOO SMALL → kill the small side → left++
 
 //output [-4,4]
 //To find a first pair whose sum is zero using indexing //Firstly do a sort here

@@ -16,7 +16,8 @@ Whenever userRole changes:
 computed automatically runs again
 and recalculates value.
 
-  // Computed signal for admin check
+  // Computed signal for admin check 
+  Notice: computed() only calculates a value.
   isAdmin = computed(() => {
     return this.userRole() === 'ADMIN';
   });

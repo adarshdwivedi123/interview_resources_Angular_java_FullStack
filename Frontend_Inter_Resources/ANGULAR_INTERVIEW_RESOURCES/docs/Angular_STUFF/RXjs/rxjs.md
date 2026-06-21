@@ -1,4 +1,14 @@
 
+Why Use Operators Before Subscribe + What pipe() Does
+
+Simple Analogy First
+Think of Water Pipeline:
+
+Source (tap)  →  Filter  →  Purify  →  Heat  →  You drink
+
+Observable    →  filter  →  map     →  tap   →  subscribe
+(raw data)      (clean)   (transform) (log)    (use data)
+---------------------------------------------------------------------
 #)RxJS (Reactive Extensions for JavaScript) is a library used in Angular to work with async data streams such as:
 
 

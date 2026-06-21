@@ -11,3 +11,5 @@ console.log(nums.includes(9)) //true
 OR
 var item=3
 console.log(nums.some(x => x === item)) //true
+
+

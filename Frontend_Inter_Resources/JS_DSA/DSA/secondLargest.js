@@ -1,4 +1,7 @@
 
+// Largest → Start from the smallest possible value → -Infinity
+// Smallest → Start from the largest possible value → Infinity
+
 
 // function secondLargest(arr){
 // firstLargest=-Infinity

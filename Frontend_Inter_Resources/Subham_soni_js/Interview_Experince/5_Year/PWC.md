@@ -5,6 +5,7 @@
 5)HOw to communoca  woith tema
 6) tell me scenairon wherwe  ua hve use rxjs
 7)Observabke anf Promise  tell me scanrion where u have used 
+8)SOlid desing pattern
 
 // A = [1, 2, 3, 4]; B = ['a', 'b', 'c', 'd']; 
 // // Output = {a: 1, b: 2, c: 3, d: 4}

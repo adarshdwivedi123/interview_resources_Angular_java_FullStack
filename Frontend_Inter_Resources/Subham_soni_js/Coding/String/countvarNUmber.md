@@ -42,3 +42,20 @@ for (let i = 0; i < str.length; i++) {
         count = 1;
     }
 }
+-----------------------------------------------------
+let obj = {};
+let str = "adarsh";
+
+for (let ch of str) {
+    if (obj[ch] === undefined) {
+        obj[ch] = 1;
+    } else {
+        obj[ch]++;
+    }
+}
+
+for (let key in obj) {
+    if (obj[key] > 1) {
+        console.log({ [key]: obj[key] });
+    }
+}
