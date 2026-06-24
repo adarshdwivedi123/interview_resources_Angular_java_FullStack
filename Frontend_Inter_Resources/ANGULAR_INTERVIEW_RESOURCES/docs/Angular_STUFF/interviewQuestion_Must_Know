@@ -1,0 +1,26 @@
+
+40. How Did You Handle API Errors in Production?
+"I handle errors at 4 layers:
+
+ Layer 1 — HTTP Interceptor
+  Catches all API errors globally.
+  Shows toast notification per status code.
+  401 → redirect to login.
+  403 → forbidden page.
+  500 → server error message.
+
+ Layer 2 — Logger Service
+  Sends error details to backend.
+  Includes userId, timestamp, URL.
+  Only in production environment.
+
+ Layer 3 — Global Error Handler
+  Catches JavaScript errors.
+  Null pointer, undefined etc.
+  Navigates to error page.
+
+ Layer 4 — Component Level
+  Shows empty state or retry button.
+  isLoading, error, empty states."
+  ------------------------------------------------------
+  v

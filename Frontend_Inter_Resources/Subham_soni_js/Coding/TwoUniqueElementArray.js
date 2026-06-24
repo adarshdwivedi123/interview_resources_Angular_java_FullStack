@@ -21,10 +21,8 @@ function twoUniqueElement(arr){
     for(let num in count){
         if(count[num] === 1){
             //convert into number thast why we use this 
-            result.push(Number(num));
-            
-        }
-        
+            result.push(Number(num));       
+     }
     }
     return result;
 }

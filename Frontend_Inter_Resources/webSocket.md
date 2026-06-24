@@ -1,3 +1,5 @@
+
+
 WebSocket is used when we need real-time communication between client and server.
 
 

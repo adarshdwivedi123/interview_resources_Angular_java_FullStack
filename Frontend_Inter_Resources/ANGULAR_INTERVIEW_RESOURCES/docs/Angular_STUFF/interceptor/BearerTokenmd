@@ -1,0 +1,54 @@
+Bearer token we pass  
+in componet  from backned we are getting the   bearer token based on requiremnt we store in 
+1)LocalStroge
+2)Session
+3)Cookies
+
+
+// GOOD — write once → works for ALL APIs ✅
+// auth.interceptor.ts
+
+import { HttpInterceptorFn } from '@angular/common/http';
+
+export const authInterceptor: HttpInterceptorFn = (req, next) => {
+
+  // get token
+  const token = localStorage.getItem('token');
+
+  // no token → pass request as is
+  if (!token) return next(req);
+
+  // clone request + add token
+  const authReq = req.clone({
+    headers: req.headers.set(
+      'Authorization', `Bearer ${token}`
+    )
+  });
+
+  // pass cloned request
+  return next(authReq);
+};
+
+// GOOD — write once → works for ALL APIs ✅
+// auth.interceptor.ts
+
+import { HttpInterceptorFn } from '@angular/common/http';
+
+export const authInterceptor: HttpInterceptorFn = (req, next) => {
+
+  // get token
+  const token = localStorage.getItem('token');
+
+  // no token → pass request as is
+  if (!token) return next(req);
+
+  // clone request + add token
+  const authReq = req.clone({
+    headers: req.headers.set(
+      'Authorization', `Bearer ${token}`
+    )
+  });
+
+  // pass cloned request
+  return next(authReq);
+};

@@ -13,8 +13,14 @@ I have also worked on backend code refactoring to improve code quality, maintain
 
 
 #)For Forntend ROle and resposibilty
-I am responsible for the end-to-end development of frontend features, from understanding requirements to implementation and deployment.visit to the client locaiton for the demo and testing .
-2)I also collaborate with backend developers, QA teams, and product managers to understand requirements and deliver stable and scalable solutions.
+I am responsible for the end-to-end development of frontend features, from understanding requirements to implementation and deployment.
+2)Visiting client locations for live demos,Testing and gathering
+direct feedback to improve the application.  trained them  how they have used our product.
+3)I also collaborate with backend developers, QA teams, and product managers to understand requirements and deliver stable and scalable solutions.
+4)Currently i  got the appreciation from cleint design a entire  figma  using claude AI givng working prototype.
+
+benfit of going  there my mindset is getting  there how  devkeopet product so thst end user should not face diffculity  for us we should develop a product that mantal people can understnsd easily,
+for exmpale they mention use  radion buttom instead of givng direct drop down some time mental helath people not undersnar
 
 3)here we have flexibilty to interact with cdirect client take the requiemtn got the oppurnity visit at client lication test  with them. 
 4)I am also  handling  vendor realted requirment.
